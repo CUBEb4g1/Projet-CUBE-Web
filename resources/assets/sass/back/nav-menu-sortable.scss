@@ -1,0 +1,49 @@
+.nav-menu-sortable {
+	ol {
+		margin: 0;
+		list-style: none;
+	}
+
+	ol:first-child {
+		padding-left: 0;
+	}
+
+	ol:not(:first-child) {
+		margin-left: 22px;
+		padding-left: 14px;
+		border-left: 1px solid rgba(0, 0, 0, 0.03);
+	}
+
+	.ui-sortable-placeholder {
+		margin-bottom: 3px;
+		list-style: none;
+		border: 1px dashed #d9d9d9;
+		background-color: rgb(253, 253, 253);
+		visibility: visible !important;
+	}
+}
+
+.nav-menu-sortable__grab {
+	cursor: grab;
+}
+
+.nav-menu-sortable__grab:active,
+.ui-sortable-helper .nav-menu-sortable__grab,
+.ui-sortable-helper .card--nav-menu-sortable {
+	cursor: grabbing;
+}
+
+.card--nav-menu-sortable {
+	margin-bottom: 5px;
+}
+
+.card-header--nav-menu-sortable {
+	background-color: #fafafa !important;
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+	padding-left: 15px !important;
+}
+
+.card-body--nav-menu-sortable {
+	margin-top: 20px;
+}

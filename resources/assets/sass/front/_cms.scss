@@ -1,0 +1,57 @@
+/**
+ * Feuille de style regroupant des classes pour les pages CMS créées avec GrapesJs
+ */
+
+.cms-link-block {
+	display: inline-block;
+}
+
+.cms-title {
+	padding: 10px;
+}
+
+.cms-image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+
+.cms-video {
+	display: block;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.cms-line-break {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.cms-figure {
+	display: block;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+
+.cms-figure__image {
+	display: block;
+	width: 100%;
+}
+
+.cms-figure__caption {
+	padding: 10px;
+	background-color: #fff;
+	text-align: center;
+	font-size: 0.8rem;
+	font-weight: 600;
+
+	&:empty {
+		display: none;
+	}
+}

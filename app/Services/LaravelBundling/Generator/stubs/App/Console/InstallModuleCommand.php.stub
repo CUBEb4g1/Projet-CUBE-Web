@@ -1,0 +1,33 @@
+<?php
+
+namespace Modules\$PC_NAME$\App\Console;
+
+use App\Services\LaravelBundling\Console\Traits\ModuleCommand;
+
+class InstallModuleCommand extends ModuleCommand
+{
+	/**
+	 * The console command signature.
+	 * @var string
+	 */
+	protected $signature = '$KC_NAME$-module:install';
+
+	/**
+	 * The console command description.
+	 *
+	 * @var string
+	 */
+	protected $description = 'Install the $PC_NAME$ module';
+
+	/**
+	 * Execute the console command.
+	 *
+	 * @return void
+	 */
+	public function handle()
+	{
+		system('composer require larabase/$KC_NAME$ @dev');
+		system('npm install '.base_path('modules/$PC_NAME$'));
+		$this->call('module:link', ['module-name' => '$KC_NAME$']);
+	}
+}

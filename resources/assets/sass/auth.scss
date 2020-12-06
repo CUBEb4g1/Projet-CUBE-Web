@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600&display=swap');
+
+.auth-container {
+	padding: 80px 0;
+	background-color: #f4f6f8;
+}
+
+.auth-card {
+	font-family: 'Nunito', sans-serif;
+	border: 2px solid #e3e5ed;
+	border-radius: 7px;
+	background: #fff;
+}
+
+.auth-card__header {
+	padding: 20px;
+}
+
+.auth-card__body {
+	padding: 0 25px 25px;
+}
+
+.auth-card__footer {
+	padding: 25px;
+	border-radius: 0 0 7px 7px;
+	box-shadow: inset 0 5px 3px -5px rgba(0, 0, 0, 0.1);
+	background-color: #f9fafb;
+}
+
+.auth-card__title {
+	margin: 0;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.auth-card__label {
+	margin-bottom: 6px;
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
+.auth-card__input {
+	height: 35px;
+	border-radius: 4px;
+}
+
+.auth-card__btn {
+	border-radius: 4px;
+}
+
+.auth-card__btn--grey {
+	background-color: #fdfdfd;
+	border: 1px solid #e6e9ec;
+	border-bottom: 1px solid #d7dce1;
+	box-shadow: inset 0 -2px 3px #fafafa;
+
+	&:focus, &.focus {
+		box-shadow: 0 0 0 0.2rem rgba(217, 217, 217, 0.25);
+	}
+}

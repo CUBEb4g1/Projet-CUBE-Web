@@ -1,0 +1,6 @@
+{
+  "name": "cms",
+  "provider": "Modules\\Cms\\App\\Providers\\CmsServiceProvider",
+  "media-path": "modules/Cms/resources/assets/media",
+  "install-cmd": "cms-module:install"
+}

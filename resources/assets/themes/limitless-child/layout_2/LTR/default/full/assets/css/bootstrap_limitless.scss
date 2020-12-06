@@ -1,0 +1,191 @@
+/*=======================================================*/
+/*======================== NAVBAR =======================*/
+
+.nav-sidebar .nav-item-header {
+	padding-top: 0.45rem;
+	padding-bottom: 0.45rem;
+}
+
+.nav-sidebar .nav-link {
+	padding-top: 0.55rem;
+	padding-bottom: 0.55rem;
+}
+
+.navbar-brand > a {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-brand.navbar-brand-xs > a {
+	justify-content: center;
+}
+
+.navbar-brand > a > span {
+	margin: -20px 0 -20px 15px;
+	color: #ebeaee;
+	color: rgba(51, 51, 51, 0.85);
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+}
+
+.navbar-header .navbar-brand > a > span {
+	color: #ebeaee;
+}
+
+.sidebar:not(.sidebar-component) .sidebar-content {
+	overflow-y: auto;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #f5f5f5;
+}
+
+.sidebar-content::-webkit-scrollbar {
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+	background-color: #434d5e;
+}
+
+/*=======================================================*/
+/*========================= ICONS =======================*/
+
+$fontFamily: 'Font Awesome 5 Pro';
+
+.dropdown-toggle::after {
+	font-family: $fontFamily;
+	content: "\f107";
+	font-weight: 100;
+}
+
+.dropup .dropdown-toggle::after {
+	font-family: $fontFamily;
+	content: "\f106";
+	font-weight: 100;
+}
+
+.dropright .dropdown-toggle::after {
+	font-family: $fontFamily;
+	content: "\f105";
+	font-weight: 100;
+}
+
+.dropleft .dropdown-toggle::after {
+	font-family: $fontFamily;
+}
+
+.dropleft .dropdown-toggle::before {
+	font-family: $fontFamily;
+	content: "\f104";
+	font-weight: 100;
+}
+
+.list-inline-dotted .list-inline-item:not(:last-child):after {
+	content: "\f111";
+	font-family: $fontFamily;
+	font-weight: 600;
+}
+
+.dropdown-menu > .dropdown-submenu > .dropdown-item:after {
+	content: "\f105";
+	font-family: $fontFamily;
+	font-weight: 400;
+}
+
+[data-action]:after {
+	font-family: $fontFamily;
+}
+
+[data-action=collapse]:after {
+	content: "\f107";
+}
+
+.card-group-control .card-title > a:before {
+	content: "\f068";
+	font-family: $fontFamily;
+	font-weight: 400;
+}
+
+.card-group-control .card-title > a.collapsed:before {
+	content: "\f067";
+}
+
+.alert[class*=alert-styled-]:after {
+	content: "\f0c9";
+	font-family: $fontFamily;
+	font-weight: 400;
+}
+
+.slinky-menu .next:after,
+.slinky-menu .next:before,
+.slinky-menu .back:after,
+.slinky-menu .back:before {
+	font-family: $fontFamily;
+}
+
+.nav-item-submenu > .nav-link:after {
+	font-family: $fontFamily;
+	content: "\f105";
+	font-weight: 400;
+}
+
+.fc-icon:after {
+	font-family: $fontFamily;
+}
+
+.fc-icon-chevron-left:after {
+	content: '\f104';
+	font-weight: 400;
+}
+
+.fc-icon-chevron-right:after {
+	content: '\f105';
+	font-weight: 400;
+}
+
+.dropzone .dz-default.dz-message:before {
+	content: '\f093';
+	font-family: $fontFamily;
+	font-weight: 600;
+}
+
+/*=======================================================*/
+/*======================== BUTTONS ======================*/
+
+.btn-labeled > b {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: -1px;
+	padding-top: 0;
+	padding-bottom: 0;
+
+	& > i.fa, & > i.fas, & > i.far, & > i.fal {
+		font-size: 16px;
+	}
+}
+
+$buttons: (
+	"primary": rgba(38, 143, 255, 0.5),
+	"secondary": rgba(130, 138, 145, 0.5),
+	"success": rgba(72, 180, 97, 0.5),
+	"danger": rgba(225, 83, 97, 0.5),
+	"warning": rgba(222, 170, 12, 0.5),
+	"info": rgba(58, 176, 195, 0.5),
+	"light": rgba(216, 217, 219, 0.5),
+	"dark": rgba(82, 88, 93, 0.5),
+);
+
+@each $name, $bg in $buttons {
+	.btn-#{$name}:focus, .btn-#{$name}.focus,
+	.btn-#{$name}:not(:disabled):not(.disabled):active:focus,
+	.btn-#{$name}:not(:disabled):not(.disabled).active:focus,
+	.show > .btn-#{$name}.dropdown-toggle:focus {
+		box-shadow: 0 0 0 0.2rem $bg !important;
+	}
+}

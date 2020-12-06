@@ -1,0 +1,27 @@
+const mix = require('laravel-mix');
+const env = process.env.NODE_ENV;
+
+/*
+ |--------------------------------------------------------------------------
+ | Assets
+ |--------------------------------------------------------------------------
+ */
+
+mix.sass(__dirname + '/resources/assets/sass/$KC_NAME$.scss', 'public/modules/$KC_NAME$/css');
+
+/*
+ |--------------------------------------------------------------------------
+ | Options
+ |--------------------------------------------------------------------------
+ */
+
+mix.version()
+	.sourceMaps()
+	.options({
+		postCss: [
+			require('autoprefixer')(),
+			require('postcss-css-variables')()
+		],
+		// processCssUrls: false
+	})
+	.disableNotifications();

@@ -1,0 +1,76 @@
+/*!
+ * CSS à appliquer à l'intérieur du canvas de gjs
+ */
+@import 'gjs-selection-theming';
+
+/*=======================================================*/
+/*=================== GHOST COMPONENTS ==================*/
+
+// Empêcher un bloc vide d'avoir une hauteur égale à 0px pour une meilleur compréhension
+
+[data-gjs-type="text"]:empty,
+[data-gjs-type="block"]:empty,
+[data-gjs-type="link"]:empty,
+[data-gjs-type="link-block"]:empty,
+[data-gjs-type="figure-caption"]:empty,
+.container:empty {
+	display: block;
+	min-width: 150px;
+	padding: 10px 0;
+	background-color: white;
+
+	&:before {
+		content: url('/modules/cms/media/img/ghost-regular.svg');
+		display: block;
+		width: 20px;
+		height: 30px;
+		margin: auto;
+		opacity: 0.1;
+	}
+}
+
+/*=======================================================*/
+/*==================== HELPER MARGINS ===================*/
+
+// Mieux visualiser l'imbrication des blocks
+
+body.gjs-dashed {
+	[data-gjs-type="wrapper"],
+	[data-gjs-type="block"],
+	[data-gjs-type="link-block"],
+	[data-gjs-type="cms-figure"] {
+		padding: 15px;
+	}
+}
+
+/*=======================================================*/
+/*==================== IMAGE COMPONENT ==================*/
+
+// Éviter que les borders dashed des blocks ne passent par dessus l'image
+
+body.gjs-dashed {
+	[data-gjs-type="image"],
+	[data-gjs-type="figure"] {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+/*=======================================================*/
+/*================= LINE-BREAK COMPONENT ================*/
+
+[data-gjs-type="line-break"] {
+	&:after {
+		content: "\f07d";
+		font-family: "Font Awesome 5 Pro", sans-serif;
+		font-size: 2.2rem;
+		font-weight: 100;
+		color: rgb(68, 78, 84);
+		opacity: 0.3;
+	}
+}
+
+body.gjs-dashed [data-gjs-type="line-break"] {
+	border: none;
+	background-color: rgba(255, 255, 255, 0.5);
+}

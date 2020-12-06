@@ -1,0 +1,5 @@
+<?php
+
+Route::prefix('$KC_NAME$')->group(function () {
+	Route::get('/', 'HelloWorldController@index');
+});

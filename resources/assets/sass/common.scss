@@ -1,0 +1,41 @@
+/*=======================================================*/
+/*================= FORM LABELS INPUTS ==================*/
+
+// Ajouter une étoile au label des input required
+.form-group label:not(.custom-control-label).is-required:after {
+	content: ' *';
+	opacity: 0.6;
+}
+
+/*=======================================================*/
+/*======================== TABLES =======================*/
+
+// Forcer la colonne d'une table à rester la plus petite possible
+th.td-xs,
+td.td-xs {
+	width: 1px;
+	white-space: nowrap;
+}
+
+/*=======================================================*/
+/*=================== OBFUSCATED LINKS ==================*/
+
+/*<editor-fold desc="show">*/
+.js-obflink:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/*</editor-fold>*/
+
+/*=================================================================*/
+/*                              VENDOR                             */
+/*=================================================================*/
+
+/*=======================================================*/
+/*======================= BOOTSTRAP =====================*/
+
+// Fix pour Bootstrap, forcer le text des inputs custom-file-label à être alignés à gauche
+.custom-file-label {
+	text-align: left;
+}

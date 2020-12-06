@@ -1,0 +1,414 @@
+@import '~grapesjs/dist/css/grapes.min.css';
+@import '~@fortawesome/fontawesome-pro/css/all.min.css';
+@import '~toastr';
+@import '_gjs-selection-theming.scss';
+
+/*======================================================*/
+/*=================== DEFAULT STYLING ==================*/
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Helvetica', sans-serif;
+}
+
+/*=======================================================*/
+/*======================== THEMING ======================*/
+
+/*================*/
+/*=== Couleurs ===*/
+
+.gjs-one-bg {
+	background-color: #444e54;
+}
+
+.gjs-three-bg {
+	background-color: #373c3f;
+}
+
+.gjs-two-color {
+	color: #dbe6eb;
+}
+
+.gjs-four-color {
+	color: #fff;
+}
+
+/*==============================*/
+/*=== Champs dans les panels ===*/
+
+.gjs-category-title, .gjs-sm-sector .gjs-sm-title, .gjs-clm-tags .gjs-sm-title, .gjs-block-category .gjs-title, .gjs-layer-title {
+	background-color: #313c41;
+	border-top: 1px solid #202a30;
+	border-bottom: none;
+	font-weight: bold;
+}
+
+.gjs-sm-title {
+	font-size: 14px;
+}
+
+.gjs-field {
+	background-color: #5a646a;
+	border: 1px solid #353f45;
+}
+
+.gjs-radio-item-label {
+	margin-bottom: 0;
+}
+
+.gjs-radio-item input:not(:checked) + .gjs-radio-item-label {
+	box-shadow: inset 0 1px 0 #687278;
+}
+
+.gjs-radio-item input:checked + .gjs-radio-item-label {
+	background-color: #2f393f;
+}
+
+/*==========================*/
+/*=== Boutons des panels ===*/
+
+.gjs-pn-btn {
+	font-size: 15px;
+	border: 1px solid #313c41;
+	border-top: none;
+	border-bottom: none;
+}
+
+.gjs-pn-btn:not(:last-child) {
+	border-right: none;
+}
+
+.gjs-pn-btn--combine-l {
+	padding-left: 8px !important;
+	border-left: none !important;
+}
+
+.gjs-pn-btn--combine-r {
+	padding-right: 8px !important;
+	border-right: none !important;
+}
+
+.gjs-pn-btn--lg {
+	font-size: 18px;
+}
+
+.gjs-pn-btn:hover,
+.gjs-pn-btn.gjs-pn-active {
+	background-color: #313c41;
+}
+
+.gjs-pn-views {
+	background-color: #313c41;
+	border-bottom: none;
+}
+
+/*===============*/
+/*=== Modales ===*/
+
+.gjs-mdl-dialog-lg {
+	max-width: 1720px;
+}
+
+.gjs-mdl-dialog-code-editor .gjs-mdl-content {
+	padding: 0;
+}
+
+.modal-code-editors {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.modal-code-editors__editor {
+	flex-grow: 1;
+	flex-basis: 0;
+	max-width: 100%;
+	overflow: auto;
+}
+
+.modal-code-editors__save-btn {
+	display: block;
+	margin: 10px auto;
+	padding: 8px 24px;
+	border: 2px solid #858b8f;
+	border-radius: 30px;
+}
+
+.gjs-mdl-content .CodeMirror-wrap {
+	padding: 0;
+}
+
+.modal-code-editors,
+.gjs-mdl-content .CodeMirror-wrap {
+	height: 700px;
+}
+
+/*==========================*/
+/*=== Toaster notif save ===*/
+
+#toast-container > .toast-success,
+#toast-container > .toast-success:hover {
+	width: auto;
+	padding: 10px 20px;
+	box-shadow: none;
+	background-image: none !important;
+	background-color: rgb(37, 45, 61, 0.8);
+	opacity: 0.8;
+	font-size: 35px;
+}
+
+#toast-container > .toast-success:before {
+	font-family: "Font Awesome 5 Pro", sans-serif;
+}
+
+#toast-container > .toast-success:before {
+	content: "\f0c7";
+	font-weight: 900;
+}
+
+.toast-bottom-right {
+	right: 320px;
+}
+
+/*=======================================================*/
+/*======================== LAYOUT =======================*/
+
+/*===========================*/
+/*=== Layout & containers ===*/
+
+.builder {
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	font-family: 'Helvetica', 'Nunito', sans-serif;
+	overflow: hidden;
+}
+
+.left-container {
+	width: 40px;
+}
+
+.center-container {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.center-container__editor {
+	flex-grow: 1;
+}
+
+.right-container {
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 16%;
+	max-width: 16%;
+	background-color: #444e54;
+}
+
+.right-container__panels {
+	flex-grow: 1;
+	overflow: auto;
+	height: 0;
+}
+
+.top-bar {
+	display: flex;
+	width: 100%;
+	padding: 0;
+
+	.gjs-pn-btn {
+		margin: 0;
+		padding: 10px 11px;
+	}
+}
+
+.top-bar--spaced-groups {
+	justify-content: space-between;
+}
+
+.top-bar--solo-group {
+	background-color: #313c41;
+
+	.gjs-pn-buttons {
+		width: 100%;
+	}
+
+	.gjs-pn-buttons .gjs-pn-btn {
+		flex-grow: 1;
+	}
+
+	.gjs-pn-btn.gjs-pn-active {
+		background-color: #444e54;
+	}
+}
+
+.vertical-bar {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 0;
+
+	.gjs-pn-buttons {
+		flex-direction: column;
+	}
+}
+
+.vertical-bar--spaced-groups {
+	justify-content: space-between;
+}
+
+/*===========================*/
+/*=== Layout de Grapes.js ===*/
+
+.center-container .gjs-cv-canvas {
+	position: initial;
+	width: 100%;
+	height: 100%;
+}
+
+.gjs-pn-panel {
+	position: relative;
+}
+
+.gjs-btn-lm {
+	margin-left: 20px;
+}
+
+.gjs-btn-rm {
+	margin-right: 20px;
+}
+
+/*===================*/
+/*=== Exit button ===*/
+
+.exit-btn {
+	padding: 10px;
+	margin: 0;
+	opacity: 0.7;
+}
+
+.exit-btn i {
+	font-size: 17px;
+}
+
+.exit-btn i:before {
+	content: "\f52a";
+}
+
+.exit-btn:hover i:before {
+	content: "\f52b";
+}
+
+/*=======================================================*/
+/*====================== BLOCK ICONS ====================*/
+
+.fa.fa-gjs-container {
+	position: relative;
+
+	&:before {
+		content: "\f2fa";
+		font-family: "Font Awesome 5 Pro", sans-serif;
+		font-weight: 500;
+	}
+
+	&:after {
+		content: "\f45c";
+		font-family: "Font Awesome 5 Pro", sans-serif;
+		font-weight: 100;
+		font-size: 0.62em;
+		position: absolute;
+		top: 19%;
+		left: 20%;
+	}
+}
+
+/*=======================================================*/
+/*===================== FONTAWESOME =====================*/
+
+.fa.fa-clone.gjs-toolbar-item:before {
+	font-weight: 400;
+}
+
+.fa.fa-trash-o.gjs-toolbar-item:before {
+	content: "\f2ed";
+	font-weight: 400;
+}
+
+.fa.fa-check-square-o:before {
+	content: "\f14a";
+	font-weight: 400;
+}
+
+.fa.fa-square-o:before {
+	content: "\f0c8";
+	font-weight: 400;
+}
+
+/*=======================================================*/
+/*===================== CUSTOM ICONS ====================*/
+
+.icons-flex {
+	display: inline-block;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 15px;
+	width: 15px;
+	opacity: 0.9;
+}
+
+.icon-dir-row {
+	background-image: url('../../media/img/flex-dir-row.png');
+}
+
+.icon-dir-row-rev {
+	background-image: url('../../media/img/flex-dir-row-rev.png');
+}
+
+.icon-dir-col {
+	background-image: url('../../media/img/flex-dir-col-rev.png');
+}
+
+.icon-dir-col-rev {
+	background-image: url('../../media/img/flex-dir-col-rev.png');
+}
+
+.icon-just-start {
+	background-image: url('../../media/img/flex-just-start.png');
+}
+
+.icon-just-end {
+	background-image: url('../../media/img/flex-just-end.png');
+}
+
+.icon-just-sp-bet {
+	background-image: url("../../media/img/flex-just-sp-bet.png");
+}
+
+.icon-just-sp-ar {
+	background-image: url('../../media/img/flex-just-sp-ar.png');
+}
+
+.icon-just-sp-cent {
+	background-image: url('../../media/img/flex-just-sp-cent.png');
+}
+
+.icon-al-start {
+	background-image: url('../../media/img/flex-al-start.png');
+}
+
+.icon-al-end {
+	background-image: url('../../media/img/flex-al-end.png');
+}
+
+.icon-al-str {
+	background-image: url('../../media/img/flex-al-str.png');
+}
+
+.icon-al-center {
+	background-image: url('../../media/img/flex-al-center.png');
+}
+

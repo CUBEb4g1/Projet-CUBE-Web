@@ -1,0 +1,6 @@
+{
+  "name": "$KC_NAME$",
+  "provider": "Modules\\$PC_NAME$\\App\\Providers\\$PC_NAME$ServiceProvider",
+  "media-path": "modules/$PC_NAME$/resources/assets/media",
+  "install-cmd": "$KC_NAME$-module:install"
+}

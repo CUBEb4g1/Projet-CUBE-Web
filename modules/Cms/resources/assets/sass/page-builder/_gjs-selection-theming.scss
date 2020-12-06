@@ -1,0 +1,61 @@
+/*!
+ * CSS pour personnaliser le thème de GrapesJs
+ */
+
+/*==============*/
+/*=== Canvas ===*/
+
+body {
+	.gjs-comp-selected {
+		outline: 3px solid #195bbf !important
+	}
+
+	.gjs-resizer-h {
+		border: 3px solid #195bbf;
+	}
+
+	.gjs-dashed *[data-highlightable].gjs-hovered {
+		outline: none;
+	}
+}
+
+.gjs-margin-v-el,
+.gjs-padding-v-el,
+.gjs-fixedmargin-v-el,
+.gjs-fixedpadding-v-el {
+	background-color: #60be19;
+	opacity: 0.2;
+}
+
+.gjs-padding-v-el,
+.gjs-fixedpadding-v-el {
+	background-color: #195bbf;
+}
+
+/*==============*/
+/*=== Layout ===*/
+
+.gjs-com-badge,
+.gjs-com-badge-red,
+.gjs-badge {
+	background-color: #195bbf;
+}
+
+.gjs-toolbar {
+	padding: 2px;
+	border-radius: 3px 3px 0 0;
+	background-color: #195bbf;
+}
+
+.gjs-resizer-h {
+	border: 3px solid #195bbf;
+}
+
+.gjs-cv-canvas .gjs-highlighter,
+.gjs-cv-canvas .gjs-highlighter-sel {
+	outline: 1px solid #195bbf;
+}
+
+.gjs-dashed *[data-highlightable].gjs-hovered {
+	outline: none;
+}

@@ -1,0 +1,20 @@
+@import 'variables';
+
+// Limitless
+@import '../../themes/limitless/layout_2/LTR/default/full/assets/css/bootstrap';
+@import '../../themes/limitless/layout_2/LTR/default/full/assets/css/bootstrap_limitless';
+@import '../../themes/limitless/layout_2/LTR/default/full/assets/css/colors';
+@import '../../themes/limitless/layout_2/LTR/default/full/assets/css/components';
+@import '../../themes/limitless/layout_2/LTR/default/full/assets/css/layout';
+@import '../../themes/limitless-child/layout_2/LTR/default/full/assets/css/bootstrap_limitless';
+
+// Font Awesome
+@import '~@fortawesome/fontawesome-pro/scss/fontawesome';
+@import '~@fortawesome/fontawesome-pro/scss/regular';
+@import '~@fortawesome/fontawesome-pro/scss/solid';
+@import '~@fortawesome/fontawesome-pro/scss/light';
+@import '~@fortawesome/fontawesome-pro/scss/brands';
+@import '~@fortawesome/fontawesome-pro/scss/duotone';
+
+// Flag-icon
+@import '~flag-icon-css/css/flag-icon.css';

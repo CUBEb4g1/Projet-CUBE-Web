@@ -1,0 +1,66 @@
+<?php
+
+namespace Modules\$PC_NAME$\App\Providers;
+
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\ServiceProvider;
+use Modules\$PC_NAME$\App\Console\InstallModuleCommand;
+
+class $PC_NAME$ServiceProvider extends ServiceProvider
+{
+	public function boot()
+	{
+		$this->_loadCommands();
+		$this->_loadMigrations();
+		$this->_loadConfigs();
+		$this->_loadTranslations();
+		$this->_loadViews();
+		$this->_loadRoutes();
+	}
+
+	public function register()
+	{
+		//..
+	}
+
+	protected function _loadCommands()
+	{
+		if ($this->app->runningInConsole()) {
+			$this->commands([
+				 InstallModuleCommand::class,
+			]);
+		}
+	}
+
+	protected function _loadMigrations()
+	{
+		$this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
+	}
+
+	protected function _loadConfigs()
+	{
+		$this->mergeConfigFrom(
+			__DIR__.'/../../config/$SC_NAME$.php', '$SC_NAME$'
+		);
+	}
+
+	protected function _loadTranslations()
+	{
+		$this->loadTranslationsFrom(__DIR__.'/../../resources/lang', '$SC_NAME$');
+	}
+
+	protected function _loadViews()
+	{
+		$this->loadViewsFrom(__DIR__.'/../../resources/views', '$SC_NAME$');
+	}
+
+	protected function _loadRoutes()
+	{
+		Route::middleware('web')
+			->group(__DIR__ . '/../../routes/web.php');
+
+		Route::middleware('api')
+			->prefix('api')
+			->group(__DIR__ . '/../../routes/api.php');
+	}
+}

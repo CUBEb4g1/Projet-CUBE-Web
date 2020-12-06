@@ -1,0 +1,159 @@
+.chatterbox {
+	position: relative;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	height: 100%;
+}
+
+.chatterbox-chatbox-overlay {
+	position: relative;
+	display: flex;
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+	overflow-y: auto;
+	width: 100%;
+}
+
+.chatterbox-chatbox-overlay.has-error {
+	padding-bottom: 20px;
+}
+
+.chatterbox-chatbox {
+	width: 100%;
+	overflow-y: auto;
+}
+
+.chatterbox-loader {
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	text-align: center;
+	font-size: 11px;
+}
+
+.chatterbox-loader > span {
+	position: relative;
+	left: -50%;
+	padding: 1px;
+	border-radius: 2px;
+	background: white;
+}
+
+.chatterbox-error {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-size: 11px;
+	background-color: #f14d4d;
+	color: white;
+}
+
+.chatterbox-chatbox-overlay:not(.is-loading) .chatterbox-loader,
+.chatterbox-chatbox-overlay:not(.has-error) .chatterbox-error {
+	display: none;
+}
+
+.chatterbox-message.own-message {
+	text-align: right;
+}
+
+.chatterbox-message-bubble {
+	display: inline-block;
+	margin-right: 10%;
+	margin-bottom: 2px;
+	padding: 10px 20px;
+	border-radius: 0 5px 5px 0;
+	background: #feec0e;
+	text-align: left;
+}
+
+.own-message .chatterbox-message-bubble {
+	margin-right: 0;
+	margin-left: 10%;
+	border-radius: 5px 0 0 5px;
+	background: whitesmoke;
+}
+
+.chatterbox-message-date {
+	font-size: 75%;
+	margin-left: 10px;
+}
+
+.own-message .chatterbox-message-date {
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+.chatterbox-message.no-date .chatterbox-message-date {
+	display: none;
+}
+
+.chatterbox-send-form {
+	width: 100%;
+}
+
+.chatterbox-send-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: flex-end;
+	padding: 20px;
+	text-align: right;
+}
+
+.chatterbox-send-input {
+	flex: 0 0 41.666667%;
+	max-width: 41.666667%;
+	height: 35px;
+	padding: 5px 8px;
+	border: 2px solid #bcbcbc;
+	border-radius: 50px;
+	resize: none;
+	transition: max-width 0.2s, flex 0.2s;
+}
+
+.chatterbox-send-input::-webkit-scrollbar {
+	display: none;
+}
+
+.chatterbox-send-input:focus {
+	flex: 0 0 91.666667%;
+	max-width: 91.666667%;
+	outline: none;
+	border-color: #a9a9a9;
+}
+
+.chatterbox-send-input.has-break-lines {
+	border-radius: 15px;
+}
+
+.chatterbox-send {
+	flex: 0 0 8.333333%;
+	max-width: 8.333333%;
+}
+
+.chatterbox-send-btn {
+	border: none;
+	background: transparent;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+	font-weight: bold;
+	color: black;
+	cursor: pointer;
+}
+
+.chatterbox-send-btn:focus {
+	outline: none;
+}
+
+#__cbx-copycat-textarea {
+	position: absolute;
+	top: 0;
+	left: -99999999999px;
+	max-height: 500px;
+	overflow: hidden;
+	opacity: 0;
+	word-break: break-word;
+}

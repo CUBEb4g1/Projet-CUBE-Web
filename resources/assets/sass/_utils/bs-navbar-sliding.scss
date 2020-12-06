@@ -1,0 +1,61 @@
+@media (max-width: $grid-lg - 1) {
+	.navbar--sliding.navbar-expand-lg {
+		.navbar-collapse.collapsing,
+		.navbar-collapse.collapse.show {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 100%;
+			background: white;
+			width: 80%;
+			height: inherit !important;
+			padding: 10px 20px;
+			transition: left 0.3s;
+			z-index: 100;
+		}
+
+		.navbar-collapse.collapse.show {
+			left: 20%;
+		}
+
+		.navbar-collapse:before {
+			content: "";
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.35);
+			opacity: 0;
+			z-index: -1;
+			transition: opacity 0.3s, right 0.3s;
+		}
+
+		.navbar-collapse.collapse.show:before {
+			right: 80%;
+			opacity: 1;
+		}
+
+		.navbar-collapse .navbar-toggler {
+			font-size: 30px;
+		}
+	}
+}
+
+@media (max-width: 359px) {
+	.navbar--sliding.navbar-expand-lg {
+		.navbar-collapse.collapsing,
+		.navbar-collapse.collapse.show {
+			width: 100%;
+		}
+
+		.navbar-collapse.collapse.show {
+			left: 0;
+		}
+
+		.navbar-collapse.collapse.show:before {
+			right: 100%;
+		}
+	}
+}
