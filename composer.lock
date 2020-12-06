@@ -1144,7 +1144,7 @@
             "dist": {
                 "type": "path",
                 "url": "modules/Cms",
-                "reference": "5ca1bab5785af48dfa5048b5456391a307ced3ec"
+                "reference": "b4638beef277ab50a2746f03f898de0edb428296"
             },
             "require": {
                 "laravel/framework": "^8.0"
