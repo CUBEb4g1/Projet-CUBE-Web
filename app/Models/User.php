@@ -64,6 +64,20 @@ class User extends Authenticatable implements MustVerifyEmail, HasLocalePreferen
 	|--------------------------------------------------------------------------
 	*/
 
+    public function role()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function resources()
+    {
+        return $this->hasMany(Resource::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comments::class);
+    }
 	/*
 	|--------------------------------------------------------------------------
 	| SCOPES

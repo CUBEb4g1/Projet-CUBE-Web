@@ -8,4 +8,5 @@ class Role extends SpatieRole
 {
 	const DEVELOPER = 'developer';
 	const ADMIN     = 'admin';
+
 }
