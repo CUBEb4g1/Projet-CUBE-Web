@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Resource;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ResourceController extends Controller
 {
@@ -13,6 +14,23 @@ class ResourceController extends Controller
     | FRONT OFFICE
     |--------------------------------------------------------------------------
     */
+
+    public function addRessource(Request $addRequest)
+    {
+        $resource = new Resource;
+
+        $resource->title = $addRequest->title;
+        $resource->content = $addRequest->content;
+        $resource->user_id = Auth::User()->id;
+        $resource->visibility = $addRequest->visibility;
+        $resource->validated = 0;
+        $resource->deleted = 0;
+        $resource->views = 0;
+
+        $resource->save();
+
+        return redirect()->back()->with('successNotif', "Ressource ajoutée avec succès !");
+    }
 
     public function getValidatedlist()
     {
