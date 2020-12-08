@@ -10,6 +10,7 @@ use App\Http\Controllers\Back\SettingsController;
 use App\Http\Controllers\Back\UserController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\ResourceController;
 use App\Models\Permission;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -42,9 +43,15 @@ Route::group([
 	Route::name('contact')->get('contact', [ContactController::class, 'form']);
 	Route::post('contact', [ContactController::class, 'send']);
 
+	// === Ressources === \\
+    Route::name('front.resourceList')->get('ressources/list', [ResourceController::class, 'getValidatedlist']);
+    #Route::name('front.resourceVisibility')->post('ressources/visibility', [ResourceController::class,'changeVisibility']);
+
 	Route::middleware(['auth', 'verified'])->group(function () {
 		// .. Les utilisateurs doivent être connectés
 	});
+
+
 });
 
 //=======================================================
@@ -89,4 +96,10 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
 		Route::name('back.settings.parameters')->get('settings/parameters', [SettingsController::class, 'parameters']);
 		Route::name('back.settings.parameters')->post('settings/parameters', [SettingsController::class, 'saveParameters']);
 	});
+
+    // === Gestion des Ressources === \\
+    Route::name('back.resourcePending')->get('ressources/pending', [ResourceController::class, 'getPendingValidationResources']);
+    Route::name('back.resourceValidate')->get('ressources/validate/{?resource}', [ResourceController::class, 'validateResource'])->where(['resource' => '\d*']);
+    Route::name('back.resourceRefuse')->get('ressources/refuse/{?resource}', [ResourceController::class, 'refuseResource'])->where(['resource' => '\d*']);
+    Route::name('back.resourceDelete')->get('ressources/delete/{?resource}', [ResourceController::class, 'deleteResource'])->where(['resource' => '\d*']);
 });
