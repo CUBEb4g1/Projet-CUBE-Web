@@ -19,6 +19,16 @@ class Resource extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    /**
+     * @var mixed
+     */
+    public $title;
+    public $content;
+    public $visibility;
+    public $validated;
+    public $deleted;
+    public $views;
+    public $user_id;
 
     public function user()
     {
