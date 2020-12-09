@@ -150,6 +150,10 @@ class UserController extends Controller
             ->with('infoNotif', 'Utilisateur désactivé');
     }
 
+    /**
+     * Activer l'utilisateur
+     */
+
     public function enable(User $user)
     {
         $user->active = 1;
