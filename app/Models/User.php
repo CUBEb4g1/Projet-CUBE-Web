@@ -24,7 +24,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasLocalePreferen
 	use Notifiable;
 
 	protected $fillable = [
-		'username', 'email', 'firstname', 'lastname', 'password',
+		'username', 'email', 'firstname', 'lastname', 'password', 'active',
 	];
 
 	protected $hidden = [
