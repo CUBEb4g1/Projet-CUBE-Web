@@ -13,6 +13,9 @@ class Resource extends Model
         'title', 'content', 'visibility', 'validated', 'deleted', 'views',
     ];
 
+    const PRIVATE_TYPE = 1;
+    const SHARED_TYPE = 2;
+    const PUBLIC_TYPE = 3;
 
     /*
     |--------------------------------------------------------------------------

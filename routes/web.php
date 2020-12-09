@@ -44,8 +44,9 @@ Route::group([
 	Route::post('contact', [ContactController::class, 'send']);
 
 	// === Ressources === \\
-    Route::name('front.resourceList')->get('ressources/list', [ResourceController::class, 'getValidatedlist']);
-    #Route::name('front.resourceVisibility')->post('ressources/visibility', [ResourceController::class,'changeVisibility']);
+    Route::name('front.resource_list')->get('ressources/list', [ResourceController::class, 'getValidatedlist']);
+    Route::name('front.resource_update_visibility')->post('resource/updateVisibility', [ResourceController::class, 'changeVisibility']);
+    Route::name('front.resource_add')->post('resource/add', [ResourceController::class, 'addRessource']);
 
 	Route::middleware(['auth', 'verified'])->group(function () {
 		// .. Les utilisateurs doivent être connectés

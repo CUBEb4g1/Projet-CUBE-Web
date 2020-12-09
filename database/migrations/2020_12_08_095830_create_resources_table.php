@@ -17,8 +17,7 @@ class CreateResourcesTable extends Migration
             $table->increments('id');
             $table->string('title', 255);
             $table->text('content');
-            $table->increments('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->constrained('users');
             $table->tinyInteger('visibility');
             $table->boolean('validated');
             $table->boolean('deleted');

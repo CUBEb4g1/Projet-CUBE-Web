@@ -15,21 +15,28 @@ class ResourceController extends Controller
     |--------------------------------------------------------------------------
     */
 
-    public function addRessource(Request $addRequest)
+    public function addRessource(Request $resource)
     {
-        $resource = new Resource;
+        $newresource = new Resource(array(
+            ['title' => $resource->title],
+            ['content' => $resource->content],
+            ['user_id' => Auth::User()->id],
+            ['visibility' => $resource->vType],
+            ['validated' => 0],
+            ['deleted' => 0],
+            ['views' => 0],
+        ));
 
-        $resource->title = $addRequest->title;
-        $resource->content = $addRequest->content;
-        $resource->user_id = Auth::User()->id;
-        $resource->visibility = $addRequest->visibility;
-        $resource->validated = 0;
-        $resource->deleted = 0;
-        $resource->views = 0;
+        Auth::user()->resources()->save($newresource);
 
-        $resource->save();
+        if ($resource === 1)
+        {
+            return redirect()->back()->with('successNotif', "Ressource ajoutée avec succès !");
+        }else{
+            return redirect()->back()->with('dangerNotif', "Une erreur est survenue !");
+        }
 
-        return redirect()->back()->with('successNotif', "Ressource ajoutée avec succès !");
+
     }
 
     public function getValidatedlist()
@@ -44,8 +51,15 @@ class ResourceController extends Controller
         return view('front.resource', ['resources' => $ressourceList]);
     }
 
-    public function changeVisibility(Request $request) {
-        return redirect()->back()->with('successNotif', "Visibilité de la ressource modifiée !");
+    public function changeVisibility(Request $resource)
+    {
+        $updateResource = Resource::where('id', $resource->id)->update(array('visibility' => $resource->vType));
+        if ($updateResource === 1) {
+            return redirect()->back()->with('successNotif', "Visibilité de la ressource modifiée !");
+        } else {
+            return redirect()->back()->with('dangerNotif', "Erreur erreur est survenue !");
+        }
+
     }
 
     /*
@@ -54,14 +68,13 @@ class ResourceController extends Controller
     |--------------------------------------------------------------------------
     */
 
-    public function getPendingValidationResources() {
+    public function getPendingValidationResources()
+    {
         $getResources = Resource::with('user')->where('validated', 0)
             ->where('deleted', 0)
             ->paginate(25);
 
         $totalResourcescount = $getResources->total();
-
-        dd($totalResourcescount, $getResources);
 
         return view('back.getPendingResources', ['ressourceList' => $getResources, 'totalCount' => $totalResourcescount]);
     }
