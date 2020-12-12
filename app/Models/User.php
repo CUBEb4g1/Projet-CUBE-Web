@@ -24,7 +24,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasLocalePreferen
 	use Notifiable;
 
 	protected $fillable = [
-		'username', 'email', 'firstname', 'lastname', 'password',
+		'username', 'email', 'firstname', 'lastname', 'password', 'active',
 	];
 
 	protected $hidden = [
@@ -64,6 +64,20 @@ class User extends Authenticatable implements MustVerifyEmail, HasLocalePreferen
 	|--------------------------------------------------------------------------
 	*/
 
+    public function role()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function resources()
+    {
+        return $this->hasMany(Resource::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comments::class);
+    }
 	/*
 	|--------------------------------------------------------------------------
 	| SCOPES
