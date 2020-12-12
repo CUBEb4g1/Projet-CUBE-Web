@@ -51,6 +51,8 @@ class AppServiceProvider extends ServiceProvider
 		View::share('DEV', Permission::DEV);
 		View::share('SWITCH_AUTH', Permission::SWITCH_AUTH);
 		View::share('ACCESS_BACKOFFICE', Permission::ACCESS_BACKOFFICE);
+		View::share('ADMIN_TOOLS', Permission::ADMIN_TOOLS);
+		View::share('MOD_TOOLS', Permission::MOD_TOOLS);
 	}
 
 	/**
