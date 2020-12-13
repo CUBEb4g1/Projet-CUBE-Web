@@ -9,4 +9,6 @@ class Permission extends SpatiePermission
 	const DEV               = 'dev';
 	const SWITCH_AUTH       = 'switch-auth';
 	const ACCESS_BACKOFFICE = 'access-backoffice';
+    const ADMIN_TOOLS       = 'admin-tools';
+    const MOD_TOOLS         = 'mod-tools';
 }

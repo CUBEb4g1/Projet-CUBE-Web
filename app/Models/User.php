@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
+use Overtrue\LaravelFavorite\Traits\Favoriter;
+use Overtrue\LaravelSubscribe\Traits\Subscriber;
 use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\HasRoles;
 
@@ -22,6 +24,8 @@ class User extends Authenticatable implements MustVerifyEmail, HasLocalePreferen
 	use HasRoles;
 	use HasSettings;
 	use Notifiable;
+	use Subscriber;
+	use Favoriter;
 
 	protected $fillable = [
 		'username', 'email', 'firstname', 'lastname', 'password', 'active',
