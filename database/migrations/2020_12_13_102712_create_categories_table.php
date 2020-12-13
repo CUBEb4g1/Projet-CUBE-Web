@@ -16,7 +16,8 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('label');
-            $table->foreignId('resource_id')->constrained('resources');
+            $table->unsignedInteger('resource_id');
+            $table->foreign('resource_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

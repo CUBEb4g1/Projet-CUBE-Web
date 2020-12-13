@@ -21,8 +21,6 @@ class Category extends Model
     /**
      * @var mixed
      */
-    public $label;
-    public $resource_id;
 
     public function resource()
     {
