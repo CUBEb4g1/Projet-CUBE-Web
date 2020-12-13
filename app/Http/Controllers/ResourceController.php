@@ -15,27 +15,18 @@ class ResourceController extends Controller
     |--------------------------------------------------------------------------
     */
 
-    public function addRessource(Request $resource)
+    public function addResource(Request $request)
     {
-        $newresource = new Resource(array(
-            ['title' => $resource->title],
-            ['content' => $resource->content],
-            ['user_id' => Auth::User()->id],
-            ['visibility' => $resource->vType],
-            ['validated' => 0],
-            ['deleted' => 0],
-            ['views' => 0],
-        ));
+        $newresource = new Resource([
+            'content' => $request->input('content'),
+            'user_id' => Auth::User()->id,
+            'visibility' => $request->vType,
+            'validated' => 0,
+            'deleted' => 0,
+            'views' => 0,
+        ]);
 
         Auth::user()->resources()->save($newresource);
-
-        if ($resource === 1)
-        {
-            return redirect()->back()->with('successNotif', "Ressource ajoutée avec succès !");
-        }else{
-            return redirect()->back()->with('dangerNotif', "Une erreur est survenue !");
-        }
-
 
     }
 

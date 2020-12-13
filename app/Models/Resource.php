@@ -4,13 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Overtrue\LaravelFavorite\Traits\Favoriteable;
+use Overtrue\LaravelSubscribe\Traits\Subscribable;
 
 class Resource extends Model
 {
     use HasFactory;
+    use Favoriteable;
+    use Subscribable;
 
     protected $fillable = [
-        'title', 'content', 'visibility', 'validated', 'deleted', 'views',
+        'title',
+        'content',
+        'visibility',
+        'validated',
+        'deleted',
+        'views',
     ];
 
     const PRIVATE_TYPE = 1;
@@ -25,13 +34,6 @@ class Resource extends Model
     /**
      * @var mixed
      */
-    public $title;
-    public $content;
-    public $visibility;
-    public $validated;
-    public $deleted;
-    public $views;
-    public $user_id;
 
     public function user()
     {
@@ -40,7 +42,7 @@ class Resource extends Model
 
     public function comments()
     {
-        return $this->hasMany(Comments::class);
+        return $this->hasMany(Comment::class);
     }
 
     public function category()
