@@ -136,7 +136,7 @@ var FullCalendarFormats = function() {
         var initialLocaleCode = 'en';
 
         // Define elements
-        var calendarLocaleSelectorElement = document.getElementById('lang-selector');
+        var calendarLocaleSelectorElement = document.getElementById('langs-selector');
         var calendarLocaleElement = document.querySelector('.fullcalendar-languages');
 
         // Initialize
@@ -223,7 +223,7 @@ var FullCalendarFormats = function() {
             });
 
             // When the selected option changes, dynamically change the calendar option (jQuery, because of Select2)
-            $(calendarLocaleSelectorElement).on('change', function (e) { 
+            $(calendarLocaleSelectorElement).on('change', function (e) {
                 if (this.value) {
                     calendarLocaleInit.setOption('locale', this.value);
                 }

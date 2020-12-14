@@ -53,6 +53,12 @@ class ResourceController extends Controller
 
     }
 
+
+    public function create()
+    {
+        return view("front.account.create");
+    }
+
     /*
     |--------------------------------------------------------------------------
     | BACK OFFICE

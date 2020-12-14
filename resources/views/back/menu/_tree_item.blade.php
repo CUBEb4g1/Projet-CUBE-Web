@@ -6,7 +6,7 @@
 
 		$item = $node['item'];
 		$id   = $node['item']->id;
-		$text = $node['item']->getSmartText(Request::get('lang'), false) ?? '<small class="text-muted">'.e($node['item']->text).' (pas de traduction)</small>';
+		$text = $node['item']->getSmartText(Request::get('langs'), false) ?? '<small class="text-muted">'.e($node['item']->text).' (pas de traduction)</small>';
 	} elseif ($isPrototype) {
 		$item = null;
 		$id   = '__ID__';

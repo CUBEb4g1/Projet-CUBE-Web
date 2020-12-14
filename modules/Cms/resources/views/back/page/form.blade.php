@@ -291,8 +291,8 @@
 
 			var $inputTitle     = $('input.js-page-title-input'),
 				$inputSlug      = $('input.js-page-slug-input'),
-				$langFieldTitle = $inputTitle.parents('.js-form-field-multi-lang'),
-				$langFieldSlug  = $inputSlug.parents('.js-form-field-multi-lang');
+				$langFieldTitle = $inputTitle.parents('.js-form-field-multi-langs'),
+				$langFieldSlug  = $inputSlug.parents('.js-form-field-multi-langs');
 
 			slugify.extend({ '\'': '-' });
 
@@ -313,22 +313,22 @@
 			});
 
 			// Au clic sur le changement de langue du champ title changer aussi la langue du champ slug
-			$langFieldTitle.find('.__iml-lang-btn').on('click', function () {
+			$langFieldTitle.find('.__iml-langs-btn').on('click', function () {
 				var lang     = $(this).data('lang'),
-					slugLang = $langFieldSlug.data('current-lang');
+					slugLang = $langFieldSlug.data('current-langs');
 
 				if (lang !== slugLang) {
-					$langFieldSlug.find('.__iml-lang-btn[data-lang="' + lang + '"]').click();
+					$langFieldSlug.find('.__iml-langs-btn[data-langs="' + lang + '"]').click();
 				}
 			});
 
 			// Au clic sur le changement de langue du champ slug changer aussi la langue du champ title
-			$langFieldSlug.find('.__iml-lang-btn').on('click', function () {
+			$langFieldSlug.find('.__iml-langs-btn').on('click', function () {
 				var lang      = $(this).data('lang'),
-					titleLang = $langFieldTitle.data('current-lang');
+					titleLang = $langFieldTitle.data('current-langs');
 
 				if (lang !== titleLang) {
-					$langFieldTitle.find('.__iml-lang-btn[data-lang="' + lang + '"]').click();
+					$langFieldTitle.find('.__iml-langs-btn[data-langs="' + lang + '"]').click();
 				}
 			});
 

@@ -52,14 +52,14 @@
 	@push('scripts')
 	<script>
 		$(function () {
-			var selector = '.js-form-field-multi-lang';
+			var selector = '.js-form-field-multi-langs';
 
 			$(selector).each(function () {
 				var $el           = $(this),
 					$input        = $el.find('.__iml-visible-input input'),
 					$hiddenInputs = $el.find('.__iml-hidden-translation-input'),
-					$currLangFlag = $el.find('.__iml-current-lang-flag'),
-					$langBtns     = $el.find('.__iml-lang-btn')
+					$currLangFlag = $el.find('.__iml-current-langs-flag'),
+					$langBtns     = $el.find('.__iml-langs-btn')
 				;
 
 				/*
@@ -69,22 +69,22 @@
 					// Le bouton cliqué
 					var $clickedLangBtn = $(this),
 						// Le drapeau de la langue précédente
-						prevFlagIcon    = $langBtns.filter('[data-lang="' + $el.data('current-lang') + '"]').data('icon');
+						prevFlagIcon    = $langBtns.filter('[data-langs="' + $el.data('current-langs') + '"]').data('icon');
 
 					// Maj le drapeau de la langue en cours d'édition
 					$currLangFlag.removeClass('flag-icon-' + prevFlagIcon);
 					$currLangFlag.addClass('flag-icon-' + $clickedLangBtn.data('icon'));
 					// Maj le contenu de l'input
-					$input.val($hiddenInputs.filter('[data-lang="' + $clickedLangBtn.data('lang') + '"]').val());
+					$input.val($hiddenInputs.filter('[data-langs="' + $clickedLangBtn.data('lang') + '"]').val());
 					// Maj la langue en cours d'édition
-					$el.data('current-lang', $clickedLangBtn.data('lang'));
+					$el.data('current-langs', $clickedLangBtn.data('lang'));
 				});
 
 				/*
 				 * Au changement de l'input
 				 */
 				$input.on('keyup paste cut change', function () {
-					var $inputToUpdate = $hiddenInputs.filter('[data-lang="' + $el.data('current-lang') + '"]');
+					var $inputToUpdate = $hiddenInputs.filter('[data-langs="' + $el.data('current-langs') + '"]');
 					$inputToUpdate.val($(this).val());
 				});
 			});
