@@ -61,7 +61,7 @@ var I18nextCallbacks = function() {
             fallbackLng: false
         },
         function (err, t) {
-            
+
             // Initialize library
             jqueryI18next.init(i18next, $);
 
@@ -145,7 +145,7 @@ var I18nextCallbacks = function() {
                 _componentNoty('Language has been changed to: ' + '<span class="font-weight-semibold text-uppercase">' + i18next.language + '</span>');
             });
 
-            // Change lang in dropdown
+            // Change langs in dropdown
             $switchContainer.children('.dropdown-toggle').html(
                 $(englishLangClass).html()
             ).children('img').addClass('mr-2');
@@ -172,11 +172,11 @@ var I18nextCallbacks = function() {
                 _componentNoty('Language has been changed to: ' + '<span class="font-weight-semibold text-uppercase">' + i18next.language + '</span>');
             });
 
-            // Change lang in dropdown
+            // Change langs in dropdown
             $switchContainer.children('.dropdown-toggle').html(
                 $(russianLangClass).html()
             ).children('img').addClass('mr-2');
-            
+
             // Set active class
             $switchContainer.find('.dropdown-item.active, .nav-item.active').removeClass('active');
             $('.dropdown-item' + russianLangClass).addClass('active');
@@ -199,11 +199,11 @@ var I18nextCallbacks = function() {
                 _componentNoty('Language has been changed to: ' + '<span class="font-weight-semibold text-uppercase">' + i18next.language + '</span>');
             });
 
-            // Change lang in dropdown
+            // Change langs in dropdown
             $switchContainer.children('.dropdown-toggle').html(
                 $(ukrainianLangClass).html()
             ).children('img').addClass('mr-2');
-            
+
             // Set active class
             $switchContainer.find('.dropdown-item.active, .nav-item.active').removeClass('active');
             $('.dropdown-item' + ukrainianLangClass).addClass('active');

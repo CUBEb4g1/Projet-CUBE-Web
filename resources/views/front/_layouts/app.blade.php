@@ -14,6 +14,9 @@
 	<link href="{{ mix('css/front/vendor.css') }}" rel="stylesheet">
 	<link href="{{ mix('css/front/app.css') }}" rel="stylesheet">
 	@stack('styles')
+    <script>
+
+    </script>
 </head>
 <body>
 	@include('_partials.maintenance_ribbon')

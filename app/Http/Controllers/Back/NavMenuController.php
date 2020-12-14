@@ -88,7 +88,7 @@ class NavMenuController extends Controller
 		foreach ($formDataItems as $id => $item) {
 			$item['blank'] = isset($item['blank']);
 			$item['obfuscate'] = isset($item['obfuscate']);
-			$items[$id]->fillTranslations($item, $request->input('lang'));
+			$items[$id]->fillTranslations($item, $request->input('langs'));
 			$items[$id]->save();
 		}
 
@@ -131,7 +131,7 @@ class NavMenuController extends Controller
 
 		$lastItem = NavItem::orderBy('position', 'desc')->first();
 		$newItem  = new NavItem($data);
-		$newItem->fillTranslations($data, $request->input('lang'));
+		$newItem->fillTranslations($data, $request->input('langs'));
 
 		$newItem->position = $lastItem->position ?? 0;
 
@@ -142,7 +142,7 @@ class NavMenuController extends Controller
 				'leadsTo' => $newItem->leadsTo(),
 			];
 		$response['url']  = $request->get('url');
-		$response['text'] = $newItem->getSmartText($request->input('lang'), false);
+		$response['text'] = $newItem->getSmartText($request->input('langs'), false);
 
 		return JsonResponse::create($response);
 	}

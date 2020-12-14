@@ -26,8 +26,8 @@
 	@push('scripts')
 	<script>
 		$(function () {
-			$('.js-form-toggle-lang-btn').on('click', function () {
-				$('.__iml-lang-btn[data-lang="' + $(this).data('lang') + '"]').click();
+			$('.js-form-toggle-langs-btn').on('click', function () {
+				$('.__iml-langs-btn[data-langs="' + $(this).data('lang') + '"]').click();
 			});
 		});
 	</script>

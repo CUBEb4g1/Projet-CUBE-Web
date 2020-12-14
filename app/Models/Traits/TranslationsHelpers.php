@@ -27,7 +27,7 @@ trait TranslationsHelpers
 	 */
 	public function fillTranslations(array $attributes, string $locale = null)
 	{
-		$locale = $locale ?? $attributes['lang'] ?? null;
+		$locale = $locale ?? $attributes['langs'] ?? null;
 
 		foreach ($attributes as $attr => $val) {
 			if (in_array($attr, $this->fillable)) {
@@ -42,7 +42,7 @@ trait TranslationsHelpers
 
 	/**
 	 * Méthode utilisée pour peupler les inputs des formulaires.
-	 * Utilise getTranslation() du Trait originel, mais récupère automatiquement la locale depuis l'url si existe un paramètre "lang".
+	 * Utilise getTranslation() du Trait originel, mais récupère automatiquement la locale depuis l'url si existe un paramètre "langs".
 	 * N'utilise pas de locale de fallback si la traduction n'existe pas encore.
 	 *
 	 * @see \Spatie\Translatable\HasTranslations::getTranslation()
@@ -54,6 +54,6 @@ trait TranslationsHelpers
 	 */
 	public function translationInput(string $key, string $locale = null, bool $useFallbackLocale = false)
 	{
-		return $this->getTranslation($key, $locale ?? Request::input('lang') ?? config('app.locale'), $useFallbackLocale);
+		return $this->getTranslation($key, $locale ?? Request::input('langs') ?? config('app.locale'), $useFallbackLocale);
 	}
 }
