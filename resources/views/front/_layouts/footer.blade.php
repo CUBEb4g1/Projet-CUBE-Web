@@ -28,10 +28,10 @@
                         <div class="col-sm-4">
                             <h6 class="footer-title">Navigation</h6>
                             <ul class="list-footer">
-                                <li><a href="#" class="footer-link">Accueil</a></li>
+                                <li><a href="/" class="footer-link">Accueil</a></li>
                                 <li><a href="#" class="footer-link">Contact</a></li>
-                                <li><a href="#" class="footer-link">S'inscrire</a></li>
-                                <li><a href="#" class="footer-link">Se connecter</a></li>
+                                <li><a href="{{ route('register') }}" class="footer-link">S'inscrire</a></li>
+                                <li><a href="{{ route('login') }}" class="footer-link">Se connecter</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-4">

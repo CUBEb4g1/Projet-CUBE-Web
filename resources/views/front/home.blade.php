@@ -12,7 +12,7 @@
                                 <h1 class="font-weight-medium">Ressources Relationnelles</h1>
                             </div>
                             <p class="mt-3">Lancez-vous des aujourd'hui ! Il a ete etabli depuis des siecles que<br> le bonheur ne diminue pas lorsqu'il est partage. </p>
-                            <a href="#" class="btn btn-secondary mt-3">Je m'inscris !</a>
+                            <a href="{{ route('register') }}" class="btn btn-secondary mt-3">Je m'inscris !</a>
                         </div>
                         <div class="bnr-img">
                             <img src='' class="img-fluid">
@@ -28,12 +28,3 @@
     @include('front._layouts.contact')
     @include('front._layouts.footer')
 @endsection
-
-<div class="animate_lines">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-</div>
