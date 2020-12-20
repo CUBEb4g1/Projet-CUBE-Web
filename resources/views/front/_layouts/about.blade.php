@@ -38,7 +38,7 @@
                             <img src="assets/images/stat-icon-1.svg" alt="" class="mr-3">
                             <div>
                                 <h4 class="font-weight-bold mb-0"><span class="scVal">0</span></h4>
-                                <h6 class="mb-0">Membres de la Communaute</h6>
+                                <h6 class="mb-0">Membres de la communaute</h6>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                             <img src="assets/images/stat-icon-2.svg" alt="" class="mr-3">
                             <div>
                                 <h4 class="font-weight-bold mb-0"><span class="fpVal">0</span></h4>
-                                <h6 class="mb-0">Ressources Partagees</h6>
+                                <h6 class="mb-0">Ressources partagees</h6>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             <img src="assets/images/stat-icon-3.svg" alt="" class="mr-3">
                             <div>
                                 <h4 class="font-weight-bold mb-0"><span class="tMVal">0</span></h4>
-                                <h6 class="mb-0">Membres Actifs</h6>
+                                <h6 class="mb-0">Membres actifs en ce moment</h6>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                             <img src="assets/images/stat-icon-4.svg" alt="" class="mr-3">
                             <div>
                                 <h4 class="font-weight-bold mb-0"><span class="bPVal">0</span></h4>
-                                <h6 class="mb-0">Sessions de Jeu Ouvertes</h6>
+                                <h6 class="mb-0">Sessions de jeu ouvertes</h6>
                             </div>
                         </div>
                     </div>

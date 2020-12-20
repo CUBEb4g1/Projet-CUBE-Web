@@ -6,7 +6,7 @@
 
 body,
 html {
-    overflow-x:                 hidden;
+    overflow-x: hidden;
 }
 // Style for Section 1
 .home {
@@ -47,6 +47,7 @@ html {
         width: 420px;
     }
 }
+
 // === SETTING SERVICE LAYOUT ELEMENTS ===
 
 .our-services{
@@ -56,10 +57,10 @@ html {
         color: $lighter;
     }
     h5,h6{
-        color: $light;
+        color: $green;
     }
     p{
-        color: $gray;
+        color: $white-smoke;
     }
 }
 
@@ -70,13 +71,6 @@ html {
         width: 50px;
     }
 }
-// clients
-.clients{
-    background: rgba($dark, 0.03);
-    padding: 60px 0;
-    margin: 100px 0 50px 0;
-}
-
 // contact form
 .contactus{
     form{
@@ -124,6 +118,9 @@ section {
 .card{
     border-color: $border-color;
 }
+
+// === SETTING ANIMATED LINES ELEMENTS ===
+
 .animate_lines {
     position: fixed;
     margin: auto;
@@ -292,7 +289,7 @@ section {
 // === SETTING FOOTER ELEMENTS ===
 
 .footer {
-    color: $footer-color;
+    color: $green;
     background: $dark;
 
     address{
@@ -358,7 +355,7 @@ section {
         li {
             a {
 
-                color: $light;
+                color: $white-smoke;
                 display: block;
                 padding: .625rem 0;
                 font-size: 14px;
