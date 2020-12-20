@@ -28,3 +28,12 @@
     @include('front._layouts.contact')
     @include('front._layouts.footer')
 @endsection
+
+<div class="animate_lines">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+</div>

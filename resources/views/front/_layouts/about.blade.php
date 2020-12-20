@@ -4,9 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7 col-sm-12">
-                <h5 class="text-dark">Our work process</h5>
-                <h3 class="font-weight-medium text-dark">Discover New Idea With Us!</h3>
-                <h5 class="text-dark mb-5">Imagination will take us everywhere</h5>
+                <h5 class="text-dark">Grace a chacun de vous</h5>
+                <h3 class="font-weight-medium text-dark">Explorez de nouveaux horizons !</h3>
+                <h5 class="text-dark mb-5">Votre imagination peut vous faire voyager partout</h5>
                 <div class="d-flex justify-content-start mb-3">
                     <img src="assets/images/tick.svg" alt="tick" class="mr-3 tick-icon">
                     <p class="mb-0">It is a long established fact that a reader will be distracted</p>

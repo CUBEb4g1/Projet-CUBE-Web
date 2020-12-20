@@ -10,39 +10,23 @@ $danger:                #ff696d;
 $light:                 #adadad;
 $lighter:               #e0e0e0;
 $gray:                  #7c7c7c;
-$dark:                  #343a40;
+$dark:                  #333333;
 // Defining gradient colors
-$gradient1:             #14bae4;
-$gradient2:             #9367b4;
-// Defining standard colors
-$blue:                  #5E50F9;
-$indigo:                #6610f2;
-$purple:                #6a008a;
-$pink:                  #E91E63;
-$red:                   #f96868;
-$orange:                #f2a654;
-$yellow:                #f6e84e;
-$green:                 #46c35f;
-$teal:                  #58d8a3;
-$cyan:                  #57c7d4;
+$gradient1:             #0faf96;
+$gradient2:             #63ff96;
+// Defining standard
+$green:                 #0faf96;
+$teal:                  #63ff96;
 $black:                 #000000;
 $white:                 #ffffff;
 $white-smoke:           #f7f7f7;
 $violet:                #41478a;
-$darkslategray :        #2e383e;
+$darkslategray :        #343a40;
 $dodger-blue :          #3498db;
 // Applying color changes to bootstrap designation elements
 $colors: (
-    blue:               $blue,
-    indigo:             $indigo,
-    purple:             $purple,
-    pink:               $pink,
-    red:                $red,
-    orange:             $orange,
-    yellow:             $yellow,
     green:              $green,
     teal:               $teal,
-    cyan:               $cyan,
     white:              $white,
     gray:               #434a54,
     gray-light:         #aab2bd,
@@ -123,7 +107,7 @@ $font-weight-bold:      600;
 $grid-gutter-width:     28px;
 $action-transition-duration: 0.25s;
 $action-transition-timing-function: ease;
-$testimonial-bg:        #a70ff6; //url("../images/testimonial-bg.svg");
+$testimonial-bg:        #0faf96; //url("../images/testimonial-bg.svg");
 $testimonial-nav-color: #d8d8d8;
 $input-padding-y:       1.25rem;
 $input-padding-x:       1.25rem;
