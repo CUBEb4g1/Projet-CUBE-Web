@@ -1,3 +1,368 @@
 @import 'variables';
 @import 'cms';
 @import '../common';
+
+// === SETTING MAIN ELEMENTS ===
+
+body,
+html {
+    overflow-x:                 hidden;
+}
+// Style for Section 1
+.home {
+    background: $white-smoke;
+    background-position: 0 -50px;
+    padding-top: 0;
+
+    @media (max-width: 991px) {
+        padding-top: 71px;
+    }
+}
+// Style for Section 2
+.main-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 700px;
+    padding-bottom: 50px;
+
+    @media (max-width: 991px) {
+        min-height: 400px;
+        margin-bottom: 50px;
+    }
+    .bnr-text{
+        >p{
+            font-size: 18px;
+            line-height: 36px;
+            color: rgba($dark, 0.6);
+        }
+    }
+    .banner-title {
+        width: 56%;
+        @media (max-width: 991px) {
+            width: 100%;
+        }
+    }
+    .bnr-img{
+        width: 420px;
+    }
+}
+// === SETTING SERVICE LAYOUT ELEMENTS ===
+
+.our-services{
+    background: $dark;
+    padding: 80px 0;
+    h3{
+        color: $lighter;
+    }
+    h5,h6{
+        color: $light;
+    }
+    p{
+        color: $gray;
+    }
+}
+
+// section 5
+.stat-icon{
+    margin-top: 50px;
+    img{
+        width: 50px;
+    }
+}
+// clients
+.clients{
+    background: rgba($dark, 0.03);
+    padding: 60px 0;
+    margin: 100px 0 50px 0;
+}
+
+// contact form
+.contactus{
+    form{
+        position: relative;
+        z-index: 9;
+    }
+}
+
+section {
+    padding: 120px 0 0 0;
+
+    @media (max-width: 1024px) {
+        padding: 130px 0 0 0;
+    }
+    @media (max-width: 991px) {
+        padding: 70px 0 0 0;
+    }
+}
+.services-box {
+    padding: 10px 100px 40px 0;
+    position: relative;
+    z-index: 2;
+    @media (max-width: 991px) {
+        padding: 10px 10px 40px 0;
+    }
+    img{
+        width: 50px;
+        opacity: .7;
+    }
+    &:hover {
+        img {
+            opacity: 1;
+            -webkit-transition: all 2s;
+            -moz-transition: all 2s;
+            -ms-transition: all 2s;
+            -o-transition: all 2s;
+            transition: all 2s;
+        }
+    }
+}
+.tick-icon {
+    width: 20px;
+    height: 20px;
+}
+.card{
+    border-color: $border-color;
+}
+.animate_lines {
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 90vw;
+    z-index: 0;
+
+    .line:after{
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba($dark, 0.03)), color-stop(75%, $gradient1), to($gradient2));
+        background: linear-gradient(to bottom, rgba($dark, 0.03) 0%, $gradient1 75%, $gradient2 100%);
+    }
+
+    .line {
+        position: absolute;
+        overflow: hidden;
+        width: 1px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba($dark, 0.03);
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 15vh;
+            width: 100%;
+            top: -50%;
+            left: 0;
+            -webkit-animation: run 7s 0s infinite;
+            animation: run 7s 0s infinite;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+            animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+        }
+
+        &:nth-child(1) {
+            margin-left: 22%;
+            &:after {
+                -webkit-animation-delay: 2s;
+                animation-delay: 2s;
+            }
+        }
+        &:nth-child(3) {
+            margin-left: 12%;
+            &:after {
+                -webkit-animation-delay: 2.5s;
+                animation-delay: 2.5s;
+            }
+        }
+        &:nth-child(4) {
+            margin-left: 80%;
+            &:after {
+                -webkit-animation-delay: 3s;
+                animation-delay: 3s;
+            }
+        }
+        &:nth-child(5) {
+            margin-left: 85%;
+            &:after {
+                -webkit-animation-delay: 3.5s;
+                animation-delay: 3.5s;
+            }
+        }
+        &:nth-child(6) {
+            margin-left: 100%;
+            &:after {
+                -webkit-animation-delay: 1.5s;
+                animation-delay: 1.5s;
+            }
+        }
+    }
+    @-webkit-keyframes run {
+        0% {
+            top: -50%;
+        }
+        100% {
+            top: 110%;
+        }
+    }
+
+    @keyframes run {
+        0% {
+            top: -50%;
+        }
+        100% {
+            top: 110%;
+        }
+    }
+}
+
+// === SETTING TESTIMONIAL LAYOUT ELEMENTS ===
+
+.testimonial {
+    background-size: cover;
+    padding: 100px 0 70px 0;
+
+    @media (max-width: 991px) {
+        padding: 20px 0;
+    }
+    .flipster{
+        padding: 10px 0;
+    }
+
+    .testimonial-item {
+        background: $white;
+        color: $dark;
+        width: 450px;
+        padding: 34px 34px 34px 94px;
+        border-radius: 10px;
+        position: relative;
+        box-shadow: 0 20px 70px -10px rgba(109, 121, 141, .15);
+
+        @media (max-width: 1024px) {
+            width: 400px;
+        }
+        @media (max-width: 991px) {
+            width: 280px;
+        }
+        .testimonial-icons {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            top: 40px;
+            left: 28px;
+        }
+        .testimonial-author {
+            position: relative;
+            margin-top: 1rem;
+            margin-bottom: .5rem;
+
+            &:before {
+                position: absolute;
+                color: transparent;
+                content: "\f756";
+                left: -40px;
+                font-size: 1.75rem;
+            }
+        }
+        .testimonial-destination {
+            color: $light;
+            font-weight: normal;
+            font-size: 14px;
+        }
+    }
+    .flipster__button--prev {
+        left: auto;
+        right: 0;
+        top: 86%;
+        transform: rotate(270deg);
+    }
+    .flipster__button--next {
+        transform: rotate(270deg);
+        top: 78%;
+    }
+    .flipster__button svg {
+        width: .75em;
+    }
+}
+
+// === SETTING FOOTER ELEMENTS ===
+
+.footer {
+    color: $footer-color;
+    background: $dark;
+
+    address{
+        position: relative;
+        z-index: 2;
+        color: $light;
+    }
+
+    p {
+        margin-bottom: 0.25rem;
+    }
+
+    .footer-link {
+        color: $footer-color;
+    }
+
+    .footer-top {
+        padding: 74px 0;
+
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: .875rem;
+        }
+
+        .social-icons {
+            margin-top: 1.25rem;
+            a {
+                i {
+                    font-size: 1.5rem;
+                    color: $light;
+                    margin-right: 1rem;
+                    -webkit-transition: all 0.3s;
+                    -moz-transition: all 0.3s;
+                    -ms-transition: all 0.3s;
+                    -o-transition: all 0.3s;
+                    transition: all 0.3s;
+                }
+                &:hover {
+                    i {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        background: $footer-bottom-bg;
+        padding: 10px 0;
+        border-top: 1px solid $footer-border;
+
+        img {
+            width: 100px;
+        }
+    }
+
+    .list-footer {
+        list-style: none;
+        padding-left: 0;
+        position: relative;
+        z-index: 2;
+
+        li {
+            a {
+
+                color: $light;
+                display: block;
+                padding: .625rem 0;
+                font-size: 14px;
+            }
+        }
+    }
+}

@@ -1,7 +1,30 @@
 @extends('front._layouts.app')
 
 @section('content')
-	<main class="text-center my-5">
-		<h1 class="display-3">👋 Bonjour Monde !</h1>
-	</main>
+    <section id="home" class="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="main-banner">
+                        <div class="bnr-text">
+                            <div class="banner-title">
+                                <h5>Vous aussi contribuez a votre bonheur en rejoignant la communaute</h5>
+                                <h1 class="font-weight-medium">Ressources Relationnelles</h1>
+                            </div>
+                            <p class="mt-3">Lancez-vous des aujourd'hui ! Il a ete etabli depuis des siecles que<br> le bonheur ne diminue pas lorsqu'il est partage. </p>
+                            <a href="#" class="btn btn-secondary mt-3">Je m'inscris !</a>
+                        </div>
+                        <div class="bnr-img">
+                            <img src='' class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @include('front._layouts.service')
+    @include('front._layouts.about')
+    @include('front._layouts.testimonial')
+    @include('front._layouts.contact')
+    @include('front._layouts.footer')
 @endsection

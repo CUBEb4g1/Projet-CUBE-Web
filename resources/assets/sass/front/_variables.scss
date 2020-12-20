@@ -1,3 +1,136 @@
-// === FONT AWESOME ===
+// === SETTING COLOR BASIS VARIABLES ===
 
-//$fa-font-path:
+// Defining notif references
+$primary:               #17C2D7;
+$secondary:             #9367b4;
+$success:               #82b440;
+$info:                  #00b3ff;
+$warning:               #ffe671;
+$danger:                #ff696d;
+$light:                 #adadad;
+$lighter:               #e0e0e0;
+$gray:                  #7c7c7c;
+$dark:                  #343a40;
+// Defining gradient colors
+$gradient1:             #14bae4;
+$gradient2:             #9367b4;
+// Defining standard colors
+$blue:                  #5E50F9;
+$indigo:                #6610f2;
+$purple:                #6a008a;
+$pink:                  #E91E63;
+$red:                   #f96868;
+$orange:                #f2a654;
+$yellow:                #f6e84e;
+$green:                 #46c35f;
+$teal:                  #58d8a3;
+$cyan:                  #57c7d4;
+$black:                 #000000;
+$white:                 #ffffff;
+$white-smoke:           #f7f7f7;
+$violet:                #41478a;
+$darkslategray :        #2e383e;
+$dodger-blue :          #3498db;
+// Applying color changes to bootstrap designation elements
+$colors: (
+    blue:               $blue,
+    indigo:             $indigo,
+    purple:             $purple,
+    pink:               $pink,
+    red:                $red,
+    orange:             $orange,
+    yellow:             $yellow,
+    green:              $green,
+    teal:               $teal,
+    cyan:               $cyan,
+    white:              $white,
+    gray:               #434a54,
+    gray-light:         #aab2bd,
+    gray-lighter:       #e8eff4,
+    gray-lightest:      #e6e9ed,
+    gray-dark:          #0f1531,
+    black:              #000000
+);
+
+// === SETTING COLOR THEME SPECIFIC VARIABLES ===
+
+// Defining theme specific colors
+$theme-colors: (
+    primary:            #17C2D7,
+    secondary:          #9367b4,
+    success:            #82b440,
+    info:               #00b3ff,
+    warning:            #ffe671,
+    danger:             #ff696d,
+    light:              #506690,
+    dark:               #343a40
+);
+// Defining theme specific gradients effects
+$theme-gradient-colors: (
+    primary:            linear-gradient(230deg, #759bff, #843cf6),
+    secondary:          linear-gradient(to right, #e7ebf0, #868e96),
+    success:            linear-gradient(45deg, #7bffce, #30c93e),
+    info:               linear-gradient(to bottom, #0e4cfd, #6a8eff),
+    warning:            linear-gradient(135deg, #ffc480, #ff763b),
+    danger:             linear-gradient(316deg, #fc5286, #fbaaa2),
+    light:              linear-gradient(to right, #cfd9df 0%, #e2ebf0 100%),
+    dark:               linear-gradient(to right, #7d7979 0%, #000000 100%)
+);
+
+$content-bg:            #fff;
+$border-color:          #f1efef;
+
+// Defining standard social network colors
+$social-colors: (
+    twitter:            #2caae1,
+    facebook:           #3b579d,
+    google:             #dc4a38,
+    linkedin:           #0177b5,
+    pinterest:          #cc2127,
+    youtube:            #e52d27,
+    github:             #333333,
+    behance:            #1769ff,
+    dribbble:           #ea4c89,
+    reddit:             #ff4500
+);
+
+$text-muted:            #a7afb7;
+$body-color:            #6c7293;
+$toggle-switch-bg:      #ccc;
+
+// === SETTING COLOR ELEMENT SPECIFIC VARIABLES ===
+
+// Defining header standard layout
+$header-color:          #343a40;
+$nav-link-color:        #343a40;
+$nav-link-hover-color:  #343a40;
+$nav-link-active-color: #343a40;
+$nav-link-font-size:    0.937rem;
+$header-padding-x:      0;
+$header-padding-y:      0px;
+$nav-link-padding:      0.625rem 1.25rem;
+$navbar-bg:             theme-color(secondary);
+$active-bg:             rgba(0,0,0,.2);
+$mobile-menu-width:     280px;
+$mobile-header-height:  71px;
+$mobile-overlay-bg:     rgba(0,0,0,.8);
+// Defining buttons standard format
+$btn-border-radius:     50px;
+$btn-font-size:         0.875rem;
+$btn-padding-y:         11px;
+$btn-padding-x:         30px;
+$font-weight-bold:      600;
+$grid-gutter-width:     28px;
+$action-transition-duration: 0.25s;
+$action-transition-timing-function: ease;
+$testimonial-bg:        #a70ff6; //url("../images/testimonial-bg.svg");
+$testimonial-nav-color: #d8d8d8;
+$input-padding-y:       1.25rem;
+$input-padding-x:       1.25rem;
+$input-placeholder-color: #919aa3;
+$input-font-size:       14px;
+// Defining footer standard layout
+$footer-color:          #e5e5e5;
+$footer-bottom-bg:      rgba(255, 255, 255, .07);
+$footer-border:         rgba(151, 151, 151, .07);
+$owl-overlay-bg:        rgba(60,55,241,.8);
