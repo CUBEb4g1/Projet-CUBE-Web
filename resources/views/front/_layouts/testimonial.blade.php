@@ -18,34 +18,34 @@
                     <ul>
                         <li>
                             <div class="testimonial-item">
-                                <img src="assets/images/testimonial/testimonial1.jpg" alt="icon" class="testimonial-icons">
+                                <img src="{{ asset('/media/front/testimonial/KA.jpg') }}" alt="icon" class="testimonial-icons">
                                 <p>Lorem ipsum dolor sit amet, consectetur pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium</p>
-                                <h6 class="testimonial-author">Mark Spenser</h6>
-                                <p class="testimonial-destination">Accounts</p>
+                                <h6 class="testimonial-author">Kayreddine Amama</h6>
+                                <p class="testimonial-destination">Chef de projet</p>
                             </div>
                         </li>
                         <li>
                             <div class="testimonial-item">
-                                <img src="assets/images/testimonial/testimonial2.jpg" alt="icon" class="testimonial-icons">
+                                <img src="{{ asset('/media/front/testimonial/QA.jpg') }}" alt="icon" class="testimonial-icons">
                                 <p>Lorem ipsum dolor sit amet, consecteturpretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium</p>
-                                <h6 class="testimonial-author">Tua Manuera</h6>
-                                <p class="testimonial-destination">Director,Dj market</p>
+                                <h6 class="testimonial-author">Quentin Arrachart</h6>
+                                <p class="testimonial-destination">Développeur applicatif</p>
                             </div>
                         </li>
                         <li>
                             <div class="testimonial-item">
-                                <img src="assets/images/testimonial/testimonial3.jpg" alt="icon" class="testimonial-icons">
+                                <img src="{{ asset('/media/front/testimonial/NH.jpg') }}" alt="icon" class="testimonial-icons">
                                 <p>Lorem ipsum dolor sit amet, consecteturpretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium</p>
-                                <h6 class="testimonial-author">Sarah Philip</h6>
-                                <p class="testimonial-destination">Chief Accountant</p>
+                                <h6 class="testimonial-author">Nathan Hautevelle</h6>
+                                <p class="testimonial-destination">Développeur web</p>
                             </div>
                         </li>
                         <li>
                             <div class="testimonial-item">
-                                <img src="assets/images/testimonial/testimonial4.jpg" alt="icon" class="testimonial-icons">
+                                <img src="{{ asset('/media/front/testimonial/CK.jpg') }}" alt="icon" class="testimonial-icons">
                                 <p>Lorem ipsum dolor sit amet, consecteturpretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium</p>
-                                <h6 class="testimonial-author">Mark Spenser</h6>
-                                <p class="testimonial-destination">Director,Dj market</p>
+                                <h6 class="testimonial-author">Corentin Kouvtanovitch</h6>
+                                <p class="testimonial-destination">Designer</p>
                             </div>
                         </li>
                     </ul>

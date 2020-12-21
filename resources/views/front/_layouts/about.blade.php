@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-7 col-sm-12">
                 <h5 class="text-dark">Grace a chacun de vous</h5>
-                <h3 class="font-weight-medium text-dark">Explorez de nouveaux horizons !</h3>
+                <h3>Explorez de nouveaux horizons !</h3>
                 <h5 class="text-dark mb-5">Votre imagination peut vous faire voyager partout</h5>
                 <div class="d-flex justify-content-start mb-3">
                     <img src="{{ asset('/media/front/tick.svg') }}" alt="tick" class="mr-3 tick-icon">

@@ -16,10 +16,10 @@
                     <div class="social-icons">
                         <h6 class="footer-title font-weight-bold">Partagez sur les reseaux</h6>
                         <div class="d-flex">
-                            <a href="#"><i class="mdi mdi-github-circle"></i></a>
-                            <a href="#"><i class="mdi mdi-facebook-box"></i></a>
-                            <a href="#"><i class="mdi mdi-twitter"></i></a>
-                            <a href="#"><i class="mdi mdi-dribbble"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-google "></i></a>
                         </div>
                     </div>
                 </div>

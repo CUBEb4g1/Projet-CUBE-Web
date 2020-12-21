@@ -7,8 +7,8 @@
                 <img src="{{ asset('/media/front/contact.svg') }}" alt="contact" class="img-fluid">
             </div>
             <div class="col-sm-7" >
-                <h3 class="font-weight-medium mt-5 mt-lg-0">Des questions ?</h3>
-                <h6 class="mb-5">N'hesitez pas a nous en faire part, ecrivez-nous !</h6>
+                <h3>Des questions ?</h3>
+                <h6 class="mb-5 text-dark">N'hesitez pas a nous en faire part, ecrivez-nous !</h6>
                 <form>
                     <div class="row">
                         <div class="col-sm-6">

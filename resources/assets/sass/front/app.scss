@@ -2,13 +2,195 @@
 @import 'cms';
 @import '../common';
 
+// === SETTING NAVBAR ELEMENTS ===
+
+.ms_header {
+    position: fixed;
+    background-color: $dark;
+    padding: 20px 50px;
+    right: 0;
+    left: 0px;
+    top: 0;
+    z-index: 1000;
+    backface-visibility: hidden;
+}
+.ms_logo {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+.ms_logo span {
+    width: 100%;
+    display: none;
+    font-size: 18px;
+    color: #ffff;
+    text-transform: capitalize;
+}
+.ms_logo_inner {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    min-height: 164px;
+}
+.ms_top_search {
+    max-width: 395px;
+    position: relative;
+    display: flex;
+    display: inline-block;
+    width: 100%;
+    float: left;
+}
+.search_icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 40px;
+    line-height: 40px;
+    background-color: $green;
+    border-radius: 0px 5px 5px 0px;
+    padding: 0px 16px;
+    cursor: pointer;
+}
+.ms_top_search .form-control {
+    display: inline-block;
+    height: 40px;
+    padding: 0px 20px;
+    font-size: 15px;
+    line-height: 45px;
+    color: #777;
+    border: none;
+    border-radius: 5px;
+}
+.ms_top_right {
+    line-height: 40px;
+    display: flex;
+    place-content: flex-end;
+}
+.ms_top_right .ms_top_lang {
+    color: #ffffff;
+    text-transform: capitalize;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-right: 23px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+.ms_top_right .ms_top_lang:hover, .ms_btn_light:hover {
+    color: $green;
+}
+.ms_top_right .ms_top_lang:after {
+    position: absolute;
+    background-color: $white;
+    height: 30px;
+    width: 2px;
+    content: "";
+    right: 6px;
+    top: 6px;
+}
+.ms_btn {
+    background-color: $green;
+    color: #fff;
+    height: 40px;
+    display: inline-block;
+    text-transform: capitalize;
+    width: 100px;
+    text-align: center;
+    line-height: 42px;
+    border-radius: 20px;
+    margin-left: 15px;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+.ms_btn_light {
+    color: #fff;
+    height: 40px;
+    display: inline-block;
+    text-transform: capitalize;
+    width: 100px;
+    text-align: center;
+    line-height: 42px;
+    border-radius: 20px;
+    margin-left: 15px;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+.ms_btn:hover {
+    color: #ffffff;
+    box-shadow: 0px 0px 20px 0px $teal;
+}
+.ms_top_right .ms_top_lang img {
+    margin-left: 15px;
+    margin-right: 6px;
+}
+ul.ms_lang_box {
+    padding: 5px 0px;
+    margin: 0px;
+    list-style: none;
+    background-color: $green;
+    width: 100%;
+    max-width: 120px;
+    line-height: initial;
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    border-radius: 4px;
+    transform: translateY(25px);
+    -webkit-transform: translateY(25px);
+    -moz-transform: translateY(25px);
+    -ms-transform: translateY(25px);
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+.ms_top_right .ms_top_lang:hover ul.ms_lang_box {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    opacity: 1;
+}
+ul.ms_lang_box li {
+    width: 100%;
+    display: block;
+}
+ul.ms_lang_box li a {
+    color: #ffffff;
+    width: 100%;
+    display: block;
+    padding: 5px 15px;
+}
+ul.ms_lang_box li a:hover {
+    padding-left: 20px;
+}
+ul.ms_lang_box:after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: 2px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+}
+
 // === SETTING MAIN ELEMENTS ===
 
 body,
 html {
     overflow-x: hidden;
 }
-// Style for Section 1
+// Style for Section 1 -> Title part
 .home {
     background: $white-smoke;
     background-position: 0 -50px;
@@ -18,7 +200,10 @@ html {
         padding-top: 71px;
     }
 }
-// Style for Section 2
+h1{
+    color: $green;
+}
+// Style for Section 2 -> Image part
 .main-banner {
     display: flex;
     align-items: center;
@@ -63,23 +248,29 @@ html {
         color: $white-smoke;
     }
 }
+// === SETTING ABOUT & CONTACT LAYOUT ELEMENTS ===
 
-// section 5
+.our-process, .contactus{
+    h3{
+        color: $green;
+    }
+}
+
+// Defining icon size for about section
 .stat-icon{
     margin-top: 50px;
     img{
         width: 50px;
     }
 }
-
-// contact form
+// Defining contact form position
 .contactus{
     form{
         position: relative;
         z-index: 9;
     }
 }
-
+//Defining standard section size
 section {
     padding: 120px 0 0 0;
 
@@ -90,6 +281,7 @@ section {
         padding: 70px 0 0 0;
     }
 }
+// Defining services block position and icon size
 .services-box {
     padding: 10px 100px 40px 0;
     position: relative;
@@ -414,178 +606,4 @@ section {
     border: 1px solid $border-color;
     font-size: $input-font-size;
     height: auto;
-}
-
-.owl-carousel {
-    .owl-item {
-        .item {
-            border-radius: 19.5px;
-            overflow: hidden;
-            img {
-                border: solid 10px $white;
-                display: block;
-                width: 100%;
-                box-shadow: 0 2px 10px 0 rgba(203, 203, 203, 0.44);
-                border-radius: 19.5px;
-                -webkit-transition: all 1s;
-                -moz-transition: all 1s;
-                -ms-transition: all 1s;
-                -o-transition: all 1s;
-                transition: all 1s;
-            }
-            &:hover {
-                img {
-                    transform: scale(1.1);
-                }
-            }
-        }
-        border-radius: 19.5px;
-
-    }
-}
-
-.owl-theme {
-
-    .owl-nav {
-        &.disabled {
-            +.owl-dots {
-                margin-top: 70px;
-                @media (max-width: 991px) {
-                    margin-top: 10px;
-                }
-            }
-        }
-    }
-
-    .owl-dots {
-        margin-top: 70px;
-
-        .owl-dot {
-            span {
-                width: 18px;
-                height: 18px;
-                margin: 5px 7px;
-                background: $white;
-                display: block;
-                -webkit-backface-visibility: visible;
-                transition: opacity .2s ease;
-                border-radius: 3;
-                border: solid 2px $primary;
-            }
-            &.active,
-            &:hover {
-                span {
-                    background: $primary;
-                }
-            }
-        }
-    }
-    &.owl-carousel-testimonial {
-        .owl-dots {
-            text-align: left;
-            .owl-dot {
-                span {
-                    width: 10px;
-                    height: 10px;
-                    margin: 5px 7px;
-                    background: transparent;
-                    border: 1px solid $testimonial-nav-color;
-                }
-
-                &.active,
-                &:hover {
-                    span {
-                        background: $testimonial-nav-color;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.owl-carousel {
-    .owl-item {
-        .item {
-            border-radius: 19.5px;
-            overflow: hidden;
-            img {
-                border: solid 10px $white;
-                display: block;
-                width: 100%;
-                box-shadow: 0 2px 10px 0 rgba(203, 203, 203, 0.44);
-                border-radius: 19.5px;
-                -webkit-transition: all 1s;
-                -moz-transition: all 1s;
-                -ms-transition: all 1s;
-                -o-transition: all 1s;
-                transition: all 1s;
-            }
-            &:hover {
-                img {
-                    transform: scale(1.1);
-                }
-            }
-        }
-        border-radius: 19.5px;
-
-    }
-}
-
-.owl-theme {
-
-    .owl-nav {
-        &.disabled {
-            +.owl-dots {
-                margin-top: 70px;
-                @media (max-width: 991px) {
-                    margin-top: 10px;
-                }
-            }
-        }
-    }
-
-    .owl-dots {
-        margin-top: 70px;
-
-        .owl-dot {
-            span {
-                width: 18px;
-                height: 18px;
-                margin: 5px 7px;
-                background: $white;
-                display: block;
-                -webkit-backface-visibility: visible;
-                transition: opacity .2s ease;
-                border-radius: 3;
-                border: solid 2px $primary;
-            }
-            &.active,
-            &:hover {
-                span {
-                    background: $primary;
-                }
-            }
-        }
-    }
-    &.owl-carousel-testimonial {
-        .owl-dots {
-            text-align: left;
-            .owl-dot {
-                span {
-                    width: 10px;
-                    height: 10px;
-                    margin: 5px 7px;
-                    background: transparent;
-                    border: 1px solid $testimonial-nav-color;
-                }
-
-                &.active,
-                &:hover {
-                    span {
-                        background: $testimonial-nav-color;
-                    }
-                }
-            }
-        }
-    }
 }
