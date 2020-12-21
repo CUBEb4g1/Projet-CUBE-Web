@@ -11,21 +11,21 @@
         <div class="row">
             <div class="col-md-4 col-sm-6 text-center text-lg-left">
                 <div class="services-box">
-                    <img src="assets/images/service-icon/integrated-marketing.svg" alt="integrated-marketing" >
+                    <img src="{{ asset('/media/front/community.svg') }}" alt="integrated-marketing" >
                     <h6 class="mb-3 mt-4 font-weight-medium">Communaute Riche</h6>
                     <p>Tissez des liens avec nos membres et creez votre propre communaute. </p>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 text-center text-lg-left">
                 <div class="services-box">
-                    <img src="assets/images/service-icon/design-development.svg" alt="design-development" >
+                    <img src="{{ asset('/media/front/games.svg') }}" alt="design-development" >
                     <h6 class="mb-3 mt-4 font-weight-medium">Activites de Groupe</h6>
                     <p>Participez a des jeux, conversations avec vos nouveaux contacts. </p>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 text-center text-lg-left">
                 <div class="services-box">
-                    <img src="assets/images/service-icon/digital-strategy.svg" alt="digital-strategy" >
+                    <img src="{{ asset('/media/front/share.svg') }}" alt="digital-strategy" >
                     <h6 class="mb-3 mt-4 font-weight-medium">Partage de Ressources</h6>
                     <p>Partagez des ressources avec vos amis et le reste de la communaute. </p>
                 </div>

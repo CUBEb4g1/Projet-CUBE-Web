@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row mb-5 pb-5">
             <div class="col-sm-5" >
-                <img src="assets/images/contact.svg" alt="contact" class="img-fluid">
+                <img src="{{ asset('/media/front/contact.svg') }}" alt="contact" class="img-fluid">
             </div>
             <div class="col-sm-7" >
                 <h3 class="font-weight-medium mt-5 mt-lg-0">Des questions ?</h3>

@@ -15,7 +15,7 @@
                             <a href="{{ route('register') }}" class="btn btn-secondary mt-3">Je m'inscris !</a>
                         </div>
                         <div class="bnr-img">
-                            <img src='' class="img-fluid">
+                            <img src="{{ asset('/media/front/home.svg') }}" class="img-fluid">
                         </div>
                     </div>
                 </div>
