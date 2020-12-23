@@ -74,6 +74,7 @@
             </div>
         </nav>
     </div>
+    @include('front._layouts.banner')
     {{--Content--}}
 	@yield('content')
     {{--Footer -- Need to be included instead of @include method !!! --}}

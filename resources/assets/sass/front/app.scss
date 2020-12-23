@@ -2,6 +2,27 @@
 @import 'cms';
 @import '../common';
 
+// === SETTING AWESOME BUTTONS ELEMENTS ===
+
+.btn-outline-special {
+    border-radius: 50px;
+    background: $teal;
+    background: -webkit-linear-gradient(to right, $green 0%, $teal 100%);
+    background: -webkit-gradient(linear, left top, right top, from($green), to($teal));
+    background: -webkit-linear-gradient(left, $green 0%, $teal 100%);
+    background: -o-linear-gradient(left, $green 0%, $teal 100%);
+    background: linear-gradient(to right, $green 0%, $teal 100%);
+}
+.btn-outline-special:hover {
+    border-radius: 50px;
+    background: $green;
+    background: -webkit-linear-gradient(to right, $teal 0%, $green 100%);
+    background: -webkit-gradient(linear, left top, right top, from($teal), to($green));
+    background: -webkit-linear-gradient(left, $teal 0%, $green 100%);
+    background: -o-linear-gradient(left, $teal 0%, $green 100%);
+    background: linear-gradient(to right, $teal 0%, $green 100%);
+}
+
 // === SETTING NAVBAR ELEMENTS ===
 
 .navbar {
@@ -14,7 +35,7 @@
     z-index: 1000;
     backface-visibility: hidden;
 }
-.navbar-brand {
+.navbar-teal {
     color: $green;
     font-size: 18px;
     text-transform: uppercase;
@@ -23,7 +44,7 @@
 }
 
 .navbar-toggler {
-    background: $green;
+    background: $teal;
     padding: 1px 5px;
     font-size: 18px;
     line-height: 0.3;
@@ -69,31 +90,55 @@
     color: $green;
 }
 
-// === SETTING CAROUSEL ELEMENTS ===
+// === SETTING HOME BANNER ELEMENTS ===
 
-.carousel-item {
-    height: 100vh;
-    min-height: 300px;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+.bg-soft-dark {
+    background: rgba(0,0,0,.7);
+}
+
+.banner-home {
+    overflow: hidden;
+    position: relative;
+}
+.banner-home h1, .banner-home h2, .banner-home h3 {
+    color: $green;
+}
+.banner-home h4, .banner-home h5, .banner-home h6 {
+    color: $white;
+}
+.banner-home a {
+    text-decoration: none;
+}
+.banner-home .btn-md {
+    padding: 15px 45px;
+    font-size: 16px;
+}
+.banner-home .right-section {
+    background-position: center bottom;
     background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
 }
-.carousel-caption {
-    bottom: 270px;
+@media (max-width: 1023px) {
+    .banner-home .contact-form {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
-.carousel-caption h5 {
-    font-size: 45px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 25px;
+@media (max-width: 767px) {
+    .banner-home .contact-form {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
-.carousel-caption p {
-    width: 75%;
-    margin: auto;
-    font-size: 18px;
-    line-height: 1.9;
+@media (max-width: 1023px) {
+    .banner-home .right-section {
+        position: relative;
+        bottom: -95px;
+    }
 }
 
 // === SETTING MAIN ELEMENTS ===
