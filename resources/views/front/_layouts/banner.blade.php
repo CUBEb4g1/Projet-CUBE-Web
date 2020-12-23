@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<div class="banner-home pt-5" style="background-image:url(https://phoenixia-prods.com/wp-content/uploads/2020/12/1.jpg);">
+<div class="banner-home" style="background-image:url(https://phoenixia-prods.com/wp-content/uploads/2020/12/1.jpg);">
     <!-- Row  -->
     <div class="row special-align">
         <div class="col-lg-6 p-0 bg-soft-dark">
@@ -17,7 +17,7 @@
         <div class="col-lg-6 align-justify-center pr-4 pl-0 contact-form">
             <div class="d-lg-flex align-items-center h-100 p-5 text-center justify-content-center">
                 <form class="mt-4">
-                    <div class="border p-5">
+                    <div class="border p-5 bg-soft-dark">
                         <h3 class="mb-4 font-weight-light">Super formulaire de recherche</h3>
                         <div class="col-lg-12">
                             <div class="form-group">

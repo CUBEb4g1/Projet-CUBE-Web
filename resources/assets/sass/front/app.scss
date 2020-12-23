@@ -25,70 +25,96 @@
 
 // === SETTING NAVBAR ELEMENTS ===
 
-.navbar {
-    position: fixed;
-    background-color: $dark;
-    padding: 20px 50px;
-    right: 0;
-    left: 0;
-    top: 0;
-    z-index: 1000;
-    backface-visibility: hidden;
+.header2 {
+    color: $dark;
+    font-weight: 300;
 }
-.navbar-teal {
+.header2 h1,
+.header2 h2,
+.header2 h3,
+.header2 h4,
+.header2 h5,
+.header2 h6 {
+    color: $dark;
+}
+.header2.bg-success-gradiant {
+    background: $teal;
+    background: -webkit-linear-gradient(to right, $dark 33%, $green 66%, $teal 100%);
+    background: -webkit-gradient(linear, left top, center top, right top, from($dark), to($green), to($teal));
+    background: -webkit-linear-gradient(left, $dark 33%, $green 66%, $teal 100%);
+    background: -o-linear-gradient(left, $dark 33%, $green 66%, $teal 100%);
+    background: linear-gradient(to right, $dark 33%, $green 66%, $teal 100%);
+}
+.header2 .font-12 {
+    font-size: 12px;
+}
+.header2 .dropdown-item {
+    padding: 8px 1rem;
+    color: $dark;
+}
+.header2 .h2-nav .navbar-nav .nav-item .nav-link {
+    padding: 12px 0px;
+    color: #ffffff;
+    font-weight: 400;
+}
+.header2 .h2-nav .navbar-nav .nav-item .nav-link:hover {
     color: $green;
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
+}
+.header2 .h2-nav .navbar-nav .nav-item {
+    margin: 0 20px;
+}
+@media (min-width: 1024px) {
+    .header2 .navbar-nav>.dropdown .dropdown-menu {
+        min-width: 210px;
+        margin-top: 0px;
+    }
+    .header2 .dropdown-submenu:hover>.dropdown-menu {
+        display: block;
+    }
+}
+.header2 .dropdown-toggle::after {
+    display: none;
+}
+.header2 .dropdown-submenu>.dropdown-menu.menu-right {
+    left: auto;
+    right: 100%;
+    top: 0;
+}
+@media (min-width: 1024px) {
+    .header2 .hover-dropdown .navbar-nav > .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0px;
+    }
+}
+.header2 .btn-dark {
+    color: #fff;
+    background-color: $dark;
+    border-color: $dark;
+    opacity: .7 !important;
+}
+.header2 .btn-dark:hover {
+    color: #fff;
+    background-color: $dark;
+    border-color: $dark;
+    opacity: 1 !important;
+}
+.header2 .h2-nav .navbar-nav .nav-item .btn {
+    opacity: 0.5;
+}
+.header2 .h2-nav .navbar-nav .nav-item .btn:hover {
+    opacity: 1;
+}
+.header2 .dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 0;
+    border-radius: 0.25rem;
+    display: none;
 }
 
-.navbar-toggler {
-    background: $teal;
-    padding: 1px 5px;
-    font-size: 18px;
-    line-height: 0.3;
-}
-.ms_btn {
-    background-color: $green;
-    color: #fff;
-    height: 40px;
-    display: inline-block;
-    text-transform: capitalize;
-    width: 100px;
-    text-align: center;
-    line-height: 42px;
-    border-radius: 20px;
-    margin-left: 15px;
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -ms-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-}
-.ms_btn:hover {
-    color: #ffffff;
-    box-shadow: 0px 0px 20px 0px $teal;
-}
-.ms_btn_light {
-    color: #fff;
-    height: 40px;
-    display: inline-block;
-    text-transform: capitalize;
-    width: 100px;
-    text-align: center;
-    line-height: 42px;
-    border-radius: 20px;
-    margin-left: 15px;
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -ms-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-}
-.ms_btn_light:hover {
-    color: $green;
-}
+// === SETTING NAVBAR ELEMENTS ===
+
+
 
 // === SETTING HOME BANNER ELEMENTS ===
 

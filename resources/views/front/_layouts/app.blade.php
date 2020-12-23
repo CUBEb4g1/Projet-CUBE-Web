@@ -21,56 +21,80 @@
 <body>
 	@include('_partials.maintenance_ribbon')
 	@include('_partials.switched-auth-warning')
-    <div class="navbar">
-        {{--Menu--}}
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="/">
-                    <img src="{{ asset_cache('media/favicons/favicon.png') }}" width="50" height="50" alt="">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="ms_btn" href="/">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="ms_btn_light" href="/">Ressources</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="ms_btn_light" href="/">Guide</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('contact') }}" class="ms_btn_light">Contact{{-- __('Contact form') --}}</a>
-                        </li>
-                        <li class="nav-item">
-                            @guest
-                                {{--Register--}}
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="ms_btn reg_btn">{{ __('Register') }}</a>
-                                @endif
-                                {{--Login--}}
-                                <a href="{{ route('login') }}" class="ms_btn login_btn">{{ __('Login') }}</a>
-                            @else
-                                @can($ACCESS_BACKOFFICE)
-                                    {{--Backoffice--}}
-                                    <a href="{{ route('back.dashboard') }}" class="ms_btn reg_btn">
-                                        {{ __('Administration') }}
-                                    </a>
-                                @endcan
-                                {{--Logout--}}
-                                <a href="{{ route('logout') }}" class="ms_btn login_btn" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+    <div class="header2 bg-success-gradiant">
+        <nav class="navbar navbar-expand-lg h2-nav">
+            <a class="navbar-brand" href="/"><img src="{{ asset_cache('media/favicons/favicon.png') }}" width="50" height="50" alt="Ressources Relationnelles" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header2" aria-controls="header2" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse hover-dropdown" id="header2">
+                <ul class="navbar-nav">
+                    <li class="nav-item active"><a class="nav-link" href="/">Accueil</a></li>
+                    <li class="nav-item dropdown position-relative">
+                        <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ressources <i class="icon-arrow-down ml-1 font-12"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Categorie1</a></li>
+                            <li><a class="dropdown-item" href="#">Categorie2</a></li>
+                            <li><a class="dropdown-item" href="#">Categorie3</a></li>
+                            <li class="divider" role="separator"></li>
+                            <li><a class="dropdown-item" href="#">Categorie4</a></li>
+                            <li class="divider" role="separator"></li>
+                            <li><a class="dropdown-item" href="#">Categorie5</a></li>
+                            <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">Categorie6<i class="icon-arrow-right float-right mt-1"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">SousCategorie1</a></li>
+                                    <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" href="#" data-toggle="dropdown">SousCategorie2<i class="icon-arrow-right float-right mt-1"></i></a>
+                                        <ul class="nav navbar-nav dropdown-menu">
+                                            <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" href="#" data-toggle="dropdown">Encore<i class="icon-arrow-right float-right mt-1"></i></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Vers</a></li>
+                                                    <li><a class="dropdown-item" href="#">L'infini</a></li>
+                                                    <li><a class="dropdown-item" href="#">Et</a></li>
+                                                    <li class="divider" role="separator"></li>
+                                                    <li><a class="dropdown-item" href="#">L'au</a></li>
+                                                    <li class="divider" role="separator"></li>
+                                                    <li><a class="dropdown-item" href="#">Dela</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">A propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="btn rounded-pill btn-dark py-2 px-4" href="#"><i class="far fa-question-circle"></i> Guide</a></li>
+                    <li class="nav-item">
+                        @if (Auth::check())
+                            {{--Logout--}}
+                            <a href="{{ route('logout') }}" class="btn rounded-pill btn-dark py-2 px-4" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                        @else
+                            {{--Login--}}
+                            <a href="{{ route('login') }}" class="btn rounded-pill btn-dark py-2 px-4">{{ __('Login') }}</a>
+                        @endif
+                    </li>
+                    <li class="nav-item">
+                        @if (Auth::check())
+                            {{--Checking rights--}}
+                            @can($ACCESS_BACKOFFICE)
+                                {{--Backoffice--}}
+                                <a href="{{ route('back.dashboard') }}" class="ms_btn reg_btn">
+                                    {{ __('Administration') }}
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            @endguest
-                        </li>
-                    </ul>
-                </div>
+                            @endcan
+                        @else
+                            {{--Register--}}
+                            <a class="btn rounded-pill btn-dark py-2 px-4" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        @endif
+                    </li>
+                </ul>
             </div>
         </nav>
     </div>
