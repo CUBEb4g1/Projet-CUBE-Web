@@ -12,7 +12,7 @@
                                 <h1 class="font-weight-medium">Ressources Relationnelles</h1>
                             </div>
                             <p class="mb-0 text-dark">Lancez-vous des aujourd'hui ! Il a ete etabli depuis des siecles que<br> le bonheur ne diminue pas lorsqu'il est partage. </p>
-                            <a href="{{ route('register') }}" class="btn btn-secondary mt-3">Je m'inscris !</a>
+                            <a href="{{ route('register') }}" class="btn btn-md btn-block btn-outline-special btn-lg border-0 mt-3">Je m'inscris !</a>
                         </div>
                         <div class="bnr-img">
                             <img src="{{ asset('/media/front/home.svg') }}" class="img-fluid">

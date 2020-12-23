@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="col-sm-12">
-                            <a href="#" class="btn btn-secondary">Envoyer</a>
+                            <a href="#" class="btn btn-md btn-block btn-outline-special btn-lg border-0">Envoyer</a>
                         </div>
                     </div>
                 </form>
