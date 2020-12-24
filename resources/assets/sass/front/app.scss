@@ -9,26 +9,31 @@
 // === 0.   SUMMARY ================= Line 1    ===
 // === 1.   IMPORTS SET ============= Line 21   ===
 // === 2.   COMMON RULESET ========== Line 27   ===
-// === 3.   SPECIAL RULESET ========= Line ?    ===
-// === 4.   NAVBAR RULESET ========== Line ?    ===
-// === 5.   FOOTER RULESET ========== Line ?    ===
-// === 6.   INCITATION RULESET ====== Line ?    ===
-// === 7.   SERVICE RULESET ========= Line ?    ===
-// === 8.   ABOUT RULESET =========== Line ?    ===
-// === 9.   TESTIMONIAL RULESET ===== Line ?    ===
-// === 10.  CONTACT RULESET ========= Line ?    ===
+// === 3.   SPECIAL RULESET ========= Line 63   ===
+// === 4.   NAVBAR RULESET ========== Line 72   ===
+// === 5.   FOOTER RULESET ========== Line 140  ===
+// === 6.   ANIMATED LINES RULESET == Line 203  ===
+// === 7.   BANNER RULESET ========== Line 295  ===
+// === 8.   INCITATION RULESET ====== Line 343  ===
+// === 9.   SERVICE RULESET ========= Line 381  ===
+// === 10.  ABOUT RULESET =========== Line 427  ===
+// === 11.  TESTIMONIAL RULESET ===== Line 441  ===
+// === 12.  CONTACT RULESET ========= Line ?    ===
 
-// === 1. IMPORTS SET =============================
+// === 1.   IMPORTS SET ===========================
 
 @import '../common';
 @import 'cms';
 @import 'variables';
 
-// === 2. COMMON RULESET ==========================
+// === 2.   COMMON RULESET ========================
 
 body,
 html {
     overflow-x:                     hidden;
+}
+h1{
+    color: $green;
 }
 .btn-outline-special,
 .f1-bottom-bar,
@@ -49,436 +54,410 @@ html {
     background:                     -o-linear-gradient(left, $teal 0%, $green 100%);
     background:                     linear-gradient(to right, $teal 0%, $green 100%);
 }
+.footer1,
+.header2    {
+    color:                          $white;
+    font-weight:                    300;
+    font-size:                      14px;
+}
 
-// === 3. SPECIAL RULESET =========================
+// === 3.   SPECIAL RULESET =======================
 
+.bg-soft-dark {
+    background: rgba(0,0,0,.7);
+}
 .btn-outline-special {
     border-radius:                  50px;
 }
 
-// === SETTING FOOTER ELEMENTS ===
+// === 4.   NAVBAR RULESET ========================
+
+.header2 {
+    z-index:                        1000;
+}
+.header2 .h2-nav .navbar-nav .nav-item .nav-link:hover{
+    color:                          $dark;
+}
+.header2 .font-12 {
+    font-size:                      12px;
+}
+.header2 .dropdown-item {
+    padding:                        8px 1rem;
+    color:                          $dark;
+}
+.header2 .h2-nav .navbar-nav .nav-item .nav-link {
+    padding:                        12px 0px;
+    color:                          $white;
+    font-weight:                    400;
+}
+.header2 .h2-nav .navbar-nav .nav-item {
+    margin:                         0 20px;
+}
+.header2 .dropdown-toggle::after {
+    display:                        none;
+}
+.header2 .dropdown-submenu>.dropdown-menu.menu-right {
+    left:                           auto;
+    right:                          100%;
+    top:                            0;
+}
+.header2 .btn-dark {
+    color:                          $white;
+    background-color:               $dark;
+    border-color:                   $dark;
+    opacity:                        .7 !important;
+}
+.header2 .btn-dark:hover {
+    opacity:                        1 !important;
+}
+.header2 .h2-nav .navbar-nav .nav-item .btn {
+    opacity:                        0.5;
+}
+.header2 .h2-nav .navbar-nav .nav-item .btn:hover {
+    opacity:                        1;
+}
+.header2 .dropdown-submenu > .dropdown-menu {
+    top:                            0;
+    left:                           100%;
+    margin-left:                    0;
+    border-radius:                  0.25rem;
+    display:                        none;
+}
+@media (min-width: 1024px) {
+    .header2 .navbar-nav>.dropdown .dropdown-menu {
+        min-width:                  210px;
+        margin-top:                 0px;
+    }
+    .header2 .dropdown-submenu:hover>.dropdown-menu {
+        display:                    block;
+    }
+}
+@media (min-width: 1024px) {
+    .header2 .hover-dropdown .navbar-nav > .dropdown:hover > .dropdown-menu {
+        display:                    block;
+        margin-top:                 0px;
+    }
+}
+// === 5.   FOOTER RULESET ========================
 
 .footer1 {
-    color: $white;
-    background: $dark;
-    font-weight: 300;
-    font-size: 14px;
+    background:                     $dark;
 }
 .footer1 h1,
 .footer1 h2,
 .footer1 h3,
 .footer1 h4,
 .footer1 h5,
-.footer1 h6 {
-    color: $green;
+.footer1 h6,
+.link-special {
+    color:                          $green;
 }
 .footer1 .font-weight-medium {
-    font-weight: 500;
+    font-weight:                    500;
 }
-.link-special{
-    color: $green;
-}
+.footer1 a.link:hover,
+.footer1 .navbar-expand-lg .navbar-nav .nav-link,
 .link-special:hover {
-    color: $white;
+    color:                          $white;
 }
 .f1-topbar, .f1-bottom-bar {
-    border-bottom: 1px rgba(51, 51, 51, 0.7);
+    border-bottom:                  1px rgba(51, 51, 51, 0.7);
 }
 
 .footer1 .f1-topbar.navbar .navbar-nav .nav-item .nav-link {
-    color: $white !important;
-    padding: 15px 13px;
+    color:                          $white !important;
+    padding:                        15px 13px;
 }
 .footer1 .f1-topbar .navbar .navbar-nav .nav-item:hover .nav-link,
 .footer1 .f1-topbar .navbar .navbar-nav .nav-item.active .nav-link {
-    color: $dark;
+    color:                          $dark;
 }
 .footer1 .general-listing li a {
-    color: $white;
-    -webkit-transition: 0.2s ease-in;
-    -o-transition: 0.2s ease-in;
-    transition: 0.2s ease-in;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+    color:                          $white;
+    -webkit-transition:             0.2s ease-in;
+    -o-transition:                  0.2s ease-in;
+    transition:                     0.2s ease-in;
+    -webkit-box-align:              center;
+    -ms-flex-align:                 center;
 }
 .footer1 .general-listing li:hover a {
-    color: $green;
-    padding-left: 10px;
+    color:                          $green;
+    padding-left:                   10px;
 }
 .footer1 .general-listing.two-part li {
-    width: 49%;
-    display: inline-block;
+    width:                          49%;
+    display:                        inline-block;
 }
 .footer1 .display-7 {
-    font-size: 26px;
+    font-size:                      26px;
 }
 .footer1 a.link {
-    color: rgba(0,0,0,.7);
-}
-.footer1 a.link:hover {
-    color: $white;
+    color:                          rgba(0,0,0,.7);
 }
 .footer1 .text-danger {
-    color: $dark !important;
+    color:                          $dark !important;
 }
 .footer1 .font-20 {
-    font-size: 20px;
+    font-size:                      20px;
 }
 
-// === SETTING NAVBAR ELEMENTS ===
-
-.header2 {
-    color: $dark;
-    font-weight: 300;
-    font-size: 14px;
-    z-index: 1000;
-}
-.header2 h1,
-.header2 h2,
-.header2 h3,
-.header2 h4,
-.header2 h5,
-.header2 h6 {
-    color: $dark;
-}
-.header2 .font-12 {
-    font-size: 12px;
-}
-.header2 .dropdown-item {
-    padding: 8px 1rem;
-    color: $dark;
-}
-.header2 .h2-nav .navbar-nav .nav-item .nav-link {
-    padding: 12px 0px;
-    color: #ffffff;
-    font-weight: 400;
-}
-.header2 .h2-nav .navbar-nav .nav-item .nav-link:hover {
-    color: $dark;
-}
-.header2 .h2-nav .navbar-nav .nav-item {
-    margin: 0 20px;
-}
-@media (min-width: 1024px) {
-    .header2 .navbar-nav>.dropdown .dropdown-menu {
-        min-width: 210px;
-        margin-top: 0px;
-    }
-    .header2 .dropdown-submenu:hover>.dropdown-menu {
-        display: block;
-    }
-}
-.header2 .dropdown-toggle::after {
-    display: none;
-}
-.header2 .dropdown-submenu>.dropdown-menu.menu-right {
-    left: auto;
-    right: 100%;
-    top: 0;
-}
-@media (min-width: 1024px) {
-    .header2 .hover-dropdown .navbar-nav > .dropdown:hover > .dropdown-menu {
-        display: block;
-        margin-top: 0px;
-    }
-}
-.header2 .btn-dark {
-    color: #fff;
-    background-color: $dark;
-    border-color: $dark;
-    opacity: .7 !important;
-}
-.header2 .btn-dark:hover {
-    color: #fff;
-    background-color: $dark;
-    border-color: $dark;
-    opacity: 1 !important;
-}
-.header2 .h2-nav .navbar-nav .nav-item .btn {
-    opacity: 0.5;
-}
-.header2 .h2-nav .navbar-nav .nav-item .btn:hover {
-    opacity: 1;
-}
-.header2 .dropdown-submenu > .dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-left: 0;
-    border-radius: 0.25rem;
-    display: none;
-}
-
-// === SETTING HOME BANNER ELEMENTS ===
-
-.bg-soft-dark {
-    background: rgba(0,0,0,.7);
-}
-
-.banner-home {
-    overflow: hidden;
-    position: relative;
-}
-.banner-home h1, .banner-home h2, .banner-home h3 {
-    color: $green;
-}
-.banner-home h4, .banner-home h5, .banner-home h6 {
-    color: $white;
-}
-.banner-home a {
-    text-decoration: none;
-}
-.banner-home .btn-md {
-    padding: 15px 45px;
-    font-size: 16px;
-}
-.banner-home .right-section {
-    background-position: center bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-}
-@media (max-width: 1023px) {
-    .banner-home .contact-form {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-@media (max-width: 767px) {
-    .banner-home .contact-form {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-}
-@media (max-width: 1023px) {
-    .banner-home .right-section {
-        position: relative;
-        bottom: -95px;
-    }
-}
-
-// === SETTING MAIN ELEMENTS ===
-
-// Style for Section 1 -> Title part
-.home {
-    background: $white-smoke;
-    background-position: 0 -50px;
-    padding-top: 0;
-
-    @media (max-width: 991px) {
-        padding-top: 71px;
-    }
-}
-h1{
-    color: $green;
-}
-// Style for Section 2 -> Image part
-.main-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 700px;
-    padding-bottom: 50px;
-
-    @media (max-width: 991px) {
-        min-height: 400px;
-        margin-bottom: 50px;
-    }
-    .bnr-text{
-        >p{
-            font-size: 18px;
-            line-height: 36px;
-            color: rgba($dark, 0.6);
-        }
-    }
-    .banner-title {
-        width: 56%;
-        @media (max-width: 991px) {
-            width: 100%;
-        }
-    }
-    .bnr-img{
-        width: 420px;
-    }
-}
-
-// === SETTING SERVICE LAYOUT ELEMENTS ===
-
-.our-services{
-    background: $dark;
-    padding: 80px 0;
-    h3{
-        color: $lighter;
-    }
-    h5,h6{
-        color: $green;
-    }
-    p{
-        color: $white-smoke;
-    }
-}
-// === SETTING ABOUT & CONTACT LAYOUT ELEMENTS ===
-
-.our-process, .contactus{
-    h3{
-        color: $green;
-    }
-}
-
-// Defining icon size for about section
-.stat-icon{
-    margin-top: 50px;
-    img{
-        width: 50px;
-    }
-}
-// Defining contact form position
-.contactus{
-    form{
-        position: relative;
-        z-index: 9;
-    }
-}
-//Defining standard section size
-section {
-    padding: 120px 0 0 0;
-
-    @media (max-width: 1024px) {
-        padding: 130px 0 0 0;
-    }
-    @media (max-width: 991px) {
-        padding: 70px 0 0 0;
-    }
-}
-// Defining services block position and icon size
-.services-box {
-    padding: 10px 100px 40px 0;
-    position: relative;
-    z-index: 2;
-    @media (max-width: 991px) {
-        padding: 10px 10px 40px 0;
-    }
-    img{
-        width: 50px;
-        opacity: .7;
-    }
-    &:hover {
-        img {
-            opacity: 1;
-            -webkit-transition: all 2s;
-            -moz-transition: all 2s;
-            -ms-transition: all 2s;
-            -o-transition: all 2s;
-            transition: all 2s;
-        }
-    }
-}
-.tick-icon {
-    width: 20px;
-    height: 20px;
-}
-.card{
-    border-color: $border-color;
-}
-
-// === SETTING ANIMATED LINES ELEMENTS ===
+// === 6.   ANIMATED LINES RULESET ================
 
 .animate_lines {
-    position: fixed;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    width: 90vw;
-    z-index: 0;
-
-    .line:after{
-        background: -webkit-gradient(linear, left top, left bottom, from(rgba($dark, 0.03)), color-stop(75%, $gradient1), to($gradient2));
-        background: linear-gradient(to bottom, rgba($dark, 0.03) 0%, $gradient1 75%, $gradient2 100%);
+    position:                       fixed;
+    margin:                         auto;
+    top:                            0;
+    left:                           0;
+    right:                          0;
+    height:                         100vh;
+    width:                          90vw;
+    z-index:                        0;
+    .line:after {
+        background:                 -webkit-gradient(linear, left top, left bottom, from(rgba($dark, 0.03)), color-stop(75%, $gradient1), to($gradient2));
+        background:                 linear-gradient(to bottom, rgba($dark, 0.03) 0%, $gradient1 75%, $gradient2 100%);
     }
-
     .line {
-        position: absolute;
-        overflow: hidden;
-        width: 1px;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: rgba($dark, 0.03);
-
+        position:                   absolute;
+        overflow:                   hidden;
+        width:                      1px;
+        height:                     100%;
+        top:                        0;
+        left:                       0;
+        background:                 rgba($dark, 0.03);
         &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            height: 15vh;
-            width: 100%;
-            top: -50%;
-            left: 0;
-            -webkit-animation: run 7s 0s infinite;
-            animation: run 7s 0s infinite;
+            content:                "";
+            display:                block;
+            position:               absolute;
+            height:                 15vh;
+            width:                  100%;
+            top:                    -50%;
+            left:                   0;
+            -webkit-animation:      run 7s 0s infinite;
+            animation:              run 7s 0s infinite;
             -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
+            animation-fill-mode:    forwards;
             -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
             animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
         }
-
         &:nth-child(1) {
-            margin-left: 22%;
+            margin-left:            22%;
             &:after {
                 -webkit-animation-delay: 2s;
-                animation-delay: 2s;
+                animation-delay:    2s;
             }
         }
         &:nth-child(3) {
-            margin-left: 12%;
+            margin-left:            12%;
             &:after {
                 -webkit-animation-delay: 2.5s;
-                animation-delay: 2.5s;
+                animation-delay:    2.5s;
             }
         }
         &:nth-child(4) {
-            margin-left: 80%;
+            margin-left:            80%;
             &:after {
                 -webkit-animation-delay: 3s;
-                animation-delay: 3s;
+                animation-delay:    3s;
             }
         }
         &:nth-child(5) {
-            margin-left: 85%;
+            margin-left:            85%;
             &:after {
                 -webkit-animation-delay: 3.5s;
-                animation-delay: 3.5s;
+                animation-delay:    3.5s;
             }
         }
         &:nth-child(6) {
-            margin-left: 100%;
+            margin-left:            100%;
             &:after {
                 -webkit-animation-delay: 1.5s;
-                animation-delay: 1.5s;
+                animation-delay:    1.5s;
             }
         }
     }
     @-webkit-keyframes run {
         0% {
-            top: -50%;
+            top:                    -50%;
         }
         100% {
-            top: 110%;
+            top:                    110%;
         }
     }
-
     @keyframes run {
         0% {
-            top: -50%;
+            top:                    -50%;
         }
         100% {
-            top: 110%;
+            top:                    110%;
         }
     }
 }
+
+// === 7.   BANNER RULESET ========================
+
+.banner-home {
+    overflow:                       hidden;
+    position:                       relative;
+}
+.banner-home h1,
+.banner-home h2,
+.banner-home h3 {
+    color:                          $green;
+}
+.banner-home h4,
+.banner-home h5,
+.banner-home h6 {
+    color:                          $white;
+}
+.banner-home a {
+    text-decoration:                none;
+}
+.banner-home .btn-md {
+    padding:                        15px 45px;
+    font-size:                      16px;
+}
+.banner-home .right-section {
+    background-position:            center bottom;
+    background-size:                cover;
+    background-repeat:              no-repeat;
+    position:                       absolute;
+    right:                          0;
+    bottom:                         0;
+    top:                            0;
+    @media (max-width: 1023px) {
+        position:                   relative;
+        bottom:                     -95px;
+    }
+}
+.banner-home .contact-form {
+    @media (max-width: 1023px) {
+        padding-left:               0;
+        padding-right:              0;
+    }
+    @media (max-width: 767px) {
+        padding-left:               15px;
+        padding-right:              15px;
+    }
+}
+
+// === 8.   INCITATION RULESET ====================
+
+.home {
+    background:                     $white-smoke;
+    background-position:            0 -50px;
+    padding-top:                    0;
+    @media (max-width: 991px) {
+        padding-top:                71px;
+    }
+}
+.main-banner {
+    display:                        flex;
+    align-items:                    center;
+    justify-content:                space-between;
+    min-height:                     700px;
+    padding-bottom:                 50px;
+    @media (max-width: 991px) {
+        min-height:                 400px;
+        margin-bottom:              50px;
+    }
+    .bnr-text{
+        >p{
+            font-size:              18px;
+            line-height:            36px;
+            color:                  rgba($dark, 0.6);
+        }
+    }
+    .banner-title {
+        width:                      56%;
+        @media (max-width: 991px) {
+            width:                  100%;
+        }
+    }
+    .bnr-img{
+        width:                      420px;
+    }
+}
+
+// === 9.   SERVICE RULESET =======================
+
+.our-services {
+    background:                     $dark;
+    padding:                        80px 0;
+    h3 {
+        color:                      $lighter;
+    }
+    h5,
+    h6 {
+        color:                      $green;
+    }
+    p {
+        color:                      $white-smoke;
+    }
+}
+.services-box {
+    padding:                        10px 100px 40px 0;
+    position:                       relative;
+    z-index:                        2;
+    @media (max-width: 991px) {
+        padding:                    10px 10px 40px 0;
+    }
+    img{
+        width:                      50px;
+        opacity:                    .7;
+    }
+    &:hover {
+        img {
+            opacity:                1;
+            -webkit-transition:     all 2s;
+            -moz-transition:        all 2s;
+            -ms-transition:         all 2s;
+            -o-transition:          all 2s;
+            transition:             all 2s;
+        }
+    }
+}
+.tick-icon {
+    width:                          20px;
+    height:                         20px;
+}
+.card{
+    border-color:                   $border-color;
+}
+
+// === 10.  ABOUT RULESET =========================
+
+.our-process, .contactus{
+    h3{
+        color:                      $green;
+    }
+}
+.stat-icon{
+    margin-top:                     50px;
+    img{
+        width:                      50px;
+    }
+}
+
+// === 11.  TESTIMONIAL RULESET ===================
+// === 12.  CONTACT RULESET =======================
+
+.contactus{
+    form{
+        position:                   relative;
+        z-index:                    9;
+    }
+}
+section {
+    padding:                        120px 0 0 0;
+    @media (max-width: 1024px) {
+        padding:                    130px 0 0 0;
+    }
+    @media (max-width: 991px) {
+        padding:                    70px 0 0 0;
+    }
+}
+
+// === SETTING ABOUT & CONTACT LAYOUT ELEMENTS ===
 
 // === SETTING TESTIMONIAL LAYOUT ELEMENTS ===
 
