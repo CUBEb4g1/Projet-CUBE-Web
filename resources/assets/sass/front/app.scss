@@ -2,6 +2,83 @@
 @import 'cms';
 @import '../common';
 
+// === SETTING FOOTER ELEMENTS ===
+
+.footer1 {
+    color: $white;
+    background: $dark;
+    font-weight: 300;
+    font-size: 14px;
+}
+.footer1 h1,
+.footer1 h2,
+.footer1 h3,
+.footer1 h4,
+.footer1 h5,
+.footer1 h6 {
+    color: $green;
+}
+.footer1 .font-weight-medium {
+    font-weight: 500;
+}
+.link-special{
+    color: $green;
+}
+.link-special:hover {
+    color: $white;
+}
+.f1-topbar, .f1-bottom-bar {
+    border-bottom: 1px rgba(51, 51, 51, 0.7);
+}
+.f1-topbar, .f1-bottom-bar {
+    background: $teal;
+    background: -webkit-linear-gradient(to right, $green 0%, $teal 100%);
+    background: -webkit-gradient(linear, left top, right top, from($green), to($teal));
+    background: -webkit-linear-gradient(left, $green 0%, $teal 100%);
+    background: -o-linear-gradient(left, $green 0%, $teal 100%);
+    background: linear-gradient(to right, $green 0%, $teal 100%);
+}
+
+.footer1 .f1-topbar.navbar .navbar-nav .nav-item .nav-link {
+    color: $white !important;
+    padding: 15px 13px;
+}
+.footer1 .f1-topbar .navbar .navbar-nav .nav-item:hover .nav-link,
+.footer1 .f1-topbar .navbar .navbar-nav .nav-item.active .nav-link {
+    color: $dark;
+}
+.footer1 .general-listing li a {
+    color: $white;
+    -webkit-transition: 0.2s ease-in;
+    -o-transition: 0.2s ease-in;
+    transition: 0.2s ease-in;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+}
+.footer1 .general-listing li:hover a {
+    color: $green;
+    padding-left: 10px;
+}
+.footer1 .general-listing.two-part li {
+    width: 49%;
+    display: inline-block;
+}
+.footer1 .display-7 {
+    font-size: 26px;
+}
+.footer1 a.link {
+    color: rgba(0,0,0,.7);
+}
+.footer1 a.link:hover {
+    color: $white;
+}
+.footer1 .text-danger {
+    color: $dark !important;
+}
+.footer1 .font-20 {
+    font-size: 20px;
+}
+
 // === SETTING AWESOME BUTTONS ELEMENTS ===
 
 .btn-outline-special {
@@ -111,10 +188,6 @@
     border-radius: 0.25rem;
     display: none;
 }
-
-// === SETTING NAVBAR ELEMENTS ===
-
-
 
 // === SETTING HOME BANNER ELEMENTS ===
 
@@ -497,84 +570,6 @@ section {
 
             &.active {
                 background: $border-color;
-            }
-        }
-    }
-}
-
-// === SETTING FOOTER ELEMENTS ===
-
-.footer {
-    color: $green;
-    background: $dark;
-
-    address{
-        position: relative;
-        z-index: 2;
-        color: $light;
-    }
-
-    p {
-        margin-bottom: 0.25rem;
-    }
-
-    .footer-link {
-        color: $footer-color;
-    }
-
-    .footer-top {
-        padding: 74px 0;
-
-        .footer-title {
-            font-size: 1.2rem;
-            margin-bottom: .875rem;
-        }
-
-        .social-icons {
-            margin-top: 1.25rem;
-            a {
-                i {
-                    font-size: 1.5rem;
-                    color: $light;
-                    margin-right: 1rem;
-                    -webkit-transition: all 0.3s;
-                    -moz-transition: all 0.3s;
-                    -ms-transition: all 0.3s;
-                    -o-transition: all 0.3s;
-                    transition: all 0.3s;
-                }
-                &:hover {
-                    i {
-                        color: $white;
-                    }
-                }
-            }
-        }
-    }
-
-    .footer-bottom {
-        background: $footer-bottom-bg;
-        padding: 10px 0;
-        border-top: 1px solid $footer-border;
-
-        img {
-            width: 100px;
-        }
-    }
-
-    .list-footer {
-        list-style: none;
-        padding-left: 0;
-        position: relative;
-        z-index: 2;
-
-        li {
-            a {
-
-                color: $white-smoke;
-                display: block;
-                padding: .625rem 0;
-                font-size: 14px;
             }
         }
     }
