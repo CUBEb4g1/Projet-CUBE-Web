@@ -1,6 +1,60 @@
-@import 'variables';
-@import 'cms';
+//      @ Copyright : Phoenixia Productions     ===
+//                  _,="( _  )"=,_              ===
+//               _,'    \_>\_/    ',_           ===
+//               .7,     {  }     ,\.           ===
+//                '/:,  .m  m.  ,:\'            ===
+//                  ')",(/  \),"('              ===
+//                     '{'!!'}'                 ===
+//                                              ===
+// === 0.   SUMMARY ================= Line 1    ===
+// === 1.   IMPORTS SET ============= Line 21   ===
+// === 2.   COMMON RULESET ========== Line 27   ===
+// === 3.   SPECIAL RULESET ========= Line ?    ===
+// === 4.   NAVBAR RULESET ========== Line ?    ===
+// === 5.   FOOTER RULESET ========== Line ?    ===
+// === 6.   INCITATION RULESET ====== Line ?    ===
+// === 7.   SERVICE RULESET ========= Line ?    ===
+// === 8.   ABOUT RULESET =========== Line ?    ===
+// === 9.   TESTIMONIAL RULESET ===== Line ?    ===
+// === 10.  CONTACT RULESET ========= Line ?    ===
+
+// === 1. IMPORTS SET =============================
+
 @import '../common';
+@import 'cms';
+@import 'variables';
+
+// === 2. COMMON RULESET ==========================
+
+body,
+html {
+    overflow-x:                     hidden;
+}
+.btn-outline-special,
+.f1-bottom-bar,
+.f1-topbar,
+.header2.bg-success-gradiant {
+    background:                     $teal;
+    background:                     -webkit-linear-gradient(to right, $green 0%, $teal 100%);
+    background:                     -webkit-gradient(linear, left top, right top, from($green), to($teal));
+    background:                     -webkit-linear-gradient(left, $green 0%, $teal 100%);
+    background:                     -o-linear-gradient(left, $green 0%, $teal 100%);
+    background:                     linear-gradient(to right, $green 0%, $teal 100%);
+}
+.btn-outline-special:hover {
+    background:                     $green;
+    background:                     -webkit-linear-gradient(to right, $teal 0%, $green 100%);
+    background:                     -webkit-gradient(linear, left top, right top, from($teal), to($green));
+    background:                     -webkit-linear-gradient(left, $teal 0%, $green 100%);
+    background:                     -o-linear-gradient(left, $teal 0%, $green 100%);
+    background:                     linear-gradient(to right, $teal 0%, $green 100%);
+}
+
+// === 3. SPECIAL RULESET =========================
+
+.btn-outline-special {
+    border-radius:                  50px;
+}
 
 // === SETTING FOOTER ELEMENTS ===
 
@@ -29,14 +83,6 @@
 }
 .f1-topbar, .f1-bottom-bar {
     border-bottom: 1px rgba(51, 51, 51, 0.7);
-}
-.f1-topbar, .f1-bottom-bar {
-    background: $teal;
-    background: -webkit-linear-gradient(to right, $green 0%, $teal 100%);
-    background: -webkit-gradient(linear, left top, right top, from($green), to($teal));
-    background: -webkit-linear-gradient(left, $green 0%, $teal 100%);
-    background: -o-linear-gradient(left, $green 0%, $teal 100%);
-    background: linear-gradient(to right, $green 0%, $teal 100%);
 }
 
 .footer1 .f1-topbar.navbar .navbar-nav .nav-item .nav-link {
@@ -79,27 +125,6 @@
     font-size: 20px;
 }
 
-// === SETTING AWESOME BUTTONS ELEMENTS ===
-
-.btn-outline-special {
-    border-radius: 50px;
-    background: $teal;
-    background: -webkit-linear-gradient(to right, $green 0%, $teal 100%);
-    background: -webkit-gradient(linear, left top, right top, from($green), to($teal));
-    background: -webkit-linear-gradient(left, $green 0%, $teal 100%);
-    background: -o-linear-gradient(left, $green 0%, $teal 100%);
-    background: linear-gradient(to right, $green 0%, $teal 100%);
-}
-.btn-outline-special:hover {
-    border-radius: 50px;
-    background: $green;
-    background: -webkit-linear-gradient(to right, $teal 0%, $green 100%);
-    background: -webkit-gradient(linear, left top, right top, from($teal), to($green));
-    background: -webkit-linear-gradient(left, $teal 0%, $green 100%);
-    background: -o-linear-gradient(left, $teal 0%, $green 100%);
-    background: linear-gradient(to right, $teal 0%, $green 100%);
-}
-
 // === SETTING NAVBAR ELEMENTS ===
 
 .header2 {
@@ -115,14 +140,6 @@
 .header2 h5,
 .header2 h6 {
     color: $dark;
-}
-.header2.bg-success-gradiant {
-    background: $teal;
-    background: -webkit-linear-gradient(to right, $green 0%, $teal 100%);
-    background: -webkit-gradient(linear, left top, right top, from($green), to($teal));
-    background: -webkit-linear-gradient(left, $green 0%, $teal 100%);
-    background: -o-linear-gradient(left, $green 0%, $teal 100%);
-    background: linear-gradient(to right, $green 0%, $teal 100%);
 }
 .header2 .font-12 {
     font-size: 12px;
@@ -244,10 +261,6 @@
 
 // === SETTING MAIN ELEMENTS ===
 
-body,
-html {
-    overflow-x: hidden;
-}
 // Style for Section 1 -> Title part
 .home {
     background: $white-smoke;
