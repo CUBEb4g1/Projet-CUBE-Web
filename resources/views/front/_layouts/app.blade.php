@@ -21,7 +21,7 @@
 <body>
 	@include('_partials.maintenance_ribbon')
 	@include('_partials.switched-auth-warning')
-    <div class="header2 bg-success-gradiant">
+    <div class="header2 bg-success-gradiant sticky-div">
         <div class="container">
             <nav class="navbar navbar-expand-lg h2-nav">
                 <a class="navbar-brand" href="/"><img src="{{ asset_cache('media/favicons/favicon.png') }}" width="50" height="50" alt="Ressources Relationnelles" /></a>
@@ -234,6 +234,34 @@
 		};
 	</script>
 	<script src="{{ mix('js/front/app.js') }}"></script>
-	@stack('scripts')
+    <script>
+        stickyElem =
+            document.querySelector(".sticky-div");
+
+        /* Gets the amount of height
+        of the element from the
+        viewport and adds the
+        pageYOffset to get the height
+        relative to the page */
+        currStickyPos =
+            stickyElem.getBoundingClientRect().top + window.pageYOffset;
+
+        window.onscroll = function() {
+
+            /* Check if the current Y offset
+            is greater than the position of
+            the element */
+            if (window.pageYOffset > currStickyPos) {
+                stickyElem.style.position = "fixed";
+                stickyElem.style.top = "0px";
+                stickyElem.style.left = "0px";
+                stickyElem.style.right = "0px";
+            } else {
+                stickyElem.style.position = "relative";
+                stickyElem.style.top = "initial";
+            }
+        }
+    </script>
+    @stack('scripts')
 </body>
 </html>
