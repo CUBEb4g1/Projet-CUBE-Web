@@ -7,7 +7,7 @@
             <div class="d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
                 <div class="pt-5 pb-5">
                     <img src="{{ asset_cache('media/favicons/favicon.png') }}" alt="">
-                    <h1 class="mb-0 mt-3 display-4">Hello, bienvenue !</h1>
+                    <h1 class="font-weight-medium">Hello, bienvenue !</h1>
                     <h5 class="mb-4 font-weight-light">Explore des maintenant de nouvelles possibilites</h5>
                     <a target="_blank" class="btn btn-md btn-block btn-outline-special btn-lg border-0" href="/">Suivre le guide</a>
                     </a>
