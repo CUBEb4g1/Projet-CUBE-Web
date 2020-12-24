@@ -105,6 +105,7 @@
 .header2 {
     color: $dark;
     font-weight: 300;
+    font-size: 14px;
 }
 .header2 h1,
 .header2 h2,
@@ -116,11 +117,11 @@
 }
 .header2.bg-success-gradiant {
     background: $teal;
-    background: -webkit-linear-gradient(to right, $dark 33%, $green 66%, $teal 100%);
-    background: -webkit-gradient(linear, left top, center top, right top, from($dark), to($green), to($teal));
-    background: -webkit-linear-gradient(left, $dark 33%, $green 66%, $teal 100%);
-    background: -o-linear-gradient(left, $dark 33%, $green 66%, $teal 100%);
-    background: linear-gradient(to right, $dark 33%, $green 66%, $teal 100%);
+    background: -webkit-linear-gradient(to right, $green 0%, $teal 100%);
+    background: -webkit-gradient(linear, left top, right top, from($green), to($teal));
+    background: -webkit-linear-gradient(left, $green 0%, $teal 100%);
+    background: -o-linear-gradient(left, $green 0%, $teal 100%);
+    background: linear-gradient(to right, $green 0%, $teal 100%);
 }
 .header2 .font-12 {
     font-size: 12px;
@@ -135,7 +136,7 @@
     font-weight: 400;
 }
 .header2 .h2-nav .navbar-nav .nav-item .nav-link:hover {
-    color: $green;
+    color: $dark;
 }
 .header2 .h2-nav .navbar-nav .nav-item {
     margin: 0 20px;
