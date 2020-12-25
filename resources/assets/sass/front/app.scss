@@ -9,16 +9,16 @@
 // === 0.   SUMMARY ================= Line 1    ===
 // === 1.   IMPORTS SET ============= Line 21   ===
 // === 2.   COMMON RULESET ========== Line 27   ===
-// === 3.   SPECIAL RULESET ========= Line 63   ===
-// === 4.   NAVBAR RULESET ========== Line 72   ===
-// === 5.   FOOTER RULESET ========== Line 140  ===
-// === 6.   ANIMATED LINES RULESET == Line 203  ===
-// === 7.   BANNER RULESET ========== Line 295  ===
-// === 8.   INCITATION RULESET ====== Line 343  ===
-// === 9.   SERVICE RULESET ========= Line 381  ===
-// === 10.  ABOUT RULESET =========== Line 427  ===
-// === 11.  TESTIMONIAL RULESET ===== Line 441  ===
-// === 12.  CONTACT RULESET ========= Line ?    ===
+// === 3.   SPECIAL RULESET ========= Line 65   ===
+// === 4.   NAVBAR RULESET ========== Line 74   ===
+// === 5.   FOOTER RULESET ========== Line 143  ===
+// === 6.   ANIMATED LINES RULESET == Line 206  ===
+// === 7.   BANNER RULESET ========== Line 298  ===
+// === 8.   INCITATION RULESET ====== Line 345  ===
+// === 9.   SERVICE RULESET ========= Line 383  ===
+// === 10.  ABOUT RULESET =========== Line 429  ===
+// === 11.  TEAM RULESET ============ Line 443  ===
+// === 12.  CONTACT RULESET ========= Line 505  ===
 
 // === 1.   IMPORTS SET ===========================
 
@@ -38,7 +38,8 @@ h1{
 .btn-outline-special,
 .f1-bottom-bar,
 .f1-topbar,
-.header2.bg-success-gradiant {
+.header2.bg-success-gradiant,
+.team1 .pro-pic .card-img-overlay {
     background:                     $teal;
     background:                     -webkit-linear-gradient(to right, $green 0%, $teal 100%);
     background:                     -webkit-gradient(linear, left top, right top, from($green), to($teal));
@@ -138,6 +139,7 @@ h1{
         margin-top:                 0px;
     }
 }
+
 // === 5.   FOOTER RULESET ========================
 
 .footer1 {
@@ -438,7 +440,68 @@ h1{
     }
 }
 
-// === 11.  TESTIMONIAL RULESET ===================
+// === 11.  TEAM RULESET ==========================
+
+.team {
+    background-size:                cover;
+    padding:                        100px 0 70px 0;
+    @media (max-width: 991px) {
+        padding:                    20px 0;
+    }
+}
+.team-destination {
+    font-style:                     italic;
+}
+.team1 {
+    color:                          $dark;
+    font-weight:                    300;
+    background-image:               url("https://phoenixia-prods.com/wp-content/uploads/2020/12/3.jpg");
+}
+.team1 h1,
+.team1 h2,
+.team1 h3,
+.team1 h4,
+.team1 h5,
+.team1 h6 {
+    color:                          $green;
+}
+.team1 .no-gutters {
+    background-color:               rgba(0,0,0,0);
+}
+.team1 .card {
+    background-color:               rgba(255,255,255,.7);
+}
+.team1 .font-weight-medium {
+    font-weight:                    500;
+}
+.team1 .subtitle {
+    color:                          $white;
+    line-height:                    24px;
+}
+.team1 .pro-pic {
+    min-height:                     200px;
+}
+.team1 .pro-pic .card-img-overlay {
+    opacity:                        .7;
+    display:                        none;
+}
+.team1 .pro-pic .card-img-overlay ul {
+    top:                            50%;
+    font-size:                      20px;
+}
+.team1 .pro-pic .card-img-overlay ul li a {
+    -webkit-transition:             0.1s ease-in;
+    -o-transition:                  0.1s ease-in;
+    transition:                     0.1s ease-in;
+}
+.team1 .pro-pic .card-img-overlay ul li a:hover {
+    -webkit-transform:              translate3d(0px, -5px, 0px);
+    transform:                      translate3d(0px, -5px, 0px);
+}
+.team1 .pro-pic:hover .card-img-overlay {
+    display:                        block;
+}
+
 // === 12.  CONTACT RULESET =======================
 
 .contactus{
@@ -454,118 +517,6 @@ section {
     }
     @media (max-width: 991px) {
         padding:                    70px 0 0 0;
-    }
-}
-
-// === SETTING ABOUT & CONTACT LAYOUT ELEMENTS ===
-
-// === SETTING TESTIMONIAL LAYOUT ELEMENTS ===
-
-.testimonial {
-    background-size: cover;
-    padding: 100px 0 70px 0;
-
-    @media (max-width: 991px) {
-        padding: 20px 0;
-    }
-    .flipster{
-        padding: 10px 0;
-    }
-
-    .testimonial-item {
-        background: $white;
-        color: $dark;
-        width: 450px;
-        padding: 34px 34px 34px 94px;
-        border-radius: 10px;
-        position: relative;
-        box-shadow: 0 20px 70px -10px rgba(109, 121, 141, .15);
-
-        @media (max-width: 1024px) {
-            width: 400px;
-        }
-        @media (max-width: 991px) {
-            width: 280px;
-        }
-        .testimonial-icons {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border-radius: 100%;
-            top: 40px;
-            left: 28px;
-        }
-        .testimonial-author {
-            position: relative;
-            margin-top: 1rem;
-            margin-bottom: .5rem;
-
-            &:before {
-                position: absolute;
-                color: transparent;
-                content: "\f756";
-                left: -40px;
-                font-size: 1.75rem;
-            }
-        }
-        .testimonial-destination {
-            color: $light;
-            font-weight: normal;
-            font-size: 14px;
-        }
-    }
-    .flipster__button--prev {
-        left: auto;
-        right: 0;
-        top: 86%;
-        transform: rotate(270deg);
-    }
-    .flipster__button--next {
-        transform: rotate(270deg);
-        top: 78%;
-    }
-    .flipster__button svg {
-        width: .75em;
-    }
-}
-.flipster--coverflow {
-
-    .flipster__container {
-        padding-bottom: 0;
-    }
-
-    .flipster__item__content {
-        -webkit-transform-origin: 50% 100%;
-        -ms-transform-origin: 50% 100%;
-        transform-origin: 50% 100%;
-        box-reflect: below 0 -webkit-gradient(linear, left bottom, left top, color-stop(0.05, rgba(255, 255, 255, 0)), color-stop(0.2, transparent));
-        -webkit-box-reflect: below 0 -webkit-gradient(linear, left bottom, left top, color-stop(0.05, rgba(255, 255, 255, 0)), color-stop(0.2, transparent));
-    }
-}
-
-.flipster-custom-nav {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 2rem;
-    position: relative;
-    z-index: 2;
-
-    .flipster-custom-nav-item {
-        display: inline-block;
-
-        .flipster-custom-nav-link {
-            display: block;
-            width: 10px;
-            height: 10px;
-            border-radius: 100%;
-            border: 1px solid $border-color;
-            // background: $border-color;
-            margin-right: 1rem;
-
-            &.active {
-                background: $border-color;
-            }
-        }
     }
 }
 

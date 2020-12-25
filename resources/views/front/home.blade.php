@@ -6,6 +6,6 @@
     @include('front._layouts.incitation')
     @include('front._layouts.service')
     @include('front._layouts.about')
-    @include('front._layouts.testimonial')
+    @include('front._layouts.team')
     @include('front._layouts.contact')
 @endsection
