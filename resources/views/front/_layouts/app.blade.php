@@ -18,7 +18,7 @@
 
     </script>
 </head>
-<body>
+<body id="top">
 	@include('_partials.maintenance_ribbon')
 	@include('_partials.switched-auth-warning')
     <div class="header2 bg-success-gradiant sticky-div">
@@ -103,6 +103,12 @@
     @include('front._layouts.banner')
     {{-- Content --}}
 	@yield('content')
+    {{-- Back to Top Button --}}
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+        </svg>
+    </div>
     {{-- Footer --}}
     <footer class="footer1">
         <div class="f1-topbar p-0">
@@ -251,6 +257,53 @@
                 stickyElem.style.top = "initial";
             }
         }
+    </script>
+    {{-- Dark Mode Switch -- Not yet implemented but will be --}}
+    <script>
+        (function($) { "use strict";
+            $(".switch").on('click', function () {
+                if ($("body").hasClass("light")) {
+                    $("body").removeClass("light");
+                    $(".switch").removeClass("switched");
+                }
+                else {
+                    $("body").addClass("light");
+                    $(".switch").addClass("switched");
+                }
+            });
+            {{-- Back to Top button --}}
+            $(document).ready(function(){"use strict";
+                var progressPath = document.querySelector('.progress-wrap path');
+                var pathLength = progressPath.getTotalLength();
+                progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+                progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+                progressPath.style.strokeDashoffset = pathLength;
+                progressPath.getBoundingClientRect();
+                progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+                var updateProgress = function () {
+                    var scroll = $(window).scrollTop();
+                    var height = $(document).height() - $(window).height();
+                    var progress = pathLength - (scroll * pathLength / height);
+                    progressPath.style.strokeDashoffset = progress;
+                }
+                updateProgress();
+                $(window).scroll(updateProgress);
+                var offset = 50;
+                var duration = 550;
+                jQuery(window).on('scroll', function() {
+                    if (jQuery(this).scrollTop() > offset) {
+                        jQuery('.progress-wrap').addClass('active-progress');
+                    } else {
+                        jQuery('.progress-wrap').removeClass('active-progress');
+                    }
+                });
+                jQuery('.progress-wrap').on('click', function(event) {
+                    event.preventDefault();
+                    jQuery('html, body').animate({scrollTop: 0}, duration);
+                    return false;
+                })
+            });
+        })(jQuery);
     </script>
     @stack('scripts')
 </body>

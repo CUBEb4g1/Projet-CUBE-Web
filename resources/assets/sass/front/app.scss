@@ -7,18 +7,19 @@
 //                     '{'!!'}'                 ===
 //                                              ===
 // === 0.   SUMMARY ================= Line 1    ===
-// === 1.   IMPORTS SET ============= Line 21   ===
-// === 2.   COMMON RULESET ========== Line 27   ===
-// === 3.   SPECIAL RULESET ========= Line 65   ===
-// === 4.   NAVBAR RULESET ========== Line 74   ===
-// === 5.   FOOTER RULESET ========== Line 143  ===
-// === 6.   ANIMATED LINES RULESET == Line 206  ===
-// === 7.   BANNER RULESET ========== Line 298  ===
-// === 8.   INCITATION RULESET ====== Line 345  ===
-// === 9.   SERVICE RULESET ========= Line 383  ===
-// === 10.  ABOUT RULESET =========== Line 438  ===
-// === 11.  TEAM RULESET ============ Line 452  ===
-// === 12.  CONTACT RULESET ========= Line 514  ===
+// === 1.   IMPORTS SET ============= Line 24   ===
+// === 2.   COMMON RULESET ========== Line 30   ===
+// === 3.   SPECIAL RULESET ========= Line 73   ===
+// === 4.   NAVBAR RULESET ========== Line 82   ===
+// === 5.   FOOTER RULESET ========== Line 151  ===
+// === 6.   ANIMATED LINES RULESET == Line 214  ===
+// === 7.   BANNER RULESET ========== Line 306  ===
+// === 8.   INCITATION RULESET ====== Line 353  ===
+// === 9.   SERVICE RULESET ========= Line 391  ===
+// === 10.  ABOUT RULESET =========== Line 446  ===
+// === 11.  TEAM RULESET ============ Line 460  ===
+// === 12.  CONTACT RULESET ========= Line 522  ===
+// === 13.  BACK TO TOP BUTTON ====== Line 540  ===
 
 // === 1.   IMPORTS SET ===========================
 
@@ -32,6 +33,11 @@ body,
 html {
     overflow-x:                     hidden;
 }
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior:            smooth;
+    }
+}
 h1{
     color: $green;
 }
@@ -39,6 +45,7 @@ h1{
 .f1-bottom-bar,
 .f1-topbar,
 .header2.bg-success-gradiant,
+.progress-wrap.active-progress,
 .team1 .pro-pic .card-img-overlay {
     background:                     $teal;
     background:                     -webkit-linear-gradient(to right, $green 0%, $teal 100%);
@@ -47,7 +54,8 @@ h1{
     background:                     -o-linear-gradient(left, $green 0%, $teal 100%);
     background:                     linear-gradient(to right, $green 0%, $teal 100%);
 }
-.btn-outline-special:hover {
+.btn-outline-special:hover,
+.progress-wrap:hover {
     background:                     $green;
     background:                     -webkit-linear-gradient(to right, $teal 0%, $green 100%);
     background:                     -webkit-gradient(linear, left top, right top, from($teal), to($green));
@@ -65,7 +73,7 @@ h1{
 // === 3.   SPECIAL RULESET =======================
 
 .bg-soft-dark {
-    background: rgba(255,255,255,.4);
+    background:                     rgba(255,255,255,.4);
 }
 .btn-outline-special {
     border-radius:                  50px;
@@ -431,7 +439,7 @@ h1{
     width:                          20px;
     height:                         20px;
 }
-.card{
+.card {
     border-color:                   $border-color;
 }
 
@@ -527,6 +535,82 @@ section {
     @media (max-width: 991px) {
         padding:                    70px 0 0 0;
     }
+}
+
+// === 13.  BACK TO TOP BUTTON ====================
+
+.progress-wrap {
+    position:                       fixed;
+    right:                          50px;
+    bottom:                         50px;
+    height:                         46px;
+    width:                          46px;
+    cursor:                         pointer;
+    display:                        block;
+    border-radius:                  50px;
+    box-shadow:                     inset  0 0 0 2px rgba(255,255,255,.2);
+    z-index:                        10000;
+    opacity:                        0;
+    visibility:                     hidden;
+    transform:                      translateY(15px);
+    -webkit-transition:             all 200ms linear;
+    transition:                     all 200ms linear;
+    svg path {
+        fill:                           none;
+    }
+    svg.progress-circle path {
+        stroke:                         $dark;
+        stroke-width:                   4;
+        box-sizing:                     border-box;
+        -webkit-transition:             all 200ms linear;
+        transition:                     all 200ms linear;
+    }
+}
+.progress-wrap.active-progress {
+    opacity:                        1;
+    visibility:                     visible;
+    transform:                      translateY(0);
+}
+.progress-wrap::after {
+    position:                       absolute;
+    content:                        "\f102";
+    text-align:                     center;
+    line-height:                    46px;
+    font-size:                      24px;
+    color:                          $dark;
+    left:                           0;
+    top:                            0;
+    height:                         46px;
+    width:                          46px;
+    cursor:                         pointer;
+    display:                        block;
+    z-index:                        1;
+    -webkit-transition:             all 200ms linear;
+    transition:                     all 200ms linear;
+}
+.progress-wrap::before {
+    position:                       absolute;
+    content:                        "\f102";
+    text-align:                     center;
+    line-height:                    46px;
+    font-size:                      24px;
+    opacity:                        0;
+    background-image:               $dark;
+    -webkit-background-clip:        text;
+    -webkit-text-fill-color:        transparent;
+    left:                           0;
+    top:                            0;
+    height:                         46px;
+    width:                          46px;
+    cursor:                         pointer;
+    display:                        block;
+    z-index:                        2;
+    -webkit-transition:             all 200ms linear;
+    transition:                     all 200ms linear;
+}
+.progress-wrap:hover::after,
+.progress-wrap:hover::before {
+    opacity:                        1;
 }
 
 //TESTS
