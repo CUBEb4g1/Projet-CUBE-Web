@@ -170,7 +170,6 @@
                         <a href="/"><img src="{{ asset_cache('media/logos/google-play.svg') }}" alt="Google Play" /></a>
                     </div>
                     <!-- Column -->
-                    <!-- Column -->
                     <div class="col-lg-3 col-md-6">
                         <div class="d-flex mb-2 mt-3">
                             <div class="display-7 mr-3 align-self-top"><i class="icon-location-pin"></i></div>
@@ -192,7 +191,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
                     <!-- Column -->
                     <div class="col-lg-6 col-md-12 m-t-5">
                         <h6 class="font-weight-medium mt-3">L'aventure</h6>
@@ -234,23 +232,15 @@
 		};
 	</script>
 	<script src="{{ mix('js/front/app.js') }}"></script>
+    {{-- Sticky menu script cheat --}}
     <script>
         stickyElem =
             document.querySelector(".sticky-div");
-
-        /* Gets the amount of height
-        of the element from the
-        viewport and adds the
-        pageYOffset to get the height
-        relative to the page */
+        /* Gets the amount of height of the element from the viewport and adds the pageYOffset to get the height relative to the page */
         currStickyPos =
             stickyElem.getBoundingClientRect().top + window.pageYOffset;
-
         window.onscroll = function() {
-
-            /* Check if the current Y offset
-            is greater than the position of
-            the element */
+            /* Check if the current Y offset is greater than the position of the element */
             if (window.pageYOffset > currStickyPos) {
                 stickyElem.style.position = "fixed";
                 stickyElem.style.top = "0px";

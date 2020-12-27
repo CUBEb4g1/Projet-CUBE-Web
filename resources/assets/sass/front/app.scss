@@ -16,9 +16,9 @@
 // === 7.   BANNER RULESET ========== Line 298  ===
 // === 8.   INCITATION RULESET ====== Line 345  ===
 // === 9.   SERVICE RULESET ========= Line 383  ===
-// === 10.  ABOUT RULESET =========== Line 429  ===
-// === 11.  TEAM RULESET ============ Line 443  ===
-// === 12.  CONTACT RULESET ========= Line 505  ===
+// === 10.  ABOUT RULESET =========== Line 438  ===
+// === 11.  TEAM RULESET ============ Line 452  ===
+// === 12.  CONTACT RULESET ========= Line 514  ===
 
 // === 1.   IMPORTS SET ===========================
 
@@ -383,8 +383,13 @@ h1{
 // === 9.   SERVICE RULESET =======================
 
 .our-services {
-    background:                     $dark;
-    padding:                        80px 0;
+    background-image:               url("https://phoenixia-prods.com/wp-content/uploads/2020/12/2.jpg");
+    height:                         100%;
+    background-attachment:          fixed;
+    background-position:            center;
+    background-repeat:              no-repeat;
+    background-size:                cover;
+    padding:                        0px 0 !important;
     h3 {
         color:                      $lighter;
     }
@@ -394,6 +399,10 @@ h1{
     }
     p {
         color:                      $white-smoke;
+    }
+    .parallax {
+        background-color:           rgba(0,0,0,.7);
+        padding:                    80px 0;
     }
 }
 .services-box {

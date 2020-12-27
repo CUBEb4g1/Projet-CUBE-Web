@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <section class="our-services" id="services">
+    <div class="parallax">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -31,5 +32,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
