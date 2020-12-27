@@ -95,7 +95,7 @@ h1{
     color:                          $dark;
 }
 .header2 .h2-nav .navbar-nav .nav-item .nav-link {
-    padding:                        12px 0px;
+    padding:                        12px 0;
     color:                          $white;
     font-weight:                    400;
 }
@@ -135,7 +135,7 @@ h1{
 @media (min-width: 1024px) {
     .header2 .navbar-nav>.dropdown .dropdown-menu {
         min-width:                  210px;
-        margin-top:                 0px;
+        margin-top:                 0;
     }
     .header2 .dropdown-submenu:hover>.dropdown-menu {
         display:                    block;
@@ -144,7 +144,7 @@ h1{
 @media (min-width: 1024px) {
     .header2 .hover-dropdown .navbar-nav > .dropdown:hover > .dropdown-menu {
         display:                    block;
-        margin-top:                 0px;
+        margin-top:                 0;
     }
 }
 
@@ -397,7 +397,7 @@ h1{
     background-position:            center;
     background-repeat:              no-repeat;
     background-size:                cover;
-    padding:                        0px 0 !important;
+    padding:                        0 !important;
     h3 {
         color:                      $lighter;
     }
@@ -565,7 +565,13 @@ section {
         color:                      $dark;
         left:                       0;
         top:                        0;
+        height:                     46px;
+        width:                      46px;
+        cursor:                     pointer;
+        display:                    block;
         z-index:                    1;
+        -webkit-transition:         all 200ms linear;
+        transition:                 all 200ms linear;
     }
     &:before {
         opacity:                    0;
