@@ -565,13 +565,7 @@ section {
         color:                      $dark;
         left:                       0;
         top:                        0;
-        height:                     46px;
-        width:                      46px;
-        cursor:                     pointer;
-        display:                    block;
         z-index:                    1;
-        -webkit-transition:         all 200ms linear;
-        transition:                 all 200ms linear;
     }
     &:before {
         opacity:                    0;
