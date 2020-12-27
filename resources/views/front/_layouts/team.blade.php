@@ -16,7 +16,7 @@
                     <div class="card card-shadow border-0 mb-4">
                         <!-- Row -->
                         <div class="row no-gutters">
-                            <div class="col-md-5 pro-pic" style="background:url({{ asset('/media/front/testimonial/KA.jpg') }}) center center no-repeat">
+                            <div class="col-md-5 pro-pic" style="background:url({{ asset('/media/front/testimonial/KA.png') }}) center center no-repeat">
                                 <div class="card-img-overlay">
                                     <ul class="list-inline position-relative text-center">
                                         <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-dark px-1"><i class="fab fa-github"></i></a></li>
@@ -42,7 +42,7 @@
                     <div class="card card-shadow border-0 mb-4">
                         <!-- Row -->
                         <div class="row no-gutters card-shadow">
-                            <div class="col-md-5 pro-pic" style="background:url({{ asset('/media/front/testimonial/QA.jpg') }}) center center no-repeat">
+                            <div class="col-md-5 pro-pic" style="background:url({{ asset('/media/front/testimonial/QA.png') }}) center center no-repeat">
                                 <div class="card-img-overlay">
                                     <ul class="list-inline position-relative text-center">
                                         <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-dark px-1"><i class="fab fa-github"></i></a></li>
@@ -71,7 +71,7 @@
                     <div class="card card-shadow border-0 mb-4">
                         <!-- Row -->
                         <div class="row no-gutters card-shadow">
-                            <div class="col-md-5 pro-pic" style="background:url({{ asset('/media/front/testimonial/NH.jpg') }}) center center no-repeat">
+                            <div class="col-md-5 pro-pic" style="background:url({{ asset('/media/front/testimonial/NH.png') }}) center center no-repeat">
                                 <div class="card-img-overlay">
                                     <ul class="list-inline position-relative text-center">
                                         <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-dark px-1"><i class="fab fa-github"></i></a></li>
@@ -97,7 +97,7 @@
                     <div class="card card-shadow border-0 mb-4">
                         <!-- Row -->
                         <div class="row no-gutters card-shadow">
-                            <div class="col-md-5 pro-pic" style="background:url({{ asset('/media/front/testimonial/CK.jpg') }}) center center no-repeat">
+                            <div class="col-md-5 pro-pic" style="background:url({{ asset('/media/front/testimonial/CK.png') }}) center center no-repeat">
                                 <div class="card-img-overlay">
                                     <ul class="list-inline position-relative text-center">
                                         <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-dark px-1"><i class="fab fa-github"></i></a></li>
