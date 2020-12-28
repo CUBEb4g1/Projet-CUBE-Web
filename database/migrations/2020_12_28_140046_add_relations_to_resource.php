@@ -16,8 +16,10 @@ class AddRelationsToResource extends Migration
         Schema::table('resources', function (Blueprint $table) {
             $table->unsignedInteger('relation_id');
             $table->foreign('relation_id')->references('id')->on('relations');
+
             $table->unsignedInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
+
             $table->unsignedInteger('resource_type_id');
             $table->foreign('resource_type_id')->references('id')->on('resource_types');
         });
