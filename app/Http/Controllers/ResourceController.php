@@ -37,16 +37,22 @@ class ResourceController extends Controller
 
     }
 
-    public function getValidatedlist()
+    public function getPreviewvalidatedlist()
     {
-        $ressourceList = Resource::with('user', 'comments')
+        $ressourceList = Resource::with('user')
             ->where('validated', 1)
             ->where('deleted', 0)
             ->paginate('25');
 
         //dd($ressourceList);
 
-        return view('front.resource', ['resources' => $ressourceList]);
+        return view('front.account.list', ['resources' => $ressourceList]);
+    }
+
+    public function getFullResource(Resource $resource, $id)
+    {
+        $getResource = $resource->with('user')->where('id', $id)->firstOrFail();
+        return view('front.account.getfullresource', ['resource' => $getResource]);
     }
 
     public function changeVisibility(Request $resource)

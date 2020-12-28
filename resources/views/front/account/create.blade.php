@@ -17,13 +17,12 @@
                         'required' => ''
                     ],
                 ])
-                <label class="col-sm-2 col-form-label" for="vType">Visibilité :
-                    <select class="browser-default custom-select" required name="vType">
-                        <option selected value="1">Publique</option>
-                        <option value="2">Privée</option>
-                        <option value="3">Partagée</option>
-                    </select>
-                </label>
+                <label class="col-sm-2 col-form-label" for="vType">Visibilité : </label>
+                <select class="browser-default custom-select" required name="vType">
+                    <option selected value="1">Publique</option>
+                    <option value="2">Privée</option>
+                    <option value="3">Partagée</option>
+                </select>
             </div>
             @form('textarea', [
                 'input' => [
