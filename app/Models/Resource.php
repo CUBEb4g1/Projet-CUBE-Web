@@ -25,6 +25,11 @@ class Resource extends Model
         'resource_type_id'
     ];
 
+    protected $casts = [
+        'validated' => 'boolean',
+        'deleted' => 'boolean',
+    ];
+
     const PRIVATE_TYPE = 1;
     const SHARED_TYPE = 2;
     const PUBLIC_TYPE = 3;

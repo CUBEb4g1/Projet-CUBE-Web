@@ -22,6 +22,10 @@ class AddRelationsToResource extends Migration
 
             $table->unsignedInteger('resource_type_id');
             $table->foreign('resource_type_id')->references('id')->on('resource_types');
+
+            $table->boolean('validated')->default(false)->change();
+            $table->boolean('deleted')->default(false)->change();
+            $table->integer('views')->default('0')->change();
         });
     }
 
