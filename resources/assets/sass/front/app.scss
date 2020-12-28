@@ -557,6 +557,7 @@ section {
     transition:                     all 200ms linear;
     &:after,
     &:before {
+        font-family:                "Font Awesome 5 Pro", sans-serif;
         position:                   absolute;
         content:                    "\f102";
         text-align:                 center;
