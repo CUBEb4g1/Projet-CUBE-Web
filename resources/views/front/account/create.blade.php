@@ -1,6 +1,43 @@
 @extends('front._layouts.app')
 @section('content')
-    <textarea></textarea>
+    <form action="{{ route('front.resource_add') }}" method="POST" id="addResource">
+        @csrf
+        <div class="container w-100 mx-auto">
+            <div class="input-group row mb-3 w-100 col-md-10">
+                @form('text', [
+                    'label' => [
+                        'text' => 'Titre de ressource :',
+                        'class' => 'col-sm-4 col-form-label'
+                    ],
+                    'input' => [
+                        'name' => 'title',
+                        'placeholder' => 'Titre de la ressource',
+                        'value' => old('title'),
+                        'class' => 'form-control mr-5',
+                        'required' => ''
+                    ],
+                ])
+                <label class="col-sm-2 col-form-label" for="vType">Visibilité : </label>
+                <select class="browser-default custom-select" required name="vType">
+                    <option selected value="1">Publique</option>
+                    <option value="2">Privée</option>
+                    <option value="3">Partagée</option>
+                </select>
+            </div>
+            @form('textarea', [
+                'input' => [
+                    'name' => 'content',
+                    'placeholder' => 'Créez votre ressource ici !',
+                    'value' => old('resource'),
+                    'required' => ''
+                ],
+            ])
+
+            <button type="submit" form="addResource" class="btn btn-dark btn-padded mt-2">
+                <i class="far fa-plus mr-2"></i> Poster la ressource
+            </button>
+        </div>
+    </form>
 @endsection
 @push('scripts')
     <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>

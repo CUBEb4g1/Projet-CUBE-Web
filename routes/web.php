@@ -44,9 +44,10 @@ Route::group([
 	Route::post('contact', [ContactController::class, 'send']);
 
 	// === Ressources === \\
-    Route::name('front.resource_list')->get('ressources/list', [ResourceController::class, 'getValidatedlist']);
-    Route::name('front.resource_update_visibility')->post('resource/updateVisibility', [ResourceController::class, 'changeVisibility']);
-    Route::name('front.resource_add')->post('resource/add', [ResourceController::class, 'addRessource']);
+    Route::name('front.resource_list')->get('resources/list', [ResourceController::class, 'getPreviewvalidatedlist']);
+    Route::name('front.ressource_get')->get('resources/get/{id}', [ResourceController::class, 'getFullResource'])->where(['id' => '\d*']);
+    Route::name('front.resource_update_visibility')->post('resources/updateVisibility', [ResourceController::class, 'changeVisibility']);
+    Route::name('front.resource_add')->post('resources/add', [ResourceController::class, 'add']);
 
     // == TEST VIEW ===
     Route::name("front.tinymce")->get('tinymce', [ResourceController::class, 'create']);
