@@ -10,7 +10,7 @@ class ResourceType extends Model
     use HasFactory;
 
     protected $fillable = [
-        'label', 'resource_id',
+        'label',
     ];
 
     /*

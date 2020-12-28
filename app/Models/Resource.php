@@ -20,6 +20,9 @@ class Resource extends Model
         'validated',
         'deleted',
         'views',
+        'category_id',
+        'relation_id',
+        'resource_type_id'
     ];
 
     const PRIVATE_TYPE = 1;
@@ -47,16 +50,16 @@ class Resource extends Model
 
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function resourceType()
     {
-        return $this->hasOne(ResourceType::class);
+        return $this->belongsTo(ResourceType::class);
     }
 
     public function relation()
     {
-        return $this->hasOne(Relation::class);
+        return $this->belongsTo(Relation::class);
     }
 }
