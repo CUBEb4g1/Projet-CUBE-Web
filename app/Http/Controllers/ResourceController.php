@@ -23,9 +23,6 @@ class ResourceController extends Controller
                 'content' => clean($request->input('content')),
                 'user_id' => Auth::User()->id,
                 'visibility' => $request->input('vType'),
-                'validated' => 0,
-                'deleted' => 0,
-                'views' => 0
             ]);
 
             Auth::user()->resources()->save($resource);
