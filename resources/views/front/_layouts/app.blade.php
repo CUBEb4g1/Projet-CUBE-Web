@@ -14,9 +14,8 @@
 	<link href="{{ mix('css/front/vendor.css') }}" rel="stylesheet">
 	<link href="{{ mix('css/front/app.css') }}" rel="stylesheet">
 	@stack('styles')
-    <script>
-
-    </script>
+    {{--Scripts--}}
+    <script></script>
 </head>
 <body id="top">
 	@include('_partials.maintenance_ribbon')
@@ -100,15 +99,10 @@
             </nav>
         </div>
     </div>
-    @include('front._layouts.banner')
     {{-- Content --}}
 	@yield('content')
     {{-- Back to Top Button --}}
-    <div class="progress-wrap">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
-        </svg>
-    </div>
+    @include('front._partials._back_to_top')
     {{-- Footer --}}
     <footer class="footer1">
         <div class="f1-topbar p-0">

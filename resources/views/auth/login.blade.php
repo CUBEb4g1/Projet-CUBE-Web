@@ -61,7 +61,7 @@
 									])
 								</div>
 
-								<button type="submit" class="btn btn-primary btn-block auth-card__btn">
+								<button type="submit" class="btn btn-md btn-block btn-outline-special btn-lg border-0">
 									{{ __('Login') }}
 								</button>
 
