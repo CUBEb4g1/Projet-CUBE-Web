@@ -46,7 +46,7 @@ Route::group([
 	// === Ressources === \\
     Route::name('front.resource_list')->get('ressources/list', [ResourceController::class, 'getValidatedlist']);
     Route::name('front.resource_update_visibility')->post('resource/updateVisibility', [ResourceController::class, 'changeVisibility']);
-    Route::name('front.resource_add')->post('resource/add', [ResourceController::class, 'addRessource']);
+    Route::name('front.resource_add')->post('resource/add', [ResourceController::class, 'add']);
 
     // == TEST VIEW ===
     Route::name("front.tinymce")->get('tinymce', [ResourceController::class, 'create']);

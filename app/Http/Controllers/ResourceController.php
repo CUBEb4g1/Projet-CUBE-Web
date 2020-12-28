@@ -15,18 +15,25 @@ class ResourceController extends Controller
     |--------------------------------------------------------------------------
     */
 
-    public function addResource(Request $request)
+    public function add(Request $request)
     {
-        $newresource = new Resource([
-            'content' => $request->input('content'),
-            'user_id' => Auth::User()->id,
-            'visibility' => $request->vType,
-            'validated' => 0,
-            'deleted' => 0,
-            'views' => 0,
-        ]);
+        if (!empty($request->input('content'))) {
+            $resource = new Resource([
+                'title' => $request->input('title'),
+                'content' => clean($request->input('content')),
+                'user_id' => Auth::User()->id,
+                'visibility' => $request->input('vType'),
+                'validated' => 0,
+                'deleted' => 0,
+                'views' => 0
+            ]);
 
-        Auth::user()->resources()->save($newresource);
+            Auth::user()->resources()->save($resource);
+
+            return redirect()->back()->with('warningNotif', "Nouveau post ajouté ! En attente de confirmation par un modérateur.");
+        } else {
+            return redirect()->back()->with('dangerNotif', "Veuillez remplir votre ressource !");
+        }
 
     }
 
@@ -37,7 +44,7 @@ class ResourceController extends Controller
             ->where('deleted', 0)
             ->paginate('25');
 
-        dd($ressourceList);
+        //dd($ressourceList);
 
         return view('front.resource', ['resources' => $ressourceList]);
     }
