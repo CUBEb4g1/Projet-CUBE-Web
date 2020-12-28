@@ -25,7 +25,7 @@ class AddRelationsToResource extends Migration
 
             $table->boolean('validated')->default(false)->change();
             $table->boolean('deleted')->default(false)->change();
-            $table->integer('views')->default('0')->change();
+            $table->bigInteger('views')->default('0')->change();
         });
     }
 
