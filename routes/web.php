@@ -10,7 +10,7 @@ use App\Http\Controllers\Back\SettingsController;
 use App\Http\Controllers\Back\UserController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\HomeController;
-use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\Front\ResourceController;
 use App\Models\Permission;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
