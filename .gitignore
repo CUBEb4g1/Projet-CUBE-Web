@@ -21,3 +21,4 @@ laravel-echo-server.json
 laravel-echo-server.lock
 npm-debug.log
 yarn-error.log
+composer.lock

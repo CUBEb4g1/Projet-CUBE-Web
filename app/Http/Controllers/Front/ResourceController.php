@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
 use App\Models\Resource;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,10 +47,9 @@ class ResourceController extends Controller
         return view('front.account.list', ['resources' => $ressourceList]);
     }
 
-    public function getFullResource(Resource $resource, $id)
+    public function getFullResource(Resource $resource)
     {
-        $getResource = $resource->with('user')->where('id', $id)->firstOrFail();
-        return view('front.account.getfullresource', ['resource' => $getResource]);
+        return view('front.account.getfullresource', ['resource' => $resource->with('user')->firstOrFail()]);
     }
 
     public function changeVisibility(Request $resource)
@@ -63,51 +63,8 @@ class ResourceController extends Controller
 
     }
 
-
     public function create()
     {
         return view("front.account.create");
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | BACK OFFICE
-    |--------------------------------------------------------------------------
-    */
-
-    public function getPendingValidationResources()
-    {
-        $getResources = Resource::with('user')->where('validated', 0)
-            ->where('deleted', 0)
-            ->paginate(25);
-
-        $totalResourcescount = $getResources->total();
-
-        return view('back.getPendingResources', ['ressourceList' => $getResources, 'totalCount' => $totalResourcescount]);
-    }
-
-    public function validateResource(Resource $resource)
-    {
-        $resource->validated = 1;
-        $resource->save();
-
-        return redirect()->back()->with('successNotif', "Ressource approuvée !");
-    }
-
-    public function refuseResource(Resource $resource)
-    {
-        $resource->validated = 0;
-        $resource->save();
-
-        return redirect()->back()->with('WarningNotif', "Ressource refusée !");
-    }
-
-    public function deleteResource(Resource $resource)
-    {
-        $resource->deleted = 1;
-        $resource->save();
-
-        return redirect()->back()->with('WarningNotif', "Ressource supprimée !");
-    }
-
 }
