@@ -22,10 +22,9 @@
                     ])
                 </p>
 
-
                 <p class="input-group mx-auto row mb-3 w-100 col-md-10">
                     <select class="browser-default custom-select" required name="vType">
-                        <option selected value="1">Visibilité</option>
+                        <option selected value="">Visibilité</option>
                         <option value="2">Publique</option>
                         <option value="3">Privée</option>
                         <option value="4">Partagée</option>
@@ -46,11 +45,10 @@
                 <p class="input-group mx-auto row mb-3 w-100 col-md-10">
                 @form('textarea', [
                     'input' => [
-                    'name' => 'content',
-                    'placeholder' => 'Créez votre ressource ici !',
-                    'class' => 'form-control',
-                    'value' => old('resource'),
-                    'required'
+                        'name' => 'content',
+                        'placeholder' => 'Créez votre ressource ici !',
+                        'class' => 'form-control',
+                        'value' => old('resource'),
                     ],
                 ])
                 </p>

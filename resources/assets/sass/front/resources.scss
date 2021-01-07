@@ -1,5 +1,6 @@
 body {
-    background-image: url("https://phoenixia-prods.com/wp-content/uploads/2020/12/3.jpg")!important;
+    background: url("https://phoenixia-prods.com/wp-content/uploads/2020/12/3.jpg") no-repeat center center fixed!important;
+    background-size: cover;
 }
 
 h3, .h3 {
@@ -40,4 +41,89 @@ label {
     background-color: rgba(0,0,0,.7);
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.card {
+    border:none;
+    color: #fff;
+    -webkit-border-bottom-right-radius: 0.25rem;
+    -webkit-border-bottom-left-radius: 0.25rem;
+    -moz-border-radius-bottomright: 0.25rem;
+    -moz-border-radius-bottomleft: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    background-color: rgba(0,0,0,0);
+}
+
+.card-header {
+    background: linear-gradient(to right, #0faf96 0%, #63ff96 100%);
+}
+
+.card-body{
+    color: #000;
+    background: linear-gradient(to right, #0faf96 0%, #63ff96 100%)!important;
+    /* haut | droit | bas | gauche */
+    padding: 0.15rem 0.15rem 0 0.15rem;
+    background-origin: border-box;
+}
+
+.content {
+    padding: 0.25rem;
+    background-color: #ffffff;
+    min-height:100vh;
+}
+
+.card-footer {
+    background: #333333;
+    color: #fff;
+    -webkit-border-bottom-right-radius: 0.25rem;
+    -webkit-border-bottom-left-radius: 0.25rem;
+    -moz-border-radius-bottomright: 0.25rem;
+    -moz-border-radius-bottomleft: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.card-footer {
+    background: linear-gradient(to right, #0faf96 0%, #63ff96 100%)!important;
+    /* haut | droit | bas | gauche */
+    padding: 0 0.15rem 0.15rem 0.15rem;
+    background-origin: border-box;
+}
+
+.footer-content {
+    background: #333333;
+    color: #fff;
+    -webkit-border-bottom-right-radius: 0.25rem;
+    -webkit-border-bottom-left-radius: 0.25rem;
+    -moz-border-radius-bottomright: 0.25rem;
+    -moz-border-radius-bottomleft: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    padding: 10px;
+}
+
+.comment-card-body {
+    color: #000;
+    background: linear-gradient(to right, #0faf96 0%, #63ff96 100%)!important;
+    /* haut | droit | bas | gauche */
+    padding: 0.15rem;
+    background-origin: border-box;
+    -webkit-border-bottom-right-radius: 0.25rem;
+    -webkit-border-bottom-left-radius: 0.25rem;
+    -moz-border-radius-bottomright: 0.25rem;
+    -moz-border-radius-bottomleft: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.comment-content {
+    min-height: 20vh;
+    background-color: #ffffff;
+    -webkit-border-bottom-right-radius: 0.25rem;
+    -webkit-border-bottom-left-radius: 0.25rem;
+    -moz-border-radius-bottomright: 0.25rem;
+    -moz-border-radius-bottomleft: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
 }
