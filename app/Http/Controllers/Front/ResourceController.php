@@ -52,7 +52,7 @@ class ResourceController extends Controller
 
     public function getFullResource(Resource $resource)
     {
-        return view('front.account.getfullresource', ['resource' => $resource->with('user')->firstOrFail()]);
+        return view('front.account.getfullresource', ['resource' => $resource->with('user')->where('id',$resource->id)->firstOrFail()]);
     }
 
     public function changeVisibility(Request $resource)
