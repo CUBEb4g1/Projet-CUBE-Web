@@ -4,8 +4,12 @@ namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Notifications\NotifyNewUserAccount;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class CategoryController extends Controller
 {
@@ -14,6 +18,9 @@ class CategoryController extends Controller
     | FRONT OFFICE
     |--------------------------------------------------------------------------
     */
+    /**
+     * Lister
+     */
     public function listCategory()
     {
         $categoryList = DB::table('categories')
@@ -21,22 +28,22 @@ class CategoryController extends Controller
             ->orderBy('label','asc')
             ->paginate('25');
 
-        dd($categoryList);
-
         return view('front.resource', ['category' => $categoryList]);
     }
-    public function addCategory(Request $category)
+    /**
+     * Lister
+     */
+    public function index()
     {
-        $addCategory = new Category(array(
-            ['label' => $category->label],
-        ));
+        $categories = Category::all();
 
-        if ($category === 1)
-        {
-            return redirect()->back()->with('successNotif', "Catégorie créée avec succès !");
-        }else{
-            return redirect()->back()->with('dangerNotif', "Une erreur est survenue !");
-        }
+        return view('back.category.list',compact('categories'));
+    }
+    public function list()
+    {
+        return view('back.category.list', [
+            'categories' => Category::with('resource')->paginate(25),
+        ]);
     }
 
     /*
@@ -44,20 +51,77 @@ class CategoryController extends Controller
     | BACK OFFICE
     |--------------------------------------------------------------------------
     */
-    public function changeCategory(Request $category)
+    /**
+     * Afficher le formulaire
+     */
+    public function form(Category $category = null)
     {
-        $changeCategory = Category::where('id', $category->id)->update(array('label' => $category->vType));
-        if ($changeCategory === 1) {
-            return redirect()->back()->with('successNotif', "Nom de la catégorie modifié avec succès !");
-        } else {
-            return redirect()->back()->with('dangerNotif', "Une erreur est survenue !");
-        }
+        return view('back.category.form', [
+            'category' => $category,
+        ]);
     }
-    public function deleteCategory(Request $category)
+    /**
+     * Submit du formulaire
+     *
+     * @param Request $request
+     */
+    public function save(Request $request, Category $category = null)
     {
-        $category->deleted = 1;
-        $category->save();
+        $this->_validator($request, $category);
 
-        return redirect()->back()->with('WarningNotif', "Catégorie supprimée avec succès !");
+        if ($category === null) {
+            $category = $this->_create($request);
+        } else {
+            $this->_update($category, $request);
+        }
+
+        return redirect()->route('back.category.list')
+            ->with('successNotif', __('notifications.common.saved'));
+    }
+    /**
+     * Valider le formulaire
+     */
+    protected function _validator(Request $request, Category $model = null)
+    {
+        $rules = [
+            'label' => ['required', 'max:150'],
+        ];
+
+        if ($model === null) {
+            $rules['label'][] = 'unique:categories';
+        } else {
+            $rules['label'][] = 'unique:categories,label,' . $model->id;
+        }
+
+        $this->validate($request, $rules);
+    }
+    /**
+     * Créer
+     */
+    protected function _create(Request $request)
+    {
+        $category = Category::create($request->all());
+        $category->save();
+        return redirect()->route('back.category.list')
+            ->with('successNotif', __('notifications.common.saved'));
+    }
+    /**
+     * Modifier
+     */
+    protected function _update(Category $category, Request $request)
+    {
+        $category->update(['label' => $request->label]);
+        return redirect()->route('back.category.list')
+                ->with('successNotif', __('notifications.common.saved'));
+    }
+    /**
+     * Supprimer
+     */
+    public function delete(Category $category)
+    {
+        $category->delete();
+
+        return redirect()->route('back.category.list')
+            ->with('WarningNotif', "Catégorie supprimée avec succès !");
     }
 }

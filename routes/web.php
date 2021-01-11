@@ -97,7 +97,13 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
 		Route::name('back.permission.save')->post('permission/form/{permission?}', [PermissionController::class, 'save'])->where(['permission' => '\d*']);
 		Route::name('back.permission.delete')->get('permission/delete/{permission}', [PermissionController::class, 'delete'])->where(['permission' => '\d+']);
 
-		// === Settings ===
+        // === CRUD categories ===
+        Route::name('back.category.list')->get('category', [\App\Http\Controllers\Back\CategoryController::class, 'list']);
+        Route::name('back.category.form')->get('category/form/{category?}', [\App\Http\Controllers\Back\CategoryController::class, 'form'])->where(['category' => '\d*']);
+        Route::name('back.category.save')->post('category/form/{category?}', [\App\Http\Controllers\Back\CategoryController::class, 'save'])->where(['category' => '\d*']);
+        Route::name('back.category.delete')->get('category/delete/{category}', [\App\Http\Controllers\Back\CategoryController::class, 'delete'])->where(['category' => '\d+']);
+
+        // === Settings ===
 		Route::name('back.settings.parameters')->get('settings/parameters', [SettingsController::class, 'parameters']);
 		Route::name('back.settings.parameters')->post('settings/parameters', [SettingsController::class, 'saveParameters']);
 	});

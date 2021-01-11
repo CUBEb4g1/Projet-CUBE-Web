@@ -161,6 +161,12 @@
 							<div class="text-uppercase font-size-xs line-height-xs">CMS</div>
 							<i class="far fa-ellipsis-h" title="CMS"></i>
 						</li>
+                        <li class="nav-item">
+                            <a href="{{ route('back.category.list') }}" class="nav-link {{ hlrt_begins_with('back.category') }}">
+                                <i class="nav-main-link-icon fas fa-boxes"></i>
+                                <span>{{ __('Categories') }}</span>
+                            </a>
+                        </li>
 						<li class="nav-item">
 							<a href="{{ route('back.page.list') }}" class="nav-link {{ hlrt_begins_with('back.page') }}">
 								<i class="nav-main-link-icon fas fa-layer-group fa-fw"></i>
