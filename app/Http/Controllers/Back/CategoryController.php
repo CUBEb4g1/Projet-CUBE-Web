@@ -30,27 +30,21 @@ class CategoryController extends Controller
 
         return view('front.resource', ['category' => $categoryList]);
     }
-    /**
-     * Lister
-     */
-    public function index()
-    {
-        $categories = Category::all();
-
-        return view('back.category.list',compact('categories'));
-    }
-    public function list()
-    {
-        return view('back.category.list', [
-            'categories' => Category::with('resource')->paginate(25),
-        ]);
-    }
 
     /*
     |--------------------------------------------------------------------------
     | BACK OFFICE
     |--------------------------------------------------------------------------
     */
+    /**
+     * Lister
+     */
+    public function list()
+    {
+        return view('back.category.list', [
+            'categories' => Category::with('resource')->paginate(25),
+        ]);
+    }
     /**
      * Afficher le formulaire
      */
