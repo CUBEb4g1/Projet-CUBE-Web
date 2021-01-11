@@ -46,16 +46,16 @@ Route::group([
 	// === Ressources === \\
     Route::name('front.resource_list')->get('resources/list', [ResourceController::class, 'getPreviewvalidatedlist']);
     Route::name('front.resource_get')->get('resources/get/{resource}', [ResourceController::class, 'getFullResource'])->where(['resource' => '\d*']);
+
     Route::get('resources/add', function() {
         return redirect()->route('home');
     });
-    Route::name('front.resource_update_visibility')->post('resources/updateVisibility', [ResourceController::class, 'changeVisibility']);
-    Route::name('front.resource_add')->post('resources/add', [ResourceController::class, 'add']);
-
 
 	Route::middleware(['auth', 'verified'])->group(function () {
 		// .. Les utilisateurs doivent être connectés
         Route::name("front.resourcecreate")->get('resources/create', [ResourceController::class, 'create']);
+        Route::name('front.resource_add')->post('resources/add', [ResourceController::class, 'add']);
+        Route::name('front.resource_update_visibility')->post('resources/updateVisibility', [ResourceController::class, 'changeVisibility']);
 	});
 
 
@@ -103,6 +103,10 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
 		Route::name('back.settings.parameters')->get('settings/parameters', [SettingsController::class, 'parameters']);
 		Route::name('back.settings.parameters')->post('settings/parameters', [SettingsController::class, 'saveParameters']);
 	});
+
+    Route::middleware(['permission:'.Permission::ADMIN_TOOLS])->group(function () {
+
+    });
 
     // === Gestion des Ressources === \\
     Route::name('back.resourcePending')->get('ressources/pending', [ResourceController::class, 'getPendingValidationResources']);

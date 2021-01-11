@@ -42,17 +42,14 @@ class ResourceController extends Controller
     {
         $ressourceList = Resource::with('user')
             ->where('validated', 1)
-            ->where('deleted', 0)
             ->paginate('25');
-
-        //dd($ressourceList);
 
         return view('front.account.list', ['resources' => $ressourceList]);
     }
 
     public function getFullResource(Resource $resource)
     {
-        return view('front.account.getfullresource', ['resource' => $resource->with('user')->where('id',$resource->id)->where('validated', 1)->firstOrFail()]);
+        return view('front.account.getfullresource', ['resource' => $resource->with('user')->where('visibility', 3)->where('id', $resource->id)->where('validated', 1)->firstOrFail()]);
     }
 
     public function changeVisibility(Request $resource)
@@ -63,7 +60,6 @@ class ResourceController extends Controller
         } else {
             return redirect()->back()->with('dangerNotif', "Erreur erreur est survenue !");
         }
-
     }
 
     public function create()

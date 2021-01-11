@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
 use Overtrue\LaravelFavorite\Traits\Favoriteable;
 use Overtrue\LaravelSubscribe\Traits\Subscribable;
 
@@ -66,5 +67,20 @@ class Resource extends Model
     public function relation()
     {
         return $this->belongsTo(Relation::class);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | EVENTS
+    |--------------------------------------------------------------------------
+    */
+
+    protected static function boot()
+    {
+        parent::boot();
+        // Par défaut récupérer uniquement les ressources non supprimées.
+        static::addGlobalScope('no_deleted', function (Builder $builder) {
+            $builder->where('deleted', false);
+        });
     }
 }
