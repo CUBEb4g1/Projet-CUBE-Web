@@ -4,8 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53c94eebfe2bb36d5516865b7fda1440",
+    "content-hash": "553ee961f06999e81b82a2e9c7222d7a",
     "packages": [
+        {
+            "name": "arielmejiadev/larapex-charts",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ArielMejiaDev/larapex-charts.git",
+                "reference": "fa1631ad56275500a1381138fab13fb2064b20a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ArielMejiaDev/larapex-charts/zipball/fa1631ad56275500a1381138fab13fb2064b20a1",
+                "reference": "fa1631ad56275500a1381138fab13fb2064b20a1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ArielMejiaDev\\LarapexCharts\\LarapexChartsServiceProvider"
+                    ],
+                    "aliases": {
+                        "LarapexCharts": "ArielMejiaDev\\LarapexCharts\\Facades\\LarapexCharts"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ArielMejiaDev\\LarapexCharts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ArielMejiaDev",
+                    "email": "arielmejiadev@gmail.com"
+                }
+            ],
+            "description": "Package to provide easy api to build apex charts on Laravel",
+            "support": {
+                "issues": "https://github.com/ArielMejiaDev/larapex-charts/issues",
+                "source": "https://github.com/ArielMejiaDev/larapex-charts/tree/1.0.5"
+            },
+            "time": "2020-02-07T20:43:50+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.9.1",

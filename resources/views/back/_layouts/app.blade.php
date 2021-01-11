@@ -167,6 +167,21 @@
 								<span>{{ __('Pages') }}</span>
 							</a>
 						</li>
+
+                        {{-- Statistical --}}
+                        @can($ADMIN_TOOLS)
+                            <li class="nav-item-header">
+                                <div class="text-uppercase font-size-xs line-height-xs">Statistiques</div>
+                                <i class="far fa-ellipsis-h" title="Statistiques"></i>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('back.stats.list') }}" class="nav-link {{ hlrt_is('back.stats') }}">
+                                    <i class="nav-main-link-icon fas fa-chart-pie fa-fw"></i>
+                                    <span>Statistiques globales</span>
+                                </a>
+                            </li>
+                        @endcan
+
 						{{-- Users --}}
 						<li class="nav-item-header">
 							<div class="text-uppercase font-size-xs line-height-xs">{{ __('Users') }}</div>

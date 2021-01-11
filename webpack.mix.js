@@ -20,6 +20,7 @@ mix.sass('resources/assets/sass/front/vendor.scss', 'public/css/front')
 // === Back ===
 mix.sass('resources/assets/sass/back/vendor.scss', 'public/css/back')
 	.sass('resources/assets/sass/back/app.scss', 'public/css/back')
+	.sass('resources/assets/sass/back/statistics.scss', 'public/css/back')
 	.js('resources/assets/js/back/app.js', 'public/js/back')
 ;
 
