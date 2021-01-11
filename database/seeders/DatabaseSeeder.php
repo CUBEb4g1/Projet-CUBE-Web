@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
 		$this->call([
 			FunctionsSeeder::class,
             UserSeeder::class,
-            CreateFakeDataSeeder::class
+            CreateFakeDataSeeder::class,
+            ResourceSeeder::class
 //			UsersTableSeeder::class,
 		]);
 	}
