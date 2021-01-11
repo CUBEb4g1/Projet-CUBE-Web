@@ -19,6 +19,8 @@ class CreateCommentsTable extends Migration
             $table->integer('parent_id')->unsigned()->nullable();
             $table->text('comment');
             $table->integer('resource_id')->unsigned();
+            $table->boolean('is_validated')->default(false);
+            $table->boolean('is_deleted')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });

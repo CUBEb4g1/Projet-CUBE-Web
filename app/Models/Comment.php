@@ -17,7 +17,14 @@ class Comment extends Model
         'user_id',
         'resource_id',
         'parent_id',
-        'comment'
+        'comment',
+        'is_validated',
+        'is_deleted'
+    ];
+
+    protected $casts = [
+        'is_validated' => 'boolean',
+        'is_deleted'   => 'boolean',
     ];
 
     protected $with = [
