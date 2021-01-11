@@ -24,6 +24,9 @@ class ResourceController extends Controller
                 'content' => clean($request->input('content')),
                 'user_id' => Auth::User()->id,
                 'visibility' => $request->input('vType'),
+                'relation_id' => '1',
+                'category_id' => '1',
+                'resource_type_id' => '1',
             ]);
 
             Auth::user()->resources()->save($resource);
@@ -49,7 +52,7 @@ class ResourceController extends Controller
 
     public function getFullResource(Resource $resource)
     {
-        return view('front.account.getfullresource', ['resource' => $resource->with('user')->firstOrFail()]);
+        return view('front.account.getfullresource', ['resource' => $resource->with('user')->where('id',$resource->id)->where('validated', 1)->firstOrFail()]);
     }
 
     public function changeVisibility(Request $resource)

@@ -45,15 +45,17 @@ Route::group([
 
 	// === Ressources === \\
     Route::name('front.resource_list')->get('resources/list', [ResourceController::class, 'getPreviewvalidatedlist']);
-    Route::name('front.ressource_get')->get('resources/get/{id}', [ResourceController::class, 'getFullResource'])->where(['id' => '\d*']);
+    Route::name('front.resource_get')->get('resources/get/{resource}', [ResourceController::class, 'getFullResource'])->where(['resource' => '\d*']);
+    Route::get('resources/add', function() {
+        return redirect()->route('home');
+    });
     Route::name('front.resource_update_visibility')->post('resources/updateVisibility', [ResourceController::class, 'changeVisibility']);
     Route::name('front.resource_add')->post('resources/add', [ResourceController::class, 'add']);
 
-    // == TEST VIEW ===
-    Route::name("front.tinymce")->get('tinymce', [ResourceController::class, 'create']);
 
 	Route::middleware(['auth', 'verified'])->group(function () {
 		// .. Les utilisateurs doivent être connectés
+        Route::name("front.resourcecreate")->get('resources/create', [ResourceController::class, 'create']);
 	});
 
 

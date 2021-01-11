@@ -13,6 +13,7 @@ require(__dirname + '/modules/Cms/webpack.mix.js');
 mix.sass('resources/assets/sass/front/vendor.scss', 'public/css/front')
 	.sass('resources/assets/sass/front/app.scss', 'public/css/front')
 	.sass('resources/assets/sass/auth.scss', 'public/css')
+	.sass('resources/assets/sass/front/resources.scss', 'public/css')
 	.js('resources/assets/js/front/app.js', 'public/js/front')
 ;
 
