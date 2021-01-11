@@ -64,7 +64,7 @@ class CategoryController extends Controller
         $this->_validator($request, $category);
 
         if ($category === null) {
-            $category = $this->_create($request);
+            $this->_create($request);
         } else {
             $this->_update($category, $request);
         }
