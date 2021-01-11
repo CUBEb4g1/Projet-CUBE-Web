@@ -12,7 +12,6 @@
         <div class="mb-3">
             <a href="{{ route('back.category.form') }}" class="btn btn-sm btn-primary"><i class="fa fa-fw fa-plus"></i> {{ __('Add') }}</a>
         </div>
-
         <div class="card">
             <table class="table table-striped">
                 @include('back.category._partials.list_table', ['categories' => $categories])

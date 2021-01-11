@@ -14,6 +14,9 @@
         <td>
             {{ $category->label }}
         </td>
+        <td>
+            {{ $category->active }}
+        </td>
         <td class="text-right text-nowrap">
             {{-- Modifier --}}
                 <a href="{{ route('back.category.form', ['category' => $category->id]) }}" class="btn btn-sm" data-toggle="tooltip" title="{{ __('Edit') }}">
