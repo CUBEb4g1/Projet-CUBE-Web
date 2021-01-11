@@ -7,6 +7,7 @@ use App\Http\Controllers\Back\NavMenuController;
 use App\Http\Controllers\Back\PermissionController;
 use App\Http\Controllers\Back\RoleController;
 use App\Http\Controllers\Back\SettingsController;
+use App\Http\Controllerr\Back\ManageRelationsController;
 use App\Http\Controllers\Back\UserController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\HomeController;
@@ -100,6 +101,9 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
 		// === Settings ===
 		Route::name('back.settings.parameters')->get('settings/parameters', [SettingsController::class, 'parameters']);
 		Route::name('back.settings.parameters')->post('settings/parameters', [SettingsController::class, 'saveParameters']);
+
+		// === Rel ===
+		Route::name('relations', 'ManageRelationsController');
 	});
 
     // === Gestion des Ressources === \\
