@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Models\Comment;
 use App\Models\Resource;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -49,7 +50,14 @@ class ResourceController extends Controller
 
     public function getFullResource(Resource $resource)
     {
-        return view('front.account.getfullresource', ['resource' => $resource->with('user')->where('visibility', 3)->where('id', $resource->id)->where('validated', 1)->firstOrFail()]);
+        $resource->with(['user'])
+            ->where('visibility', 3)
+            ->where('id', $resource->id)
+            ->where('validated', 1)->firstOrFail();
+
+        $commentsFull = $resource->comments()->with(['user', 'replies.user'])->paginate(10);
+
+        return view('front.account.getfullresource', compact('resource', 'commentsFull'));
     }
 
     public function changeVisibility(Request $resource)

@@ -82,6 +82,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasLocalePreferen
     {
         return $this->hasMany(Comment::class);
     }
+
 	/*
 	|--------------------------------------------------------------------------
 	| SCOPES
