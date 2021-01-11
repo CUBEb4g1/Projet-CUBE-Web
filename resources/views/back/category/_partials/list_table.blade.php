@@ -22,7 +22,7 @@
             @component('back._cmpts.more_actions')
                 {{-- Supprimer --}}
                     <a href="{{ route('back.category.delete', ['category' => $category->id]) }}" class="dropdown-item text-danger" data-toggle="tooltip" title="{{ __('Delete') }}">
-                        <i class="fa fa-user-times fa-fw"></i>{{ __('Delete') }}
+                        <i class="fas fa-trash-alt"></i>{{ __('Delete') }}
                     </a>
             @endcomponent
         </td>
