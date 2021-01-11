@@ -30,3 +30,4 @@ class AddActiveToCategoriesTable extends Migration
         });
     }
 }
+
