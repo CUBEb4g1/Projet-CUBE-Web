@@ -58,8 +58,8 @@ Route::group([
         Route::name('front.resource_add')->post('resources/add', [ResourceController::class, 'add']);
         Route::name('front.resource_update_visibility')->post('resources/updateVisibility', [ResourceController::class, 'changeVisibility']);
 
+        // === Comments ===
         Route::name('comments.store')->post('/comment/store', [CommentController::class, 'store']);
-        Route::name('comment.add')->post('/reply/store', [CommentController::class, 'replyStore']);
 	});
 
 
