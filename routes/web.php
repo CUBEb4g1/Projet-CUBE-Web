@@ -8,6 +8,7 @@ use App\Http\Controllers\Back\PermissionController;
 use App\Http\Controllers\Back\RoleController;
 use App\Http\Controllers\Back\SettingsController;
 use App\Http\Controllers\Back\UserController;
+use App\Http\Controllers\Front\CommentController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ResourceController;
@@ -56,6 +57,9 @@ Route::group([
         Route::name("front.resourcecreate")->get('resources/create', [ResourceController::class, 'create']);
         Route::name('front.resource_add')->post('resources/add', [ResourceController::class, 'add']);
         Route::name('front.resource_update_visibility')->post('resources/updateVisibility', [ResourceController::class, 'changeVisibility']);
+
+        // === Comments ===
+        Route::name('comments.store')->post('/comment/store', [CommentController::class, 'store']);
 	});
 
 

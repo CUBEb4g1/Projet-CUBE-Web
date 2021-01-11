@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder;
 use Overtrue\LaravelFavorite\Traits\Favoriteable;
 use Overtrue\LaravelSubscribe\Traits\Subscribable;
 
@@ -31,6 +31,7 @@ class Resource extends Model
         'deleted' => 'boolean',
     ];
 
+
     const PRIVATE_TYPE = 1;
     const SHARED_TYPE = 2;
     const PUBLIC_TYPE = 3;
@@ -51,7 +52,8 @@ class Resource extends Model
 
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class)->whereNull('parent_id');
+
     }
 
     public function category()
