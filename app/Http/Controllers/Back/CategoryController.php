@@ -124,4 +124,26 @@ class CategoryController extends Controller
         return redirect()->route('back.category.list')
             ->with('WarningNotif', "Catégorie supprimée avec succès !");
     }
+    /**
+     * Désactiver la catégorie
+     */
+    public function disable(Category $category)
+    {
+        $category->active = 0;
+        $category->save();
+
+        return redirect()->back()
+            ->with('infoNotif', 'Catégorie désactivée');
+    }
+    /**
+     * Réactiver la catégorie
+     */
+    public function enable(Category $category)
+    {
+        $category->active = 1;
+        $category->save();
+
+        return redirect()->back()
+            ->with('infoNotif', 'Catégorie réactivée');
+    }
 }
