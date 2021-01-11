@@ -14,15 +14,17 @@
     ])@endcomponent
 
     <div class="content">
-        <div class="d-flex flex-row flex-wrap justify-content-center">
-            <div class="d-flex justify-content-center mr-5">
-                @include('back.statistics._partials.userstats', ['UserTotalCount' => $UserTotalCount, 'UserVerifiedCount' => $UserVerifiedCount, 'UserNotVerifiedCount' => $UserNotVerifiedCount, 'Userchart' => $Userchart])
-            </div>
+        <div class="d-flex flex-row flex-wrap justify-content-around">
+            @include('back.statistics._partials.userstats', ['UserTotalCount' => $UserTotalCount, 'UserVerifiedCount' => $UserVerifiedCount, 'UserNotVerifiedCount' => $UserNotVerifiedCount, 'Userchart' => $Userchart])
+            @include('back.statistics._partials.ressourcelist', ['ResourceTotalCount' => $ResourceTotalCount, 'VerifiedCount' => $ResourceVerifiedCount, ['ResourcesDeletedCount' => $ResourcesDeletedCount], ['ResourceNotVerifiedCount' => $ResourceNotVerifiedCount],'Resourcechart' => $Resourcechart])
 
-            <div class="d-flex justify-content-center mr-5">
-                @include('back.statistics._partials.ressourcelist', ['ResourceTotalCount' => $ResourceTotalCount, 'VerifiedCount' => $ResourceVerifiedCount, ['ResourcesDeletedCount' => $ResourcesDeletedCount], ['ResourceNotVerifiedCount' => $ResourceNotVerifiedCount],'Resourcechart' => $Resourcechart])
-            </div>
         </div>
+        {!! $UserRegistredByDate->container() !!}
     </div>
+
 @endsection
+@push('scripts')
+    <script src="{{ asset('modules/apexcharts/dist/apexcharts.js') }}"></script>
+    {{ $UserRegistredByDate->script() }}
+@endpush
 

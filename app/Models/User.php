@@ -217,6 +217,13 @@ class User extends Authenticatable implements MustVerifyEmail, HasLocalePreferen
 		}
 	}
 
+    public function getDates()
+    {
+        return [
+            'created_at',
+            'updated_at',
+        ];
+    }
 	/*
 	|--------------------------------------------------------------------------
 	| LOGIC FUNCTIONS

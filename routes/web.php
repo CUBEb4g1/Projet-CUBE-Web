@@ -11,7 +11,7 @@ use App\Http\Controllers\Back\UserController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ResourceController;
-use App\Http\Controllers\StatisticsController;
+use App\Http\Controllers\Back\StatisticsController;
 use App\Models\Permission;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 

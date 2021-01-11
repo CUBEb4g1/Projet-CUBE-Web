@@ -1,8 +1,12 @@
-
 <div class="card">
-    <div class="card-header bg-botitle h2">Ressources</div>
-    <div class="card-body bg-bobody bo-cardpadding ">
-        <div class="list-group list-group-flush bg-bobody text-left p-3">
+    <div class="card-header bg-botitle h2 d-flex justify-content-between">
+        Ressources
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="d-flex justify-content-end btn btn-primary">Plus de stats</button>
+        </div>
+    </div>
+    <div class="card-body bg-bobody bo-cardpadding my-0">
+        <div class="list-group list-group-flush bg-bobody text-left p-3 mb-5">
             <div class="d-flex">
                 <div class="d-flex align-items-start mr-3 w-100">
                     <span class="h5">Nombres de ressources créer :</span>
@@ -39,9 +43,9 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex bg-light w-100 justify-content-end">
-            {!! $Resourcechart->container() !!}
-        </div>
+    </div>
+    <div class="d-flex bg-light p-1 align-items-end">
+        {!! $Resourcechart->container() !!}
     </div>
 </div>
 @push('scripts')
