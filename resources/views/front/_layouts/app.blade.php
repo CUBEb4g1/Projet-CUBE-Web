@@ -128,6 +128,9 @@
                                             <a href="{{ route('logout') }}" class="nav-link d-block" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
                                             </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
                                         @else
                                             {{--Login--}}
                                             <a href="{{ route('login') }}" class="nav-link d-block">{{ __('Login') }}</a>
