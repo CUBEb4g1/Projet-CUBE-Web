@@ -46,6 +46,13 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#">A propos</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
+                    <li class="nav-item">
+                        @if (Auth::check())
+                            {{--Profile--}}
+                            <a href="{{ route('profile') }}" class="nav-link">Mon profil</a>
+                        @else
+                        @endif
+                    </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="btn rounded-pill btn-dark py-2 px-4" href="#"><i class="far fa-question-circle"></i> Guide</a></li>
