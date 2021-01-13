@@ -10,7 +10,7 @@
                 </div>
                 <h4 class="user-name">{{Auth::user()->username}}</h4>
                 <div class="profile-description">
-                    <p class="scnd-font-color">Lorem ipsum dolor sit amet consectetuer adipiscing</p>
+                    <p class="scnd-font-color">{{Auth::user()->bio}}</p>
                 </div>
                 <ul class="profile-options horizontal-list">
                     <li><a class="comments" href="#"><p><span class="icon far fa-comment-alt scnd-font-color"></span>23</p></a></li>
