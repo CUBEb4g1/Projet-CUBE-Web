@@ -2,7 +2,7 @@
     <div class="card-header bg-botitle h2 d-flex justify-content-between">
         Ressources
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button type="button" class="d-flex justify-content-end btn btn-primary">Plus de stats</button>
+            <a type="button" class="d-flex justify-content-end btn btn-primary" href="{{ route('back.stats.resources') }}">Plus de stats</a>
         </div>
     </div>
     <div class="card-body bg-bobody bo-cardpadding my-0">

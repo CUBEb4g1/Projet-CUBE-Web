@@ -1,9 +1,9 @@
 <div class="card">
     <div class="card-header bg-botitle h2 d-flex justify-content-between">
         Utilisateurs
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button type="button" class="d-flex justify-content-end btn btn-primary">Plus de stats</button>
-        </div>
+{{--        <div class="d-grid gap-2 d-md-flex justify-content-md-end">--}}
+{{--            <a type="button" class="d-flex justify-content-end btn btn-primary" href="{{ route('back.stats.users') }}">Plus de stats</a>--}}
+{{--        </div>--}}
     </div>
     <div class="card-body bg-bobody bo-cardpadding my-0">
         <div class="list-group list-group-flush bg-bobody text-left p-3">

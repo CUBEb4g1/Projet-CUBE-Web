@@ -18,13 +18,13 @@ class StatisticsController extends Controller
         $TotalUserVerifiedCount = User::where('email_verified_at','!=', NULL)->count();
 
         $Userchart = (new LarapexChart)->setDataset([
-            $TotalUserVerifiedCount,
-            $TotalNotUserVerifiedCount
+            round((100*$TotalUserVerifiedCount)/$TotaluserCount,2),
+            round((100*$TotalNotUserVerifiedCount)/$TotaluserCount,2)
         ])
             ->setLabels(['Confirmés', 'Non confirmés'])
             ->setType('pie')
+            ->setTitle('Graphique (en %)')
             ->setHeight('200');
-
 
         $TotalresourcesCount = Resource::withoutGlobalScope('no_deleted')->count();
         $VerifiedresourcesCount = Resource::withoutGlobalScope('no_deleted')->where('validated', 1)->where('deleted', 0)->count();
@@ -32,12 +32,13 @@ class StatisticsController extends Controller
         $DeletedresourcesCount = Resource::withoutGlobalScope('no_deleted')->where('deleted', 1)->count();
 
         $Resourcechart = (new LarapexChart)->setDataset([
-                $VerifiedresourcesCount,
-                $DeletedresourcesCount,
-                $NotVerifiedresourcesCount
+                round((100 * $VerifiedresourcesCount)/$TotalresourcesCount,2),
+                round((100 * $DeletedresourcesCount)/$TotalresourcesCount,2),
+                round((100 * $NotVerifiedresourcesCount)/$TotalresourcesCount,2),
             ])
             ->setLabels(['Validées', 'Supprimées', 'Non Validées'])
             ->setType('pie')
+            ->setTitle('Graphique (en %)')
             ->setHeight('200');
 
         $AllDate = User::selectRaw('DATE_FORMAT(created_at, "%Y-%m") as date')
@@ -51,17 +52,20 @@ class StatisticsController extends Controller
 
         foreach ($AllDate->all() as $dates)
         {
-            $RegisterCountByDate[$i] = ['date' => $dates->date, 'count' => User::where('created_at', 'LIKE', '%'.$dates->date.'%')->count()];
+            $RegisterCountByDate[$i] = ['date' => $dates->date, 'count' => User::where('created_at', 'LIKE', '%'.$dates->date.'%')->count(), 'percentCount' => round((100*User::where('created_at', 'LIKE', '%'.$dates->date.'%')->count())/$TotaluserCount,2)];
             $i++;
         }
 
         $date = [];
         $count = [];
+        $percentCount = [];
         $y=0;
+
 
         foreach ($RegisterCountByDate as $array){
             $date[$y] = $array['date'];
             $count[$y] = $array['count'];
+            $percentCount[$y] = $array['percentCount'];
             $y++;
         }
 
@@ -72,12 +76,14 @@ class StatisticsController extends Controller
             ->setGrid(true)
             ->setDataset([
                 [
-                    'name'  =>  'Registred Users',
+                    'name'  =>  'Utilisateurs enregistré',
                     'data'  =>  $count,
+                ],
+                [
+                    'name' => 'Pourcentage sur le total',
+                    'data' => $percentCount,
                 ]
             ]);
-
-
 
         return view('back.statistics.list', [
             // User
@@ -94,5 +100,14 @@ class StatisticsController extends Controller
             // UserRegistred
             'UserRegistredByDate' => $UserRegistredByDate,
         ]);
+    }
+
+    public function resources()
+    {
+        $TotalresourcesCount = Resource::withoutGlobalScope('no_deleted')->count();
+        $resourceByCategory = Resource::with('relation')->withoutGlobalScope('no_deleted')->get();
+
+        dd($resourceByCategory);
+        return view('back.statistics.resources');
     }
 }

@@ -40,7 +40,7 @@ class SeedPermissionTable extends Migration
             'readable_name' => 'Accès aux outils de super admin.',
         ],
         self::ADMIN_TOOLS => [
-            'name' => self::DEV_TOOLS,
+            'name' => self::ADMIN_TOOLS,
             'readable_name' => 'Accès aux outils d\'admin.',
         ],
         self::MOD_TOOLS => [

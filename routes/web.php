@@ -85,6 +85,8 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
 
 	// === STATISTIQUE ===
     Route::name('back.stats.list')->get('stats', [StatisticsController::class, 'list']);
+//    Route::name('back.stats.users')->get('stats/users', [StatisticsController::class, 'users']);
+    Route::name('back.stats.resources')->get('stats/resources', [StatisticsController::class, 'resources']);
 
 	// === Paramètres compte utilisateur ===
 	Route::name('back.account.parameters')->get('account/parameters', [AccountController::class, 'parameters']);

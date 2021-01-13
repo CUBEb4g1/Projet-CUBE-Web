@@ -16,7 +16,7 @@
     <div class="content">
         <div class="d-flex flex-row flex-wrap justify-content-around">
             @include('back.statistics._partials.userstats', ['UserTotalCount' => $UserTotalCount, 'UserVerifiedCount' => $UserVerifiedCount, 'UserNotVerifiedCount' => $UserNotVerifiedCount, 'Userchart' => $Userchart])
-            @include('back.statistics._partials.ressourcelist', ['ResourceTotalCount' => $ResourceTotalCount, 'VerifiedCount' => $ResourceVerifiedCount, ['ResourcesDeletedCount' => $ResourcesDeletedCount], ['ResourceNotVerifiedCount' => $ResourceNotVerifiedCount],'Resourcechart' => $Resourcechart])
+            @include('back.statistics._partials.resourcelist', ['ResourceTotalCount' => $ResourceTotalCount, 'VerifiedCount' => $ResourceVerifiedCount, ['ResourcesDeletedCount' => $ResourcesDeletedCount], ['ResourceNotVerifiedCount' => $ResourceNotVerifiedCount],'Resourcechart' => $Resourcechart])
 
         </div>
         {!! $UserRegistredByDate->container() !!}

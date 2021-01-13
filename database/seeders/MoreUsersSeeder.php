@@ -18,7 +18,7 @@ class MoreUsersSeeder extends Seeder
 	{
         $faker = Faker::create('fr_FR');
 
-        for ($i = 1; $i <= 89; $i++) {
+        for ($i = 1; $i <= 1900; $i++) {
             $u1 = new User();
 
             $u1->username = $faker->userName;

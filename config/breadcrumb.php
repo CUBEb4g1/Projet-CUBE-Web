@@ -30,5 +30,13 @@ return [[
 				['text' => 'Form', 'route' => 'back.permission.form'],
 			],
 		],
+        [
+            'text' => 'Statistiques', 'route' => 'back.stats.list',
+            'sub'  => [
+                ['text' => 'Utilisateurs', 'route' => 'back.stats.users'],
+                ['text' => 'Ressources', 'route' => 'back.stats.resources'],
+            ],
+		],
+
 	],
 ]];
