@@ -65,8 +65,6 @@
             </div>
         </div>
         <div class="col-xl-8"> <!-- RIGHT COLUMN -->
-
-
             <div class="profile-content"> <!-- MODAL BLOCK -->
                 <h5 class="titular">Menu modal a integrer</h5>
                 <div class="profile-content first">

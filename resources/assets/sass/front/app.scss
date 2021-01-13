@@ -644,7 +644,7 @@ section {
         border-bottom-right-radius: 5px;
     }
     .profile{
-        margin-bottom:              0px;
+        margin-bottom:              0;
         background:                 $dark;
         border-top-left-radius:     5px;
         border-top-right-radius:    5px;
@@ -908,8 +908,8 @@ section {
         .titular {
             border-top-left-radius: 5px;
             border-top-right-radius:5px;
-            border-bottom-left-radius: 0px;
-            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
             margin-top:             2em;
         }
         /* Profile content blocks display */
