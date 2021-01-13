@@ -42,7 +42,7 @@
                     <div id="portion2" class="shortened"><div class="trunk vues" data-rel="39"></div></div>
                     <div id="portion3" class="shortened"><div class="trunk favs" data-rel="31"></div></div>
                     <div id="portion4" class="shortened"><div class="trunk part" data-rel="9"></div></div>
-                    <p class="center-date">Janv.<br><span class="scnd-font-color">2021</span></p>
+                    <p class="center-date">Janv.<br><span class="scnd-font-color">{{ now()->year }}</span></p>
                 </div>
                 <ul class="res-percentages horizontal-list">
                     <li>
