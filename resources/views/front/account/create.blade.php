@@ -10,7 +10,7 @@
         <form action="{{ route('front.resource_add') }}" method="POST" id="addResource">
             @csrf
             <div class="container my-5 bg-shadow pt-5 pb-5">
-                <p class="input-group row mb-3 w-100 col-md-10 mx-auto">
+                <p class="input-group row mb-3 w-100 mx-auto">
                     @form('text', [
                             'input' => [
                             'name' => 'title',
@@ -22,15 +22,15 @@
                     ])
                 </p>
 
-                <p class="input-group mx-auto row mb-3 w-100 col-md-10">
+                <p class="input-group mx-auto row mb-3 w-100">
                     <select class="browser-default custom-select" required name="vType">
                         <option selected value="">Visibilité</option>
-                        <option value="2">Publique</option>
-                        <option value="3">Privée</option>
-                        <option value="4">Partagée</option>
+                        <option value="3">Publique</option>
+                        <option value="1">Privée</option>
+                        <option value="2">Partagée</option>
                     </select>
                 </p>
-                <p class="input-group mx-auto row mb-3 w-100 col-md-10">
+                <p class="input-group mx-auto row mb-3 w-100">
                     @form('text', [
                             'input' => [
                                 'name' => 'rType',
@@ -42,7 +42,7 @@
                     ])
                 </p>
 
-                <p class="input-group mx-auto row mb-3 w-100 col-md-10">
+                <p class="input-group mx-auto row mb-3 w-100">
                 @form('textarea', [
                     'input' => [
                         'name' => 'content',
@@ -53,7 +53,7 @@
                 ])
                 </p>
                 <div class="text-center">
-                    <button type="submit" form="addResource" class="btn btn-dark btn-padded mt-5 text-center">
+                    <button type="submit" form="addResource" class="btn btn-dark btn-padded mt-3 text-center">
                         <i class="far fa-plus mr-2"></i> Poster la ressource
                     </button>
                 </div>
