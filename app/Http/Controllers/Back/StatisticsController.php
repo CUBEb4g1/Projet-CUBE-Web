@@ -107,7 +107,6 @@ class StatisticsController extends Controller
         $TotalresourcesCount = Resource::withoutGlobalScope('no_deleted')->count();
         $resourceByCategory = Resource::with('relation')->withoutGlobalScope('no_deleted')->get();
 
-        dd($resourceByCategory);
         return view('back.statistics.resources');
     }
 }
