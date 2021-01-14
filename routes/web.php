@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Auth\AuthAsUserController;
 use App\Http\Controllers\Back\AccountController;
+use App\Http\Controllers\Back\CategoryController;
 use App\Http\Controllers\Back\DashboardController;
+use App\Http\Controllers\Back\ManageResourcesController;
 use App\Http\Controllers\Back\NavMenuController;
 use App\Http\Controllers\Back\PermissionController;
 use App\Http\Controllers\Back\RoleController;
@@ -104,10 +106,10 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
 		Route::name('back.permission.delete')->get('permission/delete/{permission}', [PermissionController::class, 'delete'])->where(['permission' => '\d+']);
 
         // === CRUD categories ===
-        Route::name('back.category.list')->get('category', [\App\Http\Controllers\Back\CategoryController::class, 'list']);
-        Route::name('back.category.form')->get('category/form/{category?}', [\App\Http\Controllers\Back\CategoryController::class, 'form'])->where(['category' => '\d*']);
-        Route::name('back.category.save')->post('category/form/{category?}', [\App\Http\Controllers\Back\CategoryController::class, 'save'])->where(['category' => '\d*']);
-        Route::name('back.category.delete')->get('category/delete/{category}', [\App\Http\Controllers\Back\CategoryController::class, 'delete'])->where(['category' => '\d+']);
+        Route::name('back.category.list')->get('category', [CategoryController::class, 'list']);
+        Route::name('back.category.form')->get('category/form/{category?}', [CategoryController::class, 'form'])->where(['category' => '\d*']);
+        Route::name('back.category.save')->post('category/form/{category?}', [CategoryController::class, 'save'])->where(['category' => '\d*']);
+        Route::name('back.category.delete')->get('category/delete/{category}', [CategoryController::class, 'delete'])->where(['category' => '\d+']);
 
         // === Settings ===
 		Route::name('back.settings.parameters')->get('settings/parameters', [SettingsController::class, 'parameters']);
@@ -119,8 +121,16 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
     });
 
     // === Gestion des Ressources === \\
-    Route::name('back.resourcePending')->get('ressources/pending', [ResourceController::class, 'getPendingValidationResources']);
-    Route::name('back.resourceValidate')->get('ressources/validate/{?resource}', [ResourceController::class, 'validateResource'])->where(['resource' => '\d*']);
-    Route::name('back.resourceRefuse')->get('ressources/refuse/{?resource}', [ResourceController::class, 'refuseResource'])->where(['resource' => '\d*']);
-    Route::name('back.resourceDelete')->get('ressources/delete/{?resource}', [ResourceController::class, 'deleteResource'])->where(['resource' => '\d*']);
+    Route::name('back.resources.list.validated')->get('resources/validated{query?}', [ManageResourcesController::class, 'listValidated']);
+    Route::name('back.resources.list.rejected')->get('resources/rejected{query?}', [ManageResourcesController::class, 'listRejected']);
+    Route::name('back.resources.list.delete')->get('resources/deleted{query?}', [ManageResourcesController::class, 'listDeleted']);
+    Route::name('back.resources.list.pending')->get('resources/pending{query?}', [ManageResourcesController::class, 'listPending']);
+    Route::name('back.resources.list')->get('resources{query?}', [ManageResourcesController::class, 'listAll']);
+
+
+    Route::name('back.resources.form')->get('resources/form/{resource}', [ManageResourcesController::class, 'form'])->where(['resource' => '\d*']);
+    Route::name('back.resources.validate')->get('resources/validate/{resource}', [ManageResourcesController::class, 'validateResource'])->where(['resource' => '\d*']);
+    Route::name('back.resources.refuse')->get('resources/refuse/{resource}', [ManageResourcesController::class, 'refuseResource'])->where(['resource' => '\d*']);
+    Route::name('back.resources.restore')->get('resources/restore/{resource}', [ManageResourcesController::class, 'restoreResource'])->where(['resource' => '\d*']);
+    Route::name('back.resources.delete')->get('resources/delete/{resource}', [ManageResourcesController::class, 'delete'])->where(['resource' => '\d+']);
 });

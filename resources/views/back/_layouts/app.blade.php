@@ -173,6 +173,13 @@
 								<span>{{ __('Pages') }}</span>
 							</a>
 						</li>
+                        {{-- Resources --}}
+						<li class="nav-item">
+							<a href="{{ route('back.resources.list') }}" class="nav-link {{ hlrt_begins_with('back.resources') }}">
+                                <i class="nav-main-link-icon fas fa-file-alt fa-fw"></i>
+								<span>{{ __('Ressources') }}</span>
+							</a>
+						</li>
 						{{-- Users --}}
 						<li class="nav-item-header">
 							<div class="text-uppercase font-size-xs line-height-xs">{{ __('Users') }}</div>
@@ -264,5 +271,16 @@
 @endsection
 
 @prepend('scripts')
+    {{--Scripts--}}
+    <script>
+        var APP        = {};
+        APP.csrf_token = '{{ csrf_token() }}';
+        APP.notify     = {
+            info: '{{ Session::get('infoNotif') }}',
+            success: '{{ Session::get('successNotif') }}',
+            warning: '{{ Session::get('warningNotif') }}',
+            danger: '{{ Session::get('dangerNotif') }}',
+        };
+    </script>
 	<script src="{{ mix('js/back/app.js') }}"></script>
 @endprepend
