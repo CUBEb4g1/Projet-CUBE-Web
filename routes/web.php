@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthAsUserController;
 use App\Http\Controllers\Back\AccountController;
+use App\Http\Controllers\Back\CategoryController;
 use App\Http\Controllers\Back\DashboardController;
 use App\Http\Controllers\Back\NavMenuController;
 use App\Http\Controllers\Back\PermissionController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ResourceController;
 use App\Http\Controllers\Back\StatisticsController;
+use App\Http\Controllers\Front\SearchController;
 use App\Models\Permission;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -48,10 +50,12 @@ Route::group([
 	// === Ressources === \\
     Route::name('front.resource_list')->get('resources/list', [ResourceController::class, 'getPreviewvalidatedlist']);
     Route::name('front.resource_get')->get('resources/get/{resource}', [ResourceController::class, 'getFullResource'])->where(['resource' => '\d*']);
-
     Route::get('resources/add', function() {
         return redirect()->route('home');
     });
+    Route::name('search')->get('/s', [SearchController::class, 'index']);
+    Route::name('toggle.favorite')->post('favorite}', [ResourceController::class, 'toggleFavorite']);
+    Route::name('toggle.subscribe')->post('subscribe}', [ResourceController::class, 'toggleSubscribe']);
 
 	Route::middleware(['auth', 'verified'])->group(function () {
 		// .. Les utilisateurs doivent être connectés
@@ -110,10 +114,10 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
 		Route::name('back.permission.delete')->get('permission/delete/{permission}', [PermissionController::class, 'delete'])->where(['permission' => '\d+']);
 
         // === CRUD categories ===
-        Route::name('back.category.list')->get('category', [\App\Http\Controllers\Back\CategoryController::class, 'list']);
-        Route::name('back.category.form')->get('category/form/{category?}', [\App\Http\Controllers\Back\CategoryController::class, 'form'])->where(['category' => '\d*']);
-        Route::name('back.category.save')->post('category/form/{category?}', [\App\Http\Controllers\Back\CategoryController::class, 'save'])->where(['category' => '\d*']);
-        Route::name('back.category.delete')->get('category/delete/{category}', [\App\Http\Controllers\Back\CategoryController::class, 'delete'])->where(['category' => '\d+']);
+        Route::name('back.category.list')->get('category', [CategoryController::class, 'list']);
+        Route::name('back.category.form')->get('category/form/{category?}', [CategoryController::class, 'form'])->where(['category' => '\d*']);
+        Route::name('back.category.save')->post('category/form/{category?}', [CategoryController::class, 'save'])->where(['category' => '\d*']);
+        Route::name('back.category.delete')->get('category/delete/{category}', [CategoryController::class, 'delete'])->where(['category' => '\d+']);
 
         // === Settings ===
 		Route::name('back.settings.parameters')->get('settings/parameters', [SettingsController::class, 'parameters']);

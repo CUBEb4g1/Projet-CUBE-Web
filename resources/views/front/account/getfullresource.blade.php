@@ -1,12 +1,22 @@
 @extends('front._layouts.app')
 @push('styles')
-        <link href="{{ mix('css/resources.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/resources.css') }}" rel="stylesheet">
 @endpush
 @section('content')
     <div class="block">
         <section class="container mt-5 mb-5 w-100 p-0">
             <div class="card card-gradiant w-85 min-vh-100 mb-5">
-                <h5 class="card-header card-header-gradiant">{{$resource->title}}</h5>
+                <div class="card-header card-header-gradiant d-flex justify-content-between align-items-center">
+                    <span class="h5">{{$resource->title}}</span>
+                    @auth()
+                        <div>
+                            <i class="fas fa-heart fa-2x mx-2 @if($resource->isFavoritedBy(Auth::user())) text-danger @endif"
+                               id="favorite_icon" title="Favoris" data-id="{{$resource->id}}"></i>
+                            <i class="fas fa-bookmark fa-2x mx-2 @if($resource->isSubscribedBy(Auth::user())) text-danger @endif"
+                               id="subscribe_icon" title="Mettre de côté" data-id="{{$resource->id}}"></i>
+                        </div>
+                    @endauth
+                </div>
                 <div class="card-body card-body-gradiant">
                     <div class="content-gradiant p-3">
                         {!! $resource->content !!}
@@ -43,7 +53,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="submit" class="btn btn-sm btn-outline-success" value="Poster un commentaire" />
+                                    <input type="submit" class="btn btn-sm btn-outline-success"
+                                           value="Poster un commentaire"/>
                                 </div>
                             </form>
                         </div>
@@ -53,3 +64,57 @@
         </section>
     </div>
 @endsection
+
+
+@push('scripts')
+    <script>
+        $(function () {
+            $("#subscribe_icon").hover(function () {
+                $(this).toggleClass('text-danger');
+            })
+
+            $("#subscribe_icon").click(function () {
+                toastr.options = {
+                    "positionClass": "toast-top-right",
+                }
+                $.ajax({
+                    url: '{{route('toggle.subscribe')}}',
+                    dataType: 'json',
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {id: $(this).data('id')},
+                    success: function (data) {
+                        $("#subscribe_icon").toggleClass('text-danger');
+                        toastr.success("Action accomplie avec succès");
+                    }
+                });
+            })
+
+
+            $("#favorite_icon").hover(function () {
+                $(this).toggleClass('text-danger');
+            })
+
+            $("#favorite_icon").click(function () {
+                toastr.options = {
+                    "positionClass": "toast-top-right",
+                }
+                $.ajax({
+                    url: '{{route('toggle.favorite')}}',
+                    dataType: 'json',
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {id: $(this).data('id')},
+                    success: function (data) {
+                        $("#favorite_icon").toggleClass('text-danger');
+                        toastr.success("Action accomplie avec succès");
+                    }
+                });
+            })
+        });
+    </script>
+@endpush

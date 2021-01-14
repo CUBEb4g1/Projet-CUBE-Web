@@ -10,13 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ResourceController extends Controller
 {
-
-    /*
-    |--------------------------------------------------------------------------
-    | FRONT OFFICE
-    |--------------------------------------------------------------------------
-    */
-
     public function add(Request $request)
     {
         if (!empty($request->input('content'))) {
@@ -50,10 +43,12 @@ class ResourceController extends Controller
 
     public function getFullResource(Resource $resource)
     {
-        $resource->with(['user'])
+        $resource->with(['user', 'subscribers', 'favoriters'])
             ->where('visibility', 3)
             ->where('id', $resource->id)
             ->where('validated', 1)->firstOrFail();
+
+        $resource->increment('views');
 
         $commentsFull = $resource->comments()->with(['user', 'replies.user'])->paginate(10);
 
@@ -73,5 +68,23 @@ class ResourceController extends Controller
     public function create()
     {
         return view("front.account.create");
+    }
+
+    public function toggleFavorite(Request $request)
+    {
+        $user = Auth::user();
+        $resource = Resource::findOrFail($request->id);
+        $user->toggleFavorite($resource);
+
+        return ['success' => true, 'text' => 'ok'];
+    }
+
+    public function toggleSubscribe(Request $request)
+    {
+        $user = Auth::user();
+        $resource = Resource::findOrFail($request->id);
+        $user->toggleSubscribe($resource);
+
+        return ['success' => true, 'text' => 'ok'];
     }
 }
