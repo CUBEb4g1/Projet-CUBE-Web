@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 class ResourceController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function add(Request $request)
     {
         if (!empty($request->input('content'))) {
@@ -32,6 +36,9 @@ class ResourceController extends Controller
 
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function getPreviewvalidatedlist()
     {
         $ressourceList = Resource::with('user')
@@ -41,6 +48,12 @@ class ResourceController extends Controller
         return view('front.account.list', ['resources' => $ressourceList]);
     }
 
+    /**
+     * Display a resource
+     *
+     * @param Resource $resource
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function getFullResource(Resource $resource)
     {
         $resource->with(['user', 'subscribers', 'favoriters'])
@@ -55,6 +68,12 @@ class ResourceController extends Controller
         return view('front.account.getfullresource', compact('resource', 'commentsFull'));
     }
 
+    /**
+     * Change resource Visibility
+     *
+     * @param Request $resource
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function changeVisibility(Request $resource)
     {
         $updateResource = Resource::where('id', $resource->id)->update(array('visibility' => $resource->vType));
@@ -65,11 +84,20 @@ class ResourceController extends Controller
         }
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function create()
     {
         return view("front.account.create");
     }
 
+    /**
+     * Toggle resource favorited for the authenticated user
+     *
+     * @param Request $request
+     * @return array
+     */
     public function toggleFavorite(Request $request)
     {
         $user = Auth::user();
@@ -79,6 +107,13 @@ class ResourceController extends Controller
         return ['success' => true, 'text' => 'ok'];
     }
 
+    /**
+     * Toggle resource subscribed for the authenticated user
+     *
+     * @param Request $request
+     * @return array
+     * @throws \Exception
+     */
     public function toggleSubscribe(Request $request)
     {
         $user = Auth::user();

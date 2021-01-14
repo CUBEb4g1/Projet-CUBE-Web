@@ -8,8 +8,21 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+/**
+ * Class SearchController
+ * @package App\Http\Controllers\Front
+ * Permet de gérer toutes les recherches côté front
+ */
 class SearchController extends Controller
 {
+
+    /**
+     * Initialiser la recherche puis renvoie d'une vue
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     *
+     */
     public function index(Request $request)
     {
         $query = Resource::query();
@@ -19,6 +32,12 @@ class SearchController extends Controller
         return view('front.listing', compact('resources', 'query'));
     }
 
+    /**
+     * Ajouter des filtre à la query en fonction des inputs user
+     *
+     * @param Builder $query
+     * @param Request $request
+     */
     public function _addFiltersToQuery (Builder $query, Request $request)
     {
         $query->with(['user', 'category', 'resourceType', 'relation', 'subscribers', 'favoriters'])
