@@ -167,6 +167,12 @@
                                 <span>{{ __('Categories') }}</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('back.resources.list') }}" class="nav-link {{ hlrt_begins_with('back.resources') }}">
+                                <i class="nav-main-link-icon fas fa-file-alt fa-fw"></i>
+                                <span>{{ __('Ressources') }}</span>
+                            </a>
+                        </li>
 						<li class="nav-item">
 							<a href="{{ route('back.page.list') }}" class="nav-link {{ hlrt_begins_with('back.page') }}">
 								<i class="nav-main-link-icon fas fa-layer-group fa-fw"></i>
@@ -211,7 +217,6 @@
 								<span>{{ __('Users') }}</span>
 							</a>
 						</li>
-
 						@can($DEV)
 							<li class="nav-item nav-item-submenu {{ hlrt_begins_with(['back.role', 'back.permission'], 'nav-item-expanded nav-item-open') }}">
 								<a href="#" class="nav-link"><i class="fal fa-graduation-cap fa-fw"></i> <span>{{ __('Roles') }} & {{ __('Permissions') }}</span></a>

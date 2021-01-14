@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
 //			FunctionsSeeder::class,
             UserSeeder::class,
             CreateFakeDataSeeder::class,
-            ResourceSeeder::class,
-            MoreUsersSeeder::class,
-//			UsersTableSeeder::class,
+//            ResourcesSeeder::class,
+//            MoreUsersSeeder::class,
+//            UsersTableSeeder::class,
 		]);
 	}
 }
