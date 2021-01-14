@@ -12,6 +12,7 @@ use App\Http\Controllers\Front\CommentController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ResourceController;
+use App\Http\Controllers\Back\StatisticsController;
 use App\Models\Permission;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -85,6 +86,11 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
 	Route::name('back.user.form')->get('user/form/{user?}', [UserController::class, 'form'])->where(['user' => '\d*']);
 	Route::name('back.user.save')->post('user/form/{user?}', [UserController::class, 'save'])->where(['user' => '\d*']);
 	Route::name('back.user.delete')->get('users/delete/{user}', [UserController::class, 'delete'])->where(['user' => '\d+']);
+
+	// === STATISTIQUE ===
+    Route::name('back.stats.list')->get('stats', [StatisticsController::class, 'list']);
+//    Route::name('back.stats.users')->get('stats/users', [StatisticsController::class, 'users']);
+    Route::name('back.stats.resources')->get('stats/resources', [StatisticsController::class, 'resources']);
 
 	// === Paramètres compte utilisateur ===
 	Route::name('back.account.parameters')->get('account/parameters', [AccountController::class, 'parameters']);

@@ -162,7 +162,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Mews\Purifier\PurifierServiceProvider::class,
-
         /*
          * Package Service Providers...
          */

@@ -173,6 +173,33 @@
 								<span>{{ __('Pages') }}</span>
 							</a>
 						</li>
+
+                        {{-- Statistical --}}
+                        @can($ADMIN_TOOLS)
+                            <li class="nav-item-header">
+                                <div class="text-uppercase font-size-xs line-height-xs">Statistiques</div>
+                                <i class="far fa-ellipsis-h" title="Statistiques"></i>
+                            </li>
+
+                            <li class="nav-item nav-item-submenu {{ hlrt_begins_with('back.stats', 'nav-item-expanded nav-item-open') }}">
+                                <a href="{{ route('back.stats.list') }}" class="nav-link"><i class="nav-main-link-icon fas fa-chart-pie fa-fw"></i><span>Statistiques</span></a>
+
+                                <ul class="nav nav-group-sub" data-submenu-title="Statistiques">
+                                    <li class="nav-item">
+                                        <a href="{{ route('back.stats.list') }}" class="nav-link {{ hlrt_begins_with('back.stats.list') }}">Résumé</a>                                     </a>
+                                    </li>
+
+{{--                                    <li class="nav-item">--}}
+{{--                                        <a href="{{ route('back.stats.users') }}" class="nav-link {{ hlrt_begins_with('back.stats.users') }}">Utilisateurs</a>                                     </a>--}}
+{{--                                    </li>--}}
+
+                                    <li class="nav-item">
+                                        <a href="{{ route('back.stats.resources') }}" class="nav-link {{ hlrt_begins_with('back.stats.resources') }}">Ressources</a>                                     </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endcan
+
 						{{-- Users --}}
 						<li class="nav-item-header">
 							<div class="text-uppercase font-size-xs line-height-xs">{{ __('Users') }}</div>
@@ -184,6 +211,7 @@
 								<span>{{ __('Users') }}</span>
 							</a>
 						</li>
+
 						@can($DEV)
 							<li class="nav-item nav-item-submenu {{ hlrt_begins_with(['back.role', 'back.permission'], 'nav-item-expanded nav-item-open') }}">
 								<a href="#" class="nav-link"><i class="fal fa-graduation-cap fa-fw"></i> <span>{{ __('Roles') }} & {{ __('Permissions') }}</span></a>

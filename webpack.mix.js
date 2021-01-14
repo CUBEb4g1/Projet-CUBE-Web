@@ -20,8 +20,14 @@ mix.sass('resources/assets/sass/front/vendor.scss', 'public/css/front')
 // === Back ===
 mix.sass('resources/assets/sass/back/vendor.scss', 'public/css/back')
 	.sass('resources/assets/sass/back/app.scss', 'public/css/back')
+	.sass('resources/assets/sass/back/statistics.scss', 'public/css/back')
 	.js('resources/assets/js/back/app.js', 'public/js/back')
-;
+	.js('resources/assets/js/back/chart.js', 'public/js/back');
+
+// === CHARTS ===
+mix.copyDirectory('node_modules/apexcharts/dist', 'public/modules/apexcharts/dist');
+mix.copyDirectory('node_modules/apexcharts/src', 'public/modules/apexcharts/src');
+mix.copyDirectory('node_modules/apexcharts/types', 'public/modules/apexcharts/types');
 
 // === TinyMCE Packages ===
 mix.copyDirectory('node_modules/tinymce/icons', 'public/node_modules/tinymce/icons');
@@ -33,6 +39,7 @@ mix.copy('node_modules/tinymce/jquery.tinymce.js', 'public/node_modules/tinymce/
 mix.copy('node_modules/tinymce/jquery.tinymce.min.js', 'public/node_modules/tinymce/jquery.tinymce.min.js');
 mix.copy('node_modules/tinymce/tinymce.js', 'public/node_modules/tinymce/tinymce.js');
 mix.copy('node_modules/tinymce/tinymce.min.js', 'public/node_modules/tinymce/tinymce.min.js');
+
 
 /*
  |--------------------------------------------------------------------------
