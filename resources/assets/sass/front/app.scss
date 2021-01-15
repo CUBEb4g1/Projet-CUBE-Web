@@ -20,7 +20,8 @@
 // === 11.  TEAM RULESET ============ Line 462  ===
 // === 12.  CONTACT RULESET ========= Line 524  ===
 // === 13.  BACK TO TOP BUTTON ====== Line 542  ===
-// === 14.  PERSONNAL PROFILE ======= Line 606  ===
+// === 14.  RESOURCES RESULTS ======= Line 606  ===
+// === 15.  PERSONNAL PROFILE ======= Line ???  ===
 
 // === 1.   IMPORTS SET ===========================
 
@@ -75,7 +76,7 @@ h1{
 // === 3.   SPECIAL RULESET =======================
 
 .bg-soft-dark {
-    background:                     rgba(255,255,255,.4);
+    background:                     rgba(255,255,255,.7);
 }
 .btn-outline-special {
     border-radius:                  50px;
@@ -603,7 +604,12 @@ section {
     opacity:                        1;
 }
 
-// === 14.  PERSONNAL PROFILE =====================
+// === 14.  RESOURCES RESULTS =====================
+
+
+
+// === 15.  PERSONNAL PROFILE =====================
+
 .container .row .col-xl-4,
 .container .row .col-xl-8 {
     [class*="fontawesome-"]:before {

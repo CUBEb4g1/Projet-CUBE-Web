@@ -25,7 +25,6 @@
                 </p>
             </div>
         </a>
-
         <div class="card-footer text-muted">
             <div class="d-flex justify-content-between small flex-wrap mx-0">
                 <a href="{{route('search', ['category' => $resource->category->id])}}"
@@ -35,9 +34,7 @@
                 <a href="{{route('search', ['type' => $resource->resourceType->id])}}"
                    class="card-link col-12 mx-0 px-0">{{$resource->resourceType->label}}</a>
             </div>
-
             <div class="justify-content-between d-flex align-items-center">
-
             <span class="small text-muted text-right">
                 {{ucfirst($resource->created_at->translatedFormat('D d F Y')) . ' à ' . $resource->created_at->format('H:i')}}
             </span>
@@ -47,6 +44,5 @@
             </div>
         </div>
     </div>
-
 </div>
 
