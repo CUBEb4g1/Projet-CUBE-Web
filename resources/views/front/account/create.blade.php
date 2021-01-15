@@ -75,12 +75,14 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <select class="browser-default custom-select" required name="vType">
-                            <option selected value="">Visibilité</option>
-                            <option value="3">Publique</option>
-                            <option value="1">Privée</option>
-                            <option value="2">Partagée</option>
-                        </select>
+                        <div class="form-group">
+                            <select class="browser-default custom-select" required name="vType">
+                                <option selected value="">Visibilité</option>
+                                <option value="3">Publique</option>
+                                <option value="1">Privée</option>
+                                <option value="2">Partagée</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
