@@ -102,8 +102,8 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
 		Route::name('back.settings.parameters')->get('settings/parameters', [SettingsController::class, 'parameters']);
 		Route::name('back.settings.parameters')->post('settings/parameters', [SettingsController::class, 'saveParameters']);
 
-		// === Rel ===
-		Route::name('relations', 'ManageRelationsController');
+		// === Relations ===
+		Route::name('back.relation.list')->get('relation', [ManageRelationsController::class, 'index']);
 	});
 
     // === Gestion des Ressources === \\

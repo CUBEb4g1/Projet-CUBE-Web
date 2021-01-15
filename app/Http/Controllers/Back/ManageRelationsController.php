@@ -17,7 +17,10 @@ class ManageRelationsController extends Controller
         */
     public function index()
     {
-        //
+        $relation=Relation::paginate(25);
+        dd($relation);
+        return route('back.relation.list');
+
     }
 
     /**
@@ -25,7 +28,7 @@ class ManageRelationsController extends Controller
         *
         * @return Response
         */
-    public function create()
+    public function create(Relation $relation)
     {
         //
     }
@@ -36,9 +39,12 @@ class ManageRelationsController extends Controller
         * @param  int  $id
         * @return Response
         */
-    public function destroy($id)
+    public function destroy(Relation $relation)
     {
-        //
+        // $relation->destroyed = 1;
+        // $relation->save();
+
+        // return redirect()->
     }
 
 }
