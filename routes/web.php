@@ -104,6 +104,7 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
 
 		// === Relations ===
 		Route::name('back.relation.list')->get('relation', [ManageRelationsController::class, 'index']);
+		Route::name('back.relation.form')->get('relation/form', [ManageRelationsController::class, 'form']);
 	});
 
     // === Gestion des Ressources === \\

@@ -21,6 +21,12 @@ class ManageRelationsController extends Controller
         $relations=Relation::paginate(25);
         return view('back.relation.list',['relations'=>$relations]);
 
+
+    }
+
+    public function form()
+    {
+
     }
 
     /**
