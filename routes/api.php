@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\API\CategoryApiController;
 use App\Http\Controllers\API\ResourceApiController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('resources/{id}', [ResourceApiController::class, 'show']);
 Route::get('resources/', [ResourceApiController::class, 'search']);
+Route::get("category/", [CategoryApiController::class, 'search']);
 
 
 
