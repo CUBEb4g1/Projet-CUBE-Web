@@ -42,7 +42,7 @@ class CategoryController extends Controller
     public function list()
     {
         return view('back.category.list', [
-            'categories' => Category::with('resource')->paginate(25),
+            'categories' => Category::paginate(25),
         ]);
     }
     /**
