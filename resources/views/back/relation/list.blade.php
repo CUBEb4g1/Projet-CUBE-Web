@@ -18,10 +18,7 @@
 
                 </div>
             </div>
-            <div class="d-flex w-50">
-                @include('back._partials.search_table', ['placeholder' => 'Titre de ressource'], ['value' => $search])
-            </div>
-
+           
         </div>
 
 			<div class="card">
