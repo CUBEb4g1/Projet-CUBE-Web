@@ -167,6 +167,12 @@
 								<span>{{ __('Pages') }}</span>
 							</a>
 						</li>
+						<li class="nav-item">
+							<a href="{{ route('back.relation.list') }}" class="nav-link {{ hlrt_begins_with('back.relation') }}">
+								<i class="nav-main-link-icon fas fa-link fa-fw"></i>
+								<span>{{ __('Relations') }}</span>
+							</a>
+						</li>
 						{{-- Users --}}
 						<li class="nav-item-header">
 							<div class="text-uppercase font-size-xs line-height-xs">{{ __('Users') }}</div>
