@@ -99,7 +99,7 @@
                             </a>
                         @endcan
                         @guest()
-                            <a class="btn rounded-pill btn-dark py-2 px-4"
+                            <a class="btn rounded-pill btn-dark py-2 px-4 my-2"
                                href="{{ route('register') }}">{{ __('Register') }}</a>
                         @endguest
                     </li>
