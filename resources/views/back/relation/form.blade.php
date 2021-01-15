@@ -14,8 +14,8 @@
             <div class="col-lg-9">
                 <div class="card">
                     <div class="card-header header-elements-inline">
-                        @if ($relations !== null)
-                            <span class="h5">{{ $relations->label }}</span>
+                        @if ($relation !== null)
+                            <span class="h5">{{ $relation->label }}</span>
                         @endif
                     </div>
                     <div class="card-body">
@@ -23,8 +23,8 @@
                             @csrf
                             <div class="form-group">
                                 @form('text', [
-                                'label' => ['text' => __('Relations')],
-                                'input' => ['name' => 'label', 'value' => old('label') ?? ($relations ? $relations->label : null), 'required'],
+                                'label' => ['text' => __('Relation')],
+                                'input' => ['name' => 'label', 'value' => old('label') ?? ($relation ? $relation->label : null), 'required'],
                                 ])
                             </div>
                             <button type="submit" class="btn btn-primary my-3">

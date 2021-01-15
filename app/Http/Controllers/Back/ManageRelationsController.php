@@ -30,7 +30,7 @@ class ManageRelationsController extends Controller
 
     public function form(Relation $relation=null)
     {
-        return view('back.relation.form',['relations'=>$relations]);
+        return view('back.relation.form',['relation'=>$relation]);
     }
 
     /**
