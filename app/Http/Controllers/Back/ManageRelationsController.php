@@ -18,7 +18,7 @@ class ManageRelationsController extends Controller
         */
     public function index()
     {
-        $relations=Relation::paginate(25);
+        $relations=Relation::where('deleted', false)->paginate(25);
         return view('back.relation.list',['relations'=>$relations]);
 
 
@@ -47,10 +47,10 @@ class ManageRelationsController extends Controller
         */
     public function delete(Relation $relation)
     {
-        // $relation->destroyed = 1;
-        // $relation->save();
+        $relation->deleted = true;
+        $relation->save();
 
-        // return redirect()->
+        return redirect()->route('back.relation.list')->with('successNotif', 'Relation supprimée avec succès');
     }
 
 }
