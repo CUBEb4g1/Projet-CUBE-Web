@@ -19,9 +19,16 @@
 					</a>
 				@component('back._cmpts.more_actions')
 					{{-- Supprimer --}}
+					@if (!$relation->deleted)
 						<a href="{{ route('back.relation.delete', ['relation' => $relation->id]) }}" class="dropdown-item text-danger" data-toggle="tooltip" title="{{ __('Delete') }}">
 							<i class="fa fa-times fa-fw"></i>{{ __('Delete') }}
 						</a>
+					@else
+						<a href="{{ route('back.relation.restore', ['relation' => $relation->id]) }}" class="dropdown-item text-danger" data-toggle="tooltip" title="{{ __('Restaurer') }}">
+							<i class="fa fa-times fa-fw"></i>{{ __('Restaurer') }}
+						</a>
+					@endif
+
 				@endcomponent
 			</td>
 	</tr>
