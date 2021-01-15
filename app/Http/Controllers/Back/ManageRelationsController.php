@@ -30,7 +30,6 @@ class ManageRelationsController extends Controller
 
     public function form(Relation $relation=null)
     {
-        dd($resource);
         return view('back.relation.form',['relations'=>$relations]);
     }
 
