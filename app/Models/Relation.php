@@ -13,8 +13,8 @@ class Relation extends Model
         'label',
     ];
 
-    $timestamps=false;
-    
+    public $timestamps=false;
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
