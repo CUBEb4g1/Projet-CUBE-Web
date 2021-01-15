@@ -18,10 +18,10 @@
 				@include('back.relation._partials.list_table', ['relations' => $relations])
 			</table>
 
-			@if ($users->lastPage() > 1)
+			@if ($relations->lastPage() > 1)
 				<div class="card-body">
 					<nav class="d-flex justify-content-center">
-						{{ $users->links() }}
+						{{ $relations->links() }}
 					</nav>
 				</div>
 			@endif
