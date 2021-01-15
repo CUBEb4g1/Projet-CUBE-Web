@@ -45,7 +45,7 @@ class ManageRelationsController extends Controller
         * @param  int  $id
         * @return Response
         */
-    public function destroy(Relation $relation)
+    public function delete(Relation $relation)
     {
         // $relation->destroyed = 1;
         // $relation->save();
