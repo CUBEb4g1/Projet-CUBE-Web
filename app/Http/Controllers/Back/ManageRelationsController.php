@@ -65,7 +65,6 @@ class ManageRelationsController extends Controller
 
     protected function _create(Request $request)
     {
-        dd($request->all());
         $relation = Relation::create($request->all());
         $relation->save();
         return redirect()->route('back.relation.list')
