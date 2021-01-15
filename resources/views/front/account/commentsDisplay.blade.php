@@ -14,7 +14,7 @@
                 <input type="hidden" name="parent_id" value="{{ $comment->id }}"/>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-sm btn-outline-primary" value="Répondre"/>
+                <input type="submit" class="btn btn-md btn-outline-special border-0" value="Répondre"/>
             </div>
         </form>
 
