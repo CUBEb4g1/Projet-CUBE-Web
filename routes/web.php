@@ -104,8 +104,10 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
 
 		// === Relations ===
 		Route::name('back.relation.list')->get('relation', [ManageRelationsController::class, 'index']);
+		Route::name('back.relation.list.deleted')->get('relation/list/deleted', [ManageRelationsController::class, 'indexdeleted']);
 		Route::name('back.relation.form')->get('relation/form', [ManageRelationsController::class, 'form']);
 		Route::name('back.relation.delete')->get('relation/delete/{relation}', [ManageRelationsController::class, 'delete'])->where(['relation' => '\d+']);
+
 	});
 
     // === Gestion des Ressources === \\

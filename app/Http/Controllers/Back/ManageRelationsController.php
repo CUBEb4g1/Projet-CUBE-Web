@@ -20,10 +20,14 @@ class ManageRelationsController extends Controller
     {
         $relations=Relation::where('deleted', false)->paginate(25);
         return view('back.relation.list',['relations'=>$relations]);
-
-
     }
 
+    public function indexdeleted()
+    {
+        $relations=Relation::where('deleted', true)->paginate(25);
+        return view('back.relation.list',['relations'=>$relations]);
+    }
+    
     public function form()
     {
 
