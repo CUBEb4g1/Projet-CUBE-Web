@@ -24,8 +24,8 @@
 							<i class="fa fa-times fa-fw"></i>{{ __('Delete') }}
 						</a>
 					@else
-						<a href="{{ route('back.relation.restore', ['relation' => $relation->id]) }}" class="dropdown-item text-danger" data-toggle="tooltip" title="{{ __('Restaurer') }}">
-							<i class="fa fa-times fa-fw"></i>{{ __('Restaurer') }}
+						<a href="{{ route('back.relation.restore', ['relation' => $relation->id]) }}" class="dropdown-item text-success" data-toggle="tooltip" title="{{ __('Restaurer') }}">
+							<i class="fa fa-trash-restore fa-fw"></i>{{ __('Restaurer') }}
 						</a>
 					@endif
 
