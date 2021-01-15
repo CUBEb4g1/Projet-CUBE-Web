@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Models\Resource;
+use App\Models\Relation;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
 
 class ManageRelationsController extends Controller
 
@@ -17,9 +18,8 @@ class ManageRelationsController extends Controller
         */
     public function index()
     {
-        $relation=Relation::paginate(25);
-        dd($relation);
-        return route('back.relation.list');
+        $relations=Relation::paginate(25);
+        return view('back.relation.list',['relations'=>$relations]);
 
     }
 

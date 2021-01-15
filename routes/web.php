@@ -7,7 +7,7 @@ use App\Http\Controllers\Back\NavMenuController;
 use App\Http\Controllers\Back\PermissionController;
 use App\Http\Controllers\Back\RoleController;
 use App\Http\Controllers\Back\SettingsController;
-use App\Http\Controllerr\Back\ManageRelationsController;
+use App\Http\Controllers\Back\ManageRelationsController;
 use App\Http\Controllers\Back\UserController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\HomeController;

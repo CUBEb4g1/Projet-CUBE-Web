@@ -15,7 +15,7 @@
 
 		<div class="card">
 			<table class="table table-striped">
-				@include('back.user._partials.list_table', ['users' => $users])
+				@include('back.relation._partials.list_table', ['relations' => $relations])
 			</table>
 
 			@if ($users->lastPage() > 1)
