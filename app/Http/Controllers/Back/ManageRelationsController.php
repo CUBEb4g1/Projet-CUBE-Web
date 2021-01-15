@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Back;
 use App\Models\Relation;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 
 class ManageRelationsController extends Controller
