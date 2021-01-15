@@ -48,5 +48,10 @@ class ResourceApiController extends Controller
             $query
                 ->where('resource_type_id', $request->type);
         }
+
+        if ($request->filled('limit')) {
+            $query
+                ->limit($request->limit);
+        }
     }
 }
