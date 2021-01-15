@@ -9,11 +9,22 @@
 	])@endcomponent
 
 	<div class="content">
-		<div class="mb-3">
+		<div class="mb-3 d-flex w-100 flex-wrap">
 			<a href="{{ route('back.relation.form') }}" class="btn btn-sm btn-primary"><i class="fa fa-fw fa-plus"></i> {{ __('Add') }}</a>
-		</div>
+            <div class="input-group-postpend justify-content-start">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <a class="btn btn-primary" style="background-color: #093467; color: white" href="{{route('back.relation.list')}}">Actif</a>
+                    <a class="btn btn-primary" style="background-color: #093467; color: white" href="{{route('back.relation.list.deleted')}}">Supprimées</a>
 
-		<div class="card">
+                </div>
+            </div>
+            <div class="d-flex w-50">
+                @include('back._partials.search_table', ['placeholder' => 'Titre de ressource'], ['value' => $search])
+            </div>
+
+        </div>
+
+			<div class="card">
 			<table class="table table-striped">
 				@include('back.relation._partials.list_table', ['relations' => $relations])
 			</table>
