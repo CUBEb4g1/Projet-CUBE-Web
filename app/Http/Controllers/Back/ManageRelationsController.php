@@ -37,7 +37,7 @@ class ManageRelationsController extends Controller
         $this->_validator($request, $relation);
 
         if ($relation=== null) {
-            $this->_create($relation);
+            $this->_create($request);
         } else {
             $this->_update($relation, $request);
         }
