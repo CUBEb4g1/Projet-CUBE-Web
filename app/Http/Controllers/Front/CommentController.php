@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
+    /**
+     * Create comment
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
 
