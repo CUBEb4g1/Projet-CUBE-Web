@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Models\Category;
 use App\Models\Comment;
+use App\Models\Relation;
 use App\Models\Resource;
 use App\Http\Controllers\Controller;
+use App\Models\ResourceType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,9 +25,9 @@ class ResourceController extends Controller
                 'content' => clean($request->input('content')),
                 'user_id' => Auth::User()->id,
                 'visibility' => $request->input('vType'),
-                'relation_id' => '1',
-                'category_id' => '1',
-                'resource_type_id' => '1',
+                'relation_id' => $request->input('relation'),
+                'category_id' => $request->input('category'),
+                'resource_type_id' => $request->input('type'),
             ]);
 
             Auth::user()->resources()->save($resource);
@@ -89,7 +92,10 @@ class ResourceController extends Controller
      */
     public function create()
     {
-        return view("front.account.create");
+        $categories = Category::get();
+        $relations = Relation::get();
+        $types = ResourceType::get();
+        return view("front.account.create", compact('categories', 'relations', 'types'));
     }
 
     /**

@@ -4,53 +4,95 @@
 @endpush
 @section('content')
     <div class="block">
-        <div class="text-center my-3">
+        <div class="text-center m-3">
             <h3 class="">Création de votre ressource :</h3>
         </div>
         <form action="{{ route('front.resource_add') }}" method="POST" id="addResource">
             @csrf
             <div class="container my-5 bg-shadow pt-5 pb-5">
-                <p class="input-group row mb-3 w-100 mx-auto">
-                    @form('text', [
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            @form('text', [
                             'input' => [
                             'name' => 'title',
-                            'placeholder' => 'Titre de la ressource',
+                            'maxlength' => 60,
+                            'placeholder' => 'Titre de la ressource  (60 caractères)',
                             'value' => old('title'),
                             'class' => 'form-control',
                             'required'
-                        ],
-                    ])
-                </p>
+                                ],
+                            ])
+                        </div>
+                    </div>
 
-                <p class="input-group mx-auto row mb-3 w-100">
-                    <select class="browser-default custom-select" required name="vType">
-                        <option selected value="">Visibilité</option>
-                        <option value="3">Publique</option>
-                        <option value="1">Privée</option>
-                        <option value="2">Partagée</option>
-                    </select>
-                </p>
-                <p class="input-group mx-auto row mb-3 w-100">
-                    @form('text', [
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @form('select', [
+                                    'input' => [
+                                    'name' => 'category',
+                                    'value' => old('categories') ?? null,
+                                    'class' => 'custom-select js-listen-value',
+                                    'required',
+                                    ],
+                                    'placeholder' => 'Catégorie',
+                                    'selectOptions' => $categories->pluck('id', 'label'),
+                            ])
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @form('select', [
                             'input' => [
-                                'name' => 'rType',
-                                'placeholder' => 'Type de ressource',
-                                'class' => "js-search-entity-input form-control",
-                                //'data-action' => route(''),
-                                'required'
-                        ],
-                    ])
-                </p>
+                            'name' => 'relation',
+                            'value' => old('relations') ?? $query['relations'] ?? null,
+                            'class' => 'custom-select js-listen-value',
+                            'required',
+                            ],
+                            'placeholder' => 'Relation',
+                            'selectOptions' => $relations->pluck('id', 'label'),
+                            ])
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @form('select', [
+                              'input' => [
+                              'name' => 'type',
+                              'value' => old('types') ?? $query['types'] ?? null,
+                              'class' => 'custom-select js-listen-value',
+                              'required',
+                              ],
+                              'placeholder' => 'Types',
+                              'selectOptions' => $types->pluck('id', 'label'),
+                              ])
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <select class="browser-default custom-select" required name="vType">
+                            <option selected value="">Visibilité</option>
+                            <option value="3">Publique</option>
+                            <option value="1">Privée</option>
+                            <option value="2">Partagée</option>
+                        </select>
+                    </div>
+                </div>
 
                 <p class="input-group mx-auto row mb-3 w-100">
-                @form('textarea', [
-                    'input' => [
-                        'name' => 'content',
-                        'placeholder' => 'Créez votre ressource ici !',
-                        'class' => 'form-control',
-                        'value' => old('resource'),
-                    ],
-                ])
+                    @form('textarea', [
+                        'input' => [
+                            'name' => 'content',
+                            'placeholder' => 'Créez votre ressource ici !',
+                            'class' => 'form-control',
+                            'value' => old('resource'),
+                        ],
+                    ])
                 </p>
                 <div class="text-center">
                     <button type="submit" form="addResource" class="btn btn-dark btn-padded mt-3 text-center">

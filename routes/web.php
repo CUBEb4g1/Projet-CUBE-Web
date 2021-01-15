@@ -63,7 +63,6 @@ Route::group([
         Route::name("front.resourcecreate")->get('resources/create', [ResourceController::class, 'create']);
         Route::name('front.resource_add')->post('resources/add', [ResourceController::class, 'add']);
         Route::name('front.resource_update_visibility')->post('resources/updateVisibility', [ResourceController::class, 'changeVisibility']);
-
         // === Comments ===
         Route::name('comments.store')->post('/comment/store', [CommentController::class, 'store']);
 	});
@@ -114,19 +113,17 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
 		Route::name('back.permission.save')->post('permission/form/{permission?}', [PermissionController::class, 'save'])->where(['permission' => '\d*']);
 		Route::name('back.permission.delete')->get('permission/delete/{permission}', [PermissionController::class, 'delete'])->where(['permission' => '\d+']);
 
-        // === CRUD categories ===
-        Route::name('back.category.list')->get('category', [CategoryController::class, 'list']);
-        Route::name('back.category.form')->get('category/form/{category?}', [CategoryController::class, 'form'])->where(['category' => '\d*']);
-        Route::name('back.category.save')->post('category/form/{category?}', [CategoryController::class, 'save'])->where(['category' => '\d*']);
-        Route::name('back.category.delete')->get('category/delete/{category}', [CategoryController::class, 'delete'])->where(['category' => '\d+']);
-
         // === Settings ===
 		Route::name('back.settings.parameters')->get('settings/parameters', [SettingsController::class, 'parameters']);
 		Route::name('back.settings.parameters')->post('settings/parameters', [SettingsController::class, 'saveParameters']);
 	});
 
     Route::middleware(['permission:'.Permission::ADMIN_TOOLS])->group(function () {
-
+        // === CRUD categories ===
+        Route::name('back.category.list')->get('category', [CategoryController::class, 'list']);
+        Route::name('back.category.form')->get('category/form/{category?}', [CategoryController::class, 'form'])->where(['category' => '\d*']);
+        Route::name('back.category.save')->post('category/form/{category?}', [CategoryController::class, 'save'])->where(['category' => '\d*']);
+        Route::name('back.category.delete')->get('category/delete/{category}', [CategoryController::class, 'delete'])->where(['category' => '\d+']);
     });
 
     // === Gestion des Ressources === \\
