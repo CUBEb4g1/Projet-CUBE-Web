@@ -63,7 +63,7 @@ class ManageRelationsController extends Controller
     {
         $relation = Relation::create($request->all());
         $relation->save();
-        return redirect()->route('back.category.list')
+        return redirect()->route('back.relation.list')
             ->with('successNotif', __('notifications.common.saved'));
     }
     /**
@@ -72,7 +72,7 @@ class ManageRelationsController extends Controller
     protected function _update(Relation $relation, Request $request)
     {
         $relation->update(['label' => $request->label]);
-        return redirect()->route('back.category.list')
+        return redirect()->route('back.relation.list')
                 ->with('successNotif', __('notifications.common.saved'));
     }
 
