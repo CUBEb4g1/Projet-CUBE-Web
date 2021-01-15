@@ -17,7 +17,7 @@ class SearchController extends Controller
 {
 
     /**
-     * Initialiser la recherche puis renvoie d'une vue
+     * Initialiser la recherche puis renvoi d'une vue
      *
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -33,7 +33,7 @@ class SearchController extends Controller
     }
 
     /**
-     * Ajouter des filtre à la query en fonction des inputs user
+     * Ajouter des filtres à la query en fonction des inputs user
      *
      * @param Builder $query
      * @param Request $request

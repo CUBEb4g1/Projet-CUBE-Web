@@ -41,12 +41,12 @@ html {
     }
 }
 h1{
-    color: $green;
+    color: $green !important;
 }
 .btn-outline-special,
 .f1-bottom-bar,
 .f1-topbar,
-.header2.bg-success-gradiant,
+.bg-success-gradiant,
 .progress-wrap.active-progress,
 .team1 .pro-pic .card-img-overlay,
 .titular {
@@ -606,6 +606,76 @@ section {
 
 // === 14.  RESOURCES RESULTS =====================
 
+.resource-card {
+    overflow: hidden;
+    box-shadow: 0px 2px 20px rgba(0,0,0,.2);
+    background: white;
+    border-radius: 0.5rem;
+    position: relative;
+    transition: 250ms all ease-in-out;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 2px 40px rgba(0,0,0,.2);
+    }
+    .banner-img {
+        position: absolute;
+        object-fit: cover;
+        height: 5rem;
+        width: 100%;
+    }
+    .card-body {
+        margin: 5rem 1rem 1rem 1rem;
+        .card-link {
+            color: $green;
+        }
+    }
+    .card-link {
+        color: $dark;
+        padding-right: 2rem;
+    }
+    .category-tag {
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: $dark;
+        padding: 0.5rem 1.3rem 0.5rem 1rem;
+        text-transform: uppercase;
+        position: absolute;
+        z-index: 1;
+        top: 1rem;
+        border-radius: 0 2rem 2rem 0;
+    }
+    .resource-title {
+        color: $green;
+        line-height: 1.5rem;
+        margin: 1rem 0 0.5rem;
+    }
+    .resource-description {
+        color: $dark;
+        font-size: 0.9rem;
+    }
+    .card-profile {
+        display: flex;
+        margin-top: 2rem;
+        align-items: center;
+    }
+    .profile-img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .card-profile-info {
+        margin-left: 1rem;
+    }
+    .profile-name {
+        font-size: 1rem;
+    }
+    .profile-datetime {
+        color: rgba(0,0,0,.7);
+        font-size: 0.9rem;
+    }
+}
 
 
 // === 15.  PERSONNAL PROFILE =====================

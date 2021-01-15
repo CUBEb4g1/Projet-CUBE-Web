@@ -59,6 +59,8 @@
                     <li class="nav-item">
                         <a class="btn rounded-pill btn-dark py-2 px-4 my-2" href="#"><i
                                 class="far fa-question-circle"></i> Guide</a>
+                    </li>
+                    <li class="nav-item">
                         @auth()
                             <a href="{{route('front.resourcecreate')}}" class="btn rounded-pill btn-dark py-2 px-4 my-2">
                                 Créer une ressource
@@ -85,7 +87,7 @@
                             </a>
                         @endcan
                         @guest()
-                            <a class="btn rounded-pill btn-dark py-2 px-4"
+                            <a class="btn rounded-pill btn-dark py-2 px-4 my-2"
                                href="{{ route('register') }}">{{ __('Register') }}</a>
                         @endguest
                     </li>
