@@ -9,7 +9,7 @@
 	])@endcomponent
 
 	<div class="content">
-		<div class="mb-3 d-flex w-100 flex-wrap">
+		<div class="mb-3 d-flex w-100 flex-wrap justify-content-end">
 			<a href="{{ route('back.relation.form') }}" class="btn btn-sm btn-primary"><i class="fa fa-fw fa-plus"></i> {{ __('Add') }}</a>
             <div class="input-group-postpend justify-content-start">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
