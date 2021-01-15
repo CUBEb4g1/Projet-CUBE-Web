@@ -11,11 +11,6 @@ class ManageRelationsController extends Controller
 
 {
 
-    /**
-        * Display a listing of the resource.
-        *
-        * @return Response
-        */
     public function index()
     {
         $relations=Relation::where('deleted', false)->paginate(25);
@@ -33,22 +28,54 @@ class ManageRelationsController extends Controller
         return view('back.relation.form',['relation'=>$relation]);
     }
 
-    /**
-        * Show the form for creating a new resource.
-        *
-        * @return Response
-        */
-    public function create(Relation $relation)
+        public function save(Request $request, Relation $relation = null)
     {
-        //
+        $this->_validator($request, $relation);
+
+        if ($relation=== null) {
+            $this->_create($relation);
+        } else {
+            $this->_update($relation, $request);
+        }
+
+        return redirect()->route('back.relation.list')
+            ->with('successNotif', __('notifications.common.saved'));
+    }
+    /**
+     * Valider le formulaire
+     */
+    protected function _validator(Request $request, Relation $model = null)
+    {
+        $rules = [
+            'label' => ['required', 'max:150'],
+        ];
+
+        if ($model === null) {
+            $rules['label'][] = 'unique:relations';
+        } else {
+            $rules['label'][] = 'unique:relations,label,' . $model->id;
+        }
+
+        $this->validate($request, $rules);
     }
 
+    protected function _create(Request $request)
+    {
+        $relation = Relation::create($request->all());
+        $relation->save();
+        return redirect()->route('back.category.list')
+            ->with('successNotif', __('notifications.common.saved'));
+    }
     /**
-        * Remove the specified resource from storage.
-        *
-        * @param  int  $id
-        * @return Response
-        */
+     * Modifier
+     */
+    protected function _update(Relation $relation, Request $request)
+    {
+        $relation->update(['label' => $request->label]);
+        return redirect()->route('back.category.list')
+                ->with('successNotif', __('notifications.common.saved'));
+    }
+
     public function delete(Relation $relation)
     {
         $relation->deleted = true;

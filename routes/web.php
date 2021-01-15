@@ -106,8 +106,10 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
 		Route::name('back.relation.list')->get('relation/list', [ManageRelationsController::class, 'index']);
 		Route::name('back.relation.list.deleted')->get('relation/list/deleted', [ManageRelationsController::class, 'indexdeleted']);
 		Route::name('back.relation.form')->get('relation/form/{relation?}', [ManageRelationsController::class, 'form'])->where(['relation' => '\d*' ]);
+		Route::name('back.relation.save')->post('relation/form/{relation?}', [ManageRelationsController::class, 'save'])->where(['relation' => '\d*']);
 		Route::name('back.relation.delete')->get('relation/delete/{relation}', [ManageRelationsController::class, 'delete'])->where(['relation' => '\d+']);
 		Route::name('back.relation.restore')->get('relation/restore/{relation}', [ManageRelationsController::class, 'restore'])->where(['relation' => '\d+']);
+
 
 	});
 
