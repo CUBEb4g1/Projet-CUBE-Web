@@ -1,11 +1,11 @@
 @extends('back._layouts.app')
 
-@section('title', __('Relation').' - '.($user ? __('Edition') : __('Creation')))
+@section('title', __('Relation').' - '.($relation ? __('Edition') : __('Creation')))
 
 @section('content')
 	@component('back._cmpts.page_header', [
 		'title' => __('Relation'),
-		'subtitle' => $user ? __('Edition') : __('Creation'),
+		'subtitle' => $relation ? __('Edition') : __('Creation'),
 	])@endcomponent
 
 
