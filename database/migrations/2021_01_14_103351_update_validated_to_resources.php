@@ -14,7 +14,7 @@ class UpdateValidatedToResources extends Migration
     public function up()
     {
         Schema::table('resources', function (Blueprint $table) {
-            $table->boolean('validated')->nullable()->change();
+            $table->boolean('validated')->nullable()->default(NULL)->change();
         });
     }
 

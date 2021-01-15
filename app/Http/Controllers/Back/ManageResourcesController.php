@@ -144,9 +144,10 @@ class ManageResourcesController extends Controller
 
         return redirect()->route('back.resources.list')->with('WarningNotif', "Ressource refusée !");
     }
+
     public function restoreResource($resource)
     {
-        $update = Resource::withoutGlobalScope('no_deleted')->where('deleted', 1)->find($resource);
+        $update = Resource::withoutGlobalScope('no_deleted')->where('deleted', 1)->orWhere('validated', 0)->find($resource);
         $update->validated = 1;
         $update->deleted = 0;
         $update->save();
@@ -156,9 +157,10 @@ class ManageResourcesController extends Controller
 
     public function delete(Resource $resource)
     {
-        $resource->delete();
+        $resource->deleted = 1;
+        $resource->save();
 
         return redirect()->route('back.resources.list')
-            ->with('WarningNotif', "Ressource supprimée avec succès !");
+            ->with('warningNotif', "Ressource supprimée avec succès !");
     }
 }
