@@ -69,14 +69,16 @@
                     </li>
                     <li class="nav-item">
                         @auth()
-                            <a href="{{ route('logout') }}" class="btn rounded-pill btn-dark py-2 px-4 my-2"
-                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <button class="btn rounded-pill btn-dark py-2 px-4 my-2">
+                                    <i class="fas fa-power-off fa-fw"></i>
+                                    {{ __('Logout') }}
+                                </button>
+                            </form>
                         @endauth
                         @guest()
-                            <a href="{{ route('login') }}"
-                               class="btn rounded-pill btn-dark py-2 px-4 my-2">{{ __('Login') }}</a>
+                            <a href="{{ route('login') }}" class="btn rounded-pill btn-dark py-2 px-4 my-2">{{ __('Login') }}</a>
                         @endguest
                     </li>
                     <li class="nav-item">
