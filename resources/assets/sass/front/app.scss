@@ -1088,8 +1088,7 @@ section {
             box-shadow:             0 0 5px rgba(0,0,0,0.2)
         }
         .checkbox {
-            margin-bottom:          25px;
-            font-size:              14px
+            margin-bottom:          25px
         }
         .form-check label::before{
             content:                "";
@@ -1115,7 +1114,6 @@ section {
         input[type=checkbox]:checked + label:before {
             font-weight:            300;
             color:                  $white-smoke;
-            font-size:              14px;
             content:                "\2713";
             line-height:            17px
         }
