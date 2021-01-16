@@ -47,7 +47,7 @@ Route::group([
 	// === Page de profil ===
     Route::name('profile')->get('profile', [\App\Http\Controllers\Front\ProfileController::class, 'index']);
 
-	// === Formulaire de contact ===
+    // === Formulaire de contact ===
 	Route::name('contact')->get('contact', [ContactController::class, 'form']);
 	Route::post('contact', [ContactController::class, 'send']);
 

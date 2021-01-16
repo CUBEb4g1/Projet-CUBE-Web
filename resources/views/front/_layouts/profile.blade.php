@@ -8,14 +8,14 @@
                 <div class="profile-picture big-profile-picture clear">
                     <img width="150px" alt="Anne Hathaway picture" src="http://upload.wikimedia.org/wikipedia/commons/e/e1/Anne_Hathaway_Face.jpg" >
                 </div>
-                <h4 class="user-name">{{Auth::user()->username}}</h4>
+                <h4 class="user-name">{{$user->username}}</h4>
                 <div class="profile-description">
-                    <p class="scnd-font-color">{{Auth::user()->bio}}</p>
+                    <p class="scnd-font-color">{{$user->bio}}</p>
                 </div>
                 <ul class="profile-options horizontal-list">
-                    <li><a class="comments" href="#"><p><span class="icon far fa-comment-alt scnd-font-color"></span>23</p></a></li>
-                    <li><a class="views" href="#"><p><span class="icon far fa-eye scnd-font-color"></span>841</p></a></li>
-                    <li><a class="likes" href="#"><p><span class="icon far fa-heart scnd-font-color"></span>49</p></a></li>
+                    <li><a class="comments" href="#"><p><span class="icon far fa-comment-alt scnd-font-color"></span>{{$user->comments->count()}}</p></a></li>
+                    <li><a class="views" href="#"><p><span class="icon far fa-eye scnd-font-color"></span>{{$user->subscriptions->count()}}</p></a></li>
+                    <li><a class="likes" href="#"><p><span class="icon far fa-heart scnd-font-color"></span>{{$user->favorites->count()}}</p></a></li>
                 </ul>
             </div>
             <div class="menu-box"> <!-- PROFILE MENU -->
@@ -25,7 +25,7 @@
                         <a class="menu-box-tab" href="#"><span class="icon far fa-envelope scnd-font-color"></span>Messagerie<div class="menu-box-number">24</div></a>
                     </li>
                     <li>
-                        <a class="menu-box-tab" href="#"><span class="icon fas fa-photo-video scnd-font-color"></span>Ressources<div class="menu-box-number">3</div></a>
+                        <a class="menu-box-tab" href="#"><span class="icon fas fa-photo-video scnd-font-color"></span>Ressources<div class="menu-box-number">{{$user->resources->count()}}</div></a>
                     </li>
                     <li>
                         <a class="menu-box-tab" href="#"><span class="icon fas fa-cog scnd-font-color"></span>Mes parametres</a>

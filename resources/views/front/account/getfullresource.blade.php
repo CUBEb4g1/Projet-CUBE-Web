@@ -53,7 +53,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="submit" class="btn btn-sm btn-outline-success"
+                                    <input type="submit" class="btn btn-md btn-outline-special border-0"
                                            value="Poster un commentaire"/>
                                 </div>
                             </form>

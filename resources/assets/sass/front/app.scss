@@ -20,7 +20,8 @@
 // === 11.  TEAM RULESET ============ Line 462  ===
 // === 12.  CONTACT RULESET ========= Line 524  ===
 // === 13.  BACK TO TOP BUTTON ====== Line 542  ===
-// === 14.  PERSONNAL PROFILE ======= Line 606  ===
+// === 14.  RESOURCES RESULTS ======= Line 606  ===
+// === 15.  PERSONNAL PROFILE ======= Line 680  ===
 
 // === 1.   IMPORTS SET ===========================
 
@@ -40,12 +41,12 @@ html {
     }
 }
 h1{
-    color: $green;
+    color: $green !important;
 }
 .btn-outline-special,
 .f1-bottom-bar,
 .f1-topbar,
-.header2.bg-success-gradiant,
+.bg-success-gradiant,
 .progress-wrap.active-progress,
 .team1 .pro-pic .card-img-overlay,
 .titular {
@@ -75,7 +76,7 @@ h1{
 // === 3.   SPECIAL RULESET =======================
 
 .bg-soft-dark {
-    background:                     rgba(255,255,255,.4);
+    background:                     rgba(255,255,255,.7);
 }
 .btn-outline-special {
     border-radius:                  50px;
@@ -603,7 +604,81 @@ section {
     opacity:                        1;
 }
 
-// === 14.  PERSONNAL PROFILE =====================
+// === 14.  RESOURCES RESULTS =====================
+
+.resource-card {
+    overflow:                       hidden;
+    box-shadow:                     0px 2px 20px rgba(0,0,0,.2);
+    background:                     white;
+    border-radius:                  0.5rem;
+    position:                       relative;
+    transition:                     250ms all ease-in-out;
+    cursor:                         pointer;
+    &:hover {
+        transform:                  scale(1.05);
+        box-shadow:                 0px 2px 40px rgba(0,0,0,.2);
+    }
+    .banner-img {
+        position:                   absolute;
+        object-fit:                 cover;
+        height:                     5rem;
+        width:                      100%;
+    }
+    .card-body {
+        margin:                     5rem 1rem 1rem 1rem;
+        .card-link {
+            color:                  $green;
+        }
+    }
+    .card-link {
+        color:                      $dark;
+        padding-right:              2rem;
+    }
+    .category-tag {
+        font-size:                  0.8rem;
+        font-weight:                bold;
+        color:                      $dark;
+        padding:                    0.5rem 1.3rem 0.5rem 1rem;
+        text-transform:             uppercase;
+        position:                   absolute;
+        z-index:                    1;
+        top:                        1rem;
+        border-radius:              0 2rem 2rem 0;
+    }
+    .resource-title {
+        color:                      $green;
+        line-height:                1.5rem;
+        margin:                     1rem 0 0.5rem;
+    }
+    .resource-description {
+        color:                      $dark;
+        font-size:                  0.9rem;
+    }
+    .card-profile {
+        display:                    flex;
+        margin-top:                 2rem;
+        align-items:                center;
+    }
+    .profile-img {
+        width:                      60px;
+        height:                     60px;
+        object-fit:                 cover;
+        border-radius:              50%;
+    }
+    .card-profile-info {
+        margin-left:                1rem;
+    }
+    .profile-name {
+        font-size:                  1rem;
+    }
+    .profile-datetime {
+        color:                      rgba(0,0,0,.7);
+        font-size:                  0.9rem;
+    }
+}
+
+// === 15.  PERSONNAL PROFILE =====================
+
 .container .row .col-xl-4,
 .container .row .col-xl-8 {
     [class*="fontawesome-"]:before {
@@ -928,6 +1003,174 @@ section {
     }
     .profile-content-link {
         color:                      $green;
+    }
+}
+
+// === 16.  LOGIN SYSTEM ==========================
+
+.login-fg {
+    .bg {
+        background:                 rgba(0,0,0,0.04) repeat;
+        background-size:            cover;
+        top:                        0;
+        width:                      100%;
+        bottom:                     0;
+        opacity:                    1;
+        z-index:                    999;
+        min-height:                 100vh;
+        position:                   relative;
+        display:                    flex;
+        justify-content:            center;
+        align-items:                center;
+        padding:                    30px
+    }
+    .img {
+        display:                    flex;
+        justify-content:            flex-end;
+        align-items:                center;
+        img {
+            width:                  500px;
+        }
+    }
+    .login {
+        min-height:                 100vh;
+        position:                   relative;
+        display:                    -webkit-box;
+        display:                    -moz-box;
+        display:                    -ms-flexbox;
+        display:                    -webkit-flex;
+        display:                    flex;
+        justify-content:            center;
+        align-items:                center;
+        padding:                    30px 15px;
+        box-shadow:                 0 0 15px rgba(0,0,0,0.2);
+    }
+    .form-container {
+        color:                      #ccc;
+        position:                   relative;
+        .form-group {
+            margin-bottom:          25px
+        }
+        .form-fg {
+            float:                  left;
+            width:                  100%;
+            position:               relative;
+            i {
+                position:           absolute;
+                top:                13px;
+                right:              20px;
+                font-size:          19px;
+                color:              $dark;
+            }
+            .toggle {
+                position:           initial;
+                background:         none;
+                border:             none;
+            }
+        }
+        .form-fg input {
+            float:                  left;
+            width:                  100%;
+            padding:                11px 45px 11px 20px;
+            border-radius:          50px
+        }
+        .form-check {
+            float:                  left;
+            margin-bottom:          0;
+        }
+        .input-text {
+            outline:                none;
+            color:                  $dark;
+            border-radius:          3px;
+            font-weight:            500;
+            border:                 1px solid transparent;
+            box-shadow:             0 0 5px rgba(0,0,0,0.2)
+        }
+        .checkbox {
+            margin-bottom:          25px
+        }
+        .form-check label::before{
+            content:                "";
+            display:                inline-block;
+            position:               absolute;
+            width:                  18px;
+            height:                 18px;
+            top:                    2px;
+            margin-left:            -25px;
+            border:                 none;
+            border-radius:          3px;
+            background:             #fff;
+            box-shadow:             0 0 5px rgba(0,0,0,0.2)
+        }
+        .form-check-label {
+            margin-bottom:          0;
+            color:                  $dark
+        }
+        .checkbox-fg input[type="checkbox"]:checked + label::before {
+            color:                  $white;
+            background:             $green
+        }
+        input[type=checkbox]:checked + label:before {
+            font-weight:            300;
+            color:                  $white-smoke;
+            content:                "\2713";
+            line-height:            17px
+        }
+        input[type=checkbox],input[type=radio] {
+            margin-top:             4px
+        }
+        .checkbox a {
+            color:                  $green;
+            float:                  right;
+            margin-left:            3px
+        }
+    }
+    .login-section {
+        max-width:                  420px;
+        margin:                     0 auto;
+        text-align:                 center;
+        width:                      100%;
+        p {
+            margin:                 25px 0 0;
+            font-size:              15px;
+            a {
+                color:              $green
+            }
+        }
+        .or-login {
+            float:                  left;
+            width:                  100%;
+            margin:                 0 0 25px;
+            text-align:             center;
+            position:               relative;
+            &::before {
+                position:           absolute;
+                left:               0;
+                top:                10px;
+                width:              100%;
+                height:             1px;
+                background:         $green;
+                content:            ""
+            }
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .login-fg .info h1 {
+        font-size:45px
+    }
+}
+@media (max-width: 992px) {
+    .login-fg .bg {
+        display:none
+    }
+}
+@media (max-width: 768px) {
+    .login-fg .login-section .social li a {
+        width:100px
+    }
+    .login-fg .logo a {
+        font-size:26px;
     }
 }
 
