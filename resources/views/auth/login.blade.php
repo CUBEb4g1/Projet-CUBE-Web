@@ -63,108 +63,17 @@
                                             ],
                                         ])
                                     </div>
-                                    <a href="#">Mot de passe oublie</a>
+                                    <a href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
                                 </div>
                                 <div class="form-group mt-2">
                                     <button type="submit" class="btn btn-md btn-block btn-outline-special btn-lg border-0">{{ __('Login') }}</button>
                                 </div>
                             </div>
                         </form>
-                        <p>Tu n'as pas encore de compte ? <a href="#" class="linkButton"> Inscription</a></p>
+                        <p>Tu n'as pas encore de compte ? <a href="{{ route('register') }}" class="linkButton"> {{ __('Register') }}</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    {{-- OLD LOGIN FORM --}}
-    {{--     <div class="auth-container">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-                            <div class="auth-card">
-                                <div class="auth-card__header">
-                                    <h1 class="auth-card__title">{{ __('Login') }}</h1>
-                                </div>
-                                <div class="auth-card__body">
-                                    <div class="form-group">
-                                        @form('email', [
-                                            'label' => [
-                                                'text' => __('E-Mail Address'),
-                                                'class' => 'auth-card__label',
-                                            ],
-                                            'input' => [
-                                                'name' => 'email',
-                                                'value' => old('email'),
-                                                'class' => 'auth-card__input',
-                                            ],
-                                        ])
-                                    </div>
-                                    <div class="form-group">
-                                        @form('password', [
-                                            'label' => [
-                                                'text' => __('Password'),
-                                                'class' => 'auth-card__label',
-                                            ],
-                                            'input' => [
-                                                'name' => 'password',
-                                                'value' => old('password'),
-                                                'class' => 'auth-card__input',
-                                            ],
-                                        ])
-                                    </div>
-                                    <div class="form-group">
-                                        @form('checkbox', [
-                                            'label' => [
-                                                'text' => __('Remember Me'),
-                                                'class' => 'auth-card__label',
-                                            ],
-                                            'input' => [
-                                                'name' => 'remember',
-                                                'checked' => old('remember'),
-                                            ],
-                                        ])
-                                    </div>
-                                    <button type="submit" class="btn btn-md btn-block btn-outline-special btn-lg border-0">
-                                        {{ __('Login') }}
-                                    </button>
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link btn-block btn-sm" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    @endif
-                                </div>
-                                <div class="auth-card__footer">
-                                    @if (Route::has('register'))
-                                        <a href="{{ route('register') }}" class="btn btn-block auth-card__btn auth-card__btn--grey">
-                                            {{ __('Register') }}
-                                        </a>
-                                    @endif
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-    {{-- Scripts --}}
-    <script>
-        function toggleSignup(){
-            document.getElementById("login-toggle").style.backgroundColor="#fff";
-            document.getElementById("login-toggle").style.color="#222";
-            document.getElementById("signup-toggle").style.backgroundColor="#57b846";
-            document.getElementById("signup-toggle").style.color="#fff";
-            document.getElementById("login-form").style.display="none";
-            document.getElementById("signup-form").style.display="block";
-        }
-        function toggleLogin(){
-            document.getElementById("login-toggle").style.backgroundColor="#57B846";
-            document.getElementById("login-toggle").style.color="#fff";
-            document.getElementById("signup-toggle").style.backgroundColor="#fff";
-            document.getElementById("signup-toggle").style.color="#222";
-            document.getElementById("signup-form").style.display="none";
-            document.getElementById("login-form").style.display="block";
-        }
-    </script>
 @endsection
