@@ -4,12 +4,12 @@
 @endpush
 @section('content')
     <div class="block">
-        <div class="text-center m-3">
-            <h3 class="">Création de votre ressource :</h3>
-        </div>
         <form action="{{ route('front.resource_add') }}" method="POST" id="addResource">
             @csrf
             <div class="container my-5 bg-shadow pt-5 pb-5">
+                <div class="text-center m-3">
+                    <h3 class="mb-4">Création de votre ressource</h3>
+                </div>
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
@@ -97,7 +97,7 @@
                     ])
                 </p>
                 <div class="text-center">
-                    <button type="submit" form="addResource" class="btn btn-dark btn-padded mt-3 text-center">
+                    <button type="submit" form="addResource" class="btn btn-md btn-outline-special border-0">
                         <i class="far fa-plus mr-2"></i> Poster la ressource
                     </button>
                 </div>

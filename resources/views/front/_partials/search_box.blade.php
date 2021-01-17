@@ -2,7 +2,7 @@
     <div class="d-lg-flex align-items-center p-xl-5 p-0 text-center justify-content-center">
         <form action="{{route('search')}}" method="get" class="__js-sb-form mt-4">
             <div class="border p-xl-5 p-3 bg-soft-dark">
-                <h3 class="mb-4 font-weight-light">Super formulaire de recherche</h3>
+                <h3 class="mb-4">Super formulaire de recherche</h3>
 
                 <div class="form-group">
                     @include('front._partials.searchbox.title')

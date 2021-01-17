@@ -4,49 +4,39 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
 }
-
 h3, .h3 {
     font-size: 1.75rem;
     color: #0faf96;
 }
-
 .col-sm-4 {
     flex: 0 0 20.3333333333%;
     max-width: 33.3333333333%;
 }
-
 .col-sm-3  {
     flex: 0 0 10.3333333333%;
     max-width: 33.3333333333%;
 }
-
 .bg-shadow {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 0.25rem;
 }
-
 .tox {
     width: 100%!important;
 }
-
 .tox-tinymce {
     margin-right: auto;
     margin-left: auto;
 }
-
 label {
     color: #0faf96;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-
 .block {
     background-color: rgba(0,0,0,.7);
     padding-top: 5px;
     padding-bottom: 5px;
 }
-
 .card-gradiant {
     border:none;
     color: #fff;
@@ -58,11 +48,9 @@ label {
     border-bottom-left-radius: 0.25rem;
     background-color: rgba(0,0,0,0);
 }
-
 .card-header-gradiant {
     background: linear-gradient(to right, #0faf96 0%, #63ff96 100%);
 }
-
 .card-body-gradiant{
     color: #000;
     background: linear-gradient(to right, #0faf96 0%, #63ff96 100%)!important;
@@ -70,14 +58,12 @@ label {
     padding: 0.15rem 0.15rem 0 0.15rem;
     background-origin: border-box;
 }
-
 .content-gradiant {
     padding: 0.25rem;
     background-color: #ffffff;
     min-height:100vh;
     overflow: auto;
 }
-
 .card-footer-gradiant {
     background: #333333;
     color: #fff;
@@ -88,14 +74,12 @@ label {
     border-bottom-right-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
 }
-
 .card-footer-gradiant {
     background: linear-gradient(to right, #0faf96 0%, #63ff96 100%)!important;
     /* haut | droit | bas | gauche */
     padding: 0 0.15rem 0.15rem 0.15rem;
     background-origin: border-box;
 }
-
 .footer-content-gradiant {
     background: #333333;
     color: #fff;
@@ -107,7 +91,6 @@ label {
     border-bottom-left-radius: 0.25rem;
     padding: 10px;
 }
-
 .comment-card-body-gradiant {
     color: #000;
     background: linear-gradient(to right, #0faf96 0%, #63ff96 100%)!important;
@@ -121,7 +104,6 @@ label {
     border-bottom-right-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
 }
-
 .comment-content-gradiant {
     min-height: 20vh;
     padding: 2rem;

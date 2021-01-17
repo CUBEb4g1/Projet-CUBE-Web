@@ -14,41 +14,39 @@
                         <div class="collapse navbar-collapse" id="ft1">
                             <ul class="navbar-nav">
                                 <li class="nav-item active"><a class="nav-link d-block" href="/">Accueil</a></li>
-                                <li class="nav-item"><a class="nav-link d-block" href="#">Ressources</a></li>
-                                <li class="nav-item"><a class="nav-link d-block" href="#">A propos</a></li>
-                                <li class="nav-item"><a class="nav-link d-block" href="{{ route('contact') }}">Contact</a></li>
+                                {{--                                <li class="nav-item"><a class="nav-link d-block" href="#">Ressources</a></li>--}}
+                                {{--                                <li class="nav-item"><a class="nav-link d-block" href="#">A propos</a></li>--}}
+                                {{--                                <li class="nav-item"><a class="nav-link d-block" href="{{ route('contact') }}">Contact</a></li>--}}
                                 <li class="nav-item">
-                                    @if (Auth::check())
+                                    @auth ()
                                         {{--Profile--}}
                                         <a href="{{ route('profile') }}" class="nav-link d-block">Mon profil</a>
-                                    @else
-                                    @endif
+                                    @endauth
                                 </li>
                                 <li class="nav-item"><a class="nav-link d-block" href="#">Guide</a></li>
                                 <li class="nav-item">
-                                    @if (Auth::check())
-                                        {{--Logout--}}
-                                        <a href="{{ route('logout') }}" class="nav-link d-block" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    @auth()
+                                        <a href="{{ route('logout') }}" class="nav-link d-block"
+                                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
-                                    @else
-                                        {{--Login--}}
-                                        <a href="{{ route('login') }}" class="nav-link d-block">{{ __('Login') }}</a>
-                                    @endif
+                                    @endauth
+                                    @guest()
+                                        <a href="{{ route('login') }}"
+                                           class="nav-link d-block">{{ __('Login') }}</a>
+                                    @endguest
                                 </li>
                                 <li class="nav-item">
-                                    @if (Auth::check())
-                                        {{--Checking rights--}}
-                                        @can($ACCESS_BACKOFFICE)
-                                            {{--Backoffice--}}
-                                            <a href="{{ route('back.dashboard') }}" class="nav-link d-block">
-                                                {{ __('Administration') }}
-                                            </a>
-                                        @endcan
-                                    @else
-                                        {{--Register--}}
-                                        <a class="nav-link d-block" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    @endif
+                                    @can($ACCESS_BACKOFFICE)
+                                        {{--Backoffice--}}
+                                        <a href="{{ route('back.dashboard') }}" class="nav-link d-block">
+                                            {{ __('Administration') }}
+                                        </a>
+                                    @endcan
+                                    @guest(){{--Register--}}
+                                        <a class="nav-link d-block"
+                                           href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    @endguest
                                 </li>
                             </ul>
                             <ul class="navbar-nav ml-auto">
@@ -103,11 +101,10 @@
                         <li><a href="#" class="text-decoration-none d-flex py-2 align-items-center"><i class="icon-arrow-right mr-1"></i> Support</a></li>
                         <li><a href="#" class="text-decoration-none d-flex py-2 align-items-center"><i class="icon-arrow-right mr-1"></i> Jobs</a></li>
                         <li>
-                            @if (Auth::check())
+                            @auth ()
                                 {{--Profile--}}
                                 <a href="{{ route('profile') }}" class="text-decoration-none d-flex py-2 align-items-center"><i class="icon-arrow-right mr-1"></i> Mon profil</a>
-                            @else
-                            @endif
+                            @endauth
                         </li>
                     </ul>
                 </div>
