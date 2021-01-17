@@ -7,8 +7,10 @@ use App\Models\Resource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
+
 class ResourceApiController extends Controller
 {
+
     public function show($id)
     {
         $resource = Resource::with(['user',])
@@ -17,6 +19,21 @@ class ResourceApiController extends Controller
             ->where('validated', 1)->firstOrFail();
 
         $resource->increment('views');
+
+        return response()->json($resource, 200);
+    }
+
+    public function topViews()
+    {
+        $resource = Resource::orderByDesc('views')->limit(10)->get();
+
+        return response()->json($resource, 200);
+
+    }
+
+    public function topLike()
+    {
+        $resource = Resource::withCount('favoriters')->orderBy('favoriters_count', 'desc')->limit(5)->get();
 
         return response()->json($resource, 200);
     }

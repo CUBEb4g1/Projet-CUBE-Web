@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 // API Resources
 Route::get('resources/{id}', [ResourceApiController::class, 'show']);
 Route::get('resources/', [ResourceApiController::class, 'search']);
-Route::get('resources/top/', [ResourceApiController::class, 'top']);
+Route::get('resources/top/views', [ResourceApiController::class, 'topViews']);
+Route::get('resources/top/like', [ResourceApiController::class, 'topLike']);
 
 // API Category
 Route::get("category/", [CategoryApiController::class, 'search']);
