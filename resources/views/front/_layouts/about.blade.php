@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7 col-sm-12">
-                <h5 class="text-dark">Grace a chacun de vous</h5>
+                <h5 class="text-dark">Grâce à chacun de vous</h5>
                 <h3>Explorez de nouveaux horizons !</h3>
                 <h5 class="text-dark mb-5">Votre imagination peut vous faire voyager partout</h5>
                 <div class="d-flex justify-content-start mb-3">
@@ -38,7 +38,7 @@
                             <img src="{{ asset('/media/front/members.svg') }}" alt="" class="mr-3">
                             <div>
                                 <h4 class="font-weight-bold mb-0"><span class="scVal">0</span></h4>
-                                <h6 class="mb-0">Membres de la communaute</h6>
+                                <h6 class="mb-0">Membres de la communauté</h6>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                             <img src="{{ asset('/media/front/resources.svg') }}" alt="" class="mr-3">
                             <div>
                                 <h4 class="font-weight-bold mb-0"><span class="fpVal">0</span></h4>
-                                <h6 class="mb-0">Ressources partagees</h6>
+                                <h6 class="mb-0">Ressources partagées</h6>
                             </div>
                         </div>
                     </div>

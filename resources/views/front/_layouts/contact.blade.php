@@ -8,7 +8,7 @@
             </div>
             <div class="col-sm-7" >
                 <h3>Des questions ?</h3>
-                <h6 class="mb-5 text-dark">N'hesitez pas a nous en faire part, ecrivez-nous !</h6>
+                <h6 class="mb-5 text-dark">N'hésitez pas à nous en faire part, écrivez-nous !</h6>
                 <form>
                     <div class="row">
                         <div class="col-sm-6">

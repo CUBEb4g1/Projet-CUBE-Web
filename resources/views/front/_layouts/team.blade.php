@@ -7,7 +7,7 @@
             <div class="row justify-content-center mb-3">
                 <div class="col-md-7 text-center">
                     <h3 class="mb-3">Rencontrez les concepteurs de la plateforme</h3>
-                    <h6 class="subtitle font-weight-normal">Decouvrez qui se cache derriere les pages sur lesquelles vous naviguez. Suivez-les sur les reseaux et plongez dans leurs differents travaux.</h6>
+                    <h6 class="subtitle font-weight-normal">Découvrez qui se cache derrière les pages sur lesquelles vous naviguez. Suivez-les sur les réseaux et plongez dans leurs différents travaux.</h6>
                 </div>
             </div>
             <div class="row">

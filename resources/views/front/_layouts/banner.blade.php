@@ -8,7 +8,7 @@
                 <div class="pt-5 pb-5">
                     <img src="{{ asset_cache('media/favicons/favicon.png') }}" alt="">
                     <h1 class="font-weight-medium">Hello, bienvenue !</h1>
-                    <h5 class="mb-4 text-dark">Explore des maintenant de nouvelles possibilites</h5>
+                    <h5 class="mb-4 text-dark">Explore dès maintenant de nouvelles possibilités</h5>
                     <a target="_blank" class="btn btn-md btn-block btn-outline-special btn-lg border-0" href="/">Suivre le guide</a>
                     </a>
                 </div>

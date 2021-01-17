@@ -26,7 +26,7 @@
                 <a class="menu-box-tab" href="#"><span class="icon fas fa-photo-video scnd-font-color"></span>Ressources<div class="menu-box-number">{{$user->resources->count()}}</div></a>
             </li>
             <li>
-                <a class="menu-box-tab" href="#"><span class="icon fas fa-cog scnd-font-color"></span>Mes parametres</a>
+                <a class="menu-box-tab" href="#"><span class="icon fas fa-cog scnd-font-color"></span>Mes paramètres</a>
             </li>
             <li>
                 <a class="menu-box-tab" href="#"><span class="icon fas fa-chart-pie scnd-font-color"></span>Statistiques</a>
