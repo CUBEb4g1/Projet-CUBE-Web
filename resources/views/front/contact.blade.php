@@ -11,7 +11,7 @@
                         <h1 class="font-weight-medium">Ressources Relationnelles</h1>
                         <h5 class="mb-4 text-dark">Explore dès maintenant de nouvelles possibilités</h5>
                         <div class="img">
-                            <img src="{{ asset('media/front/phone.png') }}">
+                            <img src="{{ asset('media/front/contact.png') }}">
                         </div>
                     </div>
                 </div>
