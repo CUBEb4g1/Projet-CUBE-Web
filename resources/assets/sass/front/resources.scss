@@ -61,7 +61,6 @@ label {
 .content-gradiant {
     padding: 0.25rem;
     background-color: #ffffff;
-    min-height:100vh;
     overflow: auto;
 }
 .card-footer-gradiant {
@@ -114,4 +113,7 @@ label {
     -moz-border-radius-bottomleft: 0.25rem;
     border-bottom-right-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
+}
+.min-vh-100 {
+    min-height: auto !important;
 }
