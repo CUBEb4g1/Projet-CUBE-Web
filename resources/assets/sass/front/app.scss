@@ -7,21 +7,23 @@
 //                     '{'!!'}'                 ===
 //                                              ===
 // === 0.   SUMMARY ================= Line 1    ===
-// === 1.   IMPORTS SET ============= Line 25   ===
-// === 2.   COMMON RULESET ========== Line 31   ===
-// === 3.   SPECIAL RULESET ========= Line 75   ===
-// === 4.   NAVBAR RULESET ========== Line 84   ===
-// === 5.   FOOTER RULESET ========== Line 153  ===
-// === 6.   ANIMATED LINES RULESET == Line 216  ===
-// === 7.   BANNER RULESET ========== Line 308  ===
-// === 8.   INCITATION RULESET ====== Line 355  ===
-// === 9.   SERVICE RULESET ========= Line 393  ===
-// === 10.  ABOUT RULESET =========== Line 448  ===
-// === 11.  TEAM RULESET ============ Line 462  ===
-// === 12.  CONTACT RULESET ========= Line 524  ===
-// === 13.  BACK TO TOP BUTTON ====== Line 542  ===
-// === 14.  RESOURCES RESULTS ======= Line 606  ===
-// === 15.  PERSONNAL PROFILE ======= Line 680  ===
+// === 1.   IMPORTS SET ============= Line 28   ===
+// === 2.   COMMON RULESET ========== Line 34   ===
+// === 3.   SPECIAL RULESET ========= Line 78   ===
+// === 4.   NAVBAR RULESET ========== Line 87   ===
+// === 5.   FOOTER RULESET ========== Line 156  ===
+// === 6.   ANIMATED LINES RULESET == Line 219  ===
+// === 7.   BANNER RULESET ========== Line 311  ===
+// === 8.   INCITATION RULESET ====== Line 358  ===
+// === 9.   SERVICE RULESET ========= Line 396  ===
+// === 10.  ABOUT RULESET =========== Line 451  ===
+// === 11.  TEAM RULESET ============ Line 465  ===
+// === 12.  CONTACT RULESET ========= Line 527  ===
+// === 13.  BACK TO TOP BUTTON ====== Line 545  ===
+// === 14.  RESOURCES RESULTS ======= Line 609  ===
+// === 15.  PERSONNAL PROFILE ======= Line 682  ===
+// === 16.  LOGIN SYSTEM ============ Line 1011 ===
+// === 17.  CONTACT FORM ============ Line 1079 ===
 
 // === 1.   IMPORTS SET ===========================
 
@@ -1171,6 +1173,67 @@ section {
     }
     .login-fg .logo a {
         font-size:26px;
+    }
+}
+
+// === 17.  CONTACT FORM ==========================
+
+.login-fg {
+    .form-fg i {
+        right: 30px !important;
+    }
+    .form-fg-special {
+        float:                  left;
+        width:                  100%;
+        position:               relative;
+        margin-bottom:          1rem !important;
+        i {
+            position:           absolute;
+            top:                13px;
+            right:              30px;
+            font-size:          19px;
+            color:              $dark;
+        }
+        .toggle {
+            position:           initial;
+            background:         none;
+            border:             none;
+        }
+    }
+    .form-fg-special input {
+        float:                  left;
+        width:                  100%;
+        padding:                11px 45px 11px 20px;
+        border-radius:          50px
+    }
+    .form-section {
+        max-width:                  670px;
+        margin:                     0 auto;
+        text-align:                 center;
+        width:                      100%;
+        p {
+            margin:                 25px 0 0;
+            font-size:              15px;
+            a {
+                color:              $green
+            }
+        }
+        .or-login {
+            float:                  left;
+            width:                  100%;
+            margin:                 0 0 25px;
+            text-align:             center;
+            position:               relative;
+            &::before {
+                position:           absolute;
+                left:               0;
+                top:                10px;
+                width:              100%;
+                height:             1px;
+                background:         $green;
+                content:            ""
+            }
+        }
     }
 }
 
