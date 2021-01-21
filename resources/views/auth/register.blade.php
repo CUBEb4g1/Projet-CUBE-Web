@@ -2,96 +2,84 @@
 
 @section('title', __('Register'))
 
-@push('styles')
-	<link href="{{ mix('css/auth.css') }}" rel="stylesheet">
-@endpush
-
 @section('content')
-	<div class="auth-container">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-sm-8 col-md-6 col-lg-5 col-xl-4">
-					<form method="POST" action="{{ route('register') }}">
-						@csrf
-
-						<div class="auth-card">
-							<div class="auth-card__header">
-								<h1 class="auth-card__title">{{ __('Register') }}</h1>
-							</div>
-
-							<div class="auth-card__body">
-								<div class="form-group">
-									@form('text', [
-										'label' => [
-											'text' => __('Username'),
-											'class' => 'auth-card__label',
-										],
-										'input' => [
-											'name' => 'username',
-											'value' => old('username'),
-											'class' => 'auth-card__input',
-											'required',
-										],
-									])
-								</div>
-
-								<div class="form-group">
-									@form('email', [
-										'label' => [
-											'text' => __('E-Mail Address'),
-											'class' => 'auth-card__label',
-										],
-										'input' => [
-											'name' => 'email',
-											'value' => old('email'),
-											'class' => 'auth-card__input',
-											'required',
-										],
-									])
-								</div>
-
-								<div class="form-group">
-									@form('passwordToggle', [
-										'label' => [
-											'text' => __('Password'),
-											'class' => 'auth-card__label',
-										],
-										'input' => [
-											'name' => 'password',
-											'class' => 'auth-card__input',
-											'required',
-										],
-									])
-								</div>
-
-								{{--<div class="form-group">
-									@form('password', [
-										'label' => [
-											'text' => __('Confirm Password'),
-										],
-										'input' => [
-											'name' => 'password_confirmation',
-											'required',
-										],
-									])
-								</div>--}}
-
-								<button type="submit" class="btn btn-primary btn-block auth-card__btn">
-									{{ __('Register') }}
-								</button>
-							</div>
-
-							<div class="auth-card__footer">
-								@if (Route::has('register'))
-									<a href="{{ route('login') }}" class="btn btn-block auth-card__btn auth-card__btn--grey">
-										{{ __('Login') }}
-									</a>
-								@endif
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="login-fg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-8 col-lg-7 col-md-12 bg" style="background-image:url({{ asset('/media/front/wave.png') }})">
+                    <div class="info">
+                        <h1 class="font-weight-medium">Ressources Relationnelles</h1>
+                        <h5 class="mb-4 text-dark">Explore des maintenant de nouvelles possibilites</h5>
+                        <div class="img">
+                            <img src="{{ asset('media/front/phone.png') }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5 col-md-12 login">
+                    <div class="login-section">
+                        <div class="logo clearfix">
+                            <a href="/">
+                                <img src="{{ asset_cache('media/favicons/favicon.png') }}" alt="Ressources Relationnelles"/>
+                            </a>
+                        </div>
+                        <h1 class="font-weight-medium">{{ __('Register') }}</h1>
+                        <div class="or-login clearfix"></div>
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
+                            <div class="form-container">
+                                <div class="form-group form-fg">
+                                    @form('text', [
+                                        'input' => [
+                                            'placeholder' => "Nom d'utilisateur",
+                                            'name' => 'username',
+                                            'value' => old('username'),
+                                            'class' => 'input-text',
+                                            'required',
+                                        ],
+                                    ])
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="form-group form-fg">
+                                    @form('email', [
+                                        'input' => [
+                                            'placeholder' => 'Adresse mail',
+                                            'name' => 'email',
+                                            'value' => old('email'),
+                                            'class' => 'input-text',
+                                            'required',
+                                        ],
+                                    ])
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="form-group form-fg">
+                                    @form('passwordToggle', [
+                                        'input' => [
+                                            'placeholder' => 'Mot de passe',
+                                            'name' => 'password',
+                                            'class' => 'input-text',
+                                            'required',
+                                        ],
+                                    ])
+                                </div>
+                                {{--<div class="form-group">
+                                    @form('password', [
+                                         'input' => [
+                                            'placeholder' => 'Confirmation du mot de passe',
+                                            'name' => 'password_confirmation',
+                                            'required',
+                                        ],
+                                    ])
+                                </div>--}}
+                                <p>En cliquant sur 'S'incrire', je confirme avoir lu et accepte nos <a href="#" class="linkButton"> Termes et conditions d'utilisation.</a></p>
+                                <div class="form-group mt-2">
+                                    <button type="submit" class="btn btn-md btn-block btn-outline-special btn-lg border-0">{{ __('Register') }}</button>
+                                </div>
+                            </div>
+                        </form>
+                        <p>Tu as deja un compte ? <a href="{{ route('login') }}" class="linkButton"> {{ __('Login') }}</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

@@ -7,19 +7,21 @@
 //                     '{'!!'}'                 ===
 //                                              ===
 // === 0.   SUMMARY ================= Line 1    ===
-// === 1.   IMPORTS SET ============= Line 24   ===
-// === 2.   COMMON RULESET ========== Line 30   ===
-// === 3.   SPECIAL RULESET ========= Line 73   ===
-// === 4.   NAVBAR RULESET ========== Line 82   ===
-// === 5.   FOOTER RULESET ========== Line 151  ===
-// === 6.   ANIMATED LINES RULESET == Line 214  ===
-// === 7.   BANNER RULESET ========== Line 306  ===
-// === 8.   INCITATION RULESET ====== Line 353  ===
-// === 9.   SERVICE RULESET ========= Line 391  ===
-// === 10.  ABOUT RULESET =========== Line 446  ===
-// === 11.  TEAM RULESET ============ Line 460  ===
-// === 12.  CONTACT RULESET ========= Line 522  ===
-// === 13.  BACK TO TOP BUTTON ====== Line 540  ===
+// === 1.   IMPORTS SET ============= Line 25   ===
+// === 2.   COMMON RULESET ========== Line 31   ===
+// === 3.   SPECIAL RULESET ========= Line 75   ===
+// === 4.   NAVBAR RULESET ========== Line 84   ===
+// === 5.   FOOTER RULESET ========== Line 153  ===
+// === 6.   ANIMATED LINES RULESET == Line 216  ===
+// === 7.   BANNER RULESET ========== Line 308  ===
+// === 8.   INCITATION RULESET ====== Line 355  ===
+// === 9.   SERVICE RULESET ========= Line 393  ===
+// === 10.  ABOUT RULESET =========== Line 448  ===
+// === 11.  TEAM RULESET ============ Line 462  ===
+// === 12.  CONTACT RULESET ========= Line 524  ===
+// === 13.  BACK TO TOP BUTTON ====== Line 542  ===
+// === 14.  RESOURCES RESULTS ======= Line 606  ===
+// === 15.  PERSONNAL PROFILE ======= Line 680  ===
 
 // === 1.   IMPORTS SET ===========================
 
@@ -39,14 +41,15 @@ html {
     }
 }
 h1{
-    color: $green;
+    color: $green !important;
 }
 .btn-outline-special,
 .f1-bottom-bar,
 .f1-topbar,
-.header2.bg-success-gradiant,
+.bg-success-gradiant,
 .progress-wrap.active-progress,
-.team1 .pro-pic .card-img-overlay {
+.team1 .pro-pic .card-img-overlay,
+.titular {
     background:                     $teal;
     background:                     -webkit-linear-gradient(to right, $green 0%, $teal 100%);
     background:                     -webkit-gradient(linear, left top, right top, from($green), to($teal));
@@ -73,7 +76,7 @@ h1{
 // === 3.   SPECIAL RULESET =======================
 
 .bg-soft-dark {
-    background:                     rgba(255,255,255,.4);
+    background:                     rgba(255,255,255,.7);
 }
 .btn-outline-special {
     border-radius:                  50px;
@@ -601,6 +604,576 @@ section {
     opacity:                        1;
 }
 
+// === 14.  RESOURCES RESULTS =====================
+
+.resource-card {
+    overflow:                       hidden;
+    box-shadow:                     0px 2px 20px rgba(0,0,0,.2);
+    background:                     white;
+    border-radius:                  0.5rem;
+    position:                       relative;
+    transition:                     250ms all ease-in-out;
+    cursor:                         pointer;
+    &:hover {
+        transform:                  scale(1.05);
+        box-shadow:                 0px 2px 40px rgba(0,0,0,.2);
+    }
+    .banner-img {
+        position:                   absolute;
+        object-fit:                 cover;
+        height:                     5rem;
+        width:                      100%;
+    }
+    .card-body {
+        margin:                     5rem 1rem 1rem 1rem;
+        .card-link {
+            color:                  $green;
+        }
+    }
+    .card-link {
+        color:                      $dark;
+        padding-right:              2rem;
+    }
+    .category-tag {
+        font-size:                  0.8rem;
+        font-weight:                bold;
+        color:                      $dark;
+        padding:                    0.5rem 1.3rem 0.5rem 1rem;
+        text-transform:             uppercase;
+        position:                   absolute;
+        z-index:                    1;
+        top:                        1rem;
+        border-radius:              0 2rem 2rem 0;
+    }
+    .resource-title {
+        color:                      $green;
+        line-height:                1.5rem;
+        margin:                     1rem 0 0.5rem;
+    }
+    .resource-description {
+        color:                      $dark;
+        font-size:                  0.9rem;
+    }
+    .card-profile {
+        display:                    flex;
+        margin-top:                 2rem;
+        align-items:                center;
+    }
+    .profile-img {
+        width:                      60px;
+        height:                     60px;
+        object-fit:                 cover;
+        border-radius:              50%;
+    }
+    .card-profile-info {
+        margin-left:                1rem;
+    }
+    .profile-name {
+        font-size:                  1rem;
+    }
+    .profile-datetime {
+        color:                      rgba(0,0,0,.7);
+        font-size:                  0.9rem;
+    }
+}
+
+// === 15.  PERSONNAL PROFILE =====================
+
+.container .row .col-xl-4,
+.container .row .col-xl-8 {
+    [class*="fontawesome-"]:before {
+        font-family:                'FontAwesome',
+                                    sans-serif;
+    }
+    .scnd-font-color {
+        color:                      rgba(255,255,255,.7);
+    }
+    margin-top:                     2em;
+    h4 {
+        color:                      $green;
+    }
+    h1, h2, h5, p, a, span{
+        color:                      $white-smoke;
+    }
+    /* Killing marks for the whole user Profile */
+    ul {
+        list-style-type:            none;
+        margin:                     0;
+        padding-left:               0;
+    }
+    /* Profile horizontal lists */
+    .horizontal-list {
+        margin:                     0;
+        padding:                    0;
+        list-style-type:            none;
+        li {
+            float:                  left;
+        }
+    }
+    /* Profile left section titles */
+    .titular {
+        display:                    block;
+        line-height:                60px;
+        text-align:                 center;
+        border-bottom-left-radius:  5px;
+        border-bottom-right-radius: 5px;
+    }
+    .profile{
+        margin-bottom:              0;
+        background:                 $dark;
+        border-top-left-radius:     5px;
+        border-top-right-radius:    5px;
+        /* Profile options button */
+        .add-button .icon {
+            float:                  right;
+            line-height:            18px;
+            width:                  23px;
+            border:                 2px solid;
+            border-radius:          100%;
+            font-size:              18px;
+            text-align:             center;
+            margin:                 10px;
+            &:hover {
+                color:              $teal;
+                border-color:       $teal;
+            }
+        }
+        /* Profile picture */
+        .big-profile-picture {
+            margin:                 0 auto;
+            border:                 5px solid $teal;
+            width:                  150px;
+            height:                 150px;
+        }
+        .clear {
+            clear:                  both;
+        }
+        .profile-picture {
+            border-radius:          100%;
+            overflow:               hidden;
+            -webkit-box-sizing:     content-box;
+            -moz-box-sizing:        content-box;
+            box-sizing:             content-box;
+        }
+        /* Profile text space */
+        .profile-description {
+            width:                  290px;
+            margin:                 0 auto;
+            text-align:             center;
+        }
+        .user-name {
+            margin:                 25px 0 16px;
+            text-align:             center;
+        }
+        /* Profile special resources menu */
+        .profile-options {
+            padding-top:            23px;
+            .icon {
+                padding-right:      10px;
+            }
+            .comments,
+            .likes {
+                border-top:         4px solid $green;
+                background:         $dark;
+            }
+            .views {
+                border-top:         4px solid $teal;
+                background:         $dark;
+            }
+            a {
+                display:            block;
+                width:              116px;
+                line-height:        50px;
+                text-align:         center;
+                -webkit-transition: background .3s;
+                transition:         background .3s;
+                &:hover {
+                    text-decoration: none;
+                    background:     rgba(0, 0, 0, .7);
+                }
+                &:hover.comments .icon,
+                &:hover.likes .icon {
+                    color:          $green;
+                }
+                &:hover.views .icon {
+                    color:          $teal;
+                }
+            }
+            li {
+                border-left:        1px solid rgba(255,255,255,.2);
+            }
+            p {
+                margin:             0;
+            }
+        }
+    }
+    /* Profile user menu */
+    .menu-box {
+        background:                 $dark;
+        .menu-box-menu {
+            .icon {
+                display:            inline-block;
+                vertical-align:     top;
+                width:              28px;
+                padding-top:        20px;
+                margin-left:        20px;
+                margin-right:       15px;
+            }
+            li {
+                height:             60px;
+                position:           relative;
+            }
+            /* Profile user menu smart boxes */
+            .menu-box-number {
+                width:              36px;
+                line-height:        22px;
+                background:         rgba(255,255,255,.2);
+                text-align:         center;
+                border-radius:      15px;
+                position:           absolute;
+                top:                15px;
+                right:              15px;
+                -webkit-transition: all .3s;
+                transition:         all .3s;
+            }
+            .menu-box-tab {
+                line-height:        60px;
+                display:            block;
+                border-bottom:      1px solid rgba(255, 255, 255, .2);
+                -webkit-transition: background .2s;
+                transition:         background .2s;
+                &:hover {
+                    background:     rgba(0, 0, 0, .2);
+                    border-top:     1px solid $dark;
+                    text-decoration: none;
+                    .icon {
+                        color:      $green;
+                    }
+                    .menu-box-number {
+                        color:      $dark;
+                        background: -webkit-linear-gradient(to right, $teal 0%, $green 100%);
+                        background: -webkit-gradient(linear, left top, right top, from($teal), to($green));
+                        background: -webkit-linear-gradient(left, $teal 0%, $green 100%);
+                        background: -o-linear-gradient(left, $teal 0%, $green 100%);
+                        background: linear-gradient(to right, $teal 0%, $green 100%);
+                    }
+                }
+            }
+        }
+    }
+    /* Profil user stats block */
+    .donut-chart-block {
+        background:                 $dark;
+        .donut-chart {
+            position:               relative;
+            width:                  200px;
+            height:                 200px;
+            margin:                 2em auto 2rem;
+            border-radius:          100%
+        }
+        p.center-date {
+            background:             $dark;
+            position:               absolute;
+            text-align:             center;
+            font-size:              28px;
+            top:                    0;
+            left:                   0;
+            bottom:                 0;
+            right:                  0;
+            width:                  130px;
+            height:                 130px;
+            margin:                 auto;
+            border-radius:          50%;
+            line-height:            35px;
+            padding:                15% 0 0;
+        }
+        .center-date span.scnd-font-color {
+            line-height:            0;
+        }
+        .shortened {
+            border-radius:          50%;
+            clip:                   rect(0px, 200px, 200px, 100px);
+            height:                 100%;
+            position:               absolute;
+            width:                  100%;
+        }
+        .trunk {
+            border-radius:          50%;
+            clip:                   rect(0px, 100px, 200px, 0px);
+            height:                 100%;
+            position:               absolute;
+            width:                  100%;
+            font-family:            monospace;
+            font-size:              1.5rem;
+        }
+        #portion1 {
+            -webkit-transform:      rotate(0deg);
+            transform:              rotate(0deg);
+        }
+        #portion1 .trunk {
+            background-color:       $green;
+            -webkit-transform:      rotate(76deg);
+            transform:              rotate(76deg);
+        }
+        #portion2 {
+            -webkit-transform:      rotate(76deg);
+            transform:              rotate(76deg);
+        }
+        #portion2 .trunk {
+            background-color:       $teal;
+            -webkit-transform:      rotate(140deg);
+            transform:              rotate(140deg);
+        }
+        #portion3 {
+            -webkit-transform:      rotate(215deg);
+            transform:              rotate(215deg);
+        }
+        #portion3 .trunk {
+            background-color:       $white-smoke;
+            -webkit-transform:      rotate(113deg);
+            transform:              rotate(113deg);
+        }
+        #portion4 {
+            -webkit-transform:      rotate(-32deg);
+            transform:              rotate(-32deg);
+        }
+        #portion4 .trunk {
+            background-color:       $black;
+            -webkit-transform:      rotate(32deg);
+            transform:              rotate(32deg);
+        }
+        /* Profile user stats blocks */
+        .res-percentages {
+            padding-top:            20px;
+        }
+        .res-percentages li {
+            width:                  25%;
+            border-left:            1px solid rgba(255,255,255,.2);
+            text-align:             center;
+            background:             $dark;
+        }
+        .res {
+            margin:                 0;
+            padding:                10px 0 5px;
+            font-size:              15px;
+        }
+        .res.coms {
+            border-top:             4px solid $green;
+        }
+        .res.vues {
+            border-top:             4px solid $teal;
+        }
+        .res.favs {
+            border-top:             4px solid $white-smoke;
+        }
+        .res.part {
+            border-top:             4px solid $black;
+        }
+        .res-percentage {
+            margin:                 0;
+            padding:                0 0 15px 10px;
+            font-size:              25px;
+        }
+    }
+    /* Profile right content section */
+    .profile-content {
+        background:                 $dark;
+        border-top-left-radius:     5px;
+        border-top-right-radius:    5px;
+        .titular {
+            border-top-left-radius: 5px;
+            border-top-right-radius:5px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-top:             2em;
+        }
+        /* Profile content blocks display */
+        p:first-child {
+            margin:                 0;
+            padding:                30px 30px 0;
+        }
+        p:last-child {
+            margin:                 0;
+            padding:                15px 30px 0;
+        }
+    }
+    .profile-content.first {
+        height:                     150px;
+        border-bottom:              1px solid rgba(255,255,255,.2);
+    }
+    .profile-content-link {
+        color:                      $green;
+    }
+}
+
+// === 16.  LOGIN SYSTEM ==========================
+
+.login-fg {
+    .bg {
+        background:                 rgba(0,0,0,0.04) repeat;
+        background-size:            cover;
+        top:                        0;
+        width:                      100%;
+        bottom:                     0;
+        opacity:                    1;
+        z-index:                    999;
+        min-height:                 100vh;
+        position:                   relative;
+        display:                    flex;
+        justify-content:            center;
+        align-items:                center;
+        padding:                    30px
+    }
+    .img {
+        display:                    flex;
+        justify-content:            flex-end;
+        align-items:                center;
+        img {
+            width:                  500px;
+        }
+    }
+    .login {
+        min-height:                 100vh;
+        position:                   relative;
+        display:                    -webkit-box;
+        display:                    -moz-box;
+        display:                    -ms-flexbox;
+        display:                    -webkit-flex;
+        display:                    flex;
+        justify-content:            center;
+        align-items:                center;
+        padding:                    30px 15px;
+        box-shadow:                 0 0 15px rgba(0,0,0,0.2);
+    }
+    .form-container {
+        color:                      #ccc;
+        position:                   relative;
+        .form-group {
+            margin-bottom:          25px
+        }
+        .form-fg {
+            float:                  left;
+            width:                  100%;
+            position:               relative;
+            i {
+                position:           absolute;
+                top:                13px;
+                right:              20px;
+                font-size:          19px;
+                color:              $dark;
+            }
+            .toggle {
+                position:           initial;
+                background:         none;
+                border:             none;
+            }
+        }
+        .form-fg input {
+            float:                  left;
+            width:                  100%;
+            padding:                11px 45px 11px 20px;
+            border-radius:          50px
+        }
+        .form-check {
+            float:                  left;
+            margin-bottom:          0;
+        }
+        .input-text {
+            outline:                none;
+            color:                  $dark;
+            border-radius:          3px;
+            font-weight:            500;
+            border:                 1px solid transparent;
+            box-shadow:             0 0 5px rgba(0,0,0,0.2)
+        }
+        .checkbox {
+            margin-bottom:          25px
+        }
+        .form-check label::before{
+            content:                "";
+            display:                inline-block;
+            position:               absolute;
+            width:                  18px;
+            height:                 18px;
+            top:                    2px;
+            margin-left:            -25px;
+            border:                 none;
+            border-radius:          3px;
+            background:             #fff;
+            box-shadow:             0 0 5px rgba(0,0,0,0.2)
+        }
+        .form-check-label {
+            margin-bottom:          0;
+            color:                  $dark
+        }
+        .checkbox-fg input[type="checkbox"]:checked + label::before {
+            color:                  $white;
+            background:             $green
+        }
+        input[type=checkbox]:checked + label:before {
+            font-weight:            300;
+            color:                  $white-smoke;
+            content:                "\2713";
+            line-height:            17px
+        }
+        input[type=checkbox],input[type=radio] {
+            margin-top:             4px
+        }
+        .checkbox a {
+            color:                  $green;
+            float:                  right;
+            margin-left:            3px
+        }
+    }
+    .login-section {
+        max-width:                  420px;
+        margin:                     0 auto;
+        text-align:                 center;
+        width:                      100%;
+        p {
+            margin:                 25px 0 0;
+            font-size:              15px;
+            a {
+                color:              $green
+            }
+        }
+        .or-login {
+            float:                  left;
+            width:                  100%;
+            margin:                 0 0 25px;
+            text-align:             center;
+            position:               relative;
+            &::before {
+                position:           absolute;
+                left:               0;
+                top:                10px;
+                width:              100%;
+                height:             1px;
+                background:         $green;
+                content:            ""
+            }
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .login-fg .info h1 {
+        font-size:45px
+    }
+}
+@media (max-width: 992px) {
+    .login-fg .bg {
+        display:none
+    }
+}
+@media (max-width: 768px) {
+    .login-fg .login-section .social li a {
+        width:100px
+    }
+    .login-fg .logo a {
+        font-size:26px;
+    }
+}
+
 //TESTS
 
 .form-group {
@@ -610,4 +1183,13 @@ section {
     border: 1px solid $border-color;
     font-size: $input-font-size;
     height: auto;
+}
+
+.resource-link {
+    color: inherit;
+
+    &:hover {
+        color: inherit;
+        text-decoration: none;
+    }
 }

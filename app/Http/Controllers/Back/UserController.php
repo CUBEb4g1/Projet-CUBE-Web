@@ -160,6 +160,6 @@ class UserController extends Controller
         $user->save();
 
         return redirect()->back()
-            ->with('infoNotif', 'Utilisateur acitvé');
+            ->with('infoNotif', 'Utilisateur activé');
     }
 }

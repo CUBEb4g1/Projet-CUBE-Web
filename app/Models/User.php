@@ -28,11 +28,11 @@ class User extends Authenticatable implements MustVerifyEmail, HasLocalePreferen
 	use Favoriter;
 
 	protected $fillable = [
-		'username', 'email', 'firstname', 'lastname', 'password', 'active',
+		'username', 'email', 'firstname', 'lastname', 'password', 'active','bio'
 	];
 
 	protected $hidden = [
-		'password', 'remember_token',
+		'password', 'remember_token', 'email_verified_at', 'settings'
 	];
 
 	protected $casts = [
@@ -82,6 +82,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasLocalePreferen
     {
         return $this->hasMany(Comment::class);
     }
+
 	/*
 	|--------------------------------------------------------------------------
 	| SCOPES
@@ -217,6 +218,13 @@ class User extends Authenticatable implements MustVerifyEmail, HasLocalePreferen
 		}
 	}
 
+    public function getDates()
+    {
+        return [
+            'created_at',
+            'updated_at',
+        ];
+    }
 	/*
 	|--------------------------------------------------------------------------
 	| LOGIC FUNCTIONS

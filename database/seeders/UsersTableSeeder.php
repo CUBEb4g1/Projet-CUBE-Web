@@ -31,6 +31,7 @@ class UsersTableSeeder extends Seeder
 
 		$permissions = [
 			'dev'         => Permission::create(['name' => Permission::DEV, 'readable_name' => 'Accès aux outils de dev.']),
+			'admin-tools' => Permission::create(['name' => Permission::ADMIN_TOOLS, 'readable_name' => "Accès aux outils d'admin"]),
 			'switch-auth' => Permission::create(['name' => Permission::SWITCH_AUTH, 'readable_name' => 'Accès aux comptes utilisateurs']),
 			'back'        => Permission::create(['name' => Permission::ACCESS_BACKOFFICE, 'readable_name' => 'Accès au backoffice']),
 		];

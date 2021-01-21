@@ -11,19 +11,16 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-8">
-
 					<div class="auth-card">
 						<div class="auth-card__header">
 							<h1 class="auth-card__title">{{ __('Contact form') }}</h1>
 						</div>
-
 						<div class="auth-card__body">
 							@if(session('emailSent'))
 								<p class="text-center text-success my-5">{{ session('emailSent') }}</p>
 							@else
 								<form action="{{ route('contact') }}" method="post">
 									@csrf
-
 									<div class="row">
 										<div class="col-md">
 											<div class="form-group">
@@ -42,7 +39,6 @@
 											</div>
 										</div>
 										<div class="col-md">
-
 											<div class="form-group">
 												@form('email', [
 													'label' => [
@@ -59,7 +55,6 @@
 											</div>
 										</div>
 									</div>
-
 									<div class="form-group">
 										@form('text', [
 											'label' => [
@@ -75,7 +70,6 @@
 											],
 										])
 									</div>
-
 									<div class="form-group">
 										@form('textarea', [
 											'label' => [
@@ -91,7 +85,6 @@
 											],
 										])
 									</div>
-
 									<button type="submit" class="btn btn-primary btn-block auth-card__btn">
 										<i class="fas fa-paper-plane mr-3"></i> {{ __('Send my message') }}
 									</button>

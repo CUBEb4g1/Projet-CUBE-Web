@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Overtrue\LaravelFavorite\Traits\Favoriteable;
@@ -30,6 +31,7 @@ class Resource extends Model
         'deleted' => 'boolean',
     ];
 
+
     const PRIVATE_TYPE = 1;
     const SHARED_TYPE = 2;
     const PUBLIC_TYPE = 3;
@@ -50,7 +52,8 @@ class Resource extends Model
 
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class)->whereNull('parent_id');
+
     }
 
     public function category()
@@ -66,5 +69,20 @@ class Resource extends Model
     public function relation()
     {
         return $this->belongsTo(Relation::class);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | EVENTS
+    |--------------------------------------------------------------------------
+    */
+
+    protected static function boot()
+    {
+        parent::boot();
+        // Par défaut récupérer uniquement les ressources non supprimées.
+        static::addGlobalScope('no_deleted', function (Builder $builder) {
+            $builder->where('deleted', false);
+        });
     }
 }

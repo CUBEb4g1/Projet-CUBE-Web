@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\API\CategoryApiController;
+use App\Http\Controllers\API\ResourceApiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+// API Resources
+Route::get('resources/{id}', [ResourceApiController::class, 'show']);
+Route::get('resources/', [ResourceApiController::class, 'search']);
+Route::get('resources/top/views', [ResourceApiController::class, 'topViews']);
+Route::get('resources/top/like', [ResourceApiController::class, 'topLike']);
+
+// API Category
+Route::get("category/", [CategoryApiController::class, 'search']);
+
+
 
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
