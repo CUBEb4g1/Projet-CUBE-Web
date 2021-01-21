@@ -1,4 +1,7 @@
 @extends('front._layouts.app')
+
+@section('title', 'Confidentialité')
+
 @section('content')
     <div class="confidentiality">
         <div class="container">
