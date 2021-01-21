@@ -1179,14 +1179,18 @@ section {
 // === 17.  CONTACT FORM ==========================
 
 .login-fg {
-    .form-fg i {
-        right: 30px !important;
+    .form-fg {
+        z-index:                666;
+        i {
+        right:                  30px !important;
+        }
     }
     .form-fg-special {
         float:                  left;
         width:                  100%;
         position:               relative;
         margin-bottom:          1rem !important;
+        z-index:                666;
         i {
             position:           absolute;
             top:                13px;
@@ -1211,29 +1215,6 @@ section {
         margin:                     0 auto;
         text-align:                 center;
         width:                      100%;
-        p {
-            margin:                 25px 0 0;
-            font-size:              15px;
-            a {
-                color:              $green
-            }
-        }
-        .or-login {
-            float:                  left;
-            width:                  100%;
-            margin:                 0 0 25px;
-            text-align:             center;
-            position:               relative;
-            &::before {
-                position:           absolute;
-                left:               0;
-                top:                10px;
-                width:              100%;
-                height:             1px;
-                background:         $green;
-                content:            ""
-            }
-        }
     }
 }
 
@@ -1256,26 +1237,26 @@ section {
     }
     blockquote {
         /* Negate theme styles */
-        border: 0;
-        margin: 0;
-        padding: 0;
-        font-size: 1.2em;
-        font-style: italic;
-        line-height: 1.4 !important;
-        position: relative;
-        text-shadow: 0 1px $dark;
-        z-index: 600;
+        border:                     0;
+        margin:                     0;
+        padding:                    0;
+        font-size:                  1.2em;
+        font-style:                 italic;
+        line-height:                1.4 !important;
+        position:                   relative;
+        text-shadow:                0 1px $dark;
+        z-index:                    600;
         p:first-child:before {
-            content: '\201C';
-            color: $green;
-            font-size: 7.5em;
-            font-weight: 700;
-            opacity: .3;
-            position: absolute;
-            top: -.4em;
-            left: -.2em;
-            text-shadow: none;
-            z-index: -300;
+            content:                '\201C';
+            color:                  $green;
+            font-size:              7.5em;
+            font-weight:            700;
+            opacity:                .3;
+            position:               absolute;
+            top:                    -.4em;
+            left:                   -.2em;
+            text-shadow:            none;
+            z-index:                -300;
         }
     }
     .accordion .card {
@@ -1303,6 +1284,7 @@ section {
         h5 {
             padding:                0;
             button {
+                font-family:        "Font Awesome 5 Pro", sans-serif;
                 color:              $green;
                 font-size:          18px;
                 font-weight:        500;
