@@ -19,7 +19,7 @@
                     <div class="login-section">
                         <div class="logo clearfix">
                             <a href="/">
-                                <img src="{{ asset_cache('media/favicons/favicon.png') }}" alt="Ressources Relationnelles"/>
+                                <img src="{{ asset_cache('media/favicons/favicon.png') }}" height=180px width=180px alt="Ressources Relationnelles"/>
                             </a>
                         </div>
                         <h1 class="font-weight-medium">{{ __('Reset Password') }}</h1>
