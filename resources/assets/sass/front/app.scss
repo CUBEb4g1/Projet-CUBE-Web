@@ -24,6 +24,7 @@
 // === 15.  PERSONNAL PROFILE ======= Line 682  ===
 // === 16.  LOGIN SYSTEM ============ Line 1011 ===
 // === 17.  CONTACT FORM ============ Line 1079 ===
+// === 18.  CONFIDENTIALITY ========= Line 1241 ===
 
 // === 1.   IMPORTS SET ===========================
 
@@ -1237,22 +1238,36 @@ section {
     }
 }
 
-//TESTS
+// === 18.  CONFIDENTIALITY =======================
 
-.form-group {
-    margin-bottom: 1.5rem;
-}
-.form-control {
-    border: 1px solid $border-color;
-    font-size: $input-font-size;
-    height: auto;
-}
+.confidentiality {
+    .img {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
 
-.resource-link {
-    color: inherit;
-
-    &:hover {
-        color: inherit;
-        text-decoration: none;
+        img {
+            width: 350px;
+        }
     }
 }
+
+    //TESTS
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    .form-control {
+        border: 1px solid $border-color;
+        font-size: $input-font-size;
+        height: auto;
+    }
+
+    .resource-link {
+        color: inherit;
+
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+    }

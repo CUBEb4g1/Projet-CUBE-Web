@@ -44,8 +44,12 @@ Route::group([
 ], function () {
 	Route::name('home')->get('/', [HomeController::class, 'index']);
 
+	// === Page de confidentialite ===
+    Route::name('confidentiality')->get('confidentiality', [\App\Http\Controllers\Front\ConfidentialityController::class, 'confidentiality']);
+
 	// === Page de profil ===
     Route::name('profile')->get('profile', [\App\Http\Controllers\Front\ProfileController::class, 'index']);
+    Route::name('profile.resources')->get('profile/resources', [\App\Http\Controllers\Front\ProfileController::class, 'getUserResources']);
 
     // === Formulaire de contact ===
 	Route::name('contact')->get('contact', [ContactController::class, 'form']);
