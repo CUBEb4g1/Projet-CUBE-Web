@@ -1159,20 +1159,20 @@ section {
 }
 @media (max-width: 1200px) {
     .login-fg .info h1 {
-        font-size:45px
+        font-size:                  45px
     }
 }
 @media (max-width: 992px) {
     .login-fg .bg {
-        display:none
+        display:                    none
     }
 }
 @media (max-width: 768px) {
     .login-fg .login-section .social li a {
-        width:100px
+        width:                      100px
     }
     .login-fg .logo a {
-        font-size:26px;
+        font-size:                  26px;
     }
 }
 
@@ -1180,35 +1180,35 @@ section {
 
 .login-fg {
     .form-fg {
-        z-index:                666;
+        z-index:                    666;
         i {
-        right:                  30px !important;
+        right:                      30px !important;
         }
     }
     .form-fg-special {
-        float:                  left;
-        width:                  100%;
-        position:               relative;
-        margin-bottom:          1rem !important;
-        z-index:                666;
+        float:                      left;
+        width:                      100%;
+        position:                   relative;
+        margin-bottom:              1rem !important;
+        z-index:                    666;
         i {
-            position:           absolute;
-            top:                13px;
-            right:              30px;
-            font-size:          19px;
-            color:              $dark;
+            position:               absolute;
+            top:                    13px;
+            right:                  30px;
+            font-size:              19px;
+            color:                  $dark;
         }
         .toggle {
-            position:           initial;
-            background:         none;
-            border:             none;
+            position:               initial;
+            background:             none;
+            border:                 none;
         }
     }
     .form-fg-special input {
-        float:                  left;
-        width:                  100%;
-        padding:                11px 45px 11px 20px;
-        border-radius:          50px
+        float:                      left;
+        width:                      100%;
+        padding:                    11px 45px 11px 20px;
+        border-radius:              50px
     }
     .form-section {
         max-width:                  670px;
