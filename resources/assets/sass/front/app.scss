@@ -1344,6 +1344,16 @@ section {
         }
     }
 }
+@media (max-width: 1200px) {
+    .confidentiality h5 {
+        font-size:                  45px
+    }
+}
+@media (max-width: 992px) {
+    .confidentiality .img {
+        display:                    none
+    }
+}
 
 //TESTS
 
