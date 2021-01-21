@@ -5,6 +5,7 @@
 @section('content')
     <div class="confidentiality">
         <div class="container text-justify">
+            <h1 class="font-weight-medium text-center">Confidentialité, termes et conditions</h1>
             <div class="row"> {{-- First row --}}
                 <div class="col-xl-4 col-lg-4 col-md-12">
                     <div class="img">
@@ -12,7 +13,7 @@
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-8 col-md-12">
-                    <h1 class="font-weight-medium">Qui sommes-nous ?</h1>
+                    <h3 class="font-weight-medium mb-4">Qui sommes-nous ?</h3>
                     <p>
                         <strong>Dénomination : </strong>Ressources Relationnelles</br>
                         <strong>Siège social : </strong>33 Avenue du Maréchal de Lattre de Tassigny, 70100 GRAY</br>
@@ -63,13 +64,13 @@
             </div>
             <div class="row"> {{-- Second row --}}
                 <div class="col-xl-8 col-lg-8 col-md-12">
-                    <h1 class="font-weight-medium">Règles d'usage</h1>
+                    <h3 class="font-weight-medium mb-4">Règles d'usage</h3>
                     <p>
                         L’utilisateur reconnait avoir pris connaissance des présentes conditions d’utilisation et s’engage à les respecter. L’utilisateur du site web reconnaît disposer de la compétence et des moyens nécessaires pour accéder à ce site et l’utiliser.</br>
                         L’internaute s’engage à ne pas effectuer d’opérations pouvant nuire au bon fonctionnement du site, à l’intégrité des informations diffusées, et à l’image de Ressources Relationnelles.</br>
                         Il s’engage également à exercer une vigilance toute particulière dans l’utilisation des éléments qui lui sont mis à disposition et à observer toutes les précautions d’usage.
                     </p>
-                    <h1 class="font-weight-medium">Responsabilités de R2sources</h1>
+                    <h3 class="font-weight-medium mb-4">Responsabilités de Ressources Relationnelles</h3>
                     <p>
                         Ressources Relationnelles met tout en oeuvre pour offrir aux utilisateurs des informations et/ou outils disponibles et vérifiés mais ne sauraient être tenus pour responsables des erreurs, d’une absence de disponibilité des informations et/ou présence de virus sur son site. Les informations fournies par Ressources Relationnelles le sont à titre indicatif et ne sauraient dispenser l’utilisateur d’une analyse complémentaire et personnalisée. Ressources Relationnelles ne saurait garantir l’exactitude, la complétude et l’actualité des informations diffusées sur son site.</br>
                         Ressources Relationnelles ne saurait être responsable des pages auxquelles accèdent les utilisateurs via les liens hypertexte mis en place dans le cadre du site web en direction d’autres ressources présentes sur le réseau internet.</br>
@@ -89,7 +90,7 @@
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-8 col-md-12">
-                    <h1 class="font-weight-medium">Données à caractère personnel</h1>
+                    <h3 class="font-weight-medium mb-4">Données à caractère personnel</h3>
                     <div class="accordion" id="accordionRGPD">
                         <div class="row">
                             <div class="col-xl-12 col-lg-12">
@@ -221,18 +222,16 @@
                     </div>
                 </div>
             </div>
-
-
             <div class="row"> {{-- Fourth row --}}
                 <div class="accordion" id="accordionSite">
                     <div class="row">
                         <div class="col-xl-12 col-lg-12">
-                            <h1>Durée de stockage de vos données</h1>
+                            <h3 class="font-weight-medium mb-4">Durée de stockage de vos données</h3>
                             Si vous laissez un commentaire, le commentaire et ses métadonnées sont conservés indéfiniment. Cela permet de reconnaître et approuver automatiquement les commentaires suivants au lieu de les laisser dans la file de modération.</br>
                             Pour les utilisateurs et utilisatrices qui s’inscrivent sur notre site (si cela est possible), nous stockons également les données personnelles indiquées dans leur profil. Tous les utilisateurs et utilisatrices peuvent voir, modifier ou supprimer leurs informations personnelles à tout moment (à l’exception de leur nom d’utilisateur·ice). Les gestionnaires du site peuvent aussi voir et modifier ces informations.
-                            <h1>Droits que vous avez sur vos données</h1>
+                            <h3 class="font-weight-medium mb-4">Droits que vous avez sur vos données</h3>
                             Si vous avez un compte ou si vous avez laissé des commentaires sur le site, vous pouvez demander à recevoir un fichier contenant toutes les données personnelles que nous possédons à votre sujet, incluant celles que vous nous avez fournies. Vous pouvez également demander la suppression des données personnelles vous concernant. Cela ne prend pas en compte les données stockées à des fins administratives, légales ou pour des raisons de sécurité.
-                            <h1>Transmission de vos données personnelles</h1>
+                            <h3 class="font-weight-medium mb-4">Transmission de vos données personnelles</h3>
                             Les commentaires des visiteurs peuvent être vérifiés à l’aide d’un service automatisé de détection des commentaires indésirables.
                         </div>
                     </div>
@@ -245,7 +244,7 @@
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-9 col-md-12">
-                    <h1 class="font-weight-medium">Droits d'auteur et reproduction</h1>
+                    <h3 class="font-weight-medium mb-4">Droits d'auteur et reproduction</h3>
                     <div class="accordion" id="accordionAuthor">
                         <div class="row">
                             <div class="col-xl-12 col-lg-12">
