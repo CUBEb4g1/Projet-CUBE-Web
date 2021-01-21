@@ -132,6 +132,90 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                    data-target="#collapseComments" aria-expanded="false" aria-controls="collapseComments">
+                                                Commentaires
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseComments" class="collapse" data-parent="#accordionRGPD">
+                                        <div class="card-body">
+                                            Quand vous laissez un commentaire sur notre site web, les données inscrites dans le formulaire de commentaire, mais aussi votre adresse IP et l’agent utilisateur de votre navigateur sont collectés pour nous aider à la détection des commentaires indésirables.</br>
+                                            Après validation de votre commentaire, vos initiales seront visibles publiquement à coté de votre commentaire.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                    data-target="#collapseMedias" aria-expanded="false" aria-controls="collapseMedias">
+                                                Médias
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseMedias" class="collapse" data-parent="#accordionRGPD">
+                                        <div class="card-body">
+                                            Si vous êtes un utilisateur ou une utilisatrice enregistré·e et que vous téléversez des images sur le site web, nous vous conseillons d’éviter de téléverser des images contenant des données EXIF de coordonnées GPS.</br>
+                                            Les visiteurs de votre site web peuvent télécharger et extraire des données de localisation depuis ces images.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                    data-target="#collapseCookies" aria-expanded="false" aria-controls="collapseCookies">
+                                                Cookies
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseCookies" class="collapse" data-parent="#accordionRGPD">
+                                        <div class="card-body">
+                                            Un cookie est un fichier texte déposé sur votre ordinateur lors de la visite d’un site ou de la consultation d’une publicité. Il a pour but de collecter des informations relatives à votre navigation et de vous adresser des services adaptés à votre terminal (ordinateur, mobile ou tablette). Les cookies sont gérés par votre navigateur internet.</br>
+                                            Nous veillons dans la mesure du possible à ce que les prestataires de mesures d’audience respectent strictement la loi informatique et libertés du 6 janvier 1978 modifiée et s’engagent à mettre en œuvre des mesures appropriées de sécurisation et de protection de la confidentialité des données.</br>
+                                            Si vous déposez un commentaire sur notre site, il vous sera proposé d’enregistrer votre nom, adresse de messagerie et site web dans des cookies. C’est uniquement pour votre confort afin de ne pas avoir à saisir ces informations si vous déposez un autre commentaire plus tard. Ces cookies expirent au bout d’un an.</br>
+                                            Si vous vous rendez sur la page de connexion, un cookie temporaire sera créé afin de déterminer si votre navigateur accepte les cookies. Il ne contient pas de données personnelles et sera supprimé automatiquement à la fermeture de votre navigateur.</br>
+                                            Lorsque vous vous connecterez, nous mettrons en place un certain nombre de cookies pour enregistrer vos informations de connexion et vos préférences d’écran. La durée de vie d’un cookie de connexion est de deux jours, celle d’un cookie d’option d’écran est d’un an. Si vous cochez « Se souvenir de moi », votre cookie de connexion sera conservé pendant deux semaines. Si vous vous déconnectez de votre compte, le cookie de connexion sera effacé.</br>
+                                            En modifiant ou en publiant une publication, un cookie supplémentaire sera enregistré dans votre navigateur. Ce cookie ne comprend aucune donnée personnelle. Il indique simplement l’ID de la publication que vous venez de modifier. Il expire au bout d’un jour.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                    data-target="#collapseEmbedded" aria-expanded="false" aria-controls="collapseEmbedded">
+                                                Contenu embarqué
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseEmbedded" class="collapse" data-parent="#accordionRGPD">
+                                        <div class="card-body">
+                                            Les articles de ce site peuvent inclure des contenus intégrés (par exemple des vidéos, images, articles…). Le contenu intégré depuis d’autres sites se comporte de la même manière que si le visiteur se rendait sur cet autre site.</br>
+                                            Ces sites web pourraient collecter des données sur vous, utiliser des cookies, embarquer des outils de suivis tiers, suivre vos interactions avec ces contenus embarqués si vous disposez d’un compte connecté sur leur site web.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                    data-target="#collapseBrowser" aria-expanded="false" aria-controls="collapseBrowser">
+                                                Paramétrer son navigateur
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseBrowser" class="collapse" data-parent="#accordionRGPD">
+                                        <div class="card-body">
+                                            Vous pouvez à tout moment de choisir de désactiver les ces cookies. Votre navigateur peut également être paramétré pour vous signaler les cookies qui sont déposés dans votre ordinateur et vous demander de les accepter ou pas. Vous pouvez accepter ou refuser les cookies au cas par cas ou bien les refuser systématiquement.</br>
+                                            En cas de refus de dépôt de cookie, vous ne pouvez pas consulter le site r2sources.com. Afin de gérer les cookies au plus près de vos attentes nous vous invitons à paramétrer votre navigateur en tenant compte de la finalité des cookies.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -143,110 +227,17 @@
                 <div class="accordion" id="accordionSite">
                     <div class="row">
                         <div class="col-xl-12 col-lg-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapsePropretary" aria-expanded="false" aria-controls="collapsePropretary">
-                                            Propriétaire du site
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapsePropretary" class="collapse" data-parent="#accordionSite">
-                                    <div class="card-body">
-                                        Conformément aux dispositions de l’article 6 III-1 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique, nous vous informons que le présent site est la propriété de Ressources Relationnelles.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseEditor" aria-expanded="false" aria-controls="collapseEditor">
-                                            Editeur de service sur le sous site
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseEditor" class="collapse" data-parent="#accordionSite">
-                                    <div class="card-body">
-                                        Directeur de la publication : AMAMA Kayreddine à Phoenixia Productions</br>
-                                        Responsable de la rédaction : HAUTEVELLE Nathan à Phoenixia Productions</br>
-                                        Graphisme : KOUVTANOVITCH Corentin à Phoenixia Productions</br>
-                                        Webmestre : ARRACHART Quentin à Phoenixia Productions</br>
-                                        Hébergement : Rayformatics.fr
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseEditor" aria-expanded="false" aria-controls="collapseEditor">
-                                            Editeur de service sur le sous site
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseEditor" class="collapse" data-parent="#accordionSite">
-                                    <div class="card-body">
-                                        Directeur de la publication : AMAMA Kayreddine à Phoenixia Productions</br>
-                                        Responsable de la rédaction : HAUTEVELLE Nathan à Phoenixia Productions</br>
-                                        Graphisme : KOUVTANOVITCH Corentin à Phoenixia Productions</br>
-                                        Webmestre : ARRACHART Quentin à Phoenixia Productions</br>
-                                        Hébergement : Rayformatics.fr
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseEditor" aria-expanded="false" aria-controls="collapseEditor">
-                                            Editeur de service sur le sous site
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseEditor" class="collapse" data-parent="#accordionSite">
-                                    <div class="card-body">
-                                        Directeur de la publication : AMAMA Kayreddine à Phoenixia Productions</br>
-                                        Responsable de la rédaction : HAUTEVELLE Nathan à Phoenixia Productions</br>
-                                        Graphisme : KOUVTANOVITCH Corentin à Phoenixia Productions</br>
-                                        Webmestre : ARRACHART Quentin à Phoenixia Productions</br>
-                                        Hébergement : Rayformatics.fr
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseEditor" aria-expanded="false" aria-controls="collapseEditor">
-                                            Editeur de service sur le sous site
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseEditor" class="collapse" data-parent="#accordionSite">
-                                    <div class="card-body">
-                                        Directeur de la publication : AMAMA Kayreddine à Phoenixia Productions</br>
-                                        Responsable de la rédaction : HAUTEVELLE Nathan à Phoenixia Productions</br>
-                                        Graphisme : KOUVTANOVITCH Corentin à Phoenixia Productions</br>
-                                        Webmestre : ARRACHART Quentin à Phoenixia Productions</br>
-                                        Hébergement : Rayformatics.fr
-                                    </div>
-                                </div>
-                            </div>
+                            <h1>Durée de stockage de vos données</h1>
+                            Si vous laissez un commentaire, le commentaire et ses métadonnées sont conservés indéfiniment. Cela permet de reconnaître et approuver automatiquement les commentaires suivants au lieu de les laisser dans la file de modération.</br>
+                            Pour les utilisateurs et utilisatrices qui s’inscrivent sur notre site (si cela est possible), nous stockons également les données personnelles indiquées dans leur profil. Tous les utilisateurs et utilisatrices peuvent voir, modifier ou supprimer leurs informations personnelles à tout moment (à l’exception de leur nom d’utilisateur·ice). Les gestionnaires du site peuvent aussi voir et modifier ces informations.
+                            <h1>Droits que vous avez sur vos données</h1>
+                            Si vous avez un compte ou si vous avez laissé des commentaires sur le site, vous pouvez demander à recevoir un fichier contenant toutes les données personnelles que nous possédons à votre sujet, incluant celles que vous nous avez fournies. Vous pouvez également demander la suppression des données personnelles vous concernant. Cela ne prend pas en compte les données stockées à des fins administratives, légales ou pour des raisons de sécurité.
+                            <h1>Transmission de vos données personnelles</h1>
+                            Les commentaires des visiteurs peuvent être vérifiés à l’aide d’un service automatisé de détection des commentaires indésirables.
                         </div>
-                        <h1>Durée de stockage de vos données</h1>
-                        Si vous laissez un commentaire, le commentaire et ses métadonnées sont conservés indéfiniment. Cela permet de reconnaître et approuver automatiquement les commentaires suivants au lieu de les laisser dans la file de modération.</br>
-                        Pour les utilisateurs et utilisatrices qui s’inscrivent sur notre site (si cela est possible), nous stockons également les données personnelles indiquées dans leur profil. Tous les utilisateurs et utilisatrices peuvent voir, modifier ou supprimer leurs informations personnelles à tout moment (à l’exception de leur nom d’utilisateur·ice). Les gestionnaires du site peuvent aussi voir et modifier ces informations.
-                        <h1>Droits que vous avez sur vos données</h1>
-                        Si vous avez un compte ou si vous avez laissé des commentaires sur le site, vous pouvez demander à recevoir un fichier contenant toutes les données personnelles que nous possédons à votre sujet, incluant celles que vous nous avez fournies. Vous pouvez également demander la suppression des données personnelles vous concernant. Cela ne prend pas en compte les données stockées à des fins administratives, légales ou pour des raisons de sécurité.
-                        <h1>Transmission de vos données personnelles</h1>
-                        Les commentaires des visiteurs peuvent être vérifiés à l’aide d’un service automatisé de détection des commentaires indésirables.
                     </div>
                 </div>
             </div>
-
-
             <div class="row"> {{-- Filth row --}}
                 <div class="col-xl-3 col-lg-3 col-md-12">
                     <div class="img">
