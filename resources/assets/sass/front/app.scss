@@ -359,8 +359,7 @@ h1{
 // === 8.   INCITATION RULESET ====================
 
 .home {
-    background:                     $white-smoke;
-    background-position:            0 -50px;
+    background:                     0 -50px;
     padding-top:                    0;
     @media (max-width: 991px) {
         padding-top:                71px;
@@ -611,7 +610,7 @@ section {
 
 .resource-card {
     overflow:                       hidden;
-    box-shadow:                     0px 2px 20px rgba(0,0,0,.2);
+    box-shadow:                     0 2px 20px rgba(0,0,0,.2);
     background:                     white;
     border-radius:                  0.5rem;
     position:                       relative;
@@ -619,7 +618,7 @@ section {
     cursor:                         pointer;
     &:hover {
         transform:                  scale(1.05);
-        box-shadow:                 0px 2px 40px rgba(0,0,0,.2);
+        box-shadow:                 0 2px 40px rgba(0,0,0,.2);
     }
     .banner-img {
         position:                   absolute;
@@ -1241,12 +1240,122 @@ section {
 // === 18.  CONFIDENTIALITY =======================
 
 .confidentiality {
+    padding:                        0 0 50px;
+    line-height:                    30px;
+    a, a:hover, a:focus, a:active {
+        text-decoration:            none;
+        outline:                    none;
+    }
+    p {
+        color:                      $dark !important;
+    }
+    ul {
+        margin:                     0;
+        padding:                    0;
+        list-style:                 none;
+    }
+    blockquote {
+        /* Negate theme styles */
+        border: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 1.2em;
+        font-style: italic;
+        line-height: 1.4 !important;
+        position: relative;
+        text-shadow: 0 1px $dark;
+        z-index: 600;
+        p:first-child:before {
+            content: '\201C';
+            color: $green;
+            font-size: 7.5em;
+            font-weight: 700;
+            opacity: .3;
+            position: absolute;
+            top: -.4em;
+            left: -.2em;
+            text-shadow: none;
+            z-index: -300;
+        }
+    }
+    .accordion .card {
+        border:                     none;
+        margin-bottom:              15px;
+        .card-body {
+            -webkit-box-shadow:     0 15px 140px 0 rgba(69, 81, 100, 0.1);
+            box-shadow:             0 15px 140px 0 rgba(69, 81, 100, 0.1);
+            border-radius:          0 0 10px 10px;
+            padding-top:            0;
+            margin-top:             -6px;
+            padding-left:           72px;
+            padding-right:          70px;
+            padding-bottom:         23px;
+            color:                  $dark;
+        }
+    }
+    .accordion .card:not(:first-of-type) .card-header:first-child {
+        border-radius:              10px;
+    }
+    .accordion .card .card-header {
+        border:                     none;
+        border-radius:              10px;
+        padding:                    0;
+        h5 {
+            padding:                0;
+            button {
+                color:              $green;
+                font-size:          18px;
+                font-weight:        500;
+                text-decoration:    none;
+                padding:            0 30px 0 70px;
+                height:             50px;
+                display:            block;
+                width:              100%;
+                text-align:         left;
+                background:         #fff;
+                -webkit-box-shadow: 0 -50px 140px 0 rgba(69, 81, 100, 0.1);
+                box-shadow:         0 -50px 140px 0 rgba(69, 81, 100, 0.1);
+                border-radius:      10px 10px 0 0;
+                position:           relative;
+            }
+            button:after {
+                position:           absolute;
+                left:               30px;
+                top:                50%;
+                margin-top:         -10px;
+                width:              20px;
+                height:             20px;
+                color:              $dark;
+                text-align:         center;
+                border:             1px solid $dark;
+                border-radius:      50%;
+                content:            '\f067';
+                font-size:          10px;
+                line-height:        18px;
+                font-weight:        900;
+            }
+            button.collapsed {
+                background:         -webkit-linear-gradient(-180deg, $teal 0%, $green 100%);
+                border-radius:      10px;
+                -webkit-box-shadow: none;
+                box-shadow:         none;
+                border:             1px solid rgba(0, 0, 0, 0.2);
+                color:              $dark;
+            }
+            button[aria-expanded="true"]:after {
+                content:            '\f068';
+                color:              $dark;
+                background-image:   -webkit-linear-gradient(-180deg, $teal 0%, $green 100%);
+            }
+        }
+    }
     .img {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
+        display:                    flex;
+        justify-content:            flex-end;
+        align-items:                center;
+        height:                     100%;
         img {
-            width: 350px;
+            width:                  350px;
         }
     }
 }
