@@ -172,6 +172,12 @@
                                 <i class="far fa-ellipsis-h" title="CMS"></i>
                             </li>
                             <li class="nav-item">
+                                <a href="{{ route('back.relation.list') }}" class="nav-link {{ hlrt_begins_with('back.relation') }}">
+                                    <i class="nav-main-link-icon fas fa-link fa-fw"></i>
+                                    <span>{{ __('Relations') }}</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{{ route('back.resources.list') }}" class="nav-link {{ hlrt_begins_with('back.resources') }}">
                                     <i class="nav-main-link-icon fas fa-file-alt fa-fw"></i>
                                     <span>{{ __('Ressources') }}</span>
