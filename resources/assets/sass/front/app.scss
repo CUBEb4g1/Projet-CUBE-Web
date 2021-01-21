@@ -1245,29 +1245,26 @@ section {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-
         img {
             width: 350px;
         }
     }
 }
 
-    //TESTS
+//TESTS
 
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
-    .form-control {
-        border: 1px solid $border-color;
-        font-size: $input-font-size;
-        height: auto;
-    }
-
-    .resource-link {
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-control {
+    border: 1px solid $border-color;
+    font-size: $input-font-size;
+    height: auto;
+}
+.resource-link {
+    color: inherit;
+    &:hover {
         color: inherit;
-
-        &:hover {
-            color: inherit;
-            text-decoration: none;
-        }
+        text-decoration: none;
     }
+}
