@@ -9,6 +9,7 @@ use App\Http\Controllers\Back\NavMenuController;
 use App\Http\Controllers\Back\PermissionController;
 use App\Http\Controllers\Back\RoleController;
 use App\Http\Controllers\Back\SettingsController;
+use App\Http\Controllers\Back\ManageRelationsController;
 use App\Http\Controllers\Back\UserController;
 use App\Http\Controllers\Front\CommentController;
 use App\Http\Controllers\Front\ContactController;
@@ -119,6 +120,16 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
         // === Settings ===
 		Route::name('back.settings.parameters')->get('settings/parameters', [SettingsController::class, 'parameters']);
 		Route::name('back.settings.parameters')->post('settings/parameters', [SettingsController::class, 'saveParameters']);
+
+		// === Relations ===
+		Route::name('back.relation.list')->get('relation/list', [ManageRelationsController::class, 'index']);
+		Route::name('back.relation.list.deleted')->get('relation/list/deleted', [ManageRelationsController::class, 'indexdeleted']);
+		Route::name('back.relation.form')->get('relation/form/{relation?}', [ManageRelationsController::class, 'form'])->where(['relation' => '\d*' ]);
+		Route::name('back.relation.save')->post('relation/form/{relation?}', [ManageRelationsController::class, 'save'])->where(['relation' => '\d*']);
+		Route::name('back.relation.delete')->get('relation/delete/{relation}', [ManageRelationsController::class, 'delete'])->where(['relation' => '\d+']);
+		Route::name('back.relation.restore')->get('relation/restore/{relation}', [ManageRelationsController::class, 'restore'])->where(['relation' => '\d+']);
+
+
 	});
 
     Route::middleware(['permission:'.Permission::ADMIN_TOOLS])->group(function () {
