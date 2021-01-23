@@ -70,7 +70,7 @@
                                         ],
                                     ])
                                 </div>--}}
-                                <p>En cliquant sur 'S'incrire', je confirme avoir lu et accepté nos <a href="#" class="linkButton"> Termes et conditions d'utilisation.</a></p>
+                                <p>En cliquant sur 'S'incrire', je confirme avoir lu et accepté nos <a href="{{route('confidentiality')}}" class="linkButton"> Termes et conditions d'utilisation.</a></p>
                                 <div class="form-group mt-2">
                                     <button type="submit" class="btn btn-md btn-block btn-outline-special btn-lg border-0">{{ __('Register') }}</button>
                                 </div>
