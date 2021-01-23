@@ -239,8 +239,29 @@
             </div>
             <div class="row"> {{-- Filth row --}}
                 <div class="col-xl-3 col-lg-3 col-md-12">
-                    <div class="img">
-                        <img src="{{ asset_cache('media/favicons/favicon.png') }}">
+                    <div class="flip-card-container">
+                        <div class="flip-card">
+                            <div class="card-front">
+                                <figure>
+                                    <div class="img-bg"></div>
+                                    <img src="https://phoenixia-prods.com/wp-content/uploads/2020/12/1.jpg" alt="Rayformatics">
+                                    <figcaption>Hébergeur</figcaption>
+                                </figure>
+                                <ul>
+                                    <li><h5>RAYFORMATICS</h5></li>
+                                    <li>91 Grande Rue</li>
+                                    <li>70100 GRAY</li>
+                                    <li>rayformatics.fr</li>
+                                </ul>
+                            </div>
+                            <div class="card-back">
+                                <figure>
+                                    <div class="img-bg"></div>
+                                    <img src="https://phoenixia-prods.com/wp-content/uploads/2020/12/1.jpg" alt="Rayformatics">
+                                </figure>
+                                <a target="_blank" class="btn btn-md btn-outline-special btn-lg" href="http://rayformatics.fr">Site web</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-9 col-md-12">
