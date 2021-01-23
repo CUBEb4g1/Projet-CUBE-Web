@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @extends('.front._layouts.profile')
+
+@section('title', 'Mes favoris')
+
 @section('content')
     <h5 class="titular">Menu modal a integrer</h5>
     <div class="profile-content first">

@@ -7,10 +7,10 @@
 //                     '{'!!'}'                 ===
 //                                              ===
 // === 0.   SUMMARY ================= Line 1    ===
-// === 1.   IMPORTS SET ============= Line 28   ===
-// === 2.   COMMON RULESET ========== Line 34   ===
-// === 3.   SPECIAL RULESET ========= Line 78   ===
-// === 4.   NAVBAR RULESET ========== Line 87   ===
+// === 1.   IMPORTS SET ============= Line 30   ===
+// === 2.   COMMON RULESET ========== Line 36   ===
+// === 3.   SPECIAL RULESET ========= Line 80   ===
+// === 4.   NAVBAR RULESET ========== Line 89   ===
 // === 5.   FOOTER RULESET ========== Line 156  ===
 // === 6.   ANIMATED LINES RULESET == Line 219  ===
 // === 7.   BANNER RULESET ========== Line 311  ===
@@ -25,7 +25,7 @@
 // === 16.  LOGIN SYSTEM ============ Line 1011 ===
 // === 17.  CONTACT FORM ============ Line 1079 ===
 // === 18.  CONFIDENTIALITY ========= Line 1222 ===
-// === 19.  FLIP CARD =============== Line 1359 ===
+// === 19.  FLIP CARD =============== Line 1356 ===
 
 // === 1.   IMPORTS SET ===========================
 
@@ -527,12 +527,6 @@ h1{
 
 // === 12.  CONTACT RULESET =======================
 
-.contactus{
-    form{
-        position:                   relative;
-        z-index:                    9;
-    }
-}
 section {
     padding:                        120px 0 0 0;
     @media (max-width: 1024px) {
@@ -1180,6 +1174,9 @@ section {
 // === 17.  CONTACT FORM ==========================
 
 .login-fg {
+    h3 {
+        color:                      $green;
+    }
     .form-fg {
         z-index:                    666;
         i {
@@ -1474,6 +1471,7 @@ section {
 .flip-card-container:focus-within .flip-card {
     transform: rotateY(180deg);
 }
+/* Fix for title size when responsive */
 @media (max-width: 1200px) {
     .flip-card-container h5 {
         font-size:                  20px

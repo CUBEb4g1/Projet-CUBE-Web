@@ -1,36 +1,76 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<section class="contactus" id="contact">
+<section class="login-fg" id="contact">
     <div class="container">
         <div class="row mb-5 pb-5">
             <div class="col-sm-5" >
                 <img src="{{ asset('/media/front/contact.svg') }}" alt="contact" class="img-fluid">
             </div>
             <div class="col-sm-7" >
-                <h3>Des questions ?</h3>
+                <h3 class="mb-3">Des questions ?</h3>
                 <h6 class="mb-5 text-dark">N'hésitez pas à nous en faire part, écrivez-nous !</h6>
-                <form>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="name" placeholder="Nom*">
+                <div class="or-login clearfix"></div>
+                @if(session('emailSent'))
+                    <p class="text-center text-success my-5">{{ session('emailSent') }}</p>
+                @else
+                    <form method="POST" action="{{ route('contact') }}">
+                        @csrf
+                        <div class="form-container">
+                            <div class="col-md-5 form-group form-fg">
+                                @form('text', [
+                                'input' => [
+                                'placeholder' => __('Your name'),
+                                'name' => 'name',
+                                'value' => old('name'),
+                                'class' => 'input-text',
+                                'required',
+                                ],
+                                ])
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="col-md-7 form-group form-fg">
+                                @form('text', [
+                                'input' => [
+                                'placeholder' => __('Your email'),
+                                'name' => 'email',
+                                'value' => old('email'),
+                                'class' => 'input-text',
+                                'required',
+                                ],
+                                ])
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div class="col-md-12 form-group form-fg">
+                                @form('text', [
+                                'input' => [
+                                'placeholder' => __('Mail object'),
+                                'name' => 'subject',
+                                'value' => old('subject'),
+                                'autocomplete' => 'off',
+                                'class' => 'input-text',
+                                ],
+                                ])
+                                <i class="fas fa-outdent"></i>
+                            </div>
+                            <div class="col-md-12 form-group form-fg-special">
+                                @form('textarea', [
+                                'input' => [
+                                'placeholder' => __('Your message'),
+                                'name' => 'message',
+                                'value' => old('message'),
+                                'class' => 'input-text',
+                                'rows' => 5,
+                                'required',
+                                ],
+                                ])
+                                <i class="fas fa-keyboard"></i>
+                            </div>
+                            <div class="col-md-12 form-group mt-2">
+                                <button type="submit" class="btn btn-md btn-block btn-outline-special btn-lg border-0"><i class="fas fa-paper-plane mr-3"></i>{{ __('Send my message') }}</button>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="mail" placeholder="Email*">
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <textarea name="message" id="message" class="form-control" placeholder="Message*" rows="5"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <a href="#" class="btn btn-md btn-block btn-outline-special btn-lg border-0">Envoyer</a>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                @endif
             </div>
         </div>
     </div>

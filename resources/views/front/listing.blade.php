@@ -1,4 +1,7 @@
 @extends('front._layouts.app')
+
+@section('title', 'Résultats de recherche')
+
 @section('content')
     <section class="container">
         <div class="row justify-content-center">

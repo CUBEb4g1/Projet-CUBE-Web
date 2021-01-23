@@ -1,4 +1,7 @@
 @extends('front.profile')
+
+@section('title', 'Mon profil')
+
 @section('content')
 <div class="profile-content"> <!-- MODAL BLOCK -->
     <h5 class="titular">Salut {{$user->username}}</h5>

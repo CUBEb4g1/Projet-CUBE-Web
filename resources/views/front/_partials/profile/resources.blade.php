@@ -1,4 +1,7 @@
 @extends('front._layouts.profile')
+
+@section('title', 'Mes ressources')
+
 @section('content')
     <section class="container mb-5">
         <div class="row justify-content-center">
