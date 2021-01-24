@@ -105,7 +105,7 @@
                                     </div>
                                     <div id="collapseLaws" class="collapse" data-parent="#accordionRGPD">
                                         <div class="card-body">
-                                            Le site r2sources.com respecte la vie privée de l’internaute et se conforme strictement aux lois en vigueur sur la protection de la vie privée et des libertés individuelles. Aucune information personnelle n’est collectée à votre insu. Aucune information personnelle n’est cédée à des tiers.</br>
+                                            Le site {{url('/')}} respecte la vie privée de l’internaute et se conforme strictement aux lois en vigueur sur la protection de la vie privée et des libertés individuelles. Aucune information personnelle n’est collectée à votre insu. Aucune information personnelle n’est cédée à des tiers.</br>
                                             Les courriels, les adresses électroniques ou autres informations nominatives dont ce site est destinataire ne font l’objet d’aucune exploitation et ne sont conservés que pour la durée nécessaire de leur traitement.
                                         </div>
                                     </div>
@@ -129,7 +129,7 @@
                                                     70100 GRAY
                                                 </p>
                                             </blockquote>
-                                            La politique du site r2sources.com est en conformité avec la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique.
+                                            La politique du site {{url('/')}} est en conformité avec la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique.
                                         </div>
                                     </div>
                                 </div>
@@ -213,7 +213,7 @@
                                     <div id="collapseBrowser" class="collapse" data-parent="#accordionRGPD">
                                         <div class="card-body">
                                             Vous pouvez à tout moment de choisir de désactiver les ces cookies. Votre navigateur peut également être paramétré pour vous signaler les cookies qui sont déposés dans votre ordinateur et vous demander de les accepter ou pas. Vous pouvez accepter ou refuser les cookies au cas par cas ou bien les refuser systématiquement.</br>
-                                            En cas de refus de dépôt de cookie, vous ne pouvez pas consulter le site r2sources.com. Afin de gérer les cookies au plus près de vos attentes nous vous invitons à paramétrer votre navigateur en tenant compte de la finalité des cookies.
+                                            En cas de refus de dépôt de cookie, vous ne pouvez pas consulter le site {{url('/')}}. Afin de gérer les cookies au plus près de vos attentes nous vous invitons à paramétrer votre navigateur en tenant compte de la finalité des cookies.
                                         </div>
                                     </div>
                                 </div>
@@ -283,7 +283,7 @@
                                             Depuis la publication de l’ordonnance n°2005-650 du 6 juin 2005 relative à la liberté d’accès aux documents administratifs et à la réutilisation des informations publiques, ces informations peuvent être réutilisées à d’autres fins que celles pour lesquelles elles ont été produites, et particulièrement les informations faisant l’objet d’une diffusion publique.</br>
                                             Les documents publics ou officiels ne sont couverts par aucun droit d’auteur et peuvent donc être reproduits librement.</br>
                                             Le graphisme, l’iconographie ainsi que le contenu éditorial demeurent la propriété de l’État, et, à ce titre, font l’objet des protections prévues par le Code de la propriété intellectuelle.</br>
-                                            Si la reprise de ces contenus de façon partielle ou intégrale est autorisée, elle doit être obligatoirement assortie de la mention du nom de l’auteur, de la source, et éventuellement d’un lien renvoyant vers le document original en ligne sur le site. La mention "© r2sources.com" devra donc être indiquée.</br>
+                                            Si la reprise de ces contenus de façon partielle ou intégrale est autorisée, elle doit être obligatoirement assortie de la mention du nom de l’auteur, de la source, et éventuellement d’un lien renvoyant vers le document original en ligne sur le site. La mention "© {{url('/')}}" devra donc être indiquée.</br>
                                             Tous les autres contenus présents sur le site sont couverts par le droit d’auteur. Toute reprise est dès lors conditionnée à l’accord de l’auteur en vertu de l’article L.122-4 du Code de la propriété intellectuelle. Les informations utilisées ne doivent l’être qu’à des fins personnelles, associatives ou professionnelles ; toute diffusion ou utilisation à des fins commerciales ou publicitaires étant interdites.
                                         </div>
                                     </div>
@@ -333,7 +333,7 @@
                                             La demande devra préciser le contenu visé ainsi que la publication ou le site sur lequel ce dernier figurera. Une fois cette autorisation obtenue, la reproduction d’un contenu doit obéir aux principes suivants :</br>
                                             <li>gratuité de la diffusion</li>
                                             <li>respect de l’intégrité des documents reproduits (aucune modification, ni altération d’aucune sorte)</li>
-                                            <li>mention obligatoire : "© r2sources.com – droits réservés" . Cette mention pointera grâce à un lien hypertexte directement sur le contenu.</li>
+                                            <li>mention obligatoire : "© {{url('/')}} – droits réservés" . Cette mention pointera grâce à un lien hypertexte directement sur le contenu.</li>
                                         </div>
                                     </div>
                                 </div>
@@ -364,11 +364,11 @@
                                     </div>
                                     <div id="collapseLinks" class="collapse" data-parent="#accordionAuthor">
                                         <div class="card-body">
-                                            Le site r2sources.com autorise sans autorisation préalable, la mise en place de liens hypertextes pointant vers ses pages, sous réserve de :</br>
-                                            <li>ne pas utiliser la technique du lien profond, c’est-à-dire que les pages du site r2sources.com ne doivent pas être imbriquées à l’intérieur des pages d’un autre site, mais visibles par l’ouverture d’une fenêtre indépendante</li>
+                                            Le site {{url('/')}} autorise sans autorisation préalable, la mise en place de liens hypertextes pointant vers ses pages, sous réserve de :</br>
+                                            <li>ne pas utiliser la technique du lien profond, c’est-à-dire que les pages du site {{url('/')}} ne doivent pas être imbriquées à l’intérieur des pages d’un autre site, mais visibles par l’ouverture d’une fenêtre indépendante</li>
                                             <li>mentionner la source qui pointera grâce à un lien hypertexte directement sur le contenu visé</li>
                                             <li>ne pas utiliser le logotype de l’association sans autorisation</li>
-                                            Les sites qui font le choix de pointer vers r2sources.com engagent leur responsabilité dès lors qu’ils porteraient atteinte à l’image du site public.
+                                            Les sites qui font le choix de pointer vers {{url('/')}} engagent leur responsabilité dès lors qu’ils porteraient atteinte à l’image du site public.
                                         </div>
                                     </div>
                                 </div>
