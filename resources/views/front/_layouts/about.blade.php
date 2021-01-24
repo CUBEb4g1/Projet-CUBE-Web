@@ -9,19 +9,19 @@
                 <h5 class="text-dark mb-5">Votre imagination peut vous faire voyager partout</h5>
                 <div class="d-flex justify-content-start mb-3">
                     <img src="{{ asset('/media/front/tick.svg') }}" alt="tick" class="mr-3 tick-icon">
-                    <p class="mb-0">It is a long established fact that a reader will be distracted</p>
+                    <p class="mb-0">Exprimez votre personnalité en vous ouvrant à la communauté</p>
                 </div>
                 <div class="d-flex justify-content-start mb-3">
                     <img src="{{ asset('/media/front/tick.svg') }}" alt="tick" class="mr-3 tick-icon">
-                    <p class="mb-0">There are many variations of passages of Lorem Ipsum</p>
+                    <p class="mb-0">Plongez dans l'inconnu en explorant les différentes ressources</p>
                 </div>
                 <div class="d-flex justify-content-start mb-3">
                     <img src="{{ asset('/media/front/tick.svg') }}" alt="tick" class="mr-3 tick-icon">
-                    <p class="mb-0">Contrary to popular belief, Lorem Ipsum</p>
+                    <p class="mb-0">Accomplissez-vous en apprenant au quotidien</p>
                 </div>
                 <div class="d-flex justify-content-start">
                     <img src="{{ asset('/media/front/tick.svg') }}" alt="tick" class="mr-3 tick-icon">
-                    <p class="mb-0">Various versions have evolved over the years, sometimes</p>
+                    <p class="mb-0">Mais n'oubliez pas, faites-le en vous amusant !</p>
                 </div>
             </div>
             <div class="col-md-5 col-sm-12 text-right">
