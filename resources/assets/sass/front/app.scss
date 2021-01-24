@@ -26,6 +26,7 @@
 // === 17.  CONTACT FORM ============ Line 1079 ===
 // === 18.  CONFIDENTIALITY ========= Line 1222 ===
 // === 19.  FLIP CARD =============== Line 1356 ===
+// === 20.  SEARCH BOX ============== Line 1401 ===
 
 // === 1.   IMPORTS SET ===========================
 
@@ -1357,124 +1358,149 @@ section {
 
 /* .flip-card-container */
 .flip-card-container {
-    height: 100%;
-    perspective: 1000px;
+    height:                         100%;
+    perspective:                    1000px;
     h5 {
-        color: $teal;
+        color:                      $teal;
     }
     .flip-card {
-        width: inherit;
-        height: inherit;
-        position: relative;
-        transform-style: preserve-3d;
-        transition: .6s .1s;
+        width:                      inherit;
+        height:                     inherit;
+        position:                   relative;
+        transform-style:            preserve-3d;
+        transition:                 .6s .1s;
         .card-front,
         .card-back {
-            width: 100%;
-            height: 100%;
-            border-radius: 24px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            backface-visibility: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width:                  100%;
+            height:                 100%;
+            border-radius:          24px;
+            position:               absolute;
+            top:                    0;
+            left:                   0;
+            overflow:               hidden;
+            backface-visibility:    hidden;
+            display:                flex;
+            justify-content:        center;
+            align-items:            center;
         }
         .card-front {
-            transform: rotateY(0deg);
-            z-index: 2;
+            transform:              rotateY(0deg);
+            z-index:                2;
         }
         .card-back {
-            transform: rotateY(180deg);
-            z-index: 1;
+            transform:              rotateY(180deg);
+            z-index:                1;
         }
         figure {
-            z-index: -1;
+            z-index:                -1;
         }
         figure,
         .img-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position:               absolute;
+            top:                    0;
+            left:                   0;
+            width:                  100%;
+            height:                 100%;
         }
         img {
-            height: 100%;
-            border-radius: 24px;
+            height:                 100%;
+            border-radius:          24px;
         }
         figcaption {
-            display: block;
-            width: auto;
-            margin-top: 12%;
-            padding: 8px 22px;
-            font-weight: bold;
-            line-height: 1.6;
-            letter-spacing: 2px;
-            word-spacing: 6px;
-            text-align: right;
-            position: absolute;
-            top: 0;
-            right: 12px;
-            color: $teal;
-            background: rgba(0,0,0,.4);
+            display:                block;
+            width:                  auto;
+            margin-top:             12%;
+            padding:                8px 22px;
+            font-weight:            bold;
+            line-height:            1.6;
+            letter-spacing:         2px;
+            word-spacing:           6px;
+            text-align:             right;
+            position:               absolute;
+            top:                    0;
+            right:                  12px;
+            color:                  $teal;
+            background:             rgba(0,0,0,.4);
         }
         .img-bg {
-            background: rgba(0,0,0,.4);
+            background:             rgba(0,0,0,.4);
         }
-
         .card-front .img-bg {
-            clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+            clip-path:              polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
         }
         .card-back .img-bg {
-            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+            clip-path:              polygon(0 0, 100% 0, 100% 80%, 0 60%);
         }
     }
     ul {
-        padding-top: 50%;
-        margin: 0 auto;
-        width: 70%;
-        height: 100%;
-        list-style: none;
-        color: $white-smoke;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        padding-top:                50%;
+        margin:                     0 auto;
+        width:                      70%;
+        height:                     100%;
+        list-style:                 none;
+        color:                      $white-smoke;
+        display:                    flex;
+        justify-content:            center;
+        align-items:                center;
+        flex-direction:             column;
     }
     li {
-        width: 100%;
-        margin-top: 12px;
-        padding-bottom: 12px;
-        font-size: 14px;
-        text-align: center;
-        position: relative;
+        width:                      100%;
+        margin-top:                 12px;
+        padding-bottom:             12px;
+        font-size:                  14px;
+        text-align:                 center;
+        position:                   relative;
     }
     li:nth-child(4n) {
-        color: $teal;
+        color:                      $teal;
     }
     li:not(:last-child)::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background: $teal;
-        opacity: .7;
+        content:                    "";
+        position:                   absolute;
+        bottom:                     0;
+        left:                       0;
+        width:                      100%;
+        height:                     1px;
+        background:                 $teal;
+        opacity:                    .7;
     }
 }
 /* Hover and focus within both states */
 .flip-card-container:hover .flip-card,
 .flip-card-container:focus-within .flip-card {
-    transform: rotateY(180deg);
+    transform:                      rotateY(180deg);
 }
 /* Fix for title size when responsive */
 @media (max-width: 1200px) {
     .flip-card-container h5 {
         font-size:                  20px
+    }
+}
+
+// === 20.  SEARCH BOX ============================
+
+.search-box__input-group {
+    .input-group-prepend {
+        .input-group-text {
+            border-bottom-left-radius: 50px;
+            border-top-left-radius: 50px;
+            background:             rgba(255,255,255,.7);
+            .fal {
+                font-weight:        900;
+                color:              $dark;
+            }
+        }
+    }
+    .js-search-entity-input,
+    .js-listen-value {
+        border-top-right-radius:    50px;
+        border-bottom-right-radius: 50px;
+        outline:                    none;
+        color:                      $dark;
+        border:                     1px solid transparent;
+        font-weight:                500;
+        box-shadow:                 0 0 5px rgba(0, 0, 0, 0.2);
     }
 }
 
