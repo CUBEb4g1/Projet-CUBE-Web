@@ -4,6 +4,6 @@
 
 @section('right-side')
     @foreach($subscriptions as $subscription)
-        {{$subscription->title}}
+        {{$subscription->id}}
     @endforeach
 @endsection
