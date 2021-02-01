@@ -2,7 +2,7 @@
 
 @section('title', 'Mon profil')
 
-@section('content')
+@section('right-side')
 <div class="profile-content"> <!-- MODAL BLOCK -->
     <h5 class="titular">Salut {{$user->username}}</h5>
     <div class="profile-content first">

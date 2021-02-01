@@ -57,7 +57,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="btn rounded-pill btn-dark py-2 px-4 my-2" href="#"><i
+                        <a class="btn rounded-pill btn-dark py-2 px-4 my-2" href="https://github.com/CUBEb4g1" target="_blank"><i
                                 class="far fa-question-circle"></i> Guide</a>
                     </li>
                     <li class="nav-item">
@@ -69,16 +69,18 @@
                     </li>
                     <li class="nav-item">
                         @auth()
-                            <form action="{{ route('logout') }}" method="post">
+                            <a href="{{ route('logout') }}" class="btn rounded-pill btn-dark py-2 px-4 my-2"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
-                                <button class="btn rounded-pill btn-dark py-2 px-4 my-2">
-                                    <i class="fas fa-power-off fa-fw"></i>
-                                    {{ __('Logout') }}
-                                </button>
                             </form>
                         @endauth
                         @guest()
-                            <a href="{{ route('login') }}" class="btn rounded-pill btn-dark py-2 px-4 my-2">{{ __('Login') }}</a>
+                            <a href="{{ route('login') }}"
+                               class="btn rounded-pill btn-dark py-2 px-4 my-2">{{ __('Login') }}</a>
                         @endguest
                     </li>
                     <li class="nav-item">

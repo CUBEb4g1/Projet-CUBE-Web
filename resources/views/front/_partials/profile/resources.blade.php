@@ -1,8 +1,8 @@
-@extends('front._layouts.profile')
+@extends('front.profile')
 
 @section('title', 'Mes ressources')
 
-@section('content')
+@section('right-side')
     <section class="container mb-5">
         <div class="row justify-content-center">
             <div class="col-xl-10">

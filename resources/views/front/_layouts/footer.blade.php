@@ -23,7 +23,7 @@
                                         <a href="{{ route('profile') }}" class="nav-link d-block">Mon profil</a>
                                     @endauth
                                 </li>
-                                <li class="nav-item"><a class="nav-link d-block" href="#">Guide</a></li>
+                                <li class="nav-item"><a class="nav-link d-block" href="https://github.com/CUBEb4g1" target="_blank">Guide</a></li>
                                 <li class="nav-item">
                                     @auth()
                                         <a href="{{ route('logout') }}" class="nav-link d-block"
@@ -96,7 +96,7 @@
                 <div class="col-lg-6 col-md-12 m-t-5">
                     <h6 class="font-weight-medium mt-3">L'aventure</h6>
                     <ul class="general-listing two-part with-arrow mt-2 list-inline">
-                        <li><a href="#" class="text-decoration-none d-flex py-2 align-items-center"><i class="icon-arrow-right mr-1"></i> A propos</a></li>
+                        <li><a href="{{ route('aboutus') }}" class="text-decoration-none d-flex py-2 align-items-center"><i class="icon-arrow-right mr-1"></i> A propos</a></li>
                         <li><a href="{{ route('confidentiality') }}" class="text-decoration-none d-flex py-2 align-items-center"><i class="icon-arrow-right mr-1"></i> Confidentialité</a></li>
                         <li><a href="#" class="text-decoration-none d-flex py-2 align-items-center"><i class="icon-arrow-right mr-1"></i> Support</a></li>
                         <li><a href="#" class="text-decoration-none d-flex py-2 align-items-center"><i class="icon-arrow-right mr-1"></i> Jobs</a></li>

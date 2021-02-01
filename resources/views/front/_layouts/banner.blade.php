@@ -9,7 +9,7 @@
                     <img src="{{ asset_cache('media/favicons/favicon.png') }}" height=180px width=180px alt="">
                     <h1 class="font-weight-medium">Hello, bienvenue !</h1>
                     <h5 class="mb-4 text-dark">Explore dès maintenant de nouvelles possibilités</h5>
-                    <a target="_blank" class="btn btn-md btn-block btn-outline-special btn-lg border-0" href="/">Suivre le guide</a>
+                    <a target="_blank" class="btn btn-md btn-block btn-outline-special btn-lg border-0" href="https://github.com/CUBEb4g1">Suivre le guide</a>
                     </a>
                 </div>
             </div>
