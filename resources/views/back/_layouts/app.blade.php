@@ -172,6 +172,12 @@
                                 <i class="far fa-ellipsis-h" title="CMS"></i>
                             </li>
                             <li class="nav-item">
+                                <a href="{{ route('back.relation.list') }}" class="nav-link {{ hlrt_begins_with('back.relation') }}">
+                                    <i class="nav-main-link-icon fas fa-link fa-fw"></i>
+                                    <span>{{ __('Relations') }}</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{{ route('back.resources.list') }}" class="nav-link {{ hlrt_begins_with('back.resources') }}">
                                     <i class="nav-main-link-icon fas fa-file-alt fa-fw"></i>
                                     <span>{{ __('Ressources') }}</span>
@@ -237,16 +243,16 @@
 							</li>
 						@endcan
 						{{-- Apparence --}}
-{{--						<li class="nav-item-header">--}}
-{{--							<div class="text-uppercase font-size-xs line-height-xs">{{ __('Appearance') }}</div>--}}
-{{--							<i class="far fa-ellipsis-h" title="{{ __('Appearance') }}"></i>--}}
-{{--						</li>--}}
-{{--						<li class="nav-item">--}}
-{{--							<a href="{{ route('back.menu.list') }}" class="nav-link {{ hlrt_begins_with('back.menu') }}">--}}
-{{--								<i class="nav-main-link-icon fal fa-bars fa-fw"></i>--}}
-{{--								<span>{{ __('Menus') }}</span>--}}
-{{--							</a>--}}
-{{--						</li>--}}
+						<li class="nav-item-header">
+							<div class="text-uppercase font-size-xs line-height-xs">{{ __('Appearance') }}</div>
+							<i class="far fa-ellipsis-h" title="{{ __('Appearance') }}"></i>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('back.menu.list') }}" class="nav-link {{ hlrt_begins_with('back.menu') }}">
+								<i class="nav-main-link-icon fal fa-bars fa-fw"></i>
+								<span>{{ __('Menus') }}</span>
+							</a>
+						</li>
 						@can($DEV)
 							{{-- Settings --}}
 							<li class="nav-item-header">
