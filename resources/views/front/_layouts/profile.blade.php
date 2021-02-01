@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <div class="col-xl-4"> <!-- LEFT COLUMN -->
     <div class="profile"> <!-- PROFILE CARD -->
         <a class="add-button" href="#"><span class="icon fal fa-plus scnd-font-color"></span></a>
@@ -12,8 +10,8 @@
         </div>
         <ul class="profile-options horizontal-list">
             <li><a class="comments" href="#"><p><span class="icon far fa-comment-alt scnd-font-color"></span>{{$user->comments->count()}}</p></a></li>
-            <li><a class="views" href="#"><p><span class="icon far fa-eye scnd-font-color"></span>{{$user->subscriptions->count()}}</p></a></li>
-            <li><a class="likes" href="#"><p><span class="icon far fa-heart scnd-font-color"></span>{{$user->favorites->count()}}</p></a></li>
+            <li><a class="views" href="{{route('profile.subscribes')}}"><p><span class="icon far fa-eye scnd-font-color"></span>{{$user->subscriptions->count()}}</p></a></li>
+            <li><a class="likes" href="{{route('profile.favorites')}}"><p><span class="icon far fa-heart scnd-font-color"></span>{{$user->favorites->count()}}</p></a></li>
         </ul>
     </div>
     <div class="menu-box"> <!-- PROFILE MENU -->
@@ -23,7 +21,7 @@
                 <a class="menu-box-tab" href="#"><span class="icon far fa-envelope scnd-font-color"></span>Messagerie<div class="menu-box-number">24</div></a>
             </li>
             <li>
-                <a class="menu-box-tab" href="#"><span class="icon fas fa-photo-video scnd-font-color"></span>Ressources<div class="menu-box-number">{{$user->resources->count()}}</div></a>
+                <a class="menu-box-tab" href="{{route('profile.resources')}}"><span class="icon fas fa-photo-video scnd-font-color"></span>Ressources<div class="menu-box-number">{{$user->resources->count()}}</div></a>
             </li>
             <li>
                 <a class="menu-box-tab" href="#"><span class="icon fas fa-cog scnd-font-color"></span>Mes paramètres</a>
