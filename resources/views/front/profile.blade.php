@@ -26,7 +26,7 @@
     @include('.front._layouts.profile')
         <div class="col-xl-8"> <!-- RIGHT COLUMN -->
             {{-- Content --}}
-            @yield('content')
+            @yield('right-side')
         </div>
     </div>
 </div>

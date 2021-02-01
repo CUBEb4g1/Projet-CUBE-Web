@@ -11,8 +11,10 @@ use App\Http\Controllers\Back\RoleController;
 use App\Http\Controllers\Back\SettingsController;
 use App\Http\Controllers\Back\UserController;
 use App\Http\Controllers\Front\CommentController;
+use App\Http\Controllers\Front\ConfidentialityController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\ProfileController;
 use App\Http\Controllers\Front\ResourceController;
 use App\Http\Controllers\Back\StatisticsController;
 use App\Http\Controllers\Front\SearchController;
@@ -45,11 +47,7 @@ Route::group([
 	Route::name('home')->get('/', [HomeController::class, 'index']);
 
 	// === Page de confidentialite ===
-    Route::name('confidentiality')->get('confidentiality', [\App\Http\Controllers\Front\ConfidentialityController::class, 'confidentiality']);
-
-	// === Page de profil ===
-    Route::name('profile')->get('profile', [\App\Http\Controllers\Front\ProfileController::class, 'index']);
-    Route::name('profile.resources')->get('profile/resources', [\App\Http\Controllers\Front\ProfileController::class, 'getUserResources']);
+    Route::name('confidentiality')->get('confidentiality', [ConfidentialityController::class, 'confidentiality']);
 
     // === Formulaire de contact ===
 	Route::name('contact')->get('contact', [ContactController::class, 'form']);
@@ -72,6 +70,11 @@ Route::group([
         Route::name('front.resource_update_visibility')->post('resources/updateVisibility', [ResourceController::class, 'changeVisibility']);
         // === Comments ===
         Route::name('comments.store')->post('/comment/store', [CommentController::class, 'store']);
+        // === Page de profil ===
+        Route::name('profile')->get('profile', [ProfileController::class, 'index']);
+        Route::name('profile.resources')->get('profile/resources', [ProfileController::class, 'resources']);
+        Route::name('profile.favorites')->get('profile/favorites', [ProfileController::class, 'favorites']);
+        Route::name('profile.subscribes')->get('profile/subscribes', [ProfileController::class, 'subscribes']);
 	});
 
 
