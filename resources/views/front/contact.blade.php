@@ -2,99 +2,93 @@
 
 @section('title', __('Contact form'))
 
-@push('styles')
-	<link href="{{ mix('css/auth.css') }}" rel="stylesheet">
-@endpush
-
 @section('content')
-	<div class="auth-container">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-xl-8">
-					<div class="auth-card">
-						<div class="auth-card__header">
-							<h1 class="auth-card__title">{{ __('Contact form') }}</h1>
-						</div>
-						<div class="auth-card__body">
-							@if(session('emailSent'))
-								<p class="text-center text-success my-5">{{ session('emailSent') }}</p>
-							@else
-								<form action="{{ route('contact') }}" method="post">
-									@csrf
-									<div class="row">
-										<div class="col-md">
-											<div class="form-group">
-												@form('text', [
-													'label' => [
-														'text' => __('Your name'),
-														'class' => 'auth-card__label',
-													],
-													'input' => [
-														'name' => 'name',
-														'value' => old('name'),
-														'class' => 'auth-card__input',
-														'required',
-													],
-												])
-											</div>
-										</div>
-										<div class="col-md">
-											<div class="form-group">
-												@form('email', [
-													'label' => [
-														'text' => __('Your email'),
-														'class' => 'auth-card__label',
-													],
-													'input' => [
-														'name' => 'email',
-														'value' => old('email'),
-														'class' => 'auth-card__input',
-														'required',
-													],
-												])
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										@form('text', [
-											'label' => [
-												'text' => __('Mail object'),
-												'class' => 'auth-card__label',
-											],
-											'input' => [
-												'name' => 'subject',
-												'value' => old('subject'),
-												'autocomplete' => 'off',
-												'class' => 'auth-card__input',
-												'required',
-											],
-										])
-									</div>
-									<div class="form-group">
-										@form('textarea', [
-											'label' => [
-												'text' => __('Your message'),
-												'class' => 'auth-card__label',
-											],
-											'input' => [
-												'name' => 'message',
-												'value' => old('message'),
-												'class' => 'auth-card__input',
-												'rows' => 10,
-												'required',
-											],
-										])
-									</div>
-									<button type="submit" class="btn btn-primary btn-block auth-card__btn">
-										<i class="fas fa-paper-plane mr-3"></i> {{ __('Send my message') }}
-									</button>
-								</form>
-							@endif
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="login-fg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 bg" style="background-image:url({{ asset('/media/front/wave.png') }})">
+                    <div class="info">
+                        <h1 class="font-weight-medium">Ressources Relationnelles</h1>
+                        <h5 class="mb-4 text-dark">Explore dès maintenant de nouvelles possibilités</h5>
+                        <div class="img">
+                            <img src="{{ asset('media/front/contact.png') }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 login">
+                    <div class="form-section">
+                        <div class="logo clearfix">
+                            <a href="/">
+                                <img src="{{ asset_cache('media/favicons/favicon.png') }}" height=180px width=180px alt="Ressources Relationnelles"/>
+                            </a>
+                        </div>
+                        <h1 class="font-weight-medium">{{ __('Contact form') }}</h1>
+                        <div class="or-login clearfix"></div>
+                        @if(session('emailSent'))
+                            <p class="text-center text-success my-5">{{ session('emailSent') }}</p>
+                        @else
+                            <form method="POST" action="{{ route('contact') }}">
+                                @csrf
+                                <div class="form-container">
+                                    <div class="col-md-5 form-group form-fg">
+                                        @form('text', [
+                                            'input' => [
+                                                'placeholder' => __('Your name'),
+                                                'name' => 'name',
+                                                'value' => old('name'),
+                                                'class' => 'input-text',
+                                                'required',
+                                            ],
+                                        ])
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="col-md-7 form-group form-fg">
+                                        @form('text', [
+                                            'input' => [
+                                                'placeholder' => __('Your email'),
+                                                'name' => 'email',
+                                                'value' => old('email'),
+                                                'class' => 'input-text',
+                                                'required',
+                                            ],
+                                        ])
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="col-md-12 form-group form-fg">
+                                        @form('text', [
+                                            'input' => [
+                                                'placeholder' => __('Mail object'),
+                                                'name' => 'subject',
+                                                'value' => old('subject'),
+                                                'autocomplete' => 'off',
+                                                'class' => 'input-text',
+                                            ],
+                                        ])
+                                        <i class="fas fa-outdent"></i>
+                                    </div>
+                                    <div class="col-md-12 form-group form-fg-special">
+                                        @form('textarea', [
+                                            'input' => [
+                                                'placeholder' => __('Your message'),
+                                                'name' => 'message',
+                                                'value' => old('message'),
+                                                'class' => 'input-text',
+                                                'rows' => 10,
+                                                'required',
+                                            ],
+                                        ])
+                                        <i class="fas fa-keyboard"></i>
+                                    </div>
+                                    <div class="col-md-12 form-group mt-2">
+                                        <button type="submit" class="btn btn-md btn-block btn-outline-special btn-lg border-0"><i class="fas fa-paper-plane mr-3"></i>{{ __('Send my message') }}</button>
+                                    </div>
+                                </div>
+                            </form>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 

@@ -9,9 +9,9 @@
                 <div class="col-xl-8 col-lg-7 col-md-12 bg" style="background-image:url({{ asset('/media/front/wave.png') }})">
                     <div class="info">
                         <h1 class="font-weight-medium">Ressources Relationnelles</h1>
-                        <h5 class="mb-4 text-dark">Explore des maintenant de nouvelles possibilites</h5>
+                        <h5 class="mb-4 text-dark">Explore dès maintenant de nouvelles possibilités</h5>
                         <div class="img">
-                            <img src="{{ asset('media/front/phone.png') }}">
+                            <img src="{{ asset('media/front/register.png') }}">
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                     <div class="login-section">
                         <div class="logo clearfix">
                             <a href="/">
-                                <img src="{{ asset_cache('media/favicons/favicon.png') }}" alt="Ressources Relationnelles"/>
+                                <img src="{{ asset_cache('media/favicons/favicon.png') }}" height=180px width=180px alt="Ressources Relationnelles"/>
                             </a>
                         </div>
                         <h1 class="font-weight-medium">{{ __('Register') }}</h1>
@@ -70,7 +70,7 @@
                                         ],
                                     ])
                                 </div>--}}
-                                <p>En cliquant sur 'S'incrire', je confirme avoir lu et accepte nos <a href="#" class="linkButton"> Termes et conditions d'utilisation.</a></p>
+                                <p>En cliquant sur 'S'incrire', je confirme avoir lu et accepté nos <a href="{{route('confidentiality')}}" class="linkButton"> Termes et conditions d'utilisation.</a></p>
                                 <div class="form-group mt-2">
                                     <button type="submit" class="btn btn-md btn-block btn-outline-special btn-lg border-0">{{ __('Register') }}</button>
                                 </div>

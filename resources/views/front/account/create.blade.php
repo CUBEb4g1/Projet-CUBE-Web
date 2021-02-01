@@ -1,4 +1,7 @@
 @extends('front._layouts.app')
+
+@section('title', 'Création de ressource')
+
 @push('styles')
     <link href="{{ mix('css/resources.css') }}" rel="stylesheet">
 @endpush

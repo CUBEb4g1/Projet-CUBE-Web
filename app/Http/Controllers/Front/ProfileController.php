@@ -19,6 +19,6 @@ class ProfileController extends Controller
     public function index()
     {
         $user = User::with(['comments','favorites','subscriptions'])->findOrFail(Auth::user()->id);
-        return view('front.profile', compact('user'));
+        return view('front._partials.profile.welcome', compact('user'));
     }
 }

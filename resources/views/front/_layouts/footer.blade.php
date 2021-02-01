@@ -75,7 +75,7 @@
                     <div class="d-flex mb-2 mt-3">
                         <div class="display-7 mr-3 align-self-top"><i class="icon-location-pin"></i></div>
                         <div class="info">
-                            <span class="font-weight-medium mt-3"><h6>Siege social</h6></span><br/>
+                            <span class="font-weight-medium mt-3"><h6>Siège social</h6></span><br/>
                             <p class="mt-3">91 Grande Rue<br/>70100 - Gray<br/>FRANCE</p>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
                     <h6 class="font-weight-medium mt-3">L'aventure</h6>
                     <ul class="general-listing two-part with-arrow mt-2 list-inline">
                         <li><a href="#" class="text-decoration-none d-flex py-2 align-items-center"><i class="icon-arrow-right mr-1"></i> A propos</a></li>
-                        <li><a href="#" class="text-decoration-none d-flex py-2 align-items-center"><i class="icon-arrow-right mr-1"></i> Confidentialite</a></li>
+                        <li><a href="{{ route('confidentiality') }}" class="text-decoration-none d-flex py-2 align-items-center"><i class="icon-arrow-right mr-1"></i> Confidentialité</a></li>
                         <li><a href="#" class="text-decoration-none d-flex py-2 align-items-center"><i class="icon-arrow-right mr-1"></i> Support</a></li>
                         <li><a href="#" class="text-decoration-none d-flex py-2 align-items-center"><i class="icon-arrow-right mr-1"></i> Jobs</a></li>
                         <li>
@@ -115,7 +115,7 @@
     <div class="f1-bottom-bar py-3">
         <div class="container">
             <div class="d-flex">
-                <div class="my-2">© {{ now()->year }} <a href="https://phoenixia-prods.com" target="_blank" class="link p-2">Phoenixia Productions</a> Tous droits reserves.</div>
+                <div class="my-2">© {{ now()->year }} <a href="https://phoenixia-prods.com" target="_blank" class="link p-2">Phoenixia Productions</a> Tous droits réservés.</div>
                 <div class="links ml-auto my-2">
                     <a href="https://github.com/CUBEb4g1/Projet-CUBE-Web" target="_blank" class="link p-2"><i class="fab fa-github"></i></a>
                     <a href="#" class="link p-2"><i class="fab fa-facebook"></i></a>

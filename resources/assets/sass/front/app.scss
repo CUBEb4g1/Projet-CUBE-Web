@@ -7,21 +7,26 @@
 //                     '{'!!'}'                 ===
 //                                              ===
 // === 0.   SUMMARY ================= Line 1    ===
-// === 1.   IMPORTS SET ============= Line 25   ===
-// === 2.   COMMON RULESET ========== Line 31   ===
-// === 3.   SPECIAL RULESET ========= Line 75   ===
-// === 4.   NAVBAR RULESET ========== Line 84   ===
-// === 5.   FOOTER RULESET ========== Line 153  ===
-// === 6.   ANIMATED LINES RULESET == Line 216  ===
-// === 7.   BANNER RULESET ========== Line 308  ===
-// === 8.   INCITATION RULESET ====== Line 355  ===
-// === 9.   SERVICE RULESET ========= Line 393  ===
-// === 10.  ABOUT RULESET =========== Line 448  ===
-// === 11.  TEAM RULESET ============ Line 462  ===
-// === 12.  CONTACT RULESET ========= Line 524  ===
-// === 13.  BACK TO TOP BUTTON ====== Line 542  ===
-// === 14.  RESOURCES RESULTS ======= Line 606  ===
-// === 15.  PERSONNAL PROFILE ======= Line 680  ===
+// === 1.   IMPORTS SET ============= Line 30   ===
+// === 2.   COMMON RULESET ========== Line 36   ===
+// === 3.   SPECIAL RULESET ========= Line 80   ===
+// === 4.   NAVBAR RULESET ========== Line 89   ===
+// === 5.   FOOTER RULESET ========== Line 156  ===
+// === 6.   ANIMATED LINES RULESET == Line 219  ===
+// === 7.   BANNER RULESET ========== Line 311  ===
+// === 8.   INCITATION RULESET ====== Line 358  ===
+// === 9.   SERVICE RULESET ========= Line 396  ===
+// === 10.  ABOUT RULESET =========== Line 451  ===
+// === 11.  TEAM RULESET ============ Line 465  ===
+// === 12.  CONTACT RULESET ========= Line 527  ===
+// === 13.  BACK TO TOP BUTTON ====== Line 545  ===
+// === 14.  RESOURCES RESULTS ======= Line 609  ===
+// === 15.  PERSONNAL PROFILE ======= Line 682  ===
+// === 16.  LOGIN SYSTEM ============ Line 1011 ===
+// === 17.  CONTACT FORM ============ Line 1079 ===
+// === 18.  CONFIDENTIALITY ========= Line 1222 ===
+// === 19.  FLIP CARD =============== Line 1356 ===
+// === 20.  SEARCH BOX ============== Line 1401 ===
 
 // === 1.   IMPORTS SET ===========================
 
@@ -327,7 +332,6 @@ h1{
 }
 .banner-home .btn-md {
     padding:                        15px 45px;
-    font-size:                      16px;
 }
 .banner-home .right-section {
     background-position:            center bottom;
@@ -356,8 +360,7 @@ h1{
 // === 8.   INCITATION RULESET ====================
 
 .home {
-    background:                     $white-smoke;
-    background-position:            0 -50px;
+    background:                     0 -50px;
     padding-top:                    0;
     @media (max-width: 991px) {
         padding-top:                71px;
@@ -524,12 +527,6 @@ h1{
 
 // === 12.  CONTACT RULESET =======================
 
-.contactus{
-    form{
-        position:                   relative;
-        z-index:                    9;
-    }
-}
 section {
     padding:                        120px 0 0 0;
     @media (max-width: 1024px) {
@@ -608,7 +605,7 @@ section {
 
 .resource-card {
     overflow:                       hidden;
-    box-shadow:                     0px 2px 20px rgba(0,0,0,.2);
+    box-shadow:                     0 2px 20px rgba(0,0,0,.2);
     background:                     white;
     border-radius:                  0.5rem;
     position:                       relative;
@@ -616,7 +613,7 @@ section {
     cursor:                         pointer;
     &:hover {
         transform:                  scale(1.05);
-        box-shadow:                 0px 2px 40px rgba(0,0,0,.2);
+        box-shadow:                 0 2px 40px rgba(0,0,0,.2);
     }
     .banner-img {
         position:                   absolute;
@@ -647,7 +644,7 @@ section {
     }
     .resource-title {
         color:                      $green;
-        line-height:                1.5rem;
+        line-height:                2.2rem;
         margin:                     1rem 0 0.5rem;
     }
     .resource-description {
@@ -1157,20 +1154,352 @@ section {
 }
 @media (max-width: 1200px) {
     .login-fg .info h1 {
-        font-size:45px
+        font-size:                  45px
     }
 }
 @media (max-width: 992px) {
     .login-fg .bg {
-        display:none
+        display:                    none
     }
 }
 @media (max-width: 768px) {
     .login-fg .login-section .social li a {
-        width:100px
+        width:                      100px
     }
     .login-fg .logo a {
-        font-size:26px;
+        font-size:                  26px;
+    }
+}
+
+// === 17.  CONTACT FORM ==========================
+
+.login-fg {
+    h3 {
+        color:                      $green;
+    }
+    .form-fg {
+        z-index:                    666;
+        i {
+        right:                      30px !important;
+        }
+    }
+    .form-fg-special {
+        float:                      left;
+        width:                      100%;
+        position:                   relative;
+        margin-bottom:              1rem !important;
+        z-index:                    666;
+        i {
+            position:               absolute;
+            top:                    13px;
+            right:                  30px;
+            font-size:              19px;
+            color:                  $dark;
+        }
+        .toggle {
+            position:               initial;
+            background:             none;
+            border:                 none;
+        }
+    }
+    .form-fg-special input {
+        float:                      left;
+        width:                      100%;
+        padding:                    11px 45px 11px 20px;
+        border-radius:              50px
+    }
+    .form-section {
+        max-width:                  670px;
+        margin:                     0 auto;
+        text-align:                 center;
+        width:                      100%;
+    }
+}
+
+// === 18.  CONFIDENTIALITY =======================
+
+.confidentiality {
+    padding:                        0 0 50px;
+    line-height:                    30px;
+    a, a:hover, a:focus, a:active {
+        text-decoration:            none;
+        outline:                    none;
+    }
+    p {
+        color:                      $dark !important;
+    }
+    ul {
+        margin:                     0;
+        padding:                    0;
+        list-style:                 none;
+    }
+    h3 {
+        color:                      $green;
+    }
+    blockquote {
+        /* Negate theme styles */
+        border:                     0;
+        margin:                     0;
+        padding:                    0;
+        font-size:                  1.2em;
+        font-style:                 italic;
+        line-height:                1.4 !important;
+        position:                   relative;
+        text-shadow:                0 1px $dark;
+        z-index:                    600;
+        p:first-child:before {
+            content:                '\201C';
+            color:                  $green;
+            font-size:              7.5em;
+            font-weight:            700;
+            opacity:                .3;
+            position:               absolute;
+            top:                    -.4em;
+            left:                   -.2em;
+            text-shadow:            none;
+            z-index:                -300;
+        }
+    }
+    .accordion .card {
+        border:                     none;
+        margin-bottom:              15px;
+        .card-body {
+            -webkit-box-shadow:     0 15px 140px 0 rgba(69, 81, 100, 0.1);
+            box-shadow:             0 15px 140px 0 rgba(69, 81, 100, 0.1);
+            border-radius:          0 0 10px 10px;
+            padding-top:            0;
+            margin-top:             -6px;
+            padding-left:           72px;
+            padding-right:          70px;
+            padding-bottom:         23px;
+            color:                  $dark;
+        }
+    }
+    .accordion .card:not(:first-of-type) .card-header:first-child {
+        border-radius:              10px;
+    }
+    .accordion .card .card-header {
+        border:                     none;
+        border-radius:              10px;
+        padding:                    0;
+        h5 {
+            padding:                0;
+            button {
+                font-family:        "Font Awesome 5 Pro", sans-serif;
+                color:              $green;
+                font-size:          18px;
+                font-weight:        500;
+                text-decoration:    none;
+                padding:            0 30px 0 70px;
+                height:             50px;
+                display:            block;
+                width:              100%;
+                text-align:         left;
+                background:         #fff;
+                -webkit-box-shadow: 0 -50px 140px 0 rgba(69, 81, 100, 0.1);
+                box-shadow:         0 -50px 140px 0 rgba(69, 81, 100, 0.1);
+                border-radius:      10px 10px 0 0;
+                position:           relative;
+            }
+            button:after {
+                position:           absolute;
+                left:               30px;
+                top:                50%;
+                margin-top:         -10px;
+                width:              20px;
+                height:             20px;
+                color:              $dark;
+                text-align:         center;
+                border:             1px solid $dark;
+                border-radius:      50%;
+                content:            '\f067';
+                font-size:          10px;
+                line-height:        18px;
+                font-weight:        900;
+            }
+            button.collapsed {
+                background:         -webkit-linear-gradient(-180deg, $teal 0%, $green 100%);
+                border-radius:      10px;
+                -webkit-box-shadow: none;
+                box-shadow:         none;
+                border:             1px solid rgba(0, 0, 0, 0.2);
+                color:              $dark;
+            }
+            button[aria-expanded="true"]:after {
+                content:            '\f068';
+                color:              $dark;
+                background-image:   -webkit-linear-gradient(-180deg, $teal 0%, $green 100%);
+            }
+        }
+    }
+    .img {
+        display:                    flex;
+        justify-content:            flex-end;
+        align-items:                center;
+        height:                     100%;
+        img {
+            width:                  350px;
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .confidentiality h5 {
+        font-size:                  45px
+    }
+}
+@media (max-width: 992px) {
+    .confidentiality .img {
+        display:                    none
+    }
+}
+
+// === 19.  FLIP CARD =============================
+
+/* .flip-card-container */
+.flip-card-container {
+    height:                         100%;
+    perspective:                    1000px;
+    h5 {
+        color:                      $teal;
+    }
+    .flip-card {
+        width:                      inherit;
+        height:                     inherit;
+        position:                   relative;
+        transform-style:            preserve-3d;
+        transition:                 .6s .1s;
+        .card-front,
+        .card-back {
+            width:                  100%;
+            height:                 100%;
+            border-radius:          24px;
+            position:               absolute;
+            top:                    0;
+            left:                   0;
+            overflow:               hidden;
+            backface-visibility:    hidden;
+            display:                flex;
+            justify-content:        center;
+            align-items:            center;
+        }
+        .card-front {
+            transform:              rotateY(0deg);
+            z-index:                2;
+        }
+        .card-back {
+            transform:              rotateY(180deg);
+            z-index:                1;
+        }
+        figure {
+            z-index:                -1;
+        }
+        figure,
+        .img-bg {
+            position:               absolute;
+            top:                    0;
+            left:                   0;
+            width:                  100%;
+            height:                 100%;
+        }
+        img {
+            height:                 100%;
+            border-radius:          24px;
+        }
+        figcaption {
+            display:                block;
+            width:                  auto;
+            margin-top:             12%;
+            padding:                8px 22px;
+            font-weight:            bold;
+            line-height:            1.6;
+            letter-spacing:         2px;
+            word-spacing:           6px;
+            text-align:             right;
+            position:               absolute;
+            top:                    0;
+            right:                  12px;
+            color:                  $teal;
+            background:             rgba(0,0,0,.4);
+        }
+        .img-bg {
+            background:             rgba(0,0,0,.4);
+        }
+        .card-front .img-bg {
+            clip-path:              polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+        }
+        .card-back .img-bg {
+            clip-path:              polygon(0 0, 100% 0, 100% 80%, 0 60%);
+        }
+    }
+    ul {
+        padding-top:                50%;
+        margin:                     0 auto;
+        width:                      70%;
+        height:                     100%;
+        list-style:                 none;
+        color:                      $white-smoke;
+        display:                    flex;
+        justify-content:            center;
+        align-items:                center;
+        flex-direction:             column;
+    }
+    li {
+        width:                      100%;
+        margin-top:                 12px;
+        padding-bottom:             12px;
+        font-size:                  14px;
+        text-align:                 center;
+        position:                   relative;
+    }
+    li:nth-child(4n) {
+        color:                      $teal;
+    }
+    li:not(:last-child)::after {
+        content:                    "";
+        position:                   absolute;
+        bottom:                     0;
+        left:                       0;
+        width:                      100%;
+        height:                     1px;
+        background:                 $teal;
+        opacity:                    .7;
+    }
+}
+/* Hover and focus within both states */
+.flip-card-container:hover .flip-card,
+.flip-card-container:focus-within .flip-card {
+    transform:                      rotateY(180deg);
+}
+/* Fix for title size when responsive */
+@media (max-width: 1200px) {
+    .flip-card-container h5 {
+        font-size:                  20px
+    }
+}
+
+// === 20.  SEARCH BOX ============================
+
+.search-box__input-group {
+    .input-group-prepend {
+        .input-group-text {
+            border-bottom-left-radius: 50px;
+            border-top-left-radius: 50px;
+            background:             rgba(255,255,255,.7);
+            .fal {
+                font-weight:        900;
+                color:              $dark;
+            }
+        }
+    }
+    .js-search-entity-input,
+    .js-listen-value {
+        border-top-right-radius:    50px;
+        border-bottom-right-radius: 50px;
+        outline:                    none;
+        color:                      $dark;
+        border:                     1px solid transparent;
+        font-weight:                500;
+        box-shadow:                 0 0 5px rgba(0, 0, 0, 0.2);
     }
 }
 
@@ -1184,10 +1513,8 @@ section {
     font-size: $input-font-size;
     height: auto;
 }
-
 .resource-link {
     color: inherit;
-
     &:hover {
         color: inherit;
         text-decoration: none;
