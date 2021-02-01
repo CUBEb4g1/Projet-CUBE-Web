@@ -41,7 +41,7 @@ class ProfileController extends Controller
     public function subscribes()
     {
         $user = Auth::user();
-        $subscriptions = $user->getSubItems(Resource::class)->get();
+        $subscriptions = $user->subscriptions(Resource::class)->get();
 
         return view('front._partials.profile.subscribes', compact('user', 'subscriptions'));
     }
