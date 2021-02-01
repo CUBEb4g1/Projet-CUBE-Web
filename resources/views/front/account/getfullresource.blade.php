@@ -26,11 +26,11 @@
                 <div class="card-footer-gradiant">
                     <div class="d-flex justify-content-between footer-content footer-content-gradiant">
                         <div class="text-left">
-                            Par <i>{{$resource->user->getFullName()}}</i>
+                            Publication de : <i>{{$resource->user->getFullName()}}</i>
                         </div>
 
                         <div class="text-right">
-                            Créer le :
+                            Créé le :
                             <i>{{ucfirst($resource->created_at->isoFormat('dddd Do MMMM YYYY')) . ' à ' . $resource->created_at->format('H:i')}}</i>
                         </div>
                     </div>
