@@ -12,7 +12,7 @@
                     <div class="d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
                         <div class="p-5">
                             <img src="{{ asset_cache('media/favicons/favicon.png') }}" height=180px width=180px alt="">
-                            <h1>Le projet Ressources Relationnelles</h1>
+                            <h1 class="h1-green">Le projet Ressources Relationnelles</h1>
                             <h6 class="mb-4 text-dark">Cette plateforme sociale est une simulation d'un projet qui aurait pu être porté par le Ministère des Solidarités et de la Santé. Il a cependant été mis en oeuvre dans le cadre d'une soutenance auprès du CESI de Dijon par la promotion RIL B4.</h6>
                             <a target="_blank" class="px-5 btn btn-md btn-outline-special btn-lg border-0" href="https://dijon.cesi.fr/ecoles-formations/cesi-ecole-superieure-de-lalternance/">Contacter le CESI</a>
                             </a>
