@@ -135,6 +135,11 @@
                     items: 'link image emoticons charmap hr'
                 }
             },
+            image_class_list: [
+                {title: 'Responsive', value: 'img-fluid'},
+            ],
+            image_dimensions: false,
+            content_style: 'img {max-width: 100%;}',
         });
     </script>
 @endpush
