@@ -1555,13 +1555,13 @@ section {
 
 // === 22.  PAGINATE  =============================
 
-.paginate {
-    .page-link {
-        color:                      $dark;
+.custom-pagination {
+    .custom-page-link {
+        color:                      $dark!important;
     }
-    .page-link.active {
-        background-color:           $green;
-        border-color:               $green;
+    .custom-page-link.active {
+        background-color:           $green!important;
+        border-color:               $green!important;
     }
 }
 

@@ -10,7 +10,7 @@
   padding: $pagination-padding-y $pagination-padding-x;
   margin-left: -$pagination-border-width;
   line-height: $pagination-line-height;
-  color: $pagination-color;
+  color: #333333;
   background-color: $pagination-bg;
   border: $pagination-border-width solid $pagination-border-color;
 
@@ -45,8 +45,8 @@
   &.active .page-link {
     z-index: 1;
     color: $pagination-active-color;
-    background-color: $pagination-active-bg;
-    border-color: $pagination-active-border-color;
+    background-color: #0faf96;
+    border-color: #0faf96;
   }
 
   &.disabled .page-link {
