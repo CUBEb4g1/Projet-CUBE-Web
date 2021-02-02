@@ -116,8 +116,8 @@
             language: 'fr_FR',
             height: 600,
             statusbar: false,
-            plugins: "emoticons hr image link lists charmap table code",
-            toolbar: "formatgroup paragraphgroup insertgroup code | undo redo | cut copy paste",
+            plugins: "emoticons hr image link lists charmap table code media",
+            toolbar: "formatgroup paragraphgroup insertgroup code | undo redo | cut copy paste | alignleft aligncenter alignright alignjustify",
             toolbar_groups: {
                 formatgroup: {
                     icon: 'format',
@@ -127,7 +127,7 @@
                 paragraphgroup: {
                     icon: 'paragraph',
                     tooltip: 'Paragraph format',
-                    items: 'h1 h2 h3 | bullist numlist | alignleft aligncenter alignright | indent outdent'
+                    items: 'h1 h2 h3 | bullist numlist | indent outdent'
                 },
                 insertgroup: {
                     icon: 'plus',
