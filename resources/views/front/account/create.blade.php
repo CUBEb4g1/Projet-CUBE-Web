@@ -11,7 +11,7 @@
             @csrf
             <div class="container my-5 bg-shadow pt-5 pb-5">
                 <div class="text-center m-3">
-                    <h3 class="mb-4">Création de votre ressource</h3>
+                    <h3 class="h3-green mb-4">Création de votre ressource</h3>
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -116,8 +116,8 @@
             language: 'fr_FR',
             height: 600,
             statusbar: false,
-            plugins: "emoticons hr image link lists charmap table code",
-            toolbar: "formatgroup paragraphgroup insertgroup code | undo redo | cut copy paste",
+            plugins: "emoticons hr image link lists charmap table code media",
+            toolbar: "formatgroup paragraphgroup insertgroup code | undo redo | cut copy paste | alignleft aligncenter alignright alignjustify",
             toolbar_groups: {
                 formatgroup: {
                     icon: 'format',
@@ -127,7 +127,7 @@
                 paragraphgroup: {
                     icon: 'paragraph',
                     tooltip: 'Paragraph format',
-                    items: 'h1 h2 h3 | bullist numlist | alignleft aligncenter alignright | indent outdent'
+                    items: 'h1 h2 h3 | bullist numlist | indent outdent'
                 },
                 insertgroup: {
                     icon: 'plus',
@@ -135,6 +135,11 @@
                     items: 'link image emoticons charmap hr'
                 }
             },
+            image_class_list: [
+                {title: 'Responsive', value: 'img-fluid'},
+            ],
+            image_dimensions: false,
+            content_style: 'img {max-width: 100%;}',
         });
     </script>
 @endpush
