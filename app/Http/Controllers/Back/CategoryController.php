@@ -119,25 +119,14 @@ class CategoryController extends Controller
             ->with('WarningNotif', "Catégorie supprimée avec succès !");
     }
     /**
-     * Désactiver la catégorie
+     * Changer statut de la catégorie
      */
-    public function disable(Category $category)
+    public function toggleActive(Request $request)
     {
-        $category->active = 0;
+        $category = Category::find($request->category_id);
+        $category->active = $request->active;
         $category->save();
 
-        return redirect()->back()
-            ->with('infoNotif', 'Catégorie désactivée');
-    }
-    /**
-     * Réactiver la catégorie
-     */
-    public function enable(Category $category)
-    {
-        $category->active = 1;
-        $category->save();
-
-        return redirect()->back()
-            ->with('infoNotif', 'Catégorie réactivée');
+        return ['success' => true, 'text' => 'ok'];
     }
 }

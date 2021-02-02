@@ -148,6 +148,7 @@ Route::prefix(config('admin.backoffice_prefix'))->middleware(['auth', 'verified'
         Route::name('back.category.form')->get('category/form/{category?}', [CategoryController::class, 'form'])->where(['category' => '\d*']);
         Route::name('back.category.save')->post('category/form/{category?}', [CategoryController::class, 'save'])->where(['category' => '\d*']);
         Route::name('back.category.delete')->get('category/delete/{category}', [CategoryController::class, 'delete'])->where(['category' => '\d+']);
+        Route::name('back.category.active')->post('active}', [CategoryController::class, 'toggleActive']);
     });
 
     // === Gestion des Ressources === \\

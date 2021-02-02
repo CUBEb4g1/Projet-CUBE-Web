@@ -15,7 +15,10 @@
             {{ $category->label }}
         </td>
         <td>
-            {{ $category->active }}
+            <input name="Active" data-id="{{$category->id}}" class="toggle-class"
+                   type="checkbox" data-onstyle="success" data-offstyle="danger"
+                   data-toggle="toggle" data-on="Active"
+                   data-off="InActive" {{ $category->active ? 'checked' : '' }}>
         </td>
         <td class="text-right text-nowrap">
             {{-- Modifier --}}
@@ -32,4 +35,28 @@
     </tr>
 @endforeach
 </tbody>
+
+@push('scripts')
+    <script>
+        $(function() {
+            $('.toggle-class').change(function() {
+                var active = $(this).prop('checked') === true ? 1 : 0;
+                var category_id = $(this).data('id');
+
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: '{{route('back.category.active')}}',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {'active': active, 'category_id': category_id},
+                    success: function(data) {
+                        $.jGrowl('Action effectuée !', { position: 'bottom-right', theme: 'bg-info' });
+                    }
+                })
+            })
+        })
+    </script>
+@endpush
 
