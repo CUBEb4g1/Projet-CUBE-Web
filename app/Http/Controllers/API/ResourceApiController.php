@@ -90,7 +90,7 @@ class ResourceApiController extends Controller
 
             $user = User::findOrFail(2)->resources()->save($resource);
             return response()->json([
-                'message' => 'Ressource créer !'
+                'message' => 'Ressource créée !'
             ], 201);
         }
         else
