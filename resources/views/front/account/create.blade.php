@@ -11,7 +11,7 @@
             @csrf
             <div class="container my-5 bg-shadow pt-5 pb-5">
                 <div class="text-center m-3">
-                    <h3 class="mb-4">Création de votre ressource</h3>
+                    <h3 class="h3-green mb-4">Création de votre ressource</h3>
                 </div>
                 <div class="row">
                     <div class="col-12">
