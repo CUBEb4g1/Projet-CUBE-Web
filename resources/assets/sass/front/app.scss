@@ -27,6 +27,8 @@
 // === 18.  CONFIDENTIALITY ========= Line 1222 ===
 // === 19.  FLIP CARD =============== Line 1356 ===
 // === 20.  SEARCH BOX ============== Line 1401 ===
+// === 21.  ABOUT US ================ Line 1508 ===
+// === 22.  PAGINATE ================ Line 1556 ===
 
 // === 1.   IMPORTS SET ===========================
 
@@ -1548,6 +1550,18 @@ section {
         display:                    block;
         margin-top:                 0;
         padding-bottom:             1rem;
+    }
+}
+
+// === 22.  PAGINATE  =============================
+
+.paginate {
+    .page-link {
+        color:                      $dark;
+    }
+    .page-link.active {
+        background-color:           $green;
+        border-color:               $green;
     }
 }
 
