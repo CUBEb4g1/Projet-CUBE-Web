@@ -18,14 +18,14 @@
 		<div class="navbar-header navbar-dark d-none d-md-flex align-items-md-center">
 			<div class="navbar-brand navbar-brand-md">
 				<a href="{{ route('back.dashboard') }}">
-					<img src="{{ asset_cache('media/logos/logo-light.svg') }}" alt="">
+					<img src="{{ asset_cache('media/favicons/favicon.png') }}" alt="">
 					<span>{!! config('app.name') !!}</span>
 				</a>
 			</div>
 
 			<div class="navbar-brand navbar-brand-xs">
 				<a href="{{ route('back.dashboard') }}">
-					<img src="{{ asset_cache('media/logos/logo-light.svg') }}" alt="">
+					<img src="{{ asset_cache('media/favicons/favicon.png') }}" alt="">
 				</a>
 			</div>
 		</div>
