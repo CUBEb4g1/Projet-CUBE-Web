@@ -4,8 +4,11 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Resource;
+use App\Models\User;
+use http\Env\Response;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class ResourceApiController extends Controller
@@ -69,6 +72,32 @@ class ResourceApiController extends Controller
         if ($request->filled('limit')) {
             $query
                 ->limit($request->limit);
+        }
+    }
+
+    public function post (Request $request)
+    {
+        if (!empty($request->input('content'))) {
+            $resource = new Resource([
+                'title' => $request->input('title'),
+                'content' => clean($request->input('content')),
+                'user_id' => 2,
+                'visibility' => 1,
+                'relation_id' => 1,
+                'category_id' => 1,
+                'resource_type_id' => 1,
+            ]);
+
+            $user = User::findOrFail(2)->resources()->save($resource);
+            return response()->json([
+                'message' => 'Ressource créer !'
+            ], 201);
+        }
+        else
+        {
+            return response()->json([
+                'message' => 'Erreur lors de la création'
+            ], 400);
         }
     }
 }
