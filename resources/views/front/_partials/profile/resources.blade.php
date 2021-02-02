@@ -14,7 +14,7 @@
                             </div>
                             <div class="card-body text-break mt-0">
                                 {!!substr($resource->content, 0, strpos($resource->content, "\n"));!!}
-                                <a href="get/{{$resource->id}}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Voir plus</a>
+                                <a href="{{ route('front.resource_get',['resource' =>$resource->id])}}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Voir plus</a>
                             </div>
 
                             <div class="d-flex align-items-end align-self-center">
