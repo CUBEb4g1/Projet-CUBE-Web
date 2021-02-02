@@ -47,6 +47,9 @@ Route::group([
 ], function () {
 	Route::name('home')->get('/', [HomeController::class, 'index']);
 
+    // === Page d'a propos' ===
+    Route::name('aboutus')->get('about-us', [\App\Http\Controllers\Front\AboutUsController::class, 'aboutus']);
+
 	// === Page de confidentialite ===
     Route::name('confidentiality')->get('confidentiality', [ConfidentialityController::class, 'confidentiality']);
 
