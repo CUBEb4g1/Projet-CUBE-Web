@@ -27,6 +27,8 @@
 // === 18.  CONFIDENTIALITY ========= Line 1222 ===
 // === 19.  FLIP CARD =============== Line 1356 ===
 // === 20.  SEARCH BOX ============== Line 1401 ===
+// === 21.  ABOUT US ================ Line 1508 ===
+// === 22.  PAGINATE ================ Line 1556 ===
 
 // === 1.   IMPORTS SET ===========================
 
@@ -1500,6 +1502,66 @@ section {
         border:                     1px solid transparent;
         font-weight:                500;
         box-shadow:                 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// === 21.  ABOUT US  =============================
+
+.aboutus {
+    .fill-80-viewport {
+        min-height:                 80vh;
+    }
+    .introduction {
+        background:                 linear-gradient(rgba(0, 0, 0, .1), rgba(255, 255, 255, 1)),
+                                    url('https://phoenixia-prods.com/wp-content/uploads/2021/02/about.png') 0% 0%/cover ;
+    }
+    .our-services {
+        .text-info {
+            background:             -webkit-linear-gradient(to right, $green 0%, $teal 100%);
+            background:             -webkit-gradient(linear, left top, right top, from($green), to($teal));
+            background:             -webkit-linear-gradient(left, $green 0%, $teal 100%);
+            background:             -o-linear-gradient(left, $green 0%, $teal 100%);
+            background:             linear-gradient(to right, $green 0%, $teal 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+        .border {
+            border:                 1px solid $green !important;
+        }
+    }
+    .section-grid {
+        display:                    grid;
+        grid-gap:                   30px;
+        text-align:                 center;
+        .secondary-text {
+            color:                  $green;
+        }
+        .rellax {
+            width:                  100%;
+            background:             rgba(255,255,255,.7);
+            padding:                1rem;
+            border-radius:          25px;
+            box-shadow:             0 0 15px rgba(0,0,0,0.2);
+        }
+    }
+}
+@media (max-width: 700px) {
+    .section-grid {
+        display:                    block;
+        margin-top:                 0;
+        padding-bottom:             1rem;
+    }
+}
+
+// === 22.  PAGINATE  =============================
+
+.paginate {
+    .page-link {
+        color:                      $dark;
+    }
+    .page-link.active {
+        background-color:           $green;
+        border-color:               $green;
     }
 }
 
