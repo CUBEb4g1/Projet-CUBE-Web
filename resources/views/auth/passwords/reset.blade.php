@@ -19,7 +19,7 @@
 
 						<div class="auth-card">
 							<div class="auth-card__header">
-								<h1 class="auth-card__title">{{ __('Reset Password') }}</h1>
+								<h1 class="h1-green auth-card__title">{{ __('Reset Password') }}</h1>
 							</div>
 
 							<div class="auth-card__body">

@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 bg" style="background-image:url({{ asset('/media/front/wave.png') }})">
                     <div class="info">
-                        <h1 class="font-weight-medium">Ressources Relationnelles</h1>
+                        <h1 class="h1-green font-weight-medium">Ressources Relationnelles</h1>
                         <h5 class="mb-4 text-dark">Explore dès maintenant de nouvelles possibilités</h5>
                         <div class="img">
                             <img src="{{ asset('media/front/contact.png') }}">
@@ -22,7 +22,7 @@
                                 <img src="{{ asset_cache('media/favicons/favicon.png') }}" height=180px width=180px alt="Ressources Relationnelles"/>
                             </a>
                         </div>
-                        <h1 class="font-weight-medium">{{ __('Contact form') }}</h1>
+                        <h1 class="h1-green font-weight-medium">{{ __('Contact form') }}</h1>
                         <div class="or-login clearfix"></div>
                         @if(session('emailSent'))
                             <p class="text-center text-success my-5">{{ session('emailSent') }}</p>

@@ -2,7 +2,7 @@
     <div class="profile"> <!-- PROFILE CARD -->
         <a class="add-button" href="#"><span class="icon fal fa-plus scnd-font-color"></span></a>
         <div class="profile-picture big-profile-picture clear">
-            <img width="150px" alt="Anne Hathaway picture" src="http://upload.wikimedia.org/wikipedia/commons/e/e1/Anne_Hathaway_Face.jpg" >
+            <img width="150px" alt="Default profile image" src="{{ asset('/media/avatars/default.png') }}" >
         </div>
         <h4 class="user-name">{{$user->username}}</h4>
         <div class="profile-description">

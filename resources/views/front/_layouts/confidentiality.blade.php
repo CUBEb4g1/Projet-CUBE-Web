@@ -5,7 +5,7 @@
 @section('content')
     <div class="confidentiality">
         <div class="container text-justify">
-            <h1 class="font-weight-medium text-center">Confidentialité, termes et conditions</h1>
+            <h1 class="h1-green font-weight-medium text-center">Confidentialité, termes et conditions</h1>
             <div class="row"> {{-- First row --}}
                 <div class="col-xl-4 col-lg-4 col-md-12">
                     <div class="img">
