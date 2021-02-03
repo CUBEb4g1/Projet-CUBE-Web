@@ -678,6 +678,11 @@ section {
 
 // === 15.  PERSONNAL PROFILE =====================
 
+.profile-gradient {
+    width: 100vw;
+    background:                 url('https://phoenixia-prods.com/wp-content/uploads/2021/02/profile.jpg') 0% 0%;
+    background-repeat: no-repeat;
+}
 .container .row .col-xl-4,
 .container .row .col-xl-8 {
     [class*="fontawesome-"]:before {
@@ -691,7 +696,7 @@ section {
     h4 {
         color:                      $green;
     }
-    h1, h2, h5, p, a, span{
+    h1, h2, h5, h6, p, a, span{
         color:                      $white-smoke;
     }
     /* Killing marks for the whole user Profile */

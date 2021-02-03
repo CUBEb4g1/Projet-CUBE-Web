@@ -21,15 +21,17 @@
 @include('_partials.maintenance_ribbon')
 @include('_partials.switched-auth-warning')
 @include('.front._layouts.mainmenu')
-<div class="container profile-gradient">
-    <div class="row">
-    @include('.front._layouts.profile')
-        <div class="col-xl-8"> <!-- RIGHT COLUMN -->
-            {{-- Content --}}
-            @yield('right-side')
+<section class="profile-gradient">
+    <div class="container">
+        <div class="row">
+        @include('.front._layouts.profile')
+            <div class="col-xl-8"> <!-- RIGHT COLUMN -->
+                {{-- Content --}}
+                @yield('right-side')
+            </div>
         </div>
     </div>
-</div>
+</section>
 {{-- Back to Top Button --}}
 @include('front._partials._back_to_top')
 {{-- Footer --}}

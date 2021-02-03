@@ -40,23 +40,66 @@
             <div id="portion4" class="shortened"><div class="trunk part" data-rel="9"></div></div>
             <p class="center-date">Janv.<br><span class="scnd-font-color">{{ now()->year }}</span></p>
         </div>
+        <div class="donut-chart">
+            <div id="userchart"></div>
+            <p class="center-date">Janv.<br><span class="scnd-font-color">{{ now()->year }}</span></p>
+        </div>
         <ul class="res-percentages horizontal-list">
             <li>
                 <p class="coms res scnd-font-color">Coms.</p>
-                <p class="res-percentage">21<sup>%</sup></p>
+                <p class="res-percentage">{{$percoms}}<sup>%</sup></p>
             </li>
             <li>
                 <p class="vues res scnd-font-color">Vues.</p>
-                <p class="res-percentage">48<sup>%</sup></p>
+                <p class="res-percentage">{{$persubs}}<sup>%</sup></p>
             </li>
             <li>
                 <p class="favs res scnd-font-color">Favs.</p>
-                <p class="res-percentage">9<sup>%</sup></p>
+                <p class="res-percentage">{{$perfavs}}<sup>%</sup></p>
             </li>
             <li>
                 <p class="part res scnd-font-color">Part.</p>
-                <p class="res-percentage">32<sup>%</sup></p>
+                <p class="res-percentage">{{$perres}}<sup>%</sup></p>
             </li>
         </ul>
     </div>
 </div>
+
+@push('scripts')
+    <script src="{{ asset('modules/apexcharts/dist/apexcharts.js') }}"></script>
+    <script>
+        var options =
+            {
+                chart: {
+                    type: '{!! $userchart->type() !!}',
+                    height: {!! $userchart->height() !!}
+                },
+                plotOptions: {
+                    bar: {!! $userchart->horizontal() !!}
+                },
+                colors: {!! $userchart->colors() !!},
+                series:
+                {!! $userchart->dataset() !!},
+                dataLabels: {
+                    enabled: false
+                },
+                labels: [{!! $userchart->labels() !!}],
+                title: {
+                    text: "{!! $userchart->title() !!}"
+                },
+                subtitle: {
+                    text: '{!! $userchart->subtitle() !!}',
+                    align: '{!! $userchart->subtitlePosition() !!}'
+                },
+                xaxis: {
+                    categories: {!! $userchart->xAxis() !!}
+                },
+                grid: {!! $userchart->grid() !!},
+                legend: {
+                    show: false,
+                }
+            }
+        var chart = new ApexCharts(document.querySelector("#userchart"), options);
+        chart.render();
+    </script>
+@endpush
