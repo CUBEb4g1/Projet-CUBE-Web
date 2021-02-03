@@ -37,7 +37,7 @@
                         <div class="rellax">
                             <i class="fas fa-book fa-3x secondary-text"></i>
                             <h4>Un contenu diversifié</h4>
-                            <h6 class="mb-4 text-dark">Et comme nous sommes tous différents, il vous est aussi permis d'apprendre, lire, écouter et meme partager les ressources dont vous seul souhaitez bénéficier.</h6>
+                            <h6 class="mb-4 text-dark">Et comme nous sommes tous différents, il vous est aussi permis d'apprendre, lire, écouter et même partager les ressources dont vous seul souhaitez bénéficier.</h6>
                         </div>
                     </div>
                 </div>

@@ -15,12 +15,14 @@
 <div class="profile-content"> <!-- MODAL BLOCK -->
     <h5 class="titular">Un espace dédié sans publicités</h5>
     <div class="profile-content first">
-        <p>Ice-cream trucks only play music when out of ice-cream. Well played dad. On <a class="profile-content-link" href="#17">@Quora</a></p>
-        <p><a class="time-ago scnd-font-color" href="#18">3 minutes ago</a></p>
-    </div>
-    <div class="profile-content">
-        <p>We are in the process of pushing out all of the new CC apps! We will tweet again once they are live <a class="profile-content-link" href="#19">#CreativeCloud</a></p>
-        <p><a class="scnd-font-color" href="#20">6 hours ago</a></p>
+        <p>Grâce à ton espace personnel, tu pourras retrouver les différentes ressources que tu as
+            <a class="profile-content-link" href="{{route('profile.favorites')}}">aimé</a>,
+            <a class="profile-content-link" href="{{route('profile.subscribes')}}">mis de côté</a>
+            ainsi que toutes celles que tu as
+            <a class="profile-content-link" href="{{route('profile.resources')}}">posté</a>
+            !</br>
+            Pour bien commencer dans cette nouvelle experience, l'équipe t'invite à <a class="profile-content-link" href="{{route('front.resourcecreate')}}">créer ta première ressource</a>.
+        </p>
     </div>
 </div>
 <div class="profile-content"> <!-- MODAL BLOCK -->

@@ -2,9 +2,13 @@
     <div class="profile"> <!-- PROFILE CARD -->
         <a class="add-button" href="#"><span class="icon fal fa-plus scnd-font-color"></span></a>
         <div class="profile-picture big-profile-picture clear">
-            <img width="150px" alt="Default profile image" src="{{ asset('/media/avatars/default.png') }}" >
+            <a href="{{ route('profile') }}">
+                <img width="150px" alt="Default profile image" src="{{ asset('/media/avatars/default.png') }}" >
+            </a>
         </div>
-        <h4 class="user-name">{{$user->username}}</h4>
+        <a href="{{ route('profile') }}">
+            <h4 class="user-name">{{$user->username}}</h4>
+        </a>
         <div class="profile-description">
             <p class="scnd-font-color">{{$user->bio}}</p>
         </div>
