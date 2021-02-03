@@ -41,8 +41,6 @@ class ProfileController extends Controller
         }
 
         $userchart = (new LarapexChart)
-            ->setHeight('200')
-            ->setType('donut')
             ->setDataset([
                 $percoms,
                 $persubs,
@@ -91,8 +89,6 @@ class ProfileController extends Controller
         }
 
         $userchart = (new LarapexChart)
-            ->setHeight('200')
-            ->setType('donut')
             ->setDataset([
                 $percoms,
                 $persubs,
@@ -141,8 +137,6 @@ class ProfileController extends Controller
         }
 
         $userchart = (new LarapexChart)
-            ->setHeight('200')
-            ->setType('donut')
             ->setDataset([
                 $percoms,
                 $persubs,
@@ -191,8 +185,6 @@ class ProfileController extends Controller
         }
 
         $userchart = (new LarapexChart)
-            ->setHeight('200')
-            ->setType('donut')
             ->setDataset([
                 $percoms,
                 $persubs,

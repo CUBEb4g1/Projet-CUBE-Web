@@ -866,86 +866,86 @@ section {
         }
     }
     /* Profil user stats block */
+    .donut-chart {
+        position:               relative;
+        width:                  200px;
+        height:                 200px;
+        margin:                 2em auto 2rem;
+        border-radius:          100%
+    }
+    p.center-date {
+        background:             $dark;
+        position:               absolute;
+        text-align:             center;
+        font-size:              28px;
+        top:                    0;
+        left:                   0;
+        bottom:                 0;
+        right:                  0;
+        width:                  130px;
+        height:                 130px;
+        margin:                 auto;
+        border-radius:          50%;
+        line-height:            35px;
+        padding:                15% 0 0;
+    }
+    .center-date span.scnd-font-color {
+        line-height:            0;
+    }
+    .shortened {
+        border-radius:          50%;
+        clip:                   rect(0px, 200px, 200px, 100px);
+        height:                 100%;
+        position:               absolute;
+        width:                  100%;
+    }
+    .trunk {
+        border-radius:          50%;
+        clip:                   rect(0px, 100px, 200px, 0px);
+        height:                 100%;
+        position:               absolute;
+        width:                  100%;
+        font-family:            monospace;
+        font-size:              1.5rem;
+    }
+    #portion1 {
+        -webkit-transform:      rotate(0deg);
+        transform:              rotate(0deg);
+    }
+    #portion1 .trunk {
+        background-color:       $green;
+        -webkit-transform:      rotate(76deg);
+        transform:              rotate(76deg);
+    }
+    #portion2 {
+        -webkit-transform:      rotate(76deg);
+        transform:              rotate(76deg);
+    }
+    #portion2 .trunk {
+        background-color:       $teal;
+        -webkit-transform:      rotate(140deg);
+        transform:              rotate(140deg);
+    }
+    #portion3 {
+        -webkit-transform:      rotate(215deg);
+        transform:              rotate(215deg);
+    }
+    #portion3 .trunk {
+        background-color:       $white-smoke;
+        -webkit-transform:      rotate(113deg);
+        transform:              rotate(113deg);
+    }
+    #portion4 {
+        -webkit-transform:      rotate(-32deg);
+        transform:              rotate(-32deg);
+    }
+    #portion4 .trunk {
+        background-color:       $black;
+        -webkit-transform:      rotate(32deg);
+        transform:              rotate(32deg);
+    }
     .donut-chart-block {
         background:                 $dark;
-        .donut-chart {
-            position:               relative;
-            width:                  200px;
-            height:                 200px;
-            margin:                 2em auto 2rem;
-            border-radius:          100%
-        }
-        p.center-date {
-            background:             $dark;
-            position:               absolute;
-            text-align:             center;
-            font-size:              28px;
-            top:                    0;
-            left:                   0;
-            bottom:                 0;
-            right:                  0;
-            width:                  130px;
-            height:                 130px;
-            margin:                 auto;
-            border-radius:          50%;
-            line-height:            35px;
-            padding:                15% 0 0;
-        }
-        .center-date span.scnd-font-color {
-            line-height:            0;
-        }
-        .shortened {
-            border-radius:          50%;
-            clip:                   rect(0px, 200px, 200px, 100px);
-            height:                 100%;
-            position:               absolute;
-            width:                  100%;
-        }
-        .trunk {
-            border-radius:          50%;
-            clip:                   rect(0px, 100px, 200px, 0px);
-            height:                 100%;
-            position:               absolute;
-            width:                  100%;
-            font-family:            monospace;
-            font-size:              1.5rem;
-        }
-        #portion1 {
-            -webkit-transform:      rotate(0deg);
-            transform:              rotate(0deg);
-        }
-        #portion1 .trunk {
-            background-color:       $green;
-            -webkit-transform:      rotate(76deg);
-            transform:              rotate(76deg);
-        }
-        #portion2 {
-            -webkit-transform:      rotate(76deg);
-            transform:              rotate(76deg);
-        }
-        #portion2 .trunk {
-            background-color:       $teal;
-            -webkit-transform:      rotate(140deg);
-            transform:              rotate(140deg);
-        }
-        #portion3 {
-            -webkit-transform:      rotate(215deg);
-            transform:              rotate(215deg);
-        }
-        #portion3 .trunk {
-            background-color:       $white-smoke;
-            -webkit-transform:      rotate(113deg);
-            transform:              rotate(113deg);
-        }
-        #portion4 {
-            -webkit-transform:      rotate(-32deg);
-            transform:              rotate(-32deg);
-        }
-        #portion4 .trunk {
-            background-color:       $black;
-            -webkit-transform:      rotate(32deg);
-            transform:              rotate(32deg);
-        }
         /* Profile user stats blocks */
         .res-percentages {
             padding-top:            20px;
@@ -996,13 +996,13 @@ section {
             margin:                 0;
             padding:                30px 30px 0;
         }
-        p:last-child {
-            margin:                 0;
-            padding:                15px 30px 0;
-        }
     }
     .profile-content.first {
         height:                     150px;
+        border-bottom:              1px solid rgba(255,255,255,.2);
+    }
+    .profile-content.chart {
+        height:                     350px;
         border-bottom:              1px solid rgba(255,255,255,.2);
     }
     .profile-content-link {

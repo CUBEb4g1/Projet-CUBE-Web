@@ -33,17 +33,7 @@
     </div>
     <div class="donut-chart-block"> <!-- STATS BLOCK -->
         <h5 class="titular">Apercu de navigation</h5>
-        <div class="donut-chart">
-            <div id="portion1" class="shortened"><div class="trunk coms" data-rel="21"></div></div>
-            <div id="portion2" class="shortened"><div class="trunk vues" data-rel="39"></div></div>
-            <div id="portion3" class="shortened"><div class="trunk favs" data-rel="31"></div></div>
-            <div id="portion4" class="shortened"><div class="trunk part" data-rel="9"></div></div>
-            <p class="center-date">Janv.<br><span class="scnd-font-color">{{ now()->year }}</span></p>
-        </div>
-        <div class="donut-chart">
-            <div id="userchart"></div>
-            <p class="center-date">Janv.<br><span class="scnd-font-color">{{ now()->year }}</span></p>
-        </div>
+        <div id="userchart"></div>
         <ul class="res-percentages horizontal-list">
             <li>
                 <p class="coms res scnd-font-color">Coms.</p>
@@ -71,13 +61,23 @@
         var options =
             {
                 chart: {
-                    type: '{!! $userchart->type() !!}',
-                    height: {!! $userchart->height() !!}
+                    type: 'donut',
+                    height: 250
                 },
                 plotOptions: {
-                    bar: {!! $userchart->horizontal() !!}
+                    bar: {
+                        backgroundBarRadius: 2,
+                    },
                 },
-                colors: {!! $userchart->colors() !!},
+                colors: ([
+                    '#0faf96',
+                    '#63ff96',
+                    '#f7f7f7',
+                    '#000000'
+                ]),
+                stroke: {
+                  show: false,
+                },
                 series:
                 {!! $userchart->dataset() !!},
                 dataLabels: {
