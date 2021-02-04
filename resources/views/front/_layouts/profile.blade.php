@@ -2,9 +2,13 @@
     <div class="profile"> <!-- PROFILE CARD -->
         <a class="add-button" href="#"><span class="icon fal fa-plus scnd-font-color"></span></a>
         <div class="profile-picture big-profile-picture clear">
-            <img width="150px" alt="Default profile image" src="{{ asset('/media/avatars/default.png') }}" >
+            <a href="{{ route('profile') }}">
+                <img width="150px" alt="Default profile image" src="{{ asset('/media/avatars/default.png') }}" >
+            </a>
         </div>
-        <h4 class="user-name">{{$user->username}}</h4>
+        <a href="{{ route('profile') }}">
+            <h4 class="user-name">{{$user->username}}</h4>
+        </a>
         <div class="profile-description">
             <p class="scnd-font-color">{{$user->bio}}</p>
         </div>
@@ -33,30 +37,73 @@
     </div>
     <div class="donut-chart-block"> <!-- STATS BLOCK -->
         <h5 class="titular">Apercu de navigation</h5>
-        <div class="donut-chart">
-            <div id="portion1" class="shortened"><div class="trunk coms" data-rel="21"></div></div>
-            <div id="portion2" class="shortened"><div class="trunk vues" data-rel="39"></div></div>
-            <div id="portion3" class="shortened"><div class="trunk favs" data-rel="31"></div></div>
-            <div id="portion4" class="shortened"><div class="trunk part" data-rel="9"></div></div>
-            <p class="center-date">Janv.<br><span class="scnd-font-color">{{ now()->year }}</span></p>
-        </div>
+        <div id="userchart"></div>
         <ul class="res-percentages horizontal-list">
             <li>
                 <p class="coms res scnd-font-color">Coms.</p>
-                <p class="res-percentage">21<sup>%</sup></p>
+                <p class="res-percentage">{{$percoms}}<sup>%</sup></p>
             </li>
             <li>
                 <p class="vues res scnd-font-color">Vues.</p>
-                <p class="res-percentage">48<sup>%</sup></p>
+                <p class="res-percentage">{{$persubs}}<sup>%</sup></p>
             </li>
             <li>
                 <p class="favs res scnd-font-color">Favs.</p>
-                <p class="res-percentage">9<sup>%</sup></p>
+                <p class="res-percentage">{{$perfavs}}<sup>%</sup></p>
             </li>
             <li>
                 <p class="part res scnd-font-color">Part.</p>
-                <p class="res-percentage">32<sup>%</sup></p>
+                <p class="res-percentage">{{$perres}}<sup>%</sup></p>
             </li>
         </ul>
     </div>
 </div>
+
+@push('scripts')
+    <script src="{{ asset('modules/apexcharts/dist/apexcharts.js') }}"></script>
+    <script>
+        var options =
+            {
+                chart: {
+                    type: 'donut',
+                    height: 250
+                },
+                plotOptions: {
+                    bar: {
+                        backgroundBarRadius: 2,
+                    },
+                },
+                colors: ([
+                    '#0faf96',
+                    '#63ff96',
+                    '#f7f7f7',
+                    '#000000'
+                ]),
+                stroke: {
+                  show: false,
+                },
+                series:
+                {!! $userchart->dataset() !!},
+                dataLabels: {
+                    enabled: false
+                },
+                labels: [{!! $userchart->labels() !!}],
+                title: {
+                    text: "{!! $userchart->title() !!}"
+                },
+                subtitle: {
+                    text: '{!! $userchart->subtitle() !!}',
+                    align: '{!! $userchart->subtitlePosition() !!}'
+                },
+                xaxis: {
+                    categories: {!! $userchart->xAxis() !!}
+                },
+                grid: {!! $userchart->grid() !!},
+                legend: {
+                    show: false,
+                }
+            }
+        var chart = new ApexCharts(document.querySelector("#userchart"), options);
+        chart.render();
+    </script>
+@endpush
