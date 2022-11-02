@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:latest
+    container_name: db
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "admin"
+      POSTGRES_DB: "r2"
+    ports:
+      - 5432:5432
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - FA_LICENSE=A7CE7F86-9B52-4BF3-8DF5-85BD9D8D27D3
+    container_name: web
+    restart: always
+    volumes:
+      - ./:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    links:
+      - db
