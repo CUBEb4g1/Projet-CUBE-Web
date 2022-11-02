@@ -47,6 +47,7 @@ class ResourceController extends Controller
         $ressourceList = Resource::with('user')
             ->where('validated', 1)
             ->where('deleted', 0)
+            ->where('visibility', 3)
             ->paginate('25');
 
         return view('front.account.list', ['resources' => $ressourceList]);
