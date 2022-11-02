@@ -64,7 +64,7 @@ class SeedPermissionTable extends Migration
      */
     public function up()
     {
-        // Reset cached roles and permissions
+    //     // Reset cached roles and permissions
         app()['cache']->forget('spatie.permission.cache');
 
         // === PERMISSIONS ===
@@ -91,10 +91,14 @@ class SeedPermissionTable extends Migration
 
         foreach ($relations as $role => $permissions) {
             foreach ($permissions as $permission) {
-                DB::table('role_has_permissions')->insertGetId([
+                DB::table('role_has_permissions')->insert([
                     'permission_id' => $this->permissions[$permission]['id'],
                     'role_id'       => $this->roles[$role]['id'],
                 ]);
+                // DB::table('role_has_permissions')->insertGetId([
+                //     'permission_id' => $this->permissions[$permission]['id'],
+                //     'role_id'       => $this->roles[$role]['id'],
+                // ]);
             }
         }
     }
@@ -106,12 +110,12 @@ class SeedPermissionTable extends Migration
      */
     public function down()
     {
-        foreach ($this->permissions as $permission) {
-            DB::table('permissions')->where('name', $permission['name'])->delete();
-        }
+        // foreach ($this->permissions as $permission) {
+        //     DB::table('permissions')->where('name', $permission['name'])->delete();
+        // }
 
-        foreach ($this->roles as $role) {
-            DB::table('roles')->where('name', $role['name'])->delete();
-        }
+        // foreach ($this->roles as $role) {
+        //     DB::table('roles')->where('name', $role['name'])->delete();
+        // }
     }
 }
