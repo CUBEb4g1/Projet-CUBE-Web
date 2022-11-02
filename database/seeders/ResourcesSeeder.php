@@ -22,9 +22,9 @@ class ResourcesSeeder extends Seeder
             $r1->user_id = rand(1,3);
             $r1->title = $faker->sentence;
             $r1->content = implode($faker->paragraphs(10));
-            $r1->visibility = rand(0, 3);
-            $r1->validated = rand(0, 1);
-            $r1->deleted = rand(0, 1);
+            $r1->visibility = 3;
+            $r1->validated = 1;
+            $r1->deleted = 0;
             $r1->views = rand(0, 999);
             $r1->relation_id = 1;
             $r1->category_id = 1;
